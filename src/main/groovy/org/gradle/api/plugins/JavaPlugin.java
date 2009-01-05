@@ -235,11 +235,6 @@ public class JavaPlugin implements Plugin {
     private void configureTest(Project project) {
         final Test test = (Test) project.createTask(GUtil.map("type", Test.class, "dependsOn", TEST_COMPILE), TEST);
         test.conventionMapping(DefaultConventionsToPropertiesMapping.TEST);
-        test.getOptions().setFork(true);
-        test.getOptions().getForkOptions().setForkMode(ForkMode.PER_TEST);
-        test.getOptions().getForkOptions().setDir(project.getProjectDir());
-        test.include("**/*Tests.class", "**/*Test.class");
-        test.exclude("**/Abstract*.class");
         test.doFirst(new TaskAction() {
             public void execute(Task task) {
                 Test test = (Test) task;

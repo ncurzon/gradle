@@ -16,12 +16,15 @@
 
 package org.gradle.build.integtests
 
+import org.gradle.build.integtests.testng.TestNGIntegration
+
 /**
  * @author Hans Dockter
  */
 class IntegTestSuite {
     static void execute(String distDirPath, String samplesDirPath, String userguideOutputDir) {
         CacheProject.execute(distDirPath, samplesDirPath)
+        TestNGIntegration.execute(distDirPath, samplesDirPath)
         CommandLine.execute(distDirPath, samplesDirPath)
         WrapperProject.execute(distDirPath, samplesDirPath)
         JavaProject.execute(distDirPath, samplesDirPath)
@@ -34,6 +37,8 @@ class IntegTestSuite {
         org.gradle.build.integtests.Version.execute(distDirPath)
         Userguide.execute(distDirPath, samplesDirPath, userguideOutputDir)
         MavenRepo.execute(distDirPath, samplesDirPath)
+
+
         deleteGradleDirs(samplesDirPath)
     }
 
