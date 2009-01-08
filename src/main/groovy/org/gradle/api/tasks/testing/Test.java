@@ -262,10 +262,10 @@ public class Test extends ConventionTask {
     }
 
     public TestFramework getTestFramework() {
-        return getTestFramework(null);
+        return testFramework(null);
     }
 
-    public TestFramework getTestFramework(Closure testFrameworkConfigure) {
+    public TestFramework testFramework(Closure testFrameworkConfigure) {
         if ( testFramework == null ) {
             return useDefaultTestFramework(testFrameworkConfigure);
         }
@@ -281,7 +281,17 @@ public class Test extends ConventionTask {
      * @return
      */
     public Object getOptions() {
-        return getTestFramework().getOptions();
+        return options(null);
+    }
+
+    public Object options(Closure testFrameworkConfigure)
+    {
+        final Object options = getTestFramework().getOptions();
+
+        if ( testFrameworkConfigure != null )
+            ConfigureUtil.configure(testFrameworkConfigure, testFramework.getOptions());
+
+        return options;
     }
 
     public TestFramework useTestFramework(TestFramework testFramework) {
@@ -323,10 +333,10 @@ public class Test extends ConventionTask {
             final String testFrameworkDefault = (String)getProject().property(TEST_FRAMEWORK_DEFAULT_PROPERTY);
 
             if ( testFrameworkDefault == null || "".equals(testFrameworkDefault) || "junit".equalsIgnoreCase(testFrameworkDefault) ) {
-                return useJUnit();
+                return useJUnit(testFrameworkConfigure);
             }
             else if ( "testng".equalsIgnoreCase(testFrameworkDefault) ) {
-                return useTestNG();
+                return useTestNG(testFrameworkConfigure);
             }
             else {
                 try {
@@ -342,7 +352,7 @@ public class Test extends ConventionTask {
             }
         }
         catch ( MissingPropertyException e ) {
-            return useJUnit();
+            return useJUnit(testFrameworkConfigure);
         }
     }
 
