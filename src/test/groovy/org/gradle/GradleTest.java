@@ -26,14 +26,10 @@ import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.project.DefaultProject;
 import org.gradle.configuration.BuildConfigurer;
 import org.gradle.execution.TaskExecuter;
-import org.gradle.initialization.DefaultProjectDescriptor;
-import org.gradle.initialization.DefaultProjectDescriptorRegistry;
-import org.gradle.initialization.IGradlePropertiesLoader;
-import org.gradle.initialization.ISettingsFinder;
-import org.gradle.initialization.BuildLoader;
-import org.gradle.initialization.SettingsProcessor;
+import org.gradle.initialization.*;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
+import org.gradle.DefaultStartParameter;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -112,20 +108,20 @@ public class GradleTest {
 
         expectTasks("a", "b");
 
-        expectedStartParams = new StartParameter();
+        expectedStartParams = new DefaultStartParameter();
         expectedStartParams.setTaskNames(expectedTaskNames);
         expectedStartParams.setCurrentDir(expectedCurrentDir);
         expectedStartParams.setSearchUpwards(expectedSearchUpwards);
         expectedStartParams.setGradleUserHomeDir(new File(HelperUtil.TMP_DIR_FOR_TEST, "gradleUserHomeDir"));
 
-        gradle = new Gradle(expectedStartParams, settingsFinderMock, gradlePropertiesLoaderMock, settingsProcessorMock,
+        gradle = new DefaultGradle(expectedStartParams, settingsFinderMock, gradlePropertiesLoaderMock, settingsProcessorMock,
                 buildLoaderMock,
                 buildConfigurerMock);
         
         context.checking(new Expectations() {
             {
-                allowing(settingsFinderMock).find(with(any(StartParameter.class)));
-                allowing(gradlePropertiesLoaderMock).loadProperties(with(equal(expectedRootDir)), with(any(StartParameter.class)));
+                allowing(settingsFinderMock).find(with(any(DefaultStartParameter.class)));
+                allowing(gradlePropertiesLoaderMock).loadProperties(with(equal(expectedRootDir)), with(any(DefaultStartParameter.class)));
                 allowing(gradlePropertiesLoaderMock).getGradleProperties();
                 will(returnValue(testGradleProperties));
                 allowing(settingsFinderMock).getSettingsDir();
@@ -159,7 +155,7 @@ public class GradleTest {
 
     @Test
     public void testInit() {
-        gradle = new Gradle(expectedStartParams, settingsFinderMock, gradlePropertiesLoaderMock, settingsProcessorMock,
+        gradle = new DefaultGradle(expectedStartParams, settingsFinderMock, gradlePropertiesLoaderMock, settingsProcessorMock,
                 buildLoaderMock,
                 buildConfigurerMock);
         assertSame(settingsFinderMock, gradle.getSettingsFinder());
@@ -332,14 +328,14 @@ public class GradleTest {
     // todo: This test is rather weak. Make it stronger.
     @Test
     public void testNewInstanceFactory() {
-        StartParameter startParameter = new StartParameter();
+        StartParameter startParameter = new DefaultStartParameter();
         startParameter.setGradleHomeDir(new File(HelperUtil.TMP_DIR_FOR_TEST, "gradleHomeDir"));
-        Gradle gradle = Gradle.newInstance(startParameter);
+        DefaultGradle gradle = new DefaultGradleFactory(new DefaultLoggingConfigurer()).newInstance(startParameter);
         assertThat(gradle, notNullValue());
     }
 
-    private Matcher<BuildResult> result(final Settings expectedSettings, final Matcher<? extends Throwable> exceptionMatcher) {
-        return new BaseMatcher<BuildResult>() {
+    private Matcher<DefaultBuildResult> result(final Settings expectedSettings, final Matcher<? extends Throwable> exceptionMatcher) {
+        return new BaseMatcher<DefaultBuildResult>() {
             public void describeTo(Description description) {
                 description.appendText("matching build result");
             }

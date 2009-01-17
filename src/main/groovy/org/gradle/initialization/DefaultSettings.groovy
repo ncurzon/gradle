@@ -16,9 +16,12 @@
 
 package org.gradle.initialization
 
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.internal.dependencies.DependencyManagerFactory
-import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.groovy.scripts.ScriptSource
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
+import org.gradle.StartParameter
 
 /**
  * @author Hans Dockter

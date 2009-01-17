@@ -1,5 +1,6 @@
 package org.gradle.initialization;
 
+import org.gradle.DefaultStartParameter;
 import org.gradle.StartParameter;
 import org.gradle.groovy.scripts.ScriptSource;
 import static org.hamcrest.Matchers.*;
@@ -17,7 +18,7 @@ public class EmbeddedScriptSettingsFinderTest {
 
     @Test
     public void usesProvidedScriptAsSettingsFile() {
-        StartParameter parameter = new StartParameter();
+        StartParameter parameter = new DefaultStartParameter();
         ScriptSource settingsScriptSource = context.mock(ScriptSource.class);
 
         parameter.setSettingsScriptSource(settingsScriptSource);
@@ -29,7 +30,7 @@ public class EmbeddedScriptSettingsFinderTest {
 
     @Test
     public void usesCurrentDirAsSettingsDir() {
-        StartParameter parameter = new StartParameter();
+        StartParameter parameter = new DefaultStartParameter();
         File currentDir = new File("current dir");
 
         parameter.setCurrentDir(currentDir);

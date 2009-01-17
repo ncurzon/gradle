@@ -18,7 +18,6 @@ package org.gradle.api.internal;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.api.internal.project.IProjectRegistry;
-import org.gradle.StartParameter;
 import org.gradle.execution.TaskExecuter;
 
 public interface BuildInternal extends Build {

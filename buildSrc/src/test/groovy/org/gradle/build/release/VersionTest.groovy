@@ -22,10 +22,12 @@ import org.gradle.groovy.scripts.EmptyScript
 import org.gradle.util.GradleUtil
 import org.gradle.groovy.scripts.StringScriptSource
 import org.gradle.logging.AntLoggingAdapter
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.invocation.DefaultBuild
 import org.gradle.initialization.ISettingsFinder
 import org.gradle.CacheUsage
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -56,7 +58,7 @@ class VersionTest extends GroovyTestCase {
                 new DefaultDependencyManagerFactory(settingsFinder, CacheUsage.ON),
                 new BuildScriptProcessor(),
                 new PluginRegistry(),
-                new StartParameter(),
+                new DefaultStartParameter(),
                 new StringScriptSource("embedded build file", "embedded"),
                 new DefaultAntBuilderFactory(new AntLoggingAdapter()))
 

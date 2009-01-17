@@ -29,7 +29,6 @@ class IntegTestSuite {
         WrapperProject.execute(distDirPath, samplesDirPath)
         JavaProject.execute(distDirPath, samplesDirPath)
         GroovyProject.execute(distDirPath, samplesDirPath)
-        WebProject.execute(distDirPath, samplesDirPath)
         Logging.execute(distDirPath, samplesDirPath)
         Osgi.execute(distDirPath, samplesDirPath)
         PomGeneration.execute(distDirPath, samplesDirPath)

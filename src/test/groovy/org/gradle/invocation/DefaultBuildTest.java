@@ -1,5 +1,6 @@
 package org.gradle.invocation;
 
+import org.gradle.DefaultStartParameter;
 import org.gradle.StartParameter;
 import org.gradle.execution.DefaultTaskExecuter;
 import org.gradle.api.internal.project.DefaultProjectRegistry;
@@ -19,7 +20,7 @@ public class DefaultBuildTest {
 
     @Test
     public void usesStartParameterForDirLocations() {
-        StartParameter parameter = new StartParameter();
+        StartParameter parameter = new DefaultStartParameter();
         parameter.setGradleHomeDir(new File("home"));
         parameter.setGradleUserHomeDir(new File("user"));
 

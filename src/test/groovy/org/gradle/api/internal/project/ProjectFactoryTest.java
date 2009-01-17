@@ -16,7 +16,7 @@
 
 package org.gradle.api.internal.project;
 
-import org.gradle.StartParameter;
+import org.gradle.DefaultStartParameter;
 import org.gradle.api.Project;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.dependencies.DependencyManagerFactory;
@@ -79,7 +79,7 @@ public class ProjectFactoryTest {
         }});
 
         projectFactory = new ProjectFactory(taskFactoryMock, dependencyManagerFactoryMock, buildScriptProcessor, pluginRegistry,
-                new StartParameter(), null, antBuilderFactory);
+                new DefaultStartParameter(), null, antBuilderFactory);
     }
 
     @Test
@@ -138,7 +138,7 @@ public class ProjectFactoryTest {
         ScriptSource expectedScriptSource = context.mock(ScriptSource.class);
 
         ProjectFactory projectFactory = new ProjectFactory(taskFactoryMock, dependencyManagerFactoryMock, buildScriptProcessor, pluginRegistry,
-                new StartParameter(), expectedScriptSource, antBuilderFactory);
+                new DefaultStartParameter(), expectedScriptSource, antBuilderFactory);
 
         DefaultProject project = projectFactory.createProject("somename", null, rootDir, build);
 

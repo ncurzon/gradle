@@ -19,7 +19,7 @@ package org.gradle.api.internal.project
 import java.awt.Point
 import java.text.FieldPosition
 import org.apache.tools.ant.types.FileSet
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.*
 import org.gradle.api.internal.DefaultTask
 import org.gradle.api.internal.dependencies.DependencyManagerFactory
@@ -43,6 +43,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.gradle.util.HelperUtil
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -114,7 +115,7 @@ class DefaultProjectTest {
         projectRegistry = build.projectRegistry
         buildScriptProcessor = new BuildScriptProcessor()
         ProjectFactory factory = new ProjectFactory(taskFactoryMock, dependencyManagerFactoryMock, buildScriptProcessor,
-                pluginRegistry, new StartParameter(), null, antBuilderFactoryMock)
+                pluginRegistry, new DefaultStartParameter(), null, antBuilderFactoryMock)
         project = new DefaultProject('root', null, rootDir, TEST_BUILD_FILE_NAME, script, buildScriptClassLoader,
                 taskFactoryMock, dependencyManagerFactoryMock, antBuilderFactoryMock, buildScriptProcessor, pluginRegistry, projectRegistry,
                 factory, build);

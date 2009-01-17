@@ -17,11 +17,9 @@ package org.gradle.integtests;
 
 import junit.framework.AssertionFailedError;
 import org.apache.commons.io.FileUtils;
-import org.gradle.Gradle;
-import org.gradle.CacheUsage;
-import org.gradle.StartParameter;
-import org.gradle.BuildResult;
-import org.gradle.BuildListener;
+import org.gradle.DefaultStartParameter;
+import org.gradle.*;
+import org.gradle.initialization.DefaultLoggingConfigurer;
 import org.gradle.execution.BuiltInTasksBuildExecuter;
 import org.gradle.api.GradleException;
 import org.gradle.api.UncheckedIOException;
@@ -83,7 +81,7 @@ public class AbstractIntegrationTest {
     }
 
     protected StartParameter startParameter() {
-        StartParameter parameter = new StartParameter();
+        StartParameter parameter = new DefaultStartParameter();
         parameter.setGradleHomeDir(testFile("gradle-home").asFile());
 
         testFile("gradle-home/gradle-imports").writelns(
@@ -204,7 +202,7 @@ public class AbstractIntegrationTest {
 
         private GradleExecutionResult execute() {
             
-            Gradle gradle = Gradle.newInstance(parameter);
+            Gradle gradle = new DefaultGradleFactory(new DefaultLoggingConfigurer()).newInstance(parameter);
             gradle.addBuildListener(new ListenerImpl());
             BuildResult result = gradle.run();
             result.rethrowFailure();

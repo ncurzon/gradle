@@ -15,6 +15,7 @@
  */
 package org.gradle.initialization;
 
+import org.gradle.DefaultStartParameter;
 import org.gradle.StartParameter;
 import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.api.internal.SettingsInternal;
@@ -35,7 +36,7 @@ public class ScriptLocatingSettingsProcessorTest {
     private final JUnit4Mockery context = new JUnit4Mockery();
     private final SettingsProcessor delegate = context.mock(SettingsProcessor.class);
     private final ISettingsFinder finder = context.mock(ISettingsFinder.class);
-    private StartParameter startParameter;
+    private DefaultStartParameter startParameter;
     private final IGradlePropertiesLoader propertiesLoader = context.mock(IGradlePropertiesLoader.class);
     private final SettingsInternal settings = context.mock(SettingsInternal.class, "settings");
     private final SettingsProcessor processor = new ScriptLocatingSettingsProcessor(delegate);
@@ -45,7 +46,7 @@ public class ScriptLocatingSettingsProcessorTest {
     @Before
     public void setUp() {
         context.setImposteriser(ClassImposteriser.INSTANCE);
-        startParameter = context.mock(StartParameter.class);
+        startParameter = context.mock(DefaultStartParameter.class);
 
         context.checking(new Expectations(){{
             allowing(startParameter).getCurrentDir();
@@ -75,7 +76,7 @@ public class ScriptLocatingSettingsProcessorTest {
 
     @Test
     public void usesCurrentDirAsSettingsDirWhenLocatedSettingsDoNotContainProjectForCurrentDir() {
-        final StartParameter noSearchParameter = new StartParameter();
+        final StartParameter noSearchParameter = new DefaultStartParameter();
         final SettingsInternal currentDirSettings = context.mock(SettingsInternal.class, "currentDirSettings");
 
         context.checking(new Expectations() {{

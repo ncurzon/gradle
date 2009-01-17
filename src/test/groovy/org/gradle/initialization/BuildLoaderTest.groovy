@@ -16,7 +16,7 @@
 
 package org.gradle.initialization
 
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.api.internal.BuildInternal
 import org.gradle.api.internal.project.BuildScriptProcessor
@@ -37,6 +37,8 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.gradle.util.GUtil
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -87,7 +89,7 @@ class BuildLoaderTest {
         ProjectInternal child2 = context.mock(ProjectInternal, 'child2')
         IProjectRegistry projectRegistry = context.mock(IProjectRegistry)
 
-        StartParameter startParameter = new StartParameter(
+        DefaultStartParameter startParameter = new DefaultStartParameter(
                 currentDir: new File(testRootProjectDir, 'parent'),
                 gradleUserHomeDir: testUserHomeDir)
         DefaultProjectDescriptor rootProjectDescriptor = new DefaultProjectDescriptor(null, 'root', testRootProjectDir, projectDescriptorRegistry)

@@ -18,7 +18,7 @@ package org.gradle.initialization
 
 import org.apache.ivy.plugins.resolver.DualResolver
 import org.apache.ivy.plugins.resolver.FileSystemResolver
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.dependencies.ResolverContainer
@@ -36,6 +36,8 @@ import org.gradle.api.UnknownProjectException
 import org.gradle.api.dependencies.Configuration
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.api.plugins.BasePlugin
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -43,7 +45,7 @@ import org.gradle.api.plugins.BasePlugin
 @RunWith (org.jmock.integration.junit4.JMock)
 class DefaultSettingsTest {
     File settingsDir
-    StartParameter startParameter
+    DefaultStartParameter startParameter
     Map gradleProperties
     DependencyManager dependencyManagerMock
     BuildSourceBuilder buildSourceBuilderMock
@@ -57,7 +59,7 @@ class DefaultSettingsTest {
         context.setImposteriser(ClassImposteriser.INSTANCE)
         settingsDir = new File('/somepath/root').absoluteFile
         gradleProperties = [someGradleProp: 'someValue']
-        startParameter = new StartParameter(currentDir: new File(settingsDir, 'current'), gradleUserHomeDir: new File('gradleUserHomeDir'))
+        startParameter = new DefaultStartParameter(currentDir: new File(settingsDir, 'current'), gradleUserHomeDir: new File('gradleUserHomeDir'))
         dependencyManagerMock = context.mock(DependencyManager)
         buildSourceBuilderMock = context.mock(BuildSourceBuilder)
         dependencyManagerFactoryMock = context.mock(DependencyManagerFactory)
@@ -251,7 +253,7 @@ class DefaultSettingsTest {
     private checkCreateClassLoader(Set expectedTestDependencies) {
         Set testFiles = [new File('/root/f1'), new File('/root/f2')] as Set
         File expectedBuildResolverDir = 'expectedBuildResolverDir' as File
-        StartParameter expectedStartParameter = settings.buildSrcStartParameter.newInstance();
+        DefaultStartParameter expectedStartParameter = settings.buildSrcStartParameter.newInstance();
         expectedStartParameter.setCurrentDir(new File(settingsDir, DefaultSettings.DEFAULT_BUILD_SRC_DIR))
         Configuration configuration = context.mock(Configuration.class)
         context.checking {

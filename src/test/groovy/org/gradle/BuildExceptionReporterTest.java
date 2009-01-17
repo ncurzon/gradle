@@ -22,7 +22,6 @@ import org.gradle.groovy.scripts.ScriptSource;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matcher;
 import org.jmock.Expectations;
-import org.jmock.States;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.lib.legacy.ClassImposteriser;
@@ -62,7 +61,7 @@ public class BuildExceptionReporterTest {
             one(logger).error(with(errorMessage));
         }});
 
-        reporter.buildFinished(new BuildResult(null, exception));
+        reporter.buildFinished(new DefaultBuildResult(null, exception));
     }
 
     @Test
@@ -75,7 +74,7 @@ public class BuildExceptionReporterTest {
             one(logger).error(with(errorMessage));
         }});
 
-        reporter.buildFinished(new BuildResult(null, exception));
+        reporter.buildFinished(new DefaultBuildResult(null, exception));
     }
 
     @Test
@@ -99,7 +98,7 @@ public class BuildExceptionReporterTest {
             one(logger).error(with(errorMessage));
         }});
 
-        reporter.buildFinished(new BuildResult(null, wrapper));
+        reporter.buildFinished(new DefaultBuildResult(null, wrapper));
     }
 
     @Test
@@ -121,7 +120,7 @@ public class BuildExceptionReporterTest {
             one(logger).error(with(errorMessage));
         }});
 
-        reporter.buildFinished(new BuildResult(null, exception));
+        reporter.buildFinished(new DefaultBuildResult(null, exception));
     }
 
     @Test
@@ -135,7 +134,7 @@ public class BuildExceptionReporterTest {
         }});
 
         reporter = new BuildExceptionReporter(logger);
-        reporter.buildFinished(new BuildResult(null, exception));
+        reporter.buildFinished(new DefaultBuildResult(null, exception));
     }
 
     @Test
@@ -146,7 +145,7 @@ public class BuildExceptionReporterTest {
             one(logger).error(with(containsString("Build aborted because of an internal error.")), with(sameInstance(failure)));
         }});
 
-        reporter.buildFinished(new BuildResult(null, failure));
+        reporter.buildFinished(new DefaultBuildResult(null, failure));
     }
 
     @Test
@@ -158,12 +157,12 @@ public class BuildExceptionReporterTest {
         }});
 
         reporter = new BuildExceptionReporter(logger);
-        reporter.buildFinished(new BuildResult(null, failure));
+        reporter.buildFinished(new DefaultBuildResult(null, failure));
     }
 
     @Test
     public void doesNothingWheBuildIsSuccessful() {
-        reporter.buildFinished(new BuildResult(null, null));
+        reporter.buildFinished(new DefaultBuildResult(null, null));
     }
 
 }

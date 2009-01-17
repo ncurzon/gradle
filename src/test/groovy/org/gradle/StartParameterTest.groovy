@@ -33,18 +33,19 @@ import org.gradle.execution.TaskNameResolvingBuildExecuter
 import org.gradle.execution.ProjectDefaultsBuildExecuter
 import org.gradle.execution.MergingBuildExecuter
 import org.gradle.api.logging.LogLevel
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
  */
 class StartParameterTest {
-    StartParameter testObj
+    DefaultStartParameter testObj
     File gradleHome
 
     @Before public void setUp() {
         gradleHome = HelperUtil.testDir
 
-        testObj = new StartParameter(
+        testObj = new DefaultStartParameter(
                 settingsFileName: 'settingsfile',
                 buildFileName: 'buildfile',
                 taskNames: ['a'],
@@ -60,13 +61,13 @@ class StartParameterTest {
     }
 
     @Test public void testNewInstance() {
-        StartParameter startParameter = testObj.newInstance()
+        DefaultStartParameter startParameter = testObj.newInstance()
         assert startParameter.equals(testObj)
     }
 
     @Test public void testDefaultValues() {
-        StartParameter parameter = new StartParameter();
-        assertThat(parameter.gradleUserHomeDir, equalTo(new File(Main.DEFAULT_GRADLE_USER_HOME)))
+        DefaultStartParameter parameter = new DefaultStartParameter();
+        assertThat(parameter.gradleUserHomeDir, equalTo(new File(AbstractMain.DEFAULT_GRADLE_USER_HOME)))
         assertThat(parameter.currentDir, equalTo(new File(System.getProperty("user.dir"))))
         assertThat(parameter.buildFileName, equalTo(Project.DEFAULT_BUILD_FILE))
         assertThat(parameter.logLevel, equalTo(LogLevel.LIFECYCLE))
@@ -79,13 +80,13 @@ class StartParameterTest {
     }
 
     @Test public void testSetTaskNames() {
-        StartParameter parameter = new StartParameter()
+        DefaultStartParameter parameter = new DefaultStartParameter()
         parameter.setTaskNames(Arrays.asList("a", "b"))
         assertThat(parameter.buildExecuter, reflectionEquals(new TaskNameResolvingBuildExecuter(Arrays.asList("a", "b"))))
     }
 
     @Test public void testSetTaskNamesToEmptyOrNullListUsesProjectDefaultTasks() {
-        StartParameter parameter = new StartParameter()
+        DefaultStartParameter parameter = new DefaultStartParameter()
 
         parameter.setBuildExecuter({} as BuildExecuter)
         parameter.setTaskNames(Collections.emptyList())
@@ -97,14 +98,14 @@ class StartParameterTest {
     }
 
     @Test public void testWrapsBuildExecuterWhenMergedBuild() {
-        StartParameter parameter = new StartParameter()
+        DefaultStartParameter parameter = new DefaultStartParameter()
         parameter.mergedBuild = true
 
         assertThat(parameter.buildExecuter, instanceOf(MergingBuildExecuter))
     }
   
     @Test public void testUseEmbeddedBuildFile() {
-        StartParameter parameter = new StartParameter();
+        DefaultStartParameter parameter = new DefaultStartParameter();
         parameter.useEmbeddedBuildFile("<content>")
         assertThat(parameter.buildScriptSource, reflectionEquals(new StringScriptSource("embedded build file", "<content>")))
         assertThat(parameter.buildFileName, equalTo(Project.EMBEDDED_SCRIPT_ID))
@@ -113,12 +114,12 @@ class StartParameterTest {
     }
 
     @Test public void testSettingGradleHomeSetsDefaultLocationsIfNotAlreadySet() {
-        StartParameter parameter = new StartParameter()
+        DefaultStartParameter parameter = new DefaultStartParameter()
         parameter.gradleHomeDir = gradleHome
-        assertThat(parameter.defaultImportsFile, equalTo(new File(gradleHome, Main.IMPORTS_FILE_NAME)))
-        assertThat(parameter.pluginPropertiesFile, equalTo(new File(gradleHome, Main.DEFAULT_PLUGIN_PROPERTIES)))
+        assertThat(parameter.defaultImportsFile, equalTo(new File(gradleHome, AbstractMain.IMPORTS_FILE_NAME)))
+        assertThat(parameter.pluginPropertiesFile, equalTo(new File(gradleHome, AbstractMain.DEFAULT_PLUGIN_PROPERTIES)))
 
-        parameter = new StartParameter()
+        parameter = new DefaultStartParameter()
         parameter.defaultImportsFile = new File("imports")
         parameter.pluginPropertiesFile = new File("plugins")
         parameter.gradleHomeDir = gradleHome
@@ -127,7 +128,7 @@ class StartParameterTest {
     }
     
     @Test public void testNewBuild() {
-        StartParameter parameter = new StartParameter()
+        DefaultStartParameter parameter = new DefaultStartParameter()
 
         // Copied properties
         parameter.gradleHomeDir = gradleHome
@@ -141,7 +142,7 @@ class StartParameterTest {
         parameter.getTaskNames().add("t1");
         parameter.mergedBuild = true
 
-        StartParameter newParameter = parameter.newBuild();
+        DefaultStartParameter newParameter = parameter.newBuild();
 
         assertThat(newParameter, not(equalTo(parameter)));
 

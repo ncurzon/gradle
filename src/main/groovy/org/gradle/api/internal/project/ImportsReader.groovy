@@ -16,7 +16,8 @@
 
 package org.gradle.api.internal.project
 
-import org.gradle.Main
+import org.gradle.AbstractMain
+import org.gradle.AbstractMain
 
 /**
  * @author Hans Dockter
@@ -33,7 +34,7 @@ class ImportsReader {
     }
 
     String getImports(File rootDir) {
-        File projectImportsFiles =  new File(rootDir, Main.IMPORTS_FILE_NAME)
+        File projectImportsFiles =  new File(rootDir, AbstractMain.IMPORTS_FILE_NAME)
         String importsText = (defaultImportsFile ? defaultImportsFile.text : '') +
         (projectImportsFiles.isFile() ? projectImportsFiles.text : '')
         importsText

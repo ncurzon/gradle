@@ -17,7 +17,7 @@
 package org.gradle.initialization
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
@@ -36,6 +36,9 @@ import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertSame
 import org.junit.Before
 import org.junit.Test
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -47,7 +50,7 @@ class ScriptEvaluatingSettingsProcessorTest {
     DefaultSettingsFinder expectedSettingsFinder
     ImportsReader importsReader
     SettingsFactory settingsFactory
-    StartParameter expectedStartParameter
+    DefaultStartParameter expectedStartParameter
     IScriptProcessor scriptProcessorMock
     ISettingsScriptMetaData settingsScriptMetaData
     DefaultSettings expectedSettings
@@ -63,7 +66,7 @@ class ScriptEvaluatingSettingsProcessorTest {
         instantiateConstructorArgs()
         settingsProcessor = new ScriptEvaluatingSettingsProcessor(settingsScriptMetaData, scriptProcessorMock, importsReader, settingsFactory)
         initSettingsFinder()
-        expectedStartParameter = new StartParameter()
+        expectedStartParameter = new DefaultStartParameter()
         expectedGradleProperties = [a: 'b']
         propertiesLoaderMock = [getGradleProperties: { expectedGradleProperties } ] as IGradlePropertiesLoader
         initExpectedSettings()

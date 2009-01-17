@@ -7,7 +7,7 @@ import org.apache.ivy.plugins.resolver.*
 usePlugin('groovy')
 
 dependencies {
-    addMavenRepo()
+    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
     classpathResolvers.add(new URLResolver()) {
       name = 'sf_gradleRepo'
       addArtifactPattern('http://gradle.sourceforge.net/gradleRepo/[organisation]/[module](/[branch])/[type]s/[artifact]-[revision](-[classifier])(.[ext])')

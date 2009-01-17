@@ -44,7 +44,7 @@ public class DefaultGradleFactory implements GradleFactory {
         this.loggingConfigurer = loggingConfigurer;
     }
 
-    public Gradle newInstance(StartParameter startParameter) {
+    public DefaultGradle newInstance(StartParameter startParameter) {
         loggingConfigurer.configure(startParameter.getLogLevel());
         ImportsReader importsReader = new ImportsReader(startParameter.getDefaultImportsFile());
         IScriptProcessor scriptProcessor = new DefaultScriptProcessor(
@@ -56,7 +56,7 @@ public class DefaultGradleFactory implements GradleFactory {
                 new ParentDirSettingsFinderStrategy()))
                 : new EmbeddedScriptSettingsFinder();
         DependencyManagerFactory dependencyManagerFactory = new DefaultDependencyManagerFactory(settingsFinder, startParameter.getCacheUsage());
-        Gradle gradle = new Gradle(
+        DefaultGradle gradle = new DefaultGradle(
                 startParameter,
                 settingsFinder,
                 new DefaultGradlePropertiesLoader(),

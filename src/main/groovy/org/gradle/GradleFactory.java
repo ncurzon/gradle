@@ -15,9 +15,11 @@
  */
 package org.gradle;
 
+import org.gradle.DefaultStartParameter;
+
 /**
  * <p>A {@code GradleFactory} is responsible for creating a {@link Gradle} instance for a build, from a {@link
- * StartParameter}.</p>
+ * DefaultStartParameter}.</p>
  *
  * @author Hans Dockter
  */

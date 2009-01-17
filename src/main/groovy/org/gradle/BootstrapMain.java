@@ -48,7 +48,7 @@ public class BootstrapMain {
         URLClassLoader loggingClassLoader = new URLClassLoader(loggingJars.toArray(new URL[loggingJars.size()]), parentClassloader);
         URLClassLoader libClassLoader = new URLClassLoader(nonLoggingJars.toArray(new URL[nonLoggingJars.size()]), loggingClassLoader);
         Thread.currentThread().setContextClassLoader(libClassLoader);
-        Class mainClass = libClassLoader.loadClass("org.gradle.Main");
+        Class mainClass = libClassLoader.loadClass("org.gradle.OsgiMain");
         Method mainMethod = mainClass.getMethod("main", new Class[]{String[].class});
         mainMethod.invoke(null, new Object[]{args});
     }

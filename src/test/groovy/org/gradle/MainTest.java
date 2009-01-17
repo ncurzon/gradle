@@ -71,24 +71,25 @@ public class MainTest {
     private boolean expectedMergedBuild;
     private LogLevel expectedLogLevel;
 
-    private Gradle gradleMock;
+    private DefaultGradle gradleMock;
     private JUnit4Mockery context = new JUnit4Mockery();
+    private GradleFactory gradleFactory;
 
     @Before
     public void setUp() throws IOException {
         context.setImposteriser(ClassImposteriser.INSTANCE);
-        gradleMock = context.mock(Gradle.class);
+        gradleMock = context.mock(DefaultGradle.class);
 
-        Gradle.injectCustomFactory(new GradleFactory() {
+        gradleFactory = new GradleFactory() {
             public Gradle newInstance(StartParameter startParameter) {
                 actualStartParameter = startParameter;
                 return gradleMock;
             }
-        });
+        };
 
-        expectedGradleUserHome = new File(Main.DEFAULT_GRADLE_USER_HOME);
-        expectedGradleImportsFile = new File(TEST_GRADLE_HOME, Main.IMPORTS_FILE_NAME);
-        expectedPluginPropertiesFile = new File(TEST_GRADLE_HOME, Main.DEFAULT_PLUGIN_PROPERTIES);
+        expectedGradleUserHome = new File(AbstractMain.DEFAULT_GRADLE_USER_HOME);
+        expectedGradleImportsFile = new File(TEST_GRADLE_HOME, AbstractMain.IMPORTS_FILE_NAME);
+        expectedPluginPropertiesFile = new File(TEST_GRADLE_HOME, AbstractMain.DEFAULT_PLUGIN_PROPERTIES);
         expectedTaskNames = toList();
         expectedProjectDir = new File("").getCanonicalFile();
         expectedProjectProperties = new HashMap();
@@ -103,7 +104,6 @@ public class MainTest {
 
     @After
     public void tearDown() {
-        Gradle.injectCustomFactory(null);
     }
 
     @Test
@@ -133,7 +133,7 @@ public class MainTest {
     }
 
     private void checkMain(final boolean embedded, final boolean noTasks, String... args) throws Throwable {
-        final BuildResult testBuildResult = new BuildResult(context.mock(Settings.class), null);
+        final BuildResult testBuildResult = new DefaultBuildResult(context.mock(Settings.class), null);
         context.checking(new Expectations() {
             {
                 one(gradleMock).addBuildListener(with(notNullValue(BuildExceptionReporter.class)));
@@ -147,7 +147,8 @@ public class MainTest {
         });
 
         Main main = new Main(args);
-        main.setBuildCompleter(new Main.BuildCompleter() {
+        main.setGradleFactory(gradleFactory);
+        main.setBuildCompleter(new AbstractMain.BuildCompleter() {
             public void exit(Throwable failure) {
                 throw new BuildCompletedError(failure);
             }
@@ -170,7 +171,7 @@ public class MainTest {
 
     private void checkMainFails(String... args) throws Throwable {
         Main main = new Main(args);
-        main.setBuildCompleter(new Main.BuildCompleter() {
+        main.setBuildCompleter(new AbstractMain.BuildCompleter() {
             public void exit(Throwable failure) {
                 throw new BuildCompletedError(failure);
             }
@@ -392,7 +393,7 @@ public class MainTest {
 
     @Test
     public void testMainWithMissingGradleHome() throws Throwable {
-        System.getProperties().remove(Main.GRADLE_HOME_PROPERTY_KEY);
+        System.getProperties().remove(AbstractMain.GRADLE_HOME_PROPERTY_KEY);
         try {
             checkMainFails("clean");
             fail();
@@ -400,7 +401,7 @@ public class MainTest {
             // ignore
         }
         // Tests are run in one JVM. Therefore we need to set it again.
-        System.getProperties().put(Main.GRADLE_HOME_PROPERTY_KEY, TEST_GRADLE_HOME);
+        System.getProperties().put(AbstractMain.GRADLE_HOME_PROPERTY_KEY, TEST_GRADLE_HOME);
     }
 
     private class BuildCompletedError extends Error {

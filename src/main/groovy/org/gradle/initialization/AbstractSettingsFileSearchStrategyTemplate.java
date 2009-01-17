@@ -16,7 +16,6 @@
 package org.gradle.initialization;
 
 import org.gradle.StartParameter;
-import org.gradle.groovy.scripts.ScriptSource;
 
 import java.io.File;
 

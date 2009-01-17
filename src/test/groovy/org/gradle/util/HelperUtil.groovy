@@ -28,7 +28,7 @@ import org.gradle.api.internal.project.*
 import org.gradle.groovy.scripts.EmptyScript
 import org.gradle.util.GradleUtil
 import org.gradle.groovy.scripts.StringScriptSource
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.CacheUsage
 import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor
 import org.apache.ivy.core.module.descriptor.Configuration
@@ -40,8 +40,8 @@ import org.gradle.groovy.scripts.ScriptSource
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.gradle.groovy.scripts.ScriptWithSource
 import org.gradle.api.logging.LogLevel
-
-
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -79,11 +79,11 @@ class HelperUtil {
                 new DefaultDependencyManagerFactory(settingsFinder, CacheUsage.ON),
                 new BuildScriptProcessor(),
                 new PluginRegistry(),
-                new StartParameter(),
+                new DefaultStartParameter(),
                 new StringScriptSource("embedded build file", "embedded"),
                 new DefaultAntBuilderFactory(new AntLoggingAdapter()))
 
-        DefaultBuild build = new DefaultBuild(new StartParameter(), null)
+        DefaultBuild build = new DefaultBuild(new DefaultStartParameter(), null)
         DefaultProject project = projectFactory.createProject(rootDir.name, null, rootDir, build)
         project.setBuildScript(new EmptyScript())
         return project;
@@ -107,8 +107,8 @@ class HelperUtil {
                 parentProject.build)
     }
 
-    static org.gradle.StartParameter dummyStartParameter() {
-        return new StartParameter(
+    static org.gradle.DefaultStartParameter dummyStartParameter() {
+        return new DefaultStartParameter(
                 "settingsFileName",
                 "buildFileName",
                 ["onetask", "secondTask"],

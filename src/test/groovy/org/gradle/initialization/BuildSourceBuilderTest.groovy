@@ -16,7 +16,7 @@
 
 package org.gradle.initialization
 
-import org.gradle.StartParameter
+import org.gradle.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
@@ -28,7 +28,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.gradle.GradleFactory
-import org.gradle.Gradle
+import org.gradle.DefaultGradle
 import org.gradle.BuildListener
 import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.Dependency
@@ -36,6 +36,10 @@ import org.gradle.api.plugins.JavaPlugin
 import org.gradle.CacheUsage
 import org.gradle.api.dependencies.Configuration
 import org.gradle.api.plugins.BasePlugin
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultStartParameter
+import org.gradle.DefaultGradle
+import org.gradle.DefaultStartParameter
 
 /**
  * @author Hans Dockter
@@ -44,7 +48,7 @@ import org.gradle.api.plugins.BasePlugin
 class BuildSourceBuilderTest {
     BuildSourceBuilder buildSourceBuilder
     GradleFactory gradleFactoryMock
-    Gradle gradleMock
+    DefaultGradle gradleMock
     Project rootProjectMock
     Configuration configurationMock
     DependencyManager dependencyManagerMock
@@ -53,7 +57,7 @@ class BuildSourceBuilderTest {
     File testBuildSrcDir
     File testBuildResolverDir
     Set testDependencies
-    StartParameter expectedStartParameter
+    DefaultStartParameter expectedStartParameter
     JUnit4GroovyMockery context = new JUnit4GroovyMockery()
     String expectedArtifactPath
 
@@ -64,13 +68,13 @@ class BuildSourceBuilderTest {
         (testBuildSrcDir = new File(rootDir, 'buildSrc')).mkdir()
         (testBuildResolverDir = new File(testBuildSrcDir, Project.TMP_DIR_NAME + '/' + DependencyManager.BUILD_RESOLVER_NAME)).mkdir()
         gradleFactoryMock = context.mock(GradleFactory)
-        gradleMock = context.mock(Gradle)
+        gradleMock = context.mock(DefaultGradle)
         rootProjectMock = context.mock(Project)
         dependencyManagerMock = context.mock(DependencyManager)
         configurationMock = context.mock(Configuration)
         cacheInvalidationStrategyMock = context.mock(CacheInvalidationStrategy)
         buildSourceBuilder = new BuildSourceBuilder(gradleFactoryMock, cacheInvalidationStrategyMock)
-        expectedStartParameter = new StartParameter(
+        expectedStartParameter = new DefaultStartParameter(
                 searchUpwards: true,
                 currentDir: testBuildSrcDir,
                 buildFileName: Project.DEFAULT_BUILD_FILE,
@@ -102,7 +106,7 @@ class BuildSourceBuilderTest {
     }
 
     @Test public void testCreateDependencyWithExistingBuildSources() {
-        StartParameter modifiedStartParameter = expectedStartParameter.newInstance()
+        DefaultStartParameter modifiedStartParameter = expectedStartParameter.newInstance()
         modifiedStartParameter.setSearchUpwards(false)
         context.checking {
             allowing(cacheInvalidationStrategyMock).isValid(expectedArtifactPath as File, testBuildSrcDir); will(returnValue(false))
@@ -119,7 +123,7 @@ class BuildSourceBuilderTest {
 
     @Test public void testCreateDependencyWithCachedArtifactAndValidCache() {
         expectedStartParameter.setCacheUsage(CacheUsage.ON)
-        StartParameter modifiedStartParameter = expectedStartParameter.newInstance()
+        DefaultStartParameter modifiedStartParameter = expectedStartParameter.newInstance()
         modifiedStartParameter.setTaskNames([BasePlugin.INIT])
         modifiedStartParameter.setSearchUpwards(false)
         context.checking {
@@ -137,7 +141,7 @@ class BuildSourceBuilderTest {
 
     @Test public void testCreateDependencyWithCachedArtifactAndValidCacheWithCacheOff() {
         expectedStartParameter.setCacheUsage(CacheUsage.OFF)
-        StartParameter modifiedStartParameter = expectedStartParameter.newInstance()
+        DefaultStartParameter modifiedStartParameter = expectedStartParameter.newInstance()
         modifiedStartParameter.setSearchUpwards(false)
         context.checking {
             allowing(cacheInvalidationStrategyMock).isValid(expectedArtifactPath as File, testBuildSrcDir); will(returnValue(true))
@@ -153,7 +157,7 @@ class BuildSourceBuilderTest {
     }
 
     @Test public void testCreateDependencyWithNonExistingBuildScript() {
-        StartParameter modifiedStartParameter = this.expectedStartParameter.newInstance()
+        DefaultStartParameter modifiedStartParameter = this.expectedStartParameter.newInstance()
         modifiedStartParameter.setSearchUpwards(false)
         modifiedStartParameter.useEmbeddedBuildFile(BuildSourceBuilder.getDefaultScript())
         context.checking {
@@ -175,7 +179,7 @@ class BuildSourceBuilderTest {
     }
 
     @Test public void testCreateDependencyWithNoArtifactProducingBuild() {
-        StartParameter modifiedStartParameter = this.expectedStartParameter.newInstance()
+        DefaultStartParameter modifiedStartParameter = this.expectedStartParameter.newInstance()
         modifiedStartParameter.setSearchUpwards(false)
         context.checking {
             allowing(cacheInvalidationStrategyMock).isValid(expectedArtifactPath as File, testBuildSrcDir); will(returnValue(false))

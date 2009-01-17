@@ -16,7 +16,7 @@
  
 package org.gradle.api.internal.project
 
-import org.gradle.Main
+import org.gradle.AbstractMain
 import org.gradle.util.HelperUtil
 import static org.junit.Assert.*
 import org.junit.Before
@@ -40,7 +40,7 @@ class ImportsReaderTest {
     @Before public void setUp()  {
         testDir = HelperUtil.makeNewTestDir()
         (testDefaultImportsFile = new File(testDir, 'defaultImports')).write(TEST_DEFAULT_IMPORTS)
-        (testProjectImportsFile = new File(testDir, Main.IMPORTS_FILE_NAME)).write(TEST_PROJECT_IMPORTS)
+        (testProjectImportsFile = new File(testDir, AbstractMain.IMPORTS_FILE_NAME)).write(TEST_PROJECT_IMPORTS)
         testObj = new ImportsReader(testDefaultImportsFile)
     }
 

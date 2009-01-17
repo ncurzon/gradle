@@ -75,22 +75,22 @@ public class BuildExceptionReporter implements BuildListener {
         formatter.format("%n");
         formatter.format("Build aborted because of an internal error.%n");
         formatter.format("Run with -%s option to get additonal debug info. Please file an issue at: www.gradle.org",
-                Main.DEBUG);
+                AbstractMain.DEBUG);
         formatter.format("%n");
         logger.error(formatter.toString(), failure);
     }
 
     private void reportBuildFailure(GradleException failure) {
-        boolean stacktrace = options != null && (options.has(Main.STACKTRACE) || options.has(Main.DEBUG));
-        boolean fullStacktrace = options != null && (options.has(Main.FULL_STACKTRACE));
+        boolean stacktrace = options != null && (options.has(AbstractMain.STACKTRACE) || options.has(AbstractMain.DEBUG));
+        boolean fullStacktrace = options != null && (options.has(AbstractMain.FULL_STACKTRACE));
 
         Formatter formatter = new Formatter();
         formatter.format("%nBuild failed with an exception.%n");
         if (!fullStacktrace) {
             if (!stacktrace) {
-                formatter.format("Run with -%s or -%s option to get more details. ", Main.STACKTRACE, Main.DEBUG);
+                formatter.format("Run with -%s or -%s option to get more details. ", AbstractMain.STACKTRACE, AbstractMain.DEBUG);
             }
-            formatter.format("Run with -%s option to get the full (very verbose) stacktrace.%n", Main.FULL_STACKTRACE);
+            formatter.format("Run with -%s option to get the full (very verbose) stacktrace.%n", AbstractMain.FULL_STACKTRACE);
         }
         formatter.format("%n");
 

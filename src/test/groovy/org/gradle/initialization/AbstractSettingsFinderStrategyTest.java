@@ -15,6 +15,7 @@
  */
 package org.gradle.initialization;
 
+import org.gradle.DefaultStartParameter;
 import org.gradle.StartParameter;
 import org.gradle.util.HelperUtil;
 import org.junit.After;
@@ -51,7 +52,7 @@ public abstract class AbstractSettingsFinderStrategyTest {
     }
 
     protected StartParameter createStartParams(boolean searchUpwards) {
-        StartParameter startParameter = new StartParameter();
+        StartParameter startParameter = new DefaultStartParameter();
         startParameter.setCurrentDir(currentDir);
         startParameter.setSearchUpwards(searchUpwards);
         startParameter.setSettingsFileName(TEST_SETTINGS_FILE_NAME);

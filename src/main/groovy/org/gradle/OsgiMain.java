@@ -1,29 +1,39 @@
 package org.gradle;
 
-import org.gradle.initialization.DefaultLoggingConfigurer;
+import org.gradle.bootstrap.HostApplication;
 
 /**
  * @author Tom Eyckmans
  */
-public class Main extends AbstractMain {
-    private GradleFactory gradleFactory;
+public class OsgiMain extends AbstractMain {
 
-    public Main(String[] args) {
+    private final HostApplication app = new HostApplication();
+
+    public OsgiMain(String[] args) {
         super(args);
-        this.gradleFactory = new DefaultGradleFactory(new DefaultLoggingConfigurer());
+        setBuildCompleter(new BuildCompleter() {
+            @Override
+            public void exit(Throwable failure) {
+                try {
+                    app.stopApplication();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public static void main(String[] args) throws Throwable {
         new Main(args).execute();
     }
 
-    public void setGradleFactory(GradleFactory gradleFactory) {
-        this.gradleFactory = gradleFactory;
-    }
-
     @Override
     protected void doWithStartParameter(StartParameter startParameter) {
         try {
+            app.startApplication();
+
+            final GradleFactory gradleFactory = app.getGradleFactory();
+
             final Gradle gradle = gradleFactory.newInstance(startParameter);
 
             gradle.addBuildListener(exceptionReporter);
@@ -39,6 +49,5 @@ public class Main extends AbstractMain {
         }
         buildCompleter.exit(null);
     }
-
 
 }
