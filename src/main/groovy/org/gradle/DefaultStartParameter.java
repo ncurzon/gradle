@@ -21,15 +21,10 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.gradle.api.Project;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.api.initialization.Settings;
-import org.gradle.execution.TaskNameResolvingBuildExecuter;
-import org.gradle.execution.ProjectDefaultsBuildExecuter;
-import org.gradle.execution.BuildExecuter;
-import org.gradle.execution.MergingBuildExecuter;
+import org.gradle.execution.*;
 import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.groovy.scripts.StringScriptSource;
 import org.gradle.util.GUtil;
-import org.gradle.AbstractMain;
-import org.gradle.CacheUsage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -67,6 +62,7 @@ public class DefaultStartParameter implements StartParameter {
     private BuildExecuter buildExecuter;
     private boolean mergedBuild;
     private LogLevel logLevel = LogLevel.LIFECYCLE;
+    private ProcessMode processMode;
 
     /**
      * Creates a {@code StartParameter} with default values. This is roughly equivalent to running Gradle on the
@@ -218,6 +214,19 @@ public class DefaultStartParameter implements StartParameter {
      * @return The {@link BuildExecuter}. Never returns null.
      */
     public BuildExecuter getBuildExecuter() {
+        if ( buildExecuter == null ) {
+            switch(processMode) {
+                case TASKS:
+                    buildExecuter = new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.TASKS);
+                    break;
+                case PROPERTIES:
+                    buildExecuter = new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.PROPERTIES);
+                    break;
+                case DEPENDENCIES:
+                    buildExecuter = new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.DEPENDENCIES);
+                    break;
+            }
+        }
         if (buildExecuter != null) {
             return buildExecuter;
         }
@@ -236,10 +245,13 @@ public class DefaultStartParameter implements StartParameter {
      * <p> Set to null to use the default executer. When this property is set to a non-null value, the taskNames and
      * mergedBuild properties are ignored.</p>
      *
-     * @param buildExecuter The executer to use, or null to use the default executer.
+     * @param processMode The executer to use, or null to use the default executer.
      */
-    public void setBuildExecuter(BuildExecuter buildExecuter) {
-        this.buildExecuter = buildExecuter;
+//    public void setBuildExecuter(BuildExecuter buildExecuter) {
+//        this.buildExecuter = buildExecuter;
+//    }
+    public void setProcessMode(ProcessMode processMode) {
+        this.processMode = processMode;
     }
 
     /**

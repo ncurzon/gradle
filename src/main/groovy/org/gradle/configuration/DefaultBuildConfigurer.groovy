@@ -26,21 +26,23 @@ import org.slf4j.LoggerFactory
 /**
  * @author Hans Dockter
  */
-class BuildConfigurer {
-    private static Logger logger = LoggerFactory.getLogger(BuildConfigurer)
+class DefaultBuildConfigurer implements BuildConfigurer {
+    private static Logger logger = LoggerFactory.getLogger(DefaultBuildConfigurer)
 
     ProjectDependencies2TaskResolver projectDependencies2TasksResolver
 
     ProjectAction projectEvaluateAction
 
-    BuildConfigurer() {}
+    DefaultBuildConfigurer() {}
 
-    BuildConfigurer(ProjectDependencies2TaskResolver projectDependencies2TasksResolver) {
+    DefaultBuildConfigurer(ProjectDependencies2TaskResolver projectDependencies2TasksResolver) {
         this.projectDependencies2TasksResolver = projectDependencies2TasksResolver
         projectEvaluateAction = {ProjectInternal project ->
             project.evaluate()
         } as ProjectAction
     }
+
+
 
     void process(Project rootProject) {
         logger.debug('Configuring Project objects')

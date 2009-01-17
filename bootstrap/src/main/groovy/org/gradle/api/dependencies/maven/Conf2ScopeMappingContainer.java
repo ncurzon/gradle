@@ -15,8 +15,6 @@
  */
 package org.gradle.api.dependencies.maven;
 
-import org.gradle.api.dependencies.maven.Conf2ScopeMapping;
-
 import java.util.Map;
 
 /**

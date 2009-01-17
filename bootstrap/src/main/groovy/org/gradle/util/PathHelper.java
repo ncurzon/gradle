@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2008 the original author or authors.
+ * Copyright 2007 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle;
 
-import org.gradle.DefaultStartParameter;
+package org.gradle.util;
+
+import org.gradle.api.Project;
+import org.gradle.api.InvalidUserDataException;
 
 /**
- * <p>A {@code GradleFactory} is responsible for creating a {@link Gradle} instance for a build, from a {@link
- * DefaultStartParameter}.</p>
- *
  * @author Hans Dockter
  */
-public interface GradleFactory {
-    /**
-     * Creates a new {@link Gradle} instance for the given parameters.
-     *
-     * @param startParameter The parameters to use for the build.
-     * @return The new instance.
-     */
-    public Gradle newInstance(StartParameter startParameter);
+public class PathHelper {
+    public static boolean isAbsolutePath(String path) {
+        if (!GUtil.isTrue(path)) {
+            throw new InvalidUserDataException("A path must be specified!");
+        }
+        return path.startsWith(Project.PATH_SEPARATOR);
+    }
 }

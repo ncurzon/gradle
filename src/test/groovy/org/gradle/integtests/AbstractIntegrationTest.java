@@ -21,6 +21,7 @@ import org.gradle.DefaultStartParameter;
 import org.gradle.*;
 import org.gradle.initialization.DefaultLoggingConfigurer;
 import org.gradle.execution.BuiltInTasksBuildExecuter;
+import org.gradle.execution.ProcessMode;
 import org.gradle.api.GradleException;
 import org.gradle.api.UncheckedIOException;
 import org.gradle.api.Task;
@@ -196,7 +197,7 @@ public class AbstractIntegrationTest {
         }
 
         public GradleExecutionResult showTaskList() {
-            parameter.setBuildExecuter(new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.TASKS));
+            parameter.setProcessMode(ProcessMode.TASKS);
             return execute();
         }
 

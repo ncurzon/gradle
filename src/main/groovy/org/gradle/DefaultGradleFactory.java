@@ -23,7 +23,7 @@ import org.gradle.groovy.scripts.*;
 import org.gradle.initialization.*;
 import org.gradle.util.WrapUtil;
 import org.gradle.logging.AntLoggingAdapter;
-import org.gradle.configuration.BuildConfigurer;
+import org.gradle.configuration.DefaultBuildConfigurer;
 import org.gradle.configuration.ProjectDependencies2TaskResolver;
 
 /**
@@ -44,6 +44,12 @@ public class DefaultGradleFactory implements GradleFactory {
         this.loggingConfigurer = loggingConfigurer;
     }
 
+    @Override
+    public StartParameter createStartParameter() {
+        return new DefaultStartParameter();
+    }
+
+    @Override
     public DefaultGradle newInstance(StartParameter startParameter) {
         loggingConfigurer.configure(startParameter.getLogLevel());
         ImportsReader importsReader = new ImportsReader(startParameter.getDefaultImportsFile());
@@ -76,7 +82,7 @@ public class DefaultGradleFactory implements GradleFactory {
                                                 }
                                         ), new DefaultCacheInvalidationStrategy())))
                 ),
-                new BuildLoader(
+                new DefaultBuildLoader(
                         new ProjectFactory(
                                 new TaskFactory(),
                                 dependencyManagerFactory,
@@ -91,7 +97,7 @@ public class DefaultGradleFactory implements GradleFactory {
                                 startParameter.getBuildScriptSource(),
                                 new DefaultAntBuilderFactory(new AntLoggingAdapter()))
                 ),
-                new BuildConfigurer(new ProjectDependencies2TaskResolver()));
+                new DefaultBuildConfigurer(new ProjectDependencies2TaskResolver()));
 
         return gradle;
     }

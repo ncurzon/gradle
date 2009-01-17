@@ -1,5 +1,5 @@
 /*
- * Copyright 2007 the original author or authors.
+ * Copyright 2007-2008 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-package org.gradle.util;
+package org.gradle.api.dependencies;
 
 import org.gradle.api.Project;
-import org.gradle.api.InvalidUserDataException;
 
 /**
+ * <p>A {@code ProjectDependency} is a {@link Dependency} on another project in the current project hierarchy.</p>
+ * 
  * @author Hans Dockter
  */
-public class PathHelper {
-    public static boolean isAbsolutePath(String path) {
-        if (!GUtil.isTrue(path)) {
-            throw new InvalidUserDataException("A path must be specified!");
-        }
-        return path.startsWith(Project.PATH_SEPARATOR);
-    }
+public interface ProjectDependency extends Dependency {
+    Project getDependencyProject();
+
+    Project getProject();
+
+    boolean isTransitive();
+
+    ProjectDependency setTransitive(boolean transitive);
 }

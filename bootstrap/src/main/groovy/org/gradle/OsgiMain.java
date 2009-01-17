@@ -24,16 +24,27 @@ public class OsgiMain extends AbstractMain {
     }
 
     public static void main(String[] args) throws Throwable {
-        new Main(args).execute();
+        new OsgiMain(args).execute();
+    }
+
+    @Override
+    protected GradleFactory getGradleFactory() {
+        if ( gradleFactory == null ) {
+            try {
+                app.startApplication();
+            }
+            catch ( Exception e ) {
+                throw new RuntimeException();
+            }
+
+            gradleFactory = app.getGradleFactory();
+        }
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
     protected void doWithStartParameter(StartParameter startParameter) {
         try {
-            app.startApplication();
-
-            final GradleFactory gradleFactory = app.getGradleFactory();
-
             final Gradle gradle = gradleFactory.newInstance(startParameter);
 
             gradle.addBuildListener(exceptionReporter);

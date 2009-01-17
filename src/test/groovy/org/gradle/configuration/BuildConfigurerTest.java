@@ -37,7 +37,7 @@ import java.util.TreeMap;
  */
 @RunWith(org.jmock.integration.junit4.JMock.class)
 public class BuildConfigurerTest {
-    BuildConfigurer buildConfigurer;
+    DefaultBuildConfigurer buildConfigurer;
     ProjectDependencies2TaskResolver projectDependencies2TasksResolver;
     BuildScriptProcessor buildScriptProcessor;
     ProjectInternal rootProject;
@@ -52,7 +52,7 @@ public class BuildConfigurerTest {
     public void setUp()  {
         context.setImposteriser(ClassImposteriser.INSTANCE);
         projectDependencies2TasksResolver = context.mock(ProjectDependencies2TaskResolver.class);
-        buildConfigurer = new BuildConfigurer(projectDependencies2TasksResolver);
+        buildConfigurer = new DefaultBuildConfigurer(projectDependencies2TasksResolver);
         buildScriptProcessor = new BuildScriptProcessor();
         resolveCalled = false;
         expectedTasksMap = new TreeMap();

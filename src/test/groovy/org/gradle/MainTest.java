@@ -81,6 +81,10 @@ public class MainTest {
         gradleMock = context.mock(DefaultGradle.class);
 
         gradleFactory = new GradleFactory() {
+            public StartParameter createStartParameter()
+            {
+                return new DefaultStartParameter(); // TODO mock?
+            }
             public Gradle newInstance(StartParameter startParameter) {
                 actualStartParameter = startParameter;
                 return gradleMock;

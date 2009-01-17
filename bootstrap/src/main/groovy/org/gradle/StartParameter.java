@@ -2,6 +2,7 @@ package org.gradle;
 
 import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.execution.BuildExecuter;
+import org.gradle.execution.ProcessMode;
 import org.gradle.api.logging.LogLevel;
 
 import java.io.File;
@@ -34,7 +35,8 @@ public interface StartParameter {
 
     BuildExecuter getBuildExecuter();
 
-    void setBuildExecuter(BuildExecuter buildExecuter);
+//    void setBuildExecuter(BuildExecuter buildExecuter);
+    void setProcessMode(ProcessMode processMode);
 
     List<String> getTaskNames();
 

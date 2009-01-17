@@ -1,5 +1,5 @@
 /*
- * Copyright 2007 the original author or authors.
+ * Copyright 2007-2008 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-package org.gradle.api;
+package org.gradle;
 
 /**
- * <p>An <code>UnknownTaskException</code> is thrown when a task referenced by path cannot be found.</p>
+ * <p>A {@code GradleFactory} is responsible for creating a {@link Gradle} instance for a build, from a {@link
+ * StartParameter}.</p>
  *
  * @author Hans Dockter
  */
-public class UnknownTaskException extends GradleException {
-    public UnknownTaskException() {
-    }
-
-    public UnknownTaskException(String message) {
-        super(message);
-    }
-                        
-    public UnknownTaskException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public UnknownTaskException(Throwable cause) {
-        super(cause);
-    }
+public interface GradleFactory {
+    public StartParameter createStartParameter();
+    /**
+     * Creates a new {@link Gradle} instance for the given parameters.
+     *
+     * @param startParameter The parameters to use for the build.
+     * @return The new instance.
+     */
+    public Gradle newInstance(StartParameter startParameter);
 }

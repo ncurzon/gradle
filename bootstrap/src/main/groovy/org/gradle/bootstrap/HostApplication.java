@@ -18,13 +18,11 @@ import java.util.List;
  */
 public class HostApplication {
 
-    private HostActivator m_activator = null;
     private Felix m_felix = null;
     private ServiceTracker gradleFactoryTracker;
 
     public HostApplication()
     {
-        m_activator = new HostActivator();
     }
 
     public void startApplication() throws Exception
@@ -49,12 +47,11 @@ public class HostApplication {
 
         final List<BundleActivator> systemBundleActivators = new ArrayList<BundleActivator>();
 
-        systemBundleActivators.add(m_activator);
+//        systemBundleActivators.add(m_activator);
 
         configMap.put(FelixConstants.SYSTEMBUNDLE_ACTIVATORS_PROP, systemBundleActivators);
 
         // Create host activator;
-        m_activator = new HostActivator();
 
         // Now create an instance of the framework with
         // our configuration properties and activator.
@@ -63,7 +60,7 @@ public class HostApplication {
         // Now start Felix instance.
         m_felix.start();
 
-        gradleFactoryTracker = new ServiceTracker(m_felix.getBundleContext(), m_activator.getGradleFactoryReference(), null);
+        gradleFactoryTracker = new ServiceTracker(m_felix.getBundleContext(), "(&(objectclass="+GradleFactory.class.getName()+"))", null);
         gradleFactoryTracker.open();
     }
 

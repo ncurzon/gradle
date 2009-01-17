@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2008 the original author or authors.
+ * Copyright 2007 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.dependencies;
 
-import org.gradle.api.Project;
-import org.gradle.api.internal.dependencies.DefaultProjectDependency;
+package org.gradle.api;
 
 /**
- * <p>A {@code ProjectDependency} is a {@link Dependency} on another project in the current project hierarchy.</p>
- * 
+ * <p>An <code>UnknownTaskException</code> is thrown when a task referenced by path cannot be found.</p>
+ *
  * @author Hans Dockter
  */
-public interface ProjectDependency extends Dependency {
-    Project getDependencyProject();
+public class UnknownTaskException extends GradleException {
+    public UnknownTaskException() {
+    }
 
-    Project getProject();
+    public UnknownTaskException(String message) {
+        super(message);
+    }
+                        
+    public UnknownTaskException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-    boolean isTransitive();
-
-    DefaultProjectDependency setTransitive(boolean transitive);
+    public UnknownTaskException(Throwable cause) {
+        super(cause);
+    }
 }

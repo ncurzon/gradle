@@ -22,11 +22,10 @@ import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.execution.BuiltInTasksBuildExecuter;
+import org.gradle.execution.ProcessMode;
 import org.gradle.util.GUtil;
 import org.gradle.util.GradleVersion;
 import org.gradle.util.WrapUtil;
-import org.gradle.DefaultStartParameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,6 +73,7 @@ public abstract class AbstractMain {
     protected BuildCompleter buildCompleter = new ProcessExitBuildCompleter();
     protected BuildResultLogger resultLogger;
     protected BuildExceptionReporter exceptionReporter;
+    protected GradleFactory gradleFactory;
 
     public AbstractMain(String[] args) {
         this.args = args;
@@ -83,11 +83,16 @@ public abstract class AbstractMain {
         this.buildCompleter = buildCompleter;
     }
 
+    protected abstract GradleFactory getGradleFactory();
+
+
     public void execute() throws Exception {
+        gradleFactory = getGradleFactory();
+
         resultLogger = new BuildResultLogger(logger);
         exceptionReporter = new BuildExceptionReporter(logger);
 
-        StartParameter startParameter = new DefaultStartParameter();
+        final StartParameter startParameter = gradleFactory.createStartParameter();
 
         OptionParser parser = new OptionParser() {
             {
@@ -213,11 +218,11 @@ public abstract class AbstractMain {
             buildCompleter.exit(new InvalidUserDataException());
         }
         if (options.has(TASKS)) {
-            startParameter.setBuildExecuter(new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.TASKS));
+            startParameter.setProcessMode(ProcessMode.TASKS);
         } else if (options.has(PROPERTIES)) {
-            startParameter.setBuildExecuter(new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.PROPERTIES));
+            startParameter.setProcessMode(ProcessMode.PROPERTIES);
         } else if (options.has(DEPENDENCIES)) {
-            startParameter.setBuildExecuter(new BuiltInTasksBuildExecuter(BuiltInTasksBuildExecuter.Options.DEPENDENCIES));
+            startParameter.setProcessMode(ProcessMode.DEPENDENCIES);
         } else {
             startParameter.setTaskNames(options.nonOptionArguments());
         }

@@ -20,17 +20,17 @@ import org.gradle.api.invocation.Build;
 import org.gradle.api.execution.TaskExecutionGraph;
 
 /**
- * <p>A {@code BuildListener} is notified of the major lifecycle events as a {@link DefaultGradle} instance executes a
+ * <p>A {@code BuildListener} is notified of the major lifecycle events as a {@link Gradle} instance executes a
  * build.</p>
  *
  * @author Hans Dockter
- * @see DefaultGradle#addBuildListener(BuildListener)
+ * @see Gradle#addBuildListener(BuildListener)
  */
 public interface BuildListener {
     /**
      * <p>Called when the build is started.</p>
      *
-     * @param startParameter The {@link DefaultStartParameter} used to create the Gradle instance. Never null.
+     * @param startParameter The {@link StartParameter} used to create the Gradle instance. Never null.
      */
     void buildStarted(StartParameter startParameter);
 

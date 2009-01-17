@@ -36,16 +36,16 @@ import java.util.Properties;
 /**
  * @author Hans Dockter
  */
-public class BuildLoader {
-    private static Logger logger = LoggerFactory.getLogger(BuildLoader.class);
+public class DefaultBuildLoader implements BuildLoader {
+    private static Logger logger = LoggerFactory.getLogger(DefaultBuildLoader.class);
 
     private IProjectFactory projectFactory;
 
-    public BuildLoader() {
+    public DefaultBuildLoader() {
 
     }
 
-    public BuildLoader(IProjectFactory projectFactory) {
+    public DefaultBuildLoader(IProjectFactory projectFactory) {
         this.projectFactory = projectFactory;
     }
 

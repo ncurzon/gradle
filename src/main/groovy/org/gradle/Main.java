@@ -6,11 +6,15 @@ import org.gradle.initialization.DefaultLoggingConfigurer;
  * @author Tom Eyckmans
  */
 public class Main extends AbstractMain {
-    private GradleFactory gradleFactory;
 
     public Main(String[] args) {
         super(args);
-        this.gradleFactory = new DefaultGradleFactory(new DefaultLoggingConfigurer());
+        super.gradleFactory = new DefaultGradleFactory(new DefaultLoggingConfigurer());
+    }
+
+    @Override
+    protected GradleFactory getGradleFactory() {
+        return gradleFactory;
     }
 
     public static void main(String[] args) throws Throwable {

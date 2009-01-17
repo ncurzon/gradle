@@ -24,7 +24,6 @@ import org.gradle.configuration.BuildConfigurer;
 import org.gradle.execution.BuildExecuter;
 import org.gradle.initialization.*;
 import org.gradle.util.ListenerBroadcast;
-import org.gradle.DefaultStartParameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

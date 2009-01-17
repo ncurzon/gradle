@@ -11,7 +11,7 @@ import org.gradle.initialization.DefaultLoggingConfigurer;
 /**
  * @author Tom Eyckmans
  */
-public class HostActivator implements BundleActivator {
+public class DefaultGradleActivator implements BundleActivator {
 
     private BundleContext bundleContext;
     private ServiceRegistration gradleFactoryRegistration;

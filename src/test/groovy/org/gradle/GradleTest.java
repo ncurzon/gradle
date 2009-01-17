@@ -24,7 +24,7 @@ import org.gradle.api.initialization.Settings;
 import org.gradle.api.internal.SettingsInternal;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.project.DefaultProject;
-import org.gradle.configuration.BuildConfigurer;
+import org.gradle.configuration.DefaultBuildConfigurer;
 import org.gradle.execution.TaskExecuter;
 import org.gradle.initialization.*;
 import org.gradle.util.HelperUtil;
@@ -56,11 +56,11 @@ import java.util.Map;
  */
 @RunWith(org.jmock.integration.junit4.JMock.class)
 public class GradleTest {
-    private BuildLoader buildLoaderMock;
+    private DefaultBuildLoader buildLoaderMock;
     private ISettingsFinder settingsFinderMock;
     private IGradlePropertiesLoader gradlePropertiesLoaderMock;
     private SettingsProcessor settingsProcessorMock;
-    private BuildConfigurer buildConfigurerMock;
+    private DefaultBuildConfigurer buildConfigurerMock;
     private File expectedRootDir;
     private DefaultProject expectedRootProject;
     private DefaultProject expectedCurrentProject;
@@ -91,8 +91,8 @@ public class GradleTest {
         settingsMock = context.mock(SettingsInternal.class);
         taskExecuterMock = context.mock(TaskExecuter.class);
         settingsProcessorMock = context.mock(SettingsProcessor.class);
-        buildLoaderMock = context.mock(BuildLoader.class);
-        buildConfigurerMock = context.mock(BuildConfigurer.class);
+        buildLoaderMock = context.mock(DefaultBuildLoader.class);
+        buildConfigurerMock = context.mock(DefaultBuildConfigurer.class);
         buildListenerMock = context.mock(BuildListener.class);
         buildMock = context.mock(BuildInternal.class);
         testGradleProperties = WrapUtil.toMap("prop1", "value1");
