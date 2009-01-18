@@ -18,7 +18,7 @@ package org.gradle.api.internal.dependencies.maven;
 import org.apache.ivy.core.module.descriptor.DefaultDependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

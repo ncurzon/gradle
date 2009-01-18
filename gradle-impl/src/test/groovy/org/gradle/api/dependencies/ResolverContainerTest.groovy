@@ -24,7 +24,7 @@ import org.gradle.api.InvalidUserDataException
 import org.gradle.api.dependencies.maven.GroovyMavenDeployer
 import org.gradle.api.dependencies.ResolverContainer
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer
 import org.gradle.util.JUnit4GroovyMockery
 import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertSame

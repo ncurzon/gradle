@@ -28,7 +28,7 @@ import org.gradle.api.DependencyManager;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Transformer;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import org.gradle.api.dependencies.*;
 import org.gradle.util.GUtil;
 import org.gradle.util.ConfigureUtil;

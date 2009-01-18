@@ -13,30 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.dependencies;
+package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
-import java.util.List;
-import java.io.PrintWriter;
+import org.apache.ivy.core.module.descriptor.ExcludeRule;
 
 /**
  * @author Hans Dockter
  */
-public interface MavenDependency {
-    String getGroupId();
-
-    String getArtifactId();
-
-    String getVersion();
-
-    boolean isOptional();
-
-    String getType();
-
-    String getClassifier();
-
-    String getScope();
-
-    List<MavenExclude> getMavenExcludes();
-
-    void write(PrintWriter writer);
+public interface ExcludeRuleConverter {
+    DefaultMavenExclude convert(ExcludeRule excludeRule);
 }

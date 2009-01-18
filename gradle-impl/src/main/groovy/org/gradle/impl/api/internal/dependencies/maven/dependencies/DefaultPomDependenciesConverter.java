@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.dependencies;
+package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.ExcludeRule;
 import org.apache.ivy.core.module.descriptor.DependencyArtifactDescriptor;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.gradle.api.internal.dependencies.maven.dependencies.MavenDependency;
-import org.gradle.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
 import org.gradle.api.dependencies.maven.MavenPom;
 
 import java.util.List;

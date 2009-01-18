@@ -13,13 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.dependencies;
+package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
-import org.apache.ivy.core.module.descriptor.ExcludeRule;
+import org.gradle.api.dependencies.maven.MavenPom;
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+
+import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * @author Hans Dockter
  */
-public interface ExcludeRuleConverter {
-    DefaultMavenExclude convert(ExcludeRule excludeRule);
+public interface PomDependenciesWriter {
+    String DEPENDENCIES = "dependencies";
+
+    void convert(MavenPom pom, List<DependencyDescriptor> dependencies, PrintWriter printWriter);
 }

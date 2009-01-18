@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.dependencies;
+package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
  * @author Hans Dockter
  */
-public interface PomDependenciesWriter {
-    String DEPENDENCIES = "dependencies";
-
-    void convert(MavenPom pom, List<DependencyDescriptor> dependencies, PrintWriter printWriter);
+public interface PomDependenciesConverter {
+    public List<MavenDependency> convert(MavenPom pom, List<DependencyDescriptor> dependencies);
 }

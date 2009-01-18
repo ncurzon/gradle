@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.dependencies;
+package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.dependencies.maven.Conf2ScopeMapping;

@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import org.gradle.api.dependencies.maven.Conf2ScopeMapping;
 
 import java.util.Map;

@@ -20,7 +20,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.gradle.api.internal.dependencies.maven.PomWriter;
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultMavenExclude;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultMavenExclude;
 
 import java.io.StringWriter;
 import java.io.PrintWriter;

@@ -25,6 +25,7 @@ import org.gradle.util.WrapUtil;
 import org.gradle.util.HelperUtil;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
 import org.gradle.api.dependencies.maven.MavenPom;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.*;
 import org.apache.ivy.core.module.descriptor.*;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.jmock.integration.junit4.JUnit4Mockery;

@@ -19,7 +19,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;import static org.junit.Assert.assertSame;
 import org.gradle.api.internal.dependencies.maven.DefaultMavenPom;
-import org.gradle.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
 
 /**
