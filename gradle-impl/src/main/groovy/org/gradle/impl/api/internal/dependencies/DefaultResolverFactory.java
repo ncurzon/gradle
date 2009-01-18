@@ -29,8 +29,8 @@ import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultPomDe
 import org.gradle.impl.api.internal.dependencies.maven.*;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPomContainer;
-import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer;
-import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer;
 import org.gradle.api.internal.dependencies.ResolverFactory;
 
 import java.io.File;

@@ -17,7 +17,7 @@
 package org.gradle.api.internal.dependencies.maven.deploy.groovy
 
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
-import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
 import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -26,9 +26,10 @@ import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPom
 import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployerTest
 import org.gradle.api.dependencies.maven.PomFilterContainer
 import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
 
 /**
  * @author Hans Dockter

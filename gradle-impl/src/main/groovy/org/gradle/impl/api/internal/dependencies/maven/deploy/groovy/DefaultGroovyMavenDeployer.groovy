@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy.groovy
+package org.gradle.impl.api.internal.dependencies.maven.deploy.groovy
 
 import org.codehaus.groovy.runtime.InvokerHelper
 import org.gradle.api.DependencyManager
