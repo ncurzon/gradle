@@ -13,13 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
 import groovy.util.AntBuilder;
+import org.apache.tools.ant.BuildListener;
 
 /**
  * @author Hans Dockter
  */
-public interface AntBuilderFactory {
-    AntBuilder createAntBuilder();
+public class DefaultAntBuilderFactory implements AntBuilderFactory {
+    private BuildListener buildListener;
+
+    public DefaultAntBuilderFactory(BuildListener buildListener) {
+        this.buildListener = buildListener;
+    }
+
+    public AntBuilder createAntBuilder() {
+        AntBuilder antBuilder = new AntBuilder();
+        antBuilder.getProject().removeBuildListener((BuildListener) antBuilder.getProject().getBuildListeners().get(0));
+        antBuilder.getProject().addBuildListener(buildListener);
+        return antBuilder;
+    }
 }

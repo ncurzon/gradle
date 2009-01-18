@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-package org.gradle.api.internal.plugins
+package org.gradle.impl.api.internal.plugins
 
 import org.gradle.api.plugins.Convention
 import org.slf4j.LoggerFactory

@@ -13,24 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.project;
-
-import org.gradle.api.logging.LogLevel;
-import org.gradle.api.logging.StandardOutputLogging;
+package org.gradle.impl.api.internal.plugins.osgi;
 
 /**
  * @author Hans Dockter
  */
-public class DefaultStandardOutputRedirector implements StandardOutputRedirector {
-    public void on(LogLevel level) {
-        StandardOutputLogging.on(level);
-    }
-
-    public void off() {
-        StandardOutputLogging.off();
-    }
-
-    public void flush() {
-        StandardOutputLogging.flush();
+public class DefaultAnalyzerFactory implements AnalyzerFactory {
+    public ContainedVersionAnalyzer createAnalyzer() {
+        return new ContainedVersionAnalyzer();
     }
 }

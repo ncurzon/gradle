@@ -1,4 +1,4 @@
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
 import groovy.lang.Script;
 import org.gradle.api.Project;

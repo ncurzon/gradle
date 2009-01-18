@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
 import groovy.lang.Closure;
 

@@ -13,11 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.plugins.osgi;
+package org.gradle.impl.api.internal.project;
+
+import org.gradle.api.logging.LogLevel;
 
 /**
  * @author Hans Dockter
  */
-public interface AnalyzerFactory {
-    ContainedVersionAnalyzer createAnalyzer();
+public interface StandardOutputRedirector {
+    void on(LogLevel level);
+    
+    void off();
+
+    void flush();
 }

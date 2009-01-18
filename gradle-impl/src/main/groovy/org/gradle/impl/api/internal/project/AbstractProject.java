@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
 import groovy.lang.MissingPropertyException;
 import groovy.lang.Script;
@@ -21,6 +21,7 @@ import groovy.util.AntBuilder;
 import org.apache.commons.lang.StringUtils;
 import org.gradle.api.*;
 import org.gradle.api.internal.*;
+import org.gradle.api.internal.project.*;
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.logging.LogLevel;

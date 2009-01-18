@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
 import org.gradle.StartParameter;
 import org.gradle.api.internal.BuildInternal;
+import org.gradle.api.internal.project.IProjectFactory;
+import org.gradle.api.internal.project.BuildScriptProcessor;
+import org.gradle.api.internal.project.PluginRegistry;
+import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.impl.groovy.scripts.FileScriptSource;
 import org.gradle.impl.groovy.scripts.StringScriptSource;

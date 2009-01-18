@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.project
+package org.gradle.impl.api.internal.project
 
 import org.gradle.api.AfterEvaluateListener
 import org.gradle.api.DependencyManager
@@ -24,6 +24,11 @@ import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.util.ConfigureUtil
 import org.gradle.api.internal.BuildInternal
+import org.gradle.api.internal.project.ProjectInternal
+import org.gradle.api.internal.project.BuildScriptProcessor
+import org.gradle.api.internal.project.PluginRegistry
+import org.gradle.api.internal.project.IProjectRegistry
+import org.gradle.api.internal.project.IProjectFactory
 
 /**
  * @author Hans Dockter

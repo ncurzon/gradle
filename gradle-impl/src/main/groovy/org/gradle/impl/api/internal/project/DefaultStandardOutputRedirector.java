@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.project;
+package org.gradle.impl.api.internal.project;
 
-import groovy.util.AntBuilder;
-import org.apache.tools.ant.BuildListener;
+import org.gradle.api.logging.LogLevel;
+import org.gradle.api.logging.StandardOutputLogging;
 
 /**
  * @author Hans Dockter
  */
-public class DefaultAntBuilderFactory implements AntBuilderFactory {
-    private BuildListener buildListener;
-
-    public DefaultAntBuilderFactory(BuildListener buildListener) {
-        this.buildListener = buildListener;
+public class DefaultStandardOutputRedirector implements StandardOutputRedirector {
+    public void on(LogLevel level) {
+        StandardOutputLogging.on(level);
     }
 
-    public AntBuilder createAntBuilder() {
-        AntBuilder antBuilder = new AntBuilder();
-        antBuilder.getProject().removeBuildListener((BuildListener) antBuilder.getProject().getBuildListeners().get(0));
-        antBuilder.getProject().addBuildListener(buildListener);
-        return antBuilder;
+    public void off() {
+        StandardOutputLogging.off();
+    }
+
+    public void flush() {
+        StandardOutputLogging.flush();
     }
 }

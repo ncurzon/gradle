@@ -1,4 +1,4 @@
-package org.gradle.api.internal.plugins.osgi;
+package org.gradle.impl.api.internal.plugins.osgi;
 
 import aQute.lib.osgi.Jar;
 import aQute.lib.osgi.Analyzer;
