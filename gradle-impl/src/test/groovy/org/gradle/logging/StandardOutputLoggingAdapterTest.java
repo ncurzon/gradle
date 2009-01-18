@@ -31,6 +31,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.LoggerFactory;
+import org.gradle.impl.logging.StandardOutputLoggingAdapter;
 
 import java.io.IOException;
 

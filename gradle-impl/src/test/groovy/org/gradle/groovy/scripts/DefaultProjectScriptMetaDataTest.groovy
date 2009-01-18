@@ -21,6 +21,7 @@ import org.gradle.api.internal.project.DefaultProject
 import org.gradle.api.internal.project.ProjectScript
 import static org.junit.Assert.assertEquals
 import org.junit.Test
+import org.gradle.impl.groovy.scripts.DefaultProjectScriptMetaData
 
 /**
  * @author Hans Dockter

@@ -19,6 +19,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.gradle.api.tasks.wrapper.Wrapper;
+import org.gradle.impl.wrapper.PathAssembler;
 
 /**
  * @author Hans Dockter

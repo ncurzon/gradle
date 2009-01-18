@@ -25,14 +25,14 @@ import org.apache.ivy.plugins.matcher.ExactPatternMatcher
 import org.apache.ivy.plugins.matcher.PatternMatcher
 import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
 import org.gradle.api.internal.project.*
-import org.gradle.groovy.scripts.EmptyScript
+import org.gradle.impl.groovy.scripts.EmptyScript
 import org.gradle.util.GradleUtil
-import org.gradle.groovy.scripts.StringScriptSource
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.groovy.scripts.StringScriptSource
+import org.gradle.impl.DefaultStartParameter
 import org.gradle.CacheUsage
 import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor
 import org.apache.ivy.core.module.descriptor.Configuration
-import org.gradle.invocation.DefaultBuild
+import org.gradle.impl.invocation.DefaultBuild
 import org.gradle.logging.AntLoggingAdapter
 import org.gradle.api.internal.dependencies.DefaultDependencyConfigurationMappingContainer
 import org.gradle.initialization.ISettingsFinder
@@ -40,8 +40,11 @@ import org.gradle.groovy.scripts.ScriptSource
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.gradle.groovy.scripts.ScriptWithSource
 import org.gradle.api.logging.LogLevel
-import org.gradle.DefaultStartParameter
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.groovy.scripts.EmptyScript
+import org.gradle.impl.groovy.scripts.StringScriptSource
 
 /**
  * @author Hans Dockter
@@ -107,7 +110,7 @@ class HelperUtil {
                 parentProject.build)
     }
 
-    static org.gradle.DefaultStartParameter dummyStartParameter() {
+    static org.gradle.impl.DefaultStartParameter dummyStartParameter() {
         return new DefaultStartParameter(
                 "settingsFileName",
                 "buildFileName",

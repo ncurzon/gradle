@@ -25,6 +25,8 @@ import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.plugins.matcher.PatternMatcher;
 import org.apache.ivy.plugins.matcher.ExactPatternMatcher;
 import org.apache.ivy.plugins.matcher.GlobPatternMatcher;
+import org.gradle.api.internal.dependencies.maven.dependencies.DefaultExcludeRuleConverter;
+import org.gradle.api.internal.dependencies.maven.dependencies.MavenExclude;
 
 /**
  * @author Hans Dockter
@@ -37,7 +39,7 @@ public class DefaultExcludeRuleConverterTest {
 
     @Before
     public void setUp() {
-        excludeRuleConverter = new DefaultExcludeRuleConverter();   
+        excludeRuleConverter = new DefaultExcludeRuleConverter();
     }
     
     @Test

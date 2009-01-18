@@ -19,9 +19,9 @@ package org.gradle.api.internal.project;
 import org.gradle.StartParameter;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.dependencies.DependencyManagerFactory;
-import org.gradle.groovy.scripts.FileScriptSource;
+import org.gradle.impl.groovy.scripts.FileScriptSource;
+import org.gradle.impl.groovy.scripts.StringScriptSource;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.groovy.scripts.StringScriptSource;
 
 import java.io.File;
 

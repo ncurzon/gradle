@@ -17,15 +17,15 @@
 package org.gradle.initialization
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
 import org.gradle.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.api.internal.project.ImportsReader
 import org.gradle.groovy.scripts.*
-import org.gradle.initialization.DefaultSettings
-import org.gradle.initialization.ScriptEvaluatingSettingsProcessor
+import org.gradle.impl.initialization.DefaultSettings
+import org.gradle.impl.initialization.ScriptEvaluatingSettingsProcessor
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.gradle.util.ReflectionEqualsMatcher
@@ -36,9 +36,16 @@ import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertSame
 import org.junit.Before
 import org.junit.Test
-import org.gradle.DefaultStartParameter
-import org.gradle.DefaultStartParameter
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.groovy.scripts.EmptyScript
+import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
+import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry
+import org.gradle.impl.initialization.DefaultSettings
+import org.gradle.impl.initialization.DefaultSettingsFinder
+import org.gradle.impl.initialization.ScriptEvaluatingSettingsProcessor
+import org.gradle.impl.initialization.SettingsFactory
 
 /**
  * @author Hans Dockter

@@ -27,9 +27,10 @@
  */
 package org.gradle.execution
 
-import org.gradle.execution.Dag
+import org.gradle.impl.execution.Dag
 import static org.junit.Assert.*
 import org.junit.Test
+import org.gradle.impl.execution.Dag
 
 class DagTest {
     private static final String A = "A";

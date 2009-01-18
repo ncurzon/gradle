@@ -25,6 +25,8 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.Expectations;
 import org.gradle.util.WrapUtil;
 import org.gradle.api.internal.dependencies.maven.PomWriter;
+import org.gradle.api.internal.dependencies.maven.dependencies.DefaultMavenDependency;
+import org.gradle.api.internal.dependencies.maven.dependencies.MavenExclude;
 
 import java.util.List;
 import java.io.StringWriter;

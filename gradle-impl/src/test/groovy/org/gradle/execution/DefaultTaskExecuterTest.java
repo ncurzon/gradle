@@ -28,6 +28,8 @@ import org.gradle.api.internal.project.ProjectInternal;
 import static org.gradle.util.HelperUtil.*;
 import org.gradle.util.TestClosure;
 import static org.gradle.util.WrapUtil.*;
+import org.gradle.impl.execution.Dag;
+import org.gradle.impl.execution.DefaultTaskExecuter;
 import static org.hamcrest.Matchers.*;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;

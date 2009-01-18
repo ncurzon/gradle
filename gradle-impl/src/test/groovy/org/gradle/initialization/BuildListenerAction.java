@@ -19,6 +19,7 @@ import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import org.hamcrest.Description;
 import org.gradle.api.Project;
+import org.gradle.impl.initialization.BuildSourceBuilder;
 
 /**
  * @author Hans Dockter

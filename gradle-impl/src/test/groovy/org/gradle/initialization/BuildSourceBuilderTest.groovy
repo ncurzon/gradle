@@ -16,7 +16,7 @@
 
 package org.gradle.initialization
 
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
@@ -28,7 +28,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.gradle.GradleFactory
-import org.gradle.DefaultGradle
+import org.gradle.impl.DefaultGradle
 import org.gradle.BuildListener
 import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.Dependency
@@ -36,10 +36,13 @@ import org.gradle.api.plugins.JavaPlugin
 import org.gradle.CacheUsage
 import org.gradle.api.dependencies.Configuration
 import org.gradle.api.plugins.BasePlugin
-import org.gradle.DefaultStartParameter
-import org.gradle.DefaultStartParameter
-import org.gradle.DefaultGradle
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultGradle
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.DefaultGradle
+import org.gradle.impl.initialization.BuildSourceBuilder
 
 /**
  * @author Hans Dockter

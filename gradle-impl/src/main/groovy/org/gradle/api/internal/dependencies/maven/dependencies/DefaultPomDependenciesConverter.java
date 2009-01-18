@@ -22,7 +22,6 @@ import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.gradle.api.internal.dependencies.maven.dependencies.MavenDependency;
 import org.gradle.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
 import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.util.WrapUtil;
 
 import java.util.List;
 import java.util.ArrayList;

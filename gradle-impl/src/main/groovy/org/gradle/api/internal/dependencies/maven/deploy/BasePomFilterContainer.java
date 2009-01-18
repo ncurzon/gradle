@@ -21,6 +21,7 @@ import org.gradle.api.dependencies.maven.PomFilterContainer;
 import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.api.dependencies.maven.CopyablePomFilterContainer;
 import org.gradle.api.internal.dependencies.maven.MavenPomFactory;
+import org.gradle.api.internal.dependencies.maven.deploy.PomFilter;
 import org.gradle.util.WrapUtil;
 
 import java.util.HashMap;

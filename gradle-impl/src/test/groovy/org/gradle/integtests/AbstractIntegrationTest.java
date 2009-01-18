@@ -17,10 +17,10 @@ package org.gradle.integtests;
 
 import junit.framework.AssertionFailedError;
 import org.apache.commons.io.FileUtils;
-import org.gradle.DefaultStartParameter;
+import org.gradle.impl.DefaultStartParameter;
 import org.gradle.*;
-import org.gradle.initialization.DefaultLoggingConfigurer;
-import org.gradle.execution.BuiltInTasksBuildExecuter;
+import org.gradle.impl.DefaultGradleFactory;
+import org.gradle.impl.initialization.DefaultLoggingConfigurer;
 import org.gradle.execution.ProcessMode;
 import org.gradle.api.GradleException;
 import org.gradle.api.UncheckedIOException;

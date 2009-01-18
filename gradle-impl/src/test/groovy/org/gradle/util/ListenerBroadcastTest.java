@@ -26,8 +26,7 @@ import static org.gradle.util.HelperUtil.*;
 import org.gradle.api.GradleException;
 import org.gradle.api.GradleScriptException;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.groovy.scripts.StringScriptSource;
-import groovy.lang.Closure;
+import org.gradle.impl.groovy.scripts.StringScriptSource;
 
 @RunWith(JMock.class)
 public class ListenerBroadcastTest {

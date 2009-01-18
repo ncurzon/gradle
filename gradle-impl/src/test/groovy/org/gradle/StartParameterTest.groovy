@@ -19,9 +19,9 @@ package org.gradle
 import org.gradle.CacheUsage
 import org.gradle.api.Project
 import org.gradle.execution.BuildExecuter
-import org.gradle.execution.TaskNameResolvingBuildExecuter
-import org.gradle.execution.ProjectDefaultsBuildExecuter
-import org.gradle.groovy.scripts.StringScriptSource
+import org.gradle.impl.execution.TaskNameResolvingBuildExecuter
+import org.gradle.impl.execution.ProjectDefaultsBuildExecuter
+import org.gradle.impl.groovy.scripts.StringScriptSource
 import static org.gradle.util.ReflectionEqualsMatcher.*
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.*
@@ -29,11 +29,13 @@ import org.junit.Before
 import org.junit.Test
 import org.gradle.api.initialization.Settings
 import org.gradle.util.HelperUtil
-import org.gradle.execution.TaskNameResolvingBuildExecuter
-import org.gradle.execution.ProjectDefaultsBuildExecuter
-import org.gradle.execution.MergingBuildExecuter
+import org.gradle.impl.execution.TaskNameResolvingBuildExecuter
+import org.gradle.impl.execution.ProjectDefaultsBuildExecuter
+import org.gradle.impl.execution.MergingBuildExecuter
 import org.gradle.api.logging.LogLevel
-import org.gradle.DefaultStartParameter
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.groovy.scripts.StringScriptSource
+import org.gradle.impl.execution.MergingBuildExecuter
 
 /**
  * @author Hans Dockter

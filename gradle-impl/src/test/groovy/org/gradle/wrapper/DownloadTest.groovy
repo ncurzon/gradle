@@ -19,7 +19,8 @@ package org.gradle.wrapper
 import org.gradle.util.HelperUtil
 import static org.junit.Assert.*
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.wrapper.Download;
 
 /**
  * @author Hans Dockter

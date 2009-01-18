@@ -20,10 +20,9 @@ import org.apache.commons.io.FileUtils;
 import org.gradle.api.*;
 import org.gradle.api.internal.DefaultTask;
 import org.gradle.util.GUtil;
-import org.gradle.wrapper.Install;
+import org.gradle.impl.wrapper.Install;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -111,14 +110,14 @@ public class Wrapper extends DefaultTask {
 
     private void writeProperties(File propertiesFileDestination) {
         Properties wrapperProperties = new Properties();
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.URL_ROOT_PROPERTY, urlRoot);
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.DISTRIBUTION_BASE_PROPERTY, distributionBase.toString());
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.DISTRIBUTION_PATH_PROPERTY, distributionPath);
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.DISTRIBUTION_NAME_PROPERTY, archiveName);
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.DISTRIBUTION_CLASSIFIER_PROPERTY, archiveClassifier);
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.DISTRIBUTION_VERSION_PROPERTY, gradleVersion);
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.ZIP_STORE_BASE_PROPERTY, archiveBase.toString());
-        wrapperProperties.put(org.gradle.wrapper.Wrapper.ZIP_STORE_PATH_PROPERTY, archivePath);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.URL_ROOT_PROPERTY, urlRoot);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_BASE_PROPERTY, distributionBase.toString());
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_PATH_PROPERTY, distributionPath);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_NAME_PROPERTY, archiveName);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_CLASSIFIER_PROPERTY, archiveClassifier);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_VERSION_PROPERTY, gradleVersion);
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.ZIP_STORE_BASE_PROPERTY, archiveBase.toString());
+        wrapperProperties.put(org.gradle.impl.wrapper.Wrapper.ZIP_STORE_PATH_PROPERTY, archivePath);
         GUtil.saveProperties(wrapperProperties, propertiesFileDestination);
     }
 

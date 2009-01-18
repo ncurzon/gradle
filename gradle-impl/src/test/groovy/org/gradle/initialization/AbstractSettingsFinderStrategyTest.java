@@ -15,7 +15,7 @@
  */
 package org.gradle.initialization;
 
-import org.gradle.DefaultStartParameter;
+import org.gradle.impl.DefaultStartParameter;
 import org.gradle.StartParameter;
 import org.gradle.util.HelperUtil;
 import org.junit.After;

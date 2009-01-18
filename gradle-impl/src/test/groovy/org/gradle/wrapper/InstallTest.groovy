@@ -22,6 +22,9 @@ import org.junit.After
 import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.gradle.impl.wrapper.IDownload
+import org.gradle.impl.wrapper.Install
+import org.gradle.impl.wrapper.PathAssembler
 
 /**
  * @author Hans Dockter

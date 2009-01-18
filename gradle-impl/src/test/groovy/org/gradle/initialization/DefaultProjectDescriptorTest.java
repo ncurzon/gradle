@@ -23,8 +23,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNull;
 import org.gradle.api.Project;
+import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry;
 import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Mockery;
 import org.jmock.Expectations;
 
 import java.io.File;

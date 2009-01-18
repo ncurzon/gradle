@@ -17,6 +17,7 @@ package org.gradle.api.internal.dependencies.maven.deploy;
 
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.PublishFilter;
+import org.gradle.api.internal.dependencies.maven.deploy.PomFilter;
 
 /**
  * @author Hans Dockter

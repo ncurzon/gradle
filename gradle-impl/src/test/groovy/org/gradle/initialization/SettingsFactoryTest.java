@@ -16,6 +16,10 @@
 package org.gradle.initialization;
 
 import org.gradle.StartParameter;
+import org.gradle.impl.initialization.BuildSourceBuilder;
+import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry;
+import org.gradle.impl.initialization.DefaultSettings;
+import org.gradle.impl.initialization.SettingsFactory;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
 import org.gradle.api.internal.dependencies.DependencyManagerFactory;

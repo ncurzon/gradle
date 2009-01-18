@@ -26,6 +26,9 @@ import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPom
 import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployerTest
 import org.gradle.api.dependencies.maven.PomFilterContainer
 import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
+import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer
+import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployer
 
 /**
  * @author Hans Dockter

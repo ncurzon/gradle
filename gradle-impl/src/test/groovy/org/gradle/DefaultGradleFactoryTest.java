@@ -20,6 +20,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.Expectations;
 import org.gradle.initialization.LoggingConfigurer;
 import org.gradle.util.HelperUtil;
+import org.gradle.impl.DefaultGradleFactory;
 
 /**
  * @author Hans Dockter

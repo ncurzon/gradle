@@ -19,6 +19,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertNull;import static org.junit.Assert.assertEquals;
+import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry;
 
 import java.io.File;
 

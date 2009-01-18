@@ -29,6 +29,7 @@ import org.gradle.api.tasks.diagnostics.TaskReportTask;
 import org.gradle.api.tasks.diagnostics.PropertyReportTask;
 import org.gradle.api.tasks.diagnostics.DependencyReportTask;
 import org.gradle.api.internal.project.ProjectInternal;
+import org.gradle.impl.execution.BuiltInTasksBuildExecuter;
 
 import java.util.Collections;
 

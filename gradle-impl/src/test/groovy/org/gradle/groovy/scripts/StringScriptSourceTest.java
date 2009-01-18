@@ -16,6 +16,7 @@
 package org.gradle.groovy.scripts;
 
 import org.gradle.api.Project;
+import org.gradle.impl.groovy.scripts.StringScriptSource;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;

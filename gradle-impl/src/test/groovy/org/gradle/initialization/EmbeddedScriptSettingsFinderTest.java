@@ -1,6 +1,7 @@
 package org.gradle.initialization;
 
-import org.gradle.DefaultStartParameter;
+import org.gradle.impl.DefaultStartParameter;
+import org.gradle.impl.initialization.EmbeddedScriptSettingsFinder;
 import org.gradle.StartParameter;
 import org.gradle.groovy.scripts.ScriptSource;
 import static org.hamcrest.Matchers.*;

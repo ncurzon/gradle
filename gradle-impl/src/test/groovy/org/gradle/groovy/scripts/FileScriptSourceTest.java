@@ -17,6 +17,7 @@ package org.gradle.groovy.scripts;
 
 import org.apache.commons.io.FileUtils;
 import org.gradle.util.HelperUtil;
+import org.gradle.impl.groovy.scripts.FileScriptSource;
 import static org.hamcrest.Matchers.*;
 import org.junit.After;
 import static org.junit.Assert.*;

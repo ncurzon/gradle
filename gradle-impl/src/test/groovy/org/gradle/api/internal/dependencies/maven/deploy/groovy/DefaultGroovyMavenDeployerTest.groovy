@@ -32,7 +32,8 @@ import org.junit.Test
 import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
 import static org.junit.Assert.*
 import org.junit.runner.RunWith
-import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JMock
+import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer
 
 /**
  * @author Hans Dockter

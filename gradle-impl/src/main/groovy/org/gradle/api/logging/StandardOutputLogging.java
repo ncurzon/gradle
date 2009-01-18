@@ -16,7 +16,7 @@
 package org.gradle.api.logging;
 
 import ch.qos.logback.classic.Level;
-import org.gradle.logging.StandardOutputLoggingAdapter;
+import org.gradle.impl.logging.StandardOutputLoggingAdapter;
 import org.slf4j.LoggerFactory;
 
 import java.io.PrintStream;

@@ -25,11 +25,11 @@ import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
 import org.gradle.util.GradleVersion;
 import org.gradle.util.GUtil;
+import org.gradle.impl.groovy.scripts.CachePropertiesHandler;
+import org.gradle.impl.groovy.scripts.DefaultCachePropertiesHandler;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.Map;
 import java.util.HashMap;
