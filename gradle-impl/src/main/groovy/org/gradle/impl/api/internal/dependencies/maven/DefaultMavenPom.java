@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven;
+package org.gradle.impl.api.internal.dependencies.maven;
 
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
-import org.gradle.api.internal.dependencies.maven.PomFileWriter;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
-
-import java.io.File;
-import java.util.List;
 
 /**
  * @author Hans Dockter

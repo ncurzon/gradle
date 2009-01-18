@@ -13,25 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven;
+package org.gradle.impl.api.internal.dependencies.maven;
 
-import org.gradle.util.GradleVersion;
+import org.gradle.api.dependencies.maven.MavenPom;
 
 import java.io.PrintWriter;
 
 /**
  * @author Hans Dockter
  */
-public class DefaultPomHeaderWriter implements PomHeaderWriter {
-    public void convert(String licenseHeader, PrintWriter out) {
-        GradleVersion gradleVersion = new GradleVersion();
-        out.println(HEADER_XML);
-        if (licenseHeader != null) {
-            out.println(licenseHeader);
-        }
-        out.println(GENERATE_TEXT_PRE + GradleVersion.URL);
-        out.println(GENERATE_TEXT_VERSION + gradleVersion.getVersion() + " " + gradleVersion.getBuildTime());
-        out.println(GENERATE_TEXT_POST + HEADER_XMLNS);
-        out.println(HEADER_MAVEN);
-    }
+public interface PomModuleIdWriter {
+    void convert(MavenPom pom, PrintWriter testPrintWriter);
 }

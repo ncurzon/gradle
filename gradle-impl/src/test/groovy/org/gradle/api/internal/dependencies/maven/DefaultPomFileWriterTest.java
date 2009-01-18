@@ -29,6 +29,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.hamcrest.Description;
 import org.gradle.api.dependencies.maven.MavenPom;
+import org.gradle.impl.api.internal.dependencies.maven.DefaultPomFileWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 
 import java.io.*;
 import java.util.List;

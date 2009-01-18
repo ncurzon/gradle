@@ -19,7 +19,7 @@ import org.apache.ivy.core.module.descriptor.Artifact;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.dependencies.maven.PomFilterContainer;
-import org.gradle.api.internal.dependencies.maven.PomFileWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomFileWriter;
 import org.gradle.api.internal.dependencies.maven.deploy.PomFilter;
 
 import java.io.File;

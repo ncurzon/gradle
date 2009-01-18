@@ -29,7 +29,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.Expectations;
 import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.internal.dependencies.maven.PomFileWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomFileWriter;
 import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPom;
 import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPomFactory;
 import org.gradle.api.internal.dependencies.maven.deploy.DefaultArtifactPomContainer;

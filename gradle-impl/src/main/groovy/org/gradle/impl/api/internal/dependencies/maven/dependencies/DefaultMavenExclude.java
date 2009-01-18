@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
-import org.gradle.api.internal.dependencies.maven.XmlHelper;
-import org.gradle.api.internal.dependencies.maven.PomWriter;
+import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
+import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 
 import java.io.PrintWriter;
 

@@ -15,7 +15,7 @@
  *  limitations under the License.
  *
  */
-package org.gradle.api.internal.dependencies.maven;
+package org.gradle.impl.api.internal.dependencies.maven;
 
 import java.io.*;
 import java.util.List;

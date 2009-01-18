@@ -18,8 +18,8 @@ package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
-import org.gradle.api.internal.dependencies.maven.XmlHelper;
-import org.gradle.api.internal.dependencies.maven.PomWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
+import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 

@@ -25,6 +25,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
+import org.gradle.impl.api.internal.dependencies.maven.DefaultPomWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomHeaderWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomModuleIdWriter;
+import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 
