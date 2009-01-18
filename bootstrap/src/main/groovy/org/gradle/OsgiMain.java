@@ -3,6 +3,8 @@ package org.gradle;
 import org.gradle.bootstrap.HostApplication;
 
 /**
+ * TODO when startApplication fails the System doesn't exit...
+ *
  * @author Tom Eyckmans
  */
 public class OsgiMain extends AbstractMain {
@@ -18,6 +20,7 @@ public class OsgiMain extends AbstractMain {
                     app.stopApplication();
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.exit(1);
                 }
             }
         });
@@ -34,12 +37,12 @@ public class OsgiMain extends AbstractMain {
                 app.startApplication();
             }
             catch ( Exception e ) {
-                throw new RuntimeException();
+                throw new RuntimeException(e);
             }
 
             gradleFactory = app.getGradleFactory();
         }
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return gradleFactory;
     }
 
     @Override

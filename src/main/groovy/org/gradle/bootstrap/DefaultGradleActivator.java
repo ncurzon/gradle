@@ -21,6 +21,8 @@ public class DefaultGradleActivator implements BundleActivator {
     {
         this.bundleContext = bundleContext;
         this.gradleFactoryRegistration = bundleContext.registerService(GradleFactory.class.getName(), new DefaultGradleFactory(new DefaultLoggingConfigurer()), null);
+
+        System.out.println("GRADLE FACTORY SERVICE REGISTERED");
     }
 
     public ServiceReference getGradleFactoryReference()
