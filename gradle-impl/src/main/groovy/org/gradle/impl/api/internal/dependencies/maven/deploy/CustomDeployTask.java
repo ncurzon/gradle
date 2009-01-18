@@ -13,18 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
-import org.apache.maven.artifact.ant.InstallTask;
+import org.apache.maven.artifact.ant.DeployTask;
 import org.apache.maven.settings.Settings;
+import org.codehaus.plexus.PlexusContainer;
 
 /**
+ * We could also use reflection to get hold of the container property. But this would make it harder
+ * to use a Mock for this class.
+ *
  * @author Hans Dockter
  */
-public class CustomInstallTask extends InstallTask implements CustomInstallDeployTaskSupport {
+public class CustomDeployTask extends DeployTask implements CustomInstallDeployTaskSupport {
     @Override
     public synchronized Settings getSettings() {
-        return super.getSettings();   
+        return super.getSettings();
+    }
+    
+    @Override
+    public synchronized PlexusContainer getContainer() {
+        return super.getContainer();
     }
 
     @Override

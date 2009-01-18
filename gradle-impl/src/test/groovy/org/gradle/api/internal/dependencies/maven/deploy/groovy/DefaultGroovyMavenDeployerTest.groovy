@@ -24,12 +24,12 @@ import org.hamcrest.Matcher
 import org.gradle.api.dependencies.maven.PublishFilter
 import org.hamcrest.Description
 import java.lang.reflect.Proxy
-import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPomContainer
-import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPom
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPom
 import org.junit.Before
 import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainerTest
 import org.junit.Test
-import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
 import static org.junit.Assert.*
 import org.junit.runner.RunWith
 import org.jmock.integration.junit4.JMock

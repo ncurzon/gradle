@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
 /**
  * @author Hans Dockter
  */
-public class DefaultDeployTaskFactory implements DeployTaskFactory {
-    public CustomDeployTask createDeployTask() {
-        return new CustomDeployTask();
-    }
+public interface DeployTaskFactory {
+    CustomDeployTask createDeployTask();
 }

@@ -20,9 +20,9 @@ import org.codehaus.plexus.PlexusContainerException;
 import org.jmock.Expectations;
 import org.gradle.api.dependencies.maven.MavenResolver;
 import org.gradle.api.dependencies.maven.PomFilterContainer;
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenInstaller;
-import org.gradle.api.internal.dependencies.maven.deploy.CustomInstallTask;
-import org.gradle.api.internal.dependencies.maven.deploy.InstallTaskFactory;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.InstallTaskFactory;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomInstallTask;
 
 import java.io.File;
 import java.io.IOException;

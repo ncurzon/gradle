@@ -23,7 +23,7 @@ import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.DependencyManager;
 import org.gradle.impl.api.internal.dependencies.maven.DefaultMavenPom;
-import org.gradle.api.internal.dependencies.maven.deploy.DefaultArtifactPom;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPom;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import org.apache.ivy.core.module.descriptor.Artifact;
 import org.apache.ivy.core.module.descriptor.DefaultArtifact;

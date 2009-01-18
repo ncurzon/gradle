@@ -13,12 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.impl.api.internal.dependencies.maven;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
-import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPom;
 import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPom;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomFactory;
 import org.apache.ivy.core.module.descriptor.Artifact;
 
 import java.io.File;
@@ -26,8 +23,6 @@ import java.io.File;
 /**
  * @author Hans Dockter
  */
-public class DefaultArtifactPomFactory implements ArtifactPomFactory {
-    public ArtifactPom createArtifactPom(MavenPom pom, Artifact artifact, File artifactFile) {
-        return new DefaultArtifactPom(pom, artifact, artifactFile);
-    }
+public interface ArtifactPomFactory {
+    ArtifactPom createArtifactPom(MavenPom pom, Artifact artifact, File artifactFile);
 }

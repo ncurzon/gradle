@@ -13,13 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
+import org.apache.maven.artifact.ant.InstallTask;
 import org.apache.maven.settings.Settings;
 
 /**
  * @author Hans Dockter
  */
-public interface CustomInstallDeployTaskSupport {
-    Settings getSettings();
+public class CustomInstallTask extends InstallTask implements CustomInstallDeployTaskSupport {
+    @Override
+    public synchronized Settings getSettings() {
+        return super.getSettings();   
+    }
+
+    @Override
+    public void doExecute() {
+        LoggingHelper.injectLogger(getContainer(), getProject());
+        super.doExecute();
+    }
 }

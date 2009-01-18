@@ -13,16 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
-import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.Artifact;
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 
 import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Hans Dockter
  */
-public interface ArtifactPomFactory {
-    ArtifactPom createArtifactPom(MavenPom pom, Artifact artifact, File artifactFile);
+public interface ArtifactPomContainer {
+    void addArtifact(Artifact artifact, File src);
+
+    Map<File, File> createDeployableUnits(List<DependencyDescriptor> dependencies);
 }

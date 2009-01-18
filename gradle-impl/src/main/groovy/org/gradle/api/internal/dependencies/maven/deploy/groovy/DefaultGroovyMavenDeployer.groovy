@@ -20,11 +20,12 @@ import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.maven.GroovyMavenDeployer
 import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
 import org.gradle.api.dependencies.maven.MavenPom
-import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPomContainer
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployer
-import org.gradle.api.internal.dependencies.maven.deploy.ArtifactPomContainer
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployer
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
 
 /**
  * @author Hans Dockter

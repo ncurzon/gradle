@@ -18,14 +18,15 @@ package org.gradle.api.internal.dependencies.maven.deploy.groovy;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.util.ConfigureUtil
 import org.gradle.api.dependencies.maven.PublishFilter
-import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
 import org.gradle.impl.api.internal.dependencies.maven.MavenPomFactory
 import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
 import org.gradle.api.dependencies.maven.CopyablePomFilterContainer
 import org.gradle.api.dependencies.maven.CopyableGroovyPomFilterContainer
 import org.gradle.api.dependencies.maven.PomFilterContainer
-import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
 
 /**
  * @author Hans Dockter

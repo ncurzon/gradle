@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.PublishFilter;
-import org.gradle.api.internal.dependencies.maven.deploy.DefaultPomFilter;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultPomFilter;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.Expectations;
 

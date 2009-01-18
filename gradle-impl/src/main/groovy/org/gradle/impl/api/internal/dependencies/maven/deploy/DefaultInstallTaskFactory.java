@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies.maven.deploy;
-
-import org.apache.ivy.core.module.descriptor.Artifact;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
-import org.gradle.api.dependencies.maven.MavenPom;
-
-import java.io.File;
-import java.util.List;
+package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
 /**
  * @author Hans Dockter
  */
-public interface ArtifactPom {
-    Artifact getArtifact();
-
-    File getArtifactFile();
-
-    MavenPom getPom();
+public class DefaultInstallTaskFactory implements InstallTaskFactory {
+    public CustomInstallTask createInstallTask() {
+        return new CustomInstallTask();
+    }
 }

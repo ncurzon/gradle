@@ -19,7 +19,7 @@ import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.impl.api.internal.dependencies.maven.MavenPomFactory;
-import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.jmock.Expectations;
 import static org.junit.Assert.*;
