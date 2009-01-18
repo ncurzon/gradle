@@ -16,8 +16,8 @@
 package org.gradle.api.tasks.diagnostics;
 
 import org.gradle.api.Project;
-import org.gradle.api.dependencies.report.IvyDependencyGraph;
-import org.gradle.api.dependencies.report.IvyDependencyGraphBuilder;
+import org.gradle.impl.api.dependencies.report.IvyDependencyGraph;
+import org.gradle.impl.api.dependencies.report.IvyDependencyGraphBuilder;
 import org.gradle.api.internal.dependencies.BaseDependencyManager;
 import org.gradle.api.internal.dependencies.DefaultDependencyResolver;
 

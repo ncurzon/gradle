@@ -16,8 +16,8 @@
 package org.gradle.api.tasks.diagnostics;
 
 import org.gradle.api.Project;
-import org.gradle.api.dependencies.report.IvyDependency;
-import org.gradle.api.dependencies.report.IvyDependencyGraph;
+import org.gradle.impl.api.dependencies.report.IvyDependency;
+import org.gradle.impl.api.dependencies.report.IvyDependencyGraph;
 
 import java.io.IOException;
 import java.util.HashSet;
