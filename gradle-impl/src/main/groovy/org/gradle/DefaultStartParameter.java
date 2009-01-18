@@ -52,7 +52,7 @@ public class DefaultStartParameter implements StartParameter {
     private boolean searchUpwards;
     private Map<String, String> projectProperties = new HashMap<String, String>();
     private Map<String, String> systemPropertiesArgs = new HashMap<String, String>();
-    private File gradleUserHomeDir = new File(AbstractMain.DEFAULT_GRADLE_USER_HOME);
+    private File gradleUserHomeDir = new File(System.getProperty("user.home") + "/.gradle");
     private File defaultImportsFile;
     private File pluginPropertiesFile;
     private File gradleHomeDir;
@@ -157,10 +157,10 @@ public class DefaultStartParameter implements StartParameter {
     public void setGradleHomeDir(File gradleHomeDir) {
         this.gradleHomeDir = gradleHomeDir;
         if (defaultImportsFile == null) {
-            defaultImportsFile = new File(gradleHomeDir, AbstractMain.IMPORTS_FILE_NAME);
+            defaultImportsFile = new File(gradleHomeDir, Defaults.IMPORTS_FILE_NAME);
         }
         if (pluginPropertiesFile == null) {
-            pluginPropertiesFile = new File(gradleHomeDir, AbstractMain.DEFAULT_PLUGIN_PROPERTIES);
+            pluginPropertiesFile = new File(gradleHomeDir, Defaults.DEFAULT_PLUGIN_PROPERTIES);
         }
     }
 

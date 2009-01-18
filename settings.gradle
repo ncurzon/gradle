@@ -1,0 +1,1 @@
+include 'bootstrap', 'command-line-api', 'gradle-api', 'command-line-impl'

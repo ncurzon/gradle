@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle;
+package org.gradle.commandline.impl;
 
 import joptsimple.OptionException;
 import joptsimple.OptionParser;
@@ -30,65 +30,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.PrintStream;
+import java.io.InputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
+import java.util.Map;
+
+import static org.gradle.commandline.Options.*;
+import org.gradle.commandline.GradleCommandLine;
+import org.gradle.*;
 
 /**
  * @author Hans Dockter
  */
-public abstract class AbstractMain {
-    private static Logger logger = LoggerFactory.getLogger(AbstractMain.class);
+public class DefaultGradleCommandLine implements GradleCommandLine {
+    private static Logger logger = LoggerFactory.getLogger(DefaultGradleCommandLine.class);
 
     public static final String GRADLE_HOME_PROPERTY_KEY = "gradle.home";
     public static final String GRADLE_USER_HOME_PROPERTY_KEY = "gradle.user.home";
     public static final String DEFAULT_GRADLE_USER_HOME = System.getProperty("user.home") + "/.gradle";
-    public final static String DEFAULT_PLUGIN_PROPERTIES = "plugin.properties";
-    public final static String IMPORTS_FILE_NAME = "gradle-imports";
     public final static String NL = System.getProperty("line.separator");
 
-    private static final String NO_SEARCH_UPWARDS = "u";
-    private static final String PROJECT_DIR = "p";
-    private static final String PLUGIN_PROPERTIES_FILE = "l";
-    private static final String DEFAULT_IMPORT_FILE = "K";
-    private static final String BUILD_FILE = "b";
-    private static final String SETTINGS_FILE = "c";
-    private static final String TASKS = "t";
-    private static final String PROPERTIES = "r";
-    private static final String DEPENDENCIES = "n";
-    public static final String DEBUG = "d";
-    private static final String INFO = "i";
-    private static final String QUIET = "q";
-    public static final String FULL_STACKTRACE = "f";
-    public static final String STACKTRACE = "s";
-    private static final String SYSTEM_PROP = "D";
-    private static final String PROJECT_PROP = "P";
-    private static final String NO_DEFAULT_IMPORTS = "I";
-    private static final String GRADLE_USER_HOME = "g";
-    private static final String EMBEDDED_SCRIPT = "e";
-    private static final String VERSION = "v";
-    private static final String CACHE = "C";
-    private static final String HELP = "h";
-    private static final String MERGED_BUILD = "m";
-
-    private final String[] args;
-    protected BuildCompleter buildCompleter = new ProcessExitBuildCompleter();
+    private final GradleFactory gradleFactory;
     protected BuildResultLogger resultLogger;
     protected BuildExceptionReporter exceptionReporter;
-    protected GradleFactory gradleFactory;
 
-    public AbstractMain(String[] args) {
-        this.args = args;
+    public DefaultGradleCommandLine(GradleFactory gradleFactory) {
+        this.gradleFactory = gradleFactory;
     }
 
-    void setBuildCompleter(BuildCompleter buildCompleter) {
-        this.buildCompleter = buildCompleter;
-    }
-
-    protected abstract GradleFactory getGradleFactory();
-
-
-    public void execute() throws Exception {
-        gradleFactory = getGradleFactory();
-
+    public int runGradle(String[] args, Properties properties, Map<String, String> env, InputStream in, PrintStream out, PrintStream err) {
         resultLogger = new BuildResultLogger(logger);
         exceptionReporter = new BuildExceptionReporter(logger);
 
@@ -124,29 +96,40 @@ public abstract class AbstractMain {
 
         OptionSet options = null;
         try {
-            options = parser.parse(args);
-        } catch (OptionException e) {
-            System.err.println(e.getMessage());
-            parser.printHelpOn(System.err);
-            buildCompleter.exit(e);
+            try {
+                options = parser.parse(args);
+            } catch (OptionException e) {
+                err.println(e.getMessage());
+                parser.printHelpOn(err);
+
+                return 1;
+            }
+
+            exceptionReporter.setOptions(options);
+
+            if (options.has(HELP)) {
+                parser.printHelpOn(out);
+
+                return 0;
+            }
         }
+        catch ( IOException e ) {
+            e.printStackTrace(err);
 
-        exceptionReporter.setOptions(options);
-
-        if (options.has(HELP)) {
-            parser.printHelpOn(System.out);
-            buildCompleter.exit(null);
+            return 1;
         }
 
         if (options.has(VERSION)) {
-            System.out.println(new GradleVersion().prettyPrint());
-            buildCompleter.exit(null);
+            out.println(new GradleVersion().prettyPrint());
+
+            return 0;
         }
 
         String gradleHome = System.getProperty(GRADLE_HOME_PROPERTY_KEY);
         if (!GUtil.isTrue(gradleHome)) {
-            System.err.println("The gradle.home property is not set. Please set it and try again.");
-            buildCompleter.exit(new InvalidUserDataException());
+            err.println("The gradle.home property is not set. Please set it and try again.");
+
+            return 1;
         }
         startParameter.setGradleHomeDir(new File(gradleHome));
 
@@ -177,8 +160,14 @@ public abstract class AbstractMain {
         if (options.has(PROJECT_DIR)) {
             startParameter.setCurrentDir(new File(options.argumentOf(PROJECT_DIR)));
             if (!startParameter.getCurrentDir().isDirectory()) {
-                System.err.println("Error: Directory " + startParameter.getCurrentDir().getCanonicalFile() + " does not exist!");
-                buildCompleter.exit(new InvalidUserDataException());
+                try {
+                    err.println("Error: Directory " + startParameter.getCurrentDir().getCanonicalFile() + " does not exist!");
+                }
+                catch ( IOException e ) {
+                    err.println("Error: Directory " + startParameter.getCurrentDir().getAbsolutePath() + " does not exist!");
+                }
+
+                return 1;
             }
         }
 
@@ -199,23 +188,24 @@ public abstract class AbstractMain {
             try {
                 startParameter.setCacheUsage(CacheUsage.fromString(options.valueOf(CACHE).toString()));
             } catch (InvalidUserDataException e) {
-                System.err.println(e.getMessage());
-                buildCompleter.exit(e);
+                err.println(e.getMessage());
+
+                return 1;
             }
         }
 
         if (options.has(EMBEDDED_SCRIPT)) {
             if (options.has(BUILD_FILE) || options.has(NO_SEARCH_UPWARDS) || options.has(SETTINGS_FILE)) {
-                System.err.println(String.format("Error: The -%s option can't be used together with the -%s, -%s or -%s options.",
-                        EMBEDDED_SCRIPT, BUILD_FILE, SETTINGS_FILE, NO_SEARCH_UPWARDS));
-                buildCompleter.exit(new InvalidUserDataException());
+                err.println(String.format("Error: The -%s option can't be used together with the -%s, -%s or -%s options.", EMBEDDED_SCRIPT, BUILD_FILE, SETTINGS_FILE, NO_SEARCH_UPWARDS));
+                return 1;
             }
             startParameter.useEmbeddedBuildFile(options.argumentOf(EMBEDDED_SCRIPT));
         }
 
         if (options.has(TASKS) && options.has(PROPERTIES)) {
-            System.err.println(String.format("Error: The -%s and -%s options cannot be used together.", TASKS, PROPERTIES));
-            buildCompleter.exit(new InvalidUserDataException());
+            err.println(String.format("Error: The -%s and -%s options cannot be used together.", TASKS, PROPERTIES));
+
+            return 1;
         }
         if (options.has(TASKS)) {
             startParameter.setProcessMode(ProcessMode.TASKS);
@@ -228,24 +218,42 @@ public abstract class AbstractMain {
         }
         startParameter.setMergedBuild(options.has(MERGED_BUILD));
 
-        startParameter.setLogLevel(getLogLevel(options));
+        try {
+            startParameter.setLogLevel(getLogLevel(options, err));
+        }
+        catch ( InvalidUserDataException e ) {
+            return 1;
+        }
 
-        doWithStartParameter(startParameter);
+        try {
+            final Gradle gradle = gradleFactory.newInstance(startParameter);
+
+            gradle.addBuildListener(exceptionReporter);
+            gradle.addBuildListener(resultLogger);
+
+            final BuildResult buildResult = gradle.run();
+            if (buildResult.getFailure() != null) {
+                return 1;
+            }
+        } catch (Throwable e) {
+            exceptionReporter.buildFinished(new DefaultBuildResult(null, e));
+            return 1;
+        }
+
+        return 0;
     }
 
-    protected abstract void doWithStartParameter(StartParameter startParameter);
-
-    private static LogLevel getLogLevel(OptionSet options) throws Exception {
+    private static LogLevel getLogLevel(OptionSet options, PrintStream err) {
         LogLevel logLevel = null;
         if (options.has(QUIET)) {
             logLevel = LogLevel.QUIET;
         }
         if (options.has(INFO)) {
-            quitWithErrorIfLogLevelAlreadyDefined(logLevel, INFO);
+            quitWithErrorIfLogLevelAlreadyDefined(logLevel, INFO, err);
             logLevel = LogLevel.INFO;
         }
         if (options.has(DEBUG)) {
-            quitWithErrorIfLogLevelAlreadyDefined(logLevel, DEBUG);
+            quitWithErrorIfLogLevelAlreadyDefined(logLevel, DEBUG, err);
             logLevel = LogLevel.DEBUG;
         }
         if (logLevel == null) {
@@ -254,21 +262,10 @@ public abstract class AbstractMain {
         return logLevel;
     }
 
-    private static void quitWithErrorIfLogLevelAlreadyDefined(LogLevel logLevel, String option) {
+    private static void quitWithErrorIfLogLevelAlreadyDefined(LogLevel logLevel, String option, PrintStream err) {
         if (logLevel != null) {
-            System.err.println(String.format("Error: The log level is already defined by another option. Therefore the option %s is invalid.",
-                    option));
+            err.println(String.format("Error: The log level is already defined by another option. Therefore the option %s is invalid.", option));
             throw new InvalidUserDataException();
-        }
-    }
-
-    public interface BuildCompleter {
-        void exit(Throwable failure);
-    }
-
-    private static class ProcessExitBuildCompleter implements BuildCompleter {
-        public void exit(Throwable failure) {
-            System.exit(failure == null ? 0 : 1);
         }
     }
 }

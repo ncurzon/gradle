@@ -1,0 +1,16 @@
+usePlugin('java');
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+version = '0.6'
+group = 'org.gradle'
+
+usePlugin('osgi');
+
+configure(project.archive_jar.osgi) {
+      instruction 'Export-Package',
+              'org.gradle.commandline'
+      instruction 'Bundle-Vendor', 'gradle.org'
+      instruction 'Bundle-Description', 'Gradle command line api bundle'
+      instruction 'Bundle-DocURL', 'http://www.gradle.org'
+}

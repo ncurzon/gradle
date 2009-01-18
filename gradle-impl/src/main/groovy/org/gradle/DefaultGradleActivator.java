@@ -1,4 +1,4 @@
-package org.gradle.bootstrap;
+package org.gradle;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

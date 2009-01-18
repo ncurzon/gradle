@@ -26,6 +26,7 @@ import org.gradle.util.GUtil;
 import joptsimple.OptionSet;
 
 import java.util.Formatter;
+import static org.gradle.commandline.Options.*;
 
 /**
  * A {@link BuildListener} which reports the build exception, if any.
@@ -75,22 +76,22 @@ public class BuildExceptionReporter implements BuildListener {
         formatter.format("%n");
         formatter.format("Build aborted because of an internal error.%n");
         formatter.format("Run with -%s option to get additonal debug info. Please file an issue at: www.gradle.org",
-                AbstractMain.DEBUG);
+                DEBUG);
         formatter.format("%n");
         logger.error(formatter.toString(), failure);
     }
 
     private void reportBuildFailure(GradleException failure) {
-        boolean stacktrace = options != null && (options.has(AbstractMain.STACKTRACE) || options.has(AbstractMain.DEBUG));
-        boolean fullStacktrace = options != null && (options.has(AbstractMain.FULL_STACKTRACE));
+        boolean stacktrace = options != null && (options.has(STACKTRACE) || options.has(DEBUG));
+        boolean fullStacktrace = options != null && (options.has(FULL_STACKTRACE));
 
         Formatter formatter = new Formatter();
         formatter.format("%nBuild failed with an exception.%n");
         if (!fullStacktrace) {
             if (!stacktrace) {
-                formatter.format("Run with -%s or -%s option to get more details. ", AbstractMain.STACKTRACE, AbstractMain.DEBUG);
+                formatter.format("Run with -%s or -%s option to get more details. ", STACKTRACE, DEBUG);
             }
-            formatter.format("Run with -%s option to get the full (very verbose) stacktrace.%n", AbstractMain.FULL_STACKTRACE);
+            formatter.format("Run with -%s option to get the full (very verbose) stacktrace.%n", FULL_STACKTRACE);
         }
         formatter.format("%n");
 
