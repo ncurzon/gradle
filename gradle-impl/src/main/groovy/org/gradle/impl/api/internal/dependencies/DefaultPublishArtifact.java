@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.ivy.core.module.descriptor.Artifact;
 import org.apache.ivy.core.module.descriptor.DefaultArtifact;
@@ -23,7 +23,6 @@ import org.gradle.api.DependencyManager;
 import org.gradle.api.Transformer;
 import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.dependencies.PublishArtifact;
-import org.gradle.api.dependencies.IvyObjectBuilder;
 import org.gradle.util.WrapUtil;
 import org.gradle.util.GUtil;
 

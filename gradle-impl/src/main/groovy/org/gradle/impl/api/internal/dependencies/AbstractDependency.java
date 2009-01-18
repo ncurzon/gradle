@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.gradle.api.UnknownDependencyNotation;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Transformer;
 import org.gradle.api.internal.ChainingTransformer;
+import org.gradle.api.internal.dependencies.DependencyDescriptorFactory;
+import org.gradle.api.internal.dependencies.DefaultDependencyDescriptorFactory;
+import org.gradle.api.internal.dependencies.DefaultExcludeRuleContainer;
 import org.gradle.api.dependencies.Dependency;
 import org.gradle.api.dependencies.ExcludeRuleContainer;
 import org.gradle.api.dependencies.DependencyConfigurationMappingContainer;
 import org.gradle.api.dependencies.Artifact;
-import org.gradle.api.dependencies.IvyObjectBuilder;
 import org.gradle.util.ConfigureUtil;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 

@@ -23,7 +23,7 @@ import org.apache.ivy.core.module.id.ModuleId
 import org.apache.ivy.core.module.id.ModuleRevisionId
 import org.apache.ivy.plugins.matcher.ExactPatternMatcher
 import org.apache.ivy.plugins.matcher.PatternMatcher
-import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory
 import org.gradle.api.internal.project.*
 import org.gradle.impl.groovy.scripts.EmptyScript
 import org.gradle.util.GradleUtil

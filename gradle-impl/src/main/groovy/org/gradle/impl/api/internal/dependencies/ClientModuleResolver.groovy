@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies
+package org.gradle.impl.api.internal.dependencies
 
 import org.apache.ivy.core.IvyContext
 import org.apache.ivy.core.module.descriptor.Artifact

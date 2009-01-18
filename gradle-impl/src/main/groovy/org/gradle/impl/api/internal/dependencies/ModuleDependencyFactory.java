@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.gradle.api.Project;
 import org.gradle.api.dependencies.Dependency;
 import org.gradle.api.dependencies.DependencyConfigurationMappingContainer;
-import org.gradle.api.internal.dependencies.DefaultModuleDependency;
-
-import java.util.Set;
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
+import org.gradle.api.internal.dependencies.IDependencyImplementationFactory;
 
 /**
  * @author Hans Dockter

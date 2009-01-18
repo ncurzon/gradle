@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor;
@@ -27,6 +27,7 @@ import org.apache.ivy.plugins.latest.LatestRevisionStrategy;
 import org.apache.ivy.plugins.matcher.ExactPatternMatcher;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.internal.dependencies.ivy.IvyUtil;
+import org.gradle.api.internal.dependencies.DependencyManagerInternal;
 import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.Transformer;
 import org.gradle.api.dependencies.*;

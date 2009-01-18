@@ -17,9 +17,9 @@
 package org.gradle.impl.initialization;
 
 import org.gradle.StartParameter;
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.initialization.IProjectDescriptorRegistry;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.api.internal.SettingsInternal;
 
 import java.io.File;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import groovy.lang.Closure;
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager;

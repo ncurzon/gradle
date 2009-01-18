@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.commons.httpclient.HttpsURL;
 import org.apache.ivy.plugins.repository.url.URLRepository;

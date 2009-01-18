@@ -19,7 +19,7 @@ package org.gradle.api.internal.dependencies
 import org.apache.ivy.core.settings.IvySettings
 import org.apache.ivy.plugins.resolver.ChainResolver
 import org.apache.ivy.plugins.resolver.IBiblioResolver
-import org.gradle.api.internal.dependencies.DefaultSettingsConverter
+import org.gradle.impl.api.internal.dependencies.DefaultSettingsConverter
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
 import org.apache.ivy.plugins.resolver.FileSystemResolver
 import org.gradle.api.DependencyManager
@@ -34,6 +34,7 @@ import static org.hamcrest.Matchers.sameInstance
 import org.gradle.util.JUnit4GroovyMockery
 import org.jmock.lib.legacy.ClassImposteriser
 import org.gradle.api.Transformer
+import org.gradle.impl.api.internal.dependencies.ClientModuleResolver
 
 /**
  * @author Hans Dockter

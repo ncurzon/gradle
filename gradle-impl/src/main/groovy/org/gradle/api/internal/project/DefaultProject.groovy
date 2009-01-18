@@ -20,7 +20,7 @@ import org.gradle.api.AfterEvaluateListener
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.util.ConfigureUtil
 import org.gradle.api.internal.BuildInternal

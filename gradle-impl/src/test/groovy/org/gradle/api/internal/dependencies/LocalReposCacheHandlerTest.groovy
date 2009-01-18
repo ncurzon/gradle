@@ -20,7 +20,8 @@ import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
 import org.apache.ivy.plugins.lock.NoLockStrategy
 import org.gradle.api.DependencyManager
 import static org.junit.Assert.*
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.internal.dependencies.LocalReposCacheHandler;
 
 /**
  * @author Hans Dockter

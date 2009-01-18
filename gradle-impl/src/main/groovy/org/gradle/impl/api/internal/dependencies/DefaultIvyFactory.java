@@ -1,5 +1,5 @@
 /*
- * Copyright 2007 the original author or authors.
+ * Copyright 2007-2008 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.gradle.impl.api.internal.dependencies;
 
-package org.gradle.api.internal.dependencies;
-
-import org.gradle.api.DependencyManager;
-import org.gradle.api.Project;
-
-import java.io.File;
+import org.apache.ivy.Ivy;
+import org.apache.ivy.core.settings.IvySettings;
 
 /**
  * @author Hans Dockter
  */
-public interface DependencyManagerFactory {
-    DependencyManager createDependencyManager(Project project);
+public class DefaultIvyFactory implements IIvyFactory {
+    public Ivy createIvy(IvySettings ivySettings) {
+        return Ivy.newInstance(ivySettings);
+    }
 }

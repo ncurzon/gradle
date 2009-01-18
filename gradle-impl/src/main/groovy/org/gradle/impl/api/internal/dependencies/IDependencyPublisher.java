@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
-import org.apache.ivy.Ivy;
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
+import org.apache.ivy.core.publish.PublishEngine;
+import org.gradle.api.dependencies.ResolverContainer;
+import org.gradle.api.DependencyManager;
 
 import java.io.File;
 import java.util.List;
@@ -24,6 +26,12 @@ import java.util.List;
 /**
  * @author Hans Dockter
  */
-public interface IDependencyResolver {
-    List<File> resolve(String conf, Ivy ivy, ModuleDescriptor moduleDescriptor, boolean failForMissingDependencies);
+public interface IDependencyPublisher {
+    void publish(List<String> configurations,
+                 ResolverContainer resolvers,
+                 ModuleDescriptor moduleDescriptor,
+                 boolean uploadModuleDescriptor,
+                 File parentDir,
+                 DependencyManager dependencyManager,
+                 PublishEngine publishEngine);
 }

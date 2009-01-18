@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies
+package org.gradle.impl.api.internal.dependencies
 
 import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.Configuration
@@ -23,6 +23,8 @@ import org.gradle.api.dependencies.SettingsConverter
 import org.gradle.util.WrapUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.gradle.api.internal.dependencies.DependencyFactory
+import org.gradle.api.internal.dependencies.ResolverFactory
 
 
 /**

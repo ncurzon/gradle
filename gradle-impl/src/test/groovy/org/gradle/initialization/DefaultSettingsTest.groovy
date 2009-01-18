@@ -23,7 +23,7 @@ import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.dependencies.ResolverContainer
 import org.gradle.api.initialization.ProjectDescriptor
-import org.gradle.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.initialization.DefaultProjectDescriptor
 import org.gradle.util.JUnit4GroovyMockery

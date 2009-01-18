@@ -24,6 +24,7 @@ import org.gradle.api.DependencyManager;
 import org.gradle.util.HelperUtil;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.gradle.util.WrapUtil;
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyPublisher;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;

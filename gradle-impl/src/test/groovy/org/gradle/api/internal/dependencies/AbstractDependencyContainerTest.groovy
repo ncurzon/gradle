@@ -26,6 +26,8 @@ import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
 
 /**
  * @author Hans Dockter

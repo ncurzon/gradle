@@ -24,6 +24,8 @@ import org.gradle.api.dependencies.Artifact;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
 import org.gradle.util.GUtil;
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertSame;

@@ -18,7 +18,6 @@ package org.gradle.api.internal.dependencies;
 
 import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.apache.ivy.core.module.descriptor.DefaultDependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
@@ -28,9 +27,10 @@ import org.gradle.api.internal.project.AbstractProject;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
+import org.gradle.impl.api.internal.dependencies.AbstractDependency;
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
-import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
@@ -42,7 +42,6 @@ import org.junit.runner.RunWith;
 import java.awt.*;
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

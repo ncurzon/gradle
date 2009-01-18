@@ -17,6 +17,7 @@
 package org.gradle.api.internal.dependencies;
 
 import org.gradle.CacheUsage;
+import org.gradle.impl.api.internal.dependencies.*;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
 import org.gradle.api.internal.project.DefaultProject;

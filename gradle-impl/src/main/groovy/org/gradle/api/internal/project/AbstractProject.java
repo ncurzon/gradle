@@ -21,7 +21,7 @@ import groovy.util.AntBuilder;
 import org.apache.commons.lang.StringUtils;
 import org.gradle.api.*;
 import org.gradle.api.internal.*;
-import org.gradle.api.internal.dependencies.DependencyManagerFactory;
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.api.plugins.Convention;

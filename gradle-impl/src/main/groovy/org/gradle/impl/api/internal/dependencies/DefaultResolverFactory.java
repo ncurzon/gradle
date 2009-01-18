@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager;
 import org.apache.ivy.core.cache.RepositoryCacheManager;
@@ -31,6 +31,7 @@ import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenInstaller;
 import org.gradle.api.internal.dependencies.maven.deploy.DefaultArtifactPomContainer;
 import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenDeployer;
 import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer;
+import org.gradle.api.internal.dependencies.ResolverFactory;
 
 import java.io.File;
 import java.util.Map;

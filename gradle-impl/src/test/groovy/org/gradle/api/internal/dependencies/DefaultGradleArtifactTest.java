@@ -25,6 +25,7 @@ import org.gradle.api.Transformer;
 import org.gradle.util.WrapUtil;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.gradle.util.HelperUtil;
+import org.gradle.impl.api.internal.dependencies.DefaultPublishArtifact;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;

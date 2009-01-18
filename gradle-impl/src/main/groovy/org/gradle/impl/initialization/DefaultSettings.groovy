@@ -17,7 +17,7 @@
 package org.gradle.impl.initialization
 
 import org.gradle.impl.DefaultStartParameter
-import org.gradle.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultStartParameter

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.util.WrapUtil;

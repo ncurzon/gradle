@@ -24,8 +24,8 @@ import org.apache.ivy.plugins.matcher.ExactPatternMatcher
 import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.ExcludeRuleContainer
 import org.gradle.api.dependencies.PublishArtifact
-import org.gradle.api.internal.dependencies.DefaultModuleDescriptorConverter
-import org.gradle.api.internal.dependencies.DefaultProjectDependency
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
 import org.gradle.api.internal.project.DefaultProject
 import org.gradle.util.JUnit4GroovyMockery
 import org.hamcrest.Matchers
@@ -33,6 +33,10 @@ import org.jmock.lib.legacy.ClassImposteriser
 import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.gradle.impl.api.internal.dependencies.BaseDependencyManager
+import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
 
 /**
  * @author Hans Dockter

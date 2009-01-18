@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import groovy.lang.Closure;
 import org.apache.ivy.Ivy;
@@ -27,6 +27,10 @@ import org.apache.ivy.plugins.resolver.*;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Transformer;
+import org.gradle.api.internal.dependencies.DefaultDependencyContainer;
+import org.gradle.api.internal.dependencies.DependencyManagerInternal;
+import org.gradle.api.internal.dependencies.ResolverFactory;
+import org.gradle.api.internal.dependencies.DependencyFactory;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import org.gradle.api.dependencies.*;

@@ -46,6 +46,13 @@ import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor
 import org.gradle.api.Transformer
 import org.apache.ivy.core.module.id.ModuleId
 import org.gradle.api.Transformer
+import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyManager
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
+import org.gradle.impl.api.internal.dependencies.DefaultSettingsConverter
+import org.gradle.impl.api.internal.dependencies.IDependencyPublisher
+import org.gradle.impl.api.internal.dependencies.IDependencyResolver
+import org.gradle.impl.api.internal.dependencies.IIvyFactory
 
 /**
  * @author Hans Dockter

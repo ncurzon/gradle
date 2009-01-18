@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2008 the original author or authors.
+ * Copyright 2007 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal.dependencies;
 
-import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
-import org.apache.ivy.core.publish.PublishEngine;
-import org.gradle.api.dependencies.ResolverContainer;
+package org.gradle.impl.api.internal.dependencies;
+
 import org.gradle.api.DependencyManager;
+import org.gradle.api.Project;
 
 import java.io.File;
-import java.util.List;
 
 /**
  * @author Hans Dockter
  */
-public interface IDependencyPublisher {
-    void publish(List<String> configurations,
-                 ResolverContainer resolvers,
-                 ModuleDescriptor moduleDescriptor,
-                 boolean uploadModuleDescriptor,
-                 File parentDir,
-                 DependencyManager dependencyManager,
-                 PublishEngine publishEngine);
+public interface DependencyManagerFactory {
+    DependencyManager createDependencyManager(Project project);
 }

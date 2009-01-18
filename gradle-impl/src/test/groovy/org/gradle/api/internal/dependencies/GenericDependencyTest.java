@@ -18,6 +18,8 @@ package org.gradle.api.internal.dependencies;
 import org.gradle.api.dependencies.*;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
+import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;

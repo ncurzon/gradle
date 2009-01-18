@@ -1,9 +1,10 @@
-package org.gradle.api.internal.dependencies;
+package org.gradle.impl.api.internal.dependencies;
 
 import static org.apache.ivy.core.module.descriptor.Configuration.*;
 import org.gradle.api.dependencies.Configuration;
 import org.gradle.api.Transformer;
 import org.gradle.api.internal.ChainingTransformer;
+import org.gradle.api.internal.dependencies.DependencyManagerInternal;
 
 import java.io.File;
 import java.util.Arrays;

@@ -29,7 +29,8 @@ import org.apache.ivy.plugins.resolver.RepositoryResolver
 import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.apache.ivy.plugins.resolver.BasicResolver;
+import org.apache.ivy.plugins.resolver.BasicResolver
+import org.gradle.impl.api.internal.dependencies.DefaultResolverFactory;
 
 /**
  * @author Hans Dockter

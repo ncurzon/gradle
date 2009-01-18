@@ -24,7 +24,9 @@ import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*
 import org.gradle.util.JUnit4GroovyMockery
-import org.jmock.lib.legacy.ClassImposteriser;
+import org.jmock.lib.legacy.ClassImposteriser
+import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
+import org.gradle.impl.api.internal.dependencies.LocalReposCacheHandler;
 
 /**
  * @author Hans Dockter

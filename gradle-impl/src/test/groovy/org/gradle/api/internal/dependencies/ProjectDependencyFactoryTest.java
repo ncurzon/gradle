@@ -16,12 +16,11 @@
 package org.gradle.api.internal.dependencies;
 
 import org.gradle.api.Project;
-import org.gradle.api.dependencies.ProjectDependency;
-import org.gradle.api.internal.dependencies.DefaultProjectDependency;
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.gradle.util.WrapUtil;
-import org.jmock.Expectations;
+import org.gradle.impl.api.internal.dependencies.ProjectDependencyFactory;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
 import static org.junit.Assert.assertEquals;

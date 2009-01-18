@@ -16,8 +16,8 @@
 package org.gradle.impl;
 
 import org.gradle.api.internal.project.*;
-import org.gradle.api.internal.dependencies.DependencyManagerFactory;
-import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory;
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.groovy.scripts.*;
 import org.gradle.initialization.*;

@@ -20,8 +20,8 @@ import groovy.mock.interceptor.MockFor
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
-import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
-import org.gradle.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.api.internal.project.ImportsReader
 import org.gradle.groovy.scripts.*
 import org.gradle.impl.initialization.DefaultSettings
