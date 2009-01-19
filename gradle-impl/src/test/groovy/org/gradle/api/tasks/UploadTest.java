@@ -20,6 +20,7 @@ import groovy.mock.interceptor.MockFor;
 import org.gradle.api.DependencyManager;
 import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.impl.api.internal.project.AbstractProject;
+import org.gradle.impl.api.tasks.Upload;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
 import org.jmock.Expectations;

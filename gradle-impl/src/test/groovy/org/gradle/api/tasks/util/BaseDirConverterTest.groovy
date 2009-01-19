@@ -23,7 +23,8 @@ import org.gradle.util.HelperUtil
 import org.junit.Before
 import static org.junit.Assert.*
 import org.junit.Test
-import org.junit.After;
+import org.junit.After
+import org.gradle.impl.api.tasks.util.BaseDirConverter;
 
 
 /**

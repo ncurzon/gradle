@@ -16,7 +16,7 @@
 
 package org.gradle.wrapper
 
-import org.gradle.api.tasks.wrapper.Wrapper.PathBase
+import org.gradle.impl.api.tasks.wrapper.Wrapper.PathBase
 import org.gradle.util.HelperUtil
 import org.junit.After
 import static org.junit.Assert.assertEquals

@@ -28,6 +28,8 @@ import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.api.Project;
 import org.gradle.util.GUtil;
 import static org.gradle.util.WrapUtil.*;
+import org.gradle.impl.api.tasks.diagnostics.PropertyReportRenderer;
+import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
 
 import java.util.Collections;
 import java.io.IOException;

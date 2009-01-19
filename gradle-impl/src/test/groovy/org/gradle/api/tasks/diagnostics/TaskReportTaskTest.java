@@ -22,6 +22,8 @@ import org.gradle.api.plugins.Convention;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
 import static org.gradle.util.WrapUtil.*;
+import org.gradle.impl.api.tasks.diagnostics.TaskReportRenderer;
+import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
 import org.jmock.Expectations;
 import org.jmock.Sequence;
 import org.jmock.integration.junit4.JMock;

@@ -21,7 +21,8 @@ import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import java.util.jar.Attributes
-import hidden.org.codehaus.plexus.util.StringOutputStream;
+import hidden.org.codehaus.plexus.util.StringOutputStream
+import org.gradle.impl.api.tasks.bundling.GradleManifest;
 
 /**
  * @author Hans Dockter

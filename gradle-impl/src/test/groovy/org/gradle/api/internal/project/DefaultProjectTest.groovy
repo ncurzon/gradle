@@ -27,10 +27,10 @@ import org.gradle.api.invocation.Build
 import org.gradle.api.logging.LogLevel
 import org.gradle.impl.api.logging.StandardOutputLogging
 import org.gradle.api.plugins.Convention
-import org.gradle.api.plugins.JavaPlugin
+import org.gradle.impl.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginTest
-import org.gradle.api.tasks.Directory
-import org.gradle.api.tasks.util.BaseDirConverter
+import org.gradle.impl.api.tasks.Directory
+import org.gradle.impl.api.tasks.util.BaseDirConverter
 import org.gradle.impl.groovy.scripts.EmptyScript
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.impl.invocation.DefaultBuild
@@ -56,6 +56,8 @@ import org.gradle.impl.api.internal.project.ITaskFactory
 import org.gradle.impl.api.internal.project.ProjectFactory
 import org.gradle.impl.api.internal.project.StandardOutputRedirector
 import org.gradle.impl.api.internal.DefaultTask
+import org.gradle.impl.api.tasks.Directory
+import org.gradle.impl.api.tasks.util.BaseDirConverter
 
 /**
  * @author Hans Dockter

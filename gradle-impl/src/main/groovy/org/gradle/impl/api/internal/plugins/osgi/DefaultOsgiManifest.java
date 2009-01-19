@@ -16,8 +16,8 @@
 package org.gradle.impl.api.internal.plugins.osgi;
 
 import aQute.lib.osgi.Analyzer;
-import org.gradle.api.plugins.osgi.OsgiManifest;
-import org.gradle.api.tasks.bundling.GradleManifest;
+import org.gradle.impl.api.plugins.osgi.OsgiManifest;
+import org.gradle.impl.api.tasks.bundling.GradleManifest;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
 

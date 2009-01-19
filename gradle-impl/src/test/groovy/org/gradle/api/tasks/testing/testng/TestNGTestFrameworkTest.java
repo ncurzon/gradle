@@ -1,12 +1,10 @@
 package org.gradle.api.tasks.testing.testng;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.lib.legacy.ClassImposteriser;
 import org.jmock.Expectations;
-import org.gradle.util.JUnit4GroovyMockery;
-import org.gradle.api.Project;
-import org.gradle.api.tasks.testing.Test;
 import org.gradle.api.tasks.testing.AbstractTestFrameworkTest;
+import org.gradle.impl.api.tasks.testing.testng.AntTestNGExecute;
+import org.gradle.impl.api.tasks.testing.testng.TestNGOptions;
+import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework;
 import org.junit.Before;
 import static org.junit.Assert.*;
 import groovy.util.AntBuilder;

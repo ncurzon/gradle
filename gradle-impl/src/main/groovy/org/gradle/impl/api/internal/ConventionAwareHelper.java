@@ -19,7 +19,7 @@ package org.gradle.impl.api.internal;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Task;
 import org.gradle.api.plugins.Convention;
-import org.gradle.api.tasks.ConventionValue;
+import org.gradle.impl.api.tasks.ConventionValue;
 import org.gradle.util.ReflectionUtil;
 
 import java.util.HashMap;

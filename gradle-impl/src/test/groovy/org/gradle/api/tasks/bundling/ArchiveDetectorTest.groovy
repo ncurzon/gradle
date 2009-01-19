@@ -16,11 +16,13 @@
 
 package org.gradle.api.tasks.bundling
 
-import org.gradle.api.tasks.util.ZipFileSet
-import org.gradle.api.tasks.util.TarFileSet
+import org.gradle.impl.api.tasks.util.ZipFileSet
+import org.gradle.impl.api.tasks.util.TarFileSet
 import static org.junit.Assert.*
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.tasks.bundling.ArchiveDetector
+import org.gradle.impl.api.tasks.util.TarFileSet
 
 /**
  * @author Hans Dockter

@@ -17,13 +17,16 @@
 package org.gradle.api.tasks.compile
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.api.tasks.util.ExistingDirsFilter
+import org.gradle.impl.api.tasks.util.ExistingDirsFilter
 import org.gradle.api.DependencyManager
 import org.gradle.api.tasks.AbstractConventionTaskTest
 import org.gradle.api.GradleScriptException
 import org.junit.Before
 import static org.junit.Assert.*
 import org.junit.Test
+import org.gradle.impl.api.tasks.compile.ClasspathConverter
+import org.gradle.impl.api.tasks.compile.Compile
+import org.gradle.impl.api.tasks.util.ExistingDirsFilter
 
 /**
  * @author Hans Dockter

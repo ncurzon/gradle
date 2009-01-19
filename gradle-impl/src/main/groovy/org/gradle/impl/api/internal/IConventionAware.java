@@ -16,7 +16,7 @@
 
 package org.gradle.impl.api.internal;
 
-import org.gradle.api.tasks.ConventionValue;
+import org.gradle.impl.api.tasks.ConventionValue;
 
 import java.util.Map;
 

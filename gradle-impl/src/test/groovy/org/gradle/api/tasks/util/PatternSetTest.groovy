@@ -17,6 +17,7 @@
 package org.gradle.api.tasks.util
 
 import org.junit.Before
+import org.gradle.impl.api.tasks.util.PatternSet
 
 /**
 * @author Hans Dockter

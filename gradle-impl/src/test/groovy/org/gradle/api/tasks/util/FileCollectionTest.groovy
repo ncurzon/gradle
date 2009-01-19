@@ -18,7 +18,8 @@ package org.gradle.api.tasks.util
 
 import org.junit.Before
 import org.junit.Test
-import static org.junit.Assert.*;
+import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.util.FileCollection;
 
 /**
  * @author Hans Dockter

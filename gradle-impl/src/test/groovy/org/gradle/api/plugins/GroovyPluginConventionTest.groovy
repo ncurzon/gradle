@@ -19,7 +19,9 @@ package org.gradle.api.plugins
 import static org.junit.Assert.*
 import static org.hamcrest.Matchers.*;
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.plugins.JavaPluginConvention
+import org.gradle.impl.api.plugins.GroovyPluginConvention;
 
 /**
  * @author Hans Dockter

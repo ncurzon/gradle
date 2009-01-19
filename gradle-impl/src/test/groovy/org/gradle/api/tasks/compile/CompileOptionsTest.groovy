@@ -18,7 +18,10 @@ package org.gradle.api.tasks.compile
 
 import org.junit.Before
 import org.junit.Test
-import static org.junit.Assert.*;
+import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.compile.CompileOptions
+import org.gradle.impl.api.tasks.compile.DebugOptions
+import org.gradle.impl.api.tasks.compile.ForkOptions;
 
 /**
  * @author Hans Dockter

@@ -16,10 +16,12 @@
  
 package org.gradle.api.tasks.bundling
 
-import org.gradle.api.tasks.util.FileSet
+import org.gradle.impl.api.tasks.util.FileSet
 import static org.junit.Assert.*
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
+import org.gradle.impl.api.tasks.bundling.AntZip
 
 /**
  * @author Hans Dockter

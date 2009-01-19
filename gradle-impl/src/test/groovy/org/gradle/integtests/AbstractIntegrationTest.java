@@ -91,7 +91,7 @@ public class AbstractIntegrationTest {
                 "import static org.hamcrest.Matchers.*");
 
         testFile("gradle-home/plugin.properties").writelns(
-                "groovy=org.gradle.api.plugins.GroovyPlugin"
+                "groovy=org.gradle.impl.api.plugins.GroovyPlugin"
         );
 
         parameter.setGradleUserHomeDir(testFile("user-home").asFile());

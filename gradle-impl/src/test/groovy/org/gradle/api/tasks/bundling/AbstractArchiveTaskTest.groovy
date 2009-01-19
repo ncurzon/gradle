@@ -23,16 +23,24 @@ import org.gradle.api.InvalidUserDataException
 import org.gradle.impl.api.internal.AbstractTask
 import org.gradle.impl.api.internal.dependencies.DefaultPublishArtifact
 import org.gradle.api.tasks.AbstractConventionTaskTest
-import org.gradle.api.tasks.util.AntDirective
-import org.gradle.api.tasks.util.FileCollection
-import org.gradle.api.tasks.util.FileSet
-import org.gradle.api.tasks.util.ZipFileSet
+import org.gradle.impl.api.tasks.util.AntDirective
+import org.gradle.impl.api.tasks.util.FileCollection
+import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.impl.api.tasks.util.ZipFileSet
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.gradle.impl.api.internal.AbstractTask
+import org.gradle.impl.api.tasks.bundling.ArchiveDetector
+import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask
+import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
+import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
+import org.gradle.impl.api.tasks.util.AntDirective
+import org.gradle.impl.api.tasks.util.FileCollection
+import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.impl.api.tasks.util.ZipFileSet
 
 /**
  * @author Hans Dockter

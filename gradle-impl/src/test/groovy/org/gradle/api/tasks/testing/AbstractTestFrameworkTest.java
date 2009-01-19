@@ -1,10 +1,10 @@
 package org.gradle.api.tasks.testing;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.Expectations;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.gradle.api.Project;
 import org.gradle.util.JUnit4GroovyMockery;
+import org.gradle.impl.api.tasks.testing.Test;
 
 import java.io.File;
 import java.util.List;

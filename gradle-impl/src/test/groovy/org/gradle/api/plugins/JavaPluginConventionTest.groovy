@@ -20,6 +20,8 @@ import org.gradle.api.InvalidUserDataException
 import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.gradle.impl.api.plugins.JavaPluginConvention
+import org.gradle.impl.api.plugins.BasePluginConvention
 
 /**
  * @author Hans Dockter

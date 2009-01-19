@@ -18,7 +18,9 @@ package org.gradle.api.tasks.bundling
 
 import static org.junit.Assert.*
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.tasks.bundling.AbstractAntArchive
+import org.gradle.impl.api.tasks.bundling.AntArchiveParameter;
 
 /**
  * @author Hans Dockter

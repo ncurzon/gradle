@@ -24,6 +24,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.After
 import org.gradle.impl.api.internal.AbstractTask
+import org.gradle.impl.api.tasks.Directory
 
 /**
  * @author Hans Dockter

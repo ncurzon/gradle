@@ -24,6 +24,8 @@ import static org.junit.Assert.*
 import org.junit.Test
 import org.gradle.api.dependencies.Dependency
 import org.gradle.api.internal.project.PluginRegistry
+import org.gradle.impl.api.plugins.JavaPlugin
+import org.gradle.impl.api.plugins.BasePlugin
 
 /**
  * @author Hans Dockter

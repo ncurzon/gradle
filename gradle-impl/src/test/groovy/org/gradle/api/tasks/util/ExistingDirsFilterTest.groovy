@@ -21,7 +21,8 @@ import org.gradle.api.tasks.StopActionException
 import org.gradle.util.HelperUtil
 import static org.junit.Assert.*
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
+import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 
 /**
  * @author Hans Dockter

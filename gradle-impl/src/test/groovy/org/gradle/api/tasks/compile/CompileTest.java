@@ -17,6 +17,8 @@
 package org.gradle.api.tasks.compile;
 
 import org.gradle.impl.api.internal.AbstractTask;
+import org.gradle.impl.api.tasks.compile.AntJavac;
+import org.gradle.impl.api.tasks.compile.Compile;
 import org.gradle.api.tasks.AbstractTaskTest;
 import org.jmock.Mockery;
 import org.jmock.Expectations;

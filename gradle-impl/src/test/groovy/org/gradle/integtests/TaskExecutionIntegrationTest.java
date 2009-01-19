@@ -79,10 +79,10 @@ public class TaskExecutionIntegrationTest extends AbstractIntegrationTest {
         testFile("settings.gradle").write("include ('a', 'b')");
         testFile("a/build.gradle").writelns(
                 "dependsOn(':b')",
-                "createTask('libs', type: org.gradle.api.tasks.bundling.Bundle)",
+                "createTask('libs', type: org.gradle.impl.api.tasks.bundling.Bundle)",
                 // todo - should not have to do these next 2 lines
                 "version = 'none'",
-                "libs.defaultArchiveTypes = org.gradle.api.plugins.JavaPluginConvention.DEFAULT_ARCHIVE_TYPES",
+                "libs.defaultArchiveTypes = org.gradle.impl.api.plugins.JavaPluginConvention.DEFAULT_ARCHIVE_TYPES",
                 "libs {",
                 "    zip() {",
                 "        destinationDir = file('something.zip')",

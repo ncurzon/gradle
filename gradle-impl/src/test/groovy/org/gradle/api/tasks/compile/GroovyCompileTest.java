@@ -17,6 +17,10 @@
 package org.gradle.api.tasks.compile;
 
 import org.gradle.impl.api.internal.AbstractTask;
+import org.gradle.impl.api.tasks.compile.AntGroovyc;
+import org.gradle.impl.api.tasks.compile.AntJavac;
+import org.gradle.impl.api.tasks.compile.Compile;
+import org.gradle.impl.api.tasks.compile.GroovyCompile;
 import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;

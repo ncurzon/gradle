@@ -24,6 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.gradle.util.HelperUtil;
 import org.gradle.api.Project;
+import org.gradle.impl.api.tasks.diagnostics.TextProjectReportRenderer;
 
 import java.io.*;
 

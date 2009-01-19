@@ -32,10 +32,10 @@ import org.gradle.impl.DefaultGradle
 import org.gradle.BuildListener
 import org.gradle.api.DependencyManager
 import org.gradle.api.dependencies.Dependency
-import org.gradle.api.plugins.JavaPlugin
+import org.gradle.impl.api.plugins.JavaPlugin
 import org.gradle.CacheUsage
 import org.gradle.api.dependencies.Configuration
-import org.gradle.api.plugins.BasePlugin
+import org.gradle.impl.api.plugins.BasePlugin
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultGradle
@@ -43,6 +43,7 @@ import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultGradle
 import org.gradle.impl.initialization.BuildSourceBuilder
+import org.gradle.impl.api.plugins.JavaPlugin
 
 /**
  * @author Hans Dockter

@@ -16,6 +16,7 @@
 package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
+import org.gradle.impl.api.plugins.BasePluginConvention;
 import static org.hamcrest.Matchers.*;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;

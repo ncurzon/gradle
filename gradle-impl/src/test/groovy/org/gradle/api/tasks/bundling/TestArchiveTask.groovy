@@ -17,6 +17,7 @@
 package org.gradle.api.tasks.bundling
 
 import org.gradle.api.Project
+import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask
 
 /**
  * @author Hans Dockter

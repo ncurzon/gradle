@@ -16,6 +16,8 @@
  
 package org.gradle.api.tasks.bundling
 
+import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
+
 /**
  * @author Hans Dockter
  */

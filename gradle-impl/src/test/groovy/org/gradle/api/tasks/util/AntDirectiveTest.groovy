@@ -17,6 +17,7 @@
 package org.gradle.api.tasks.util
 
 import org.junit.Test
+import org.gradle.impl.api.tasks.util.AntDirective
 
 /**
  * @author Hans Dockter

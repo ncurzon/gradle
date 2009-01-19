@@ -19,13 +19,13 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.jmock.Expectations;
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.api.Project;
+import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
 
 @RunWith(JMock.class)
 public class DependencyReportTaskTest {

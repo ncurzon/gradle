@@ -18,7 +18,7 @@ package org.gradle.wrapper;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.gradle.api.tasks.wrapper.Wrapper;
+import org.gradle.impl.api.tasks.wrapper.Wrapper;
 import org.gradle.impl.wrapper.PathAssembler;
 
 /**
