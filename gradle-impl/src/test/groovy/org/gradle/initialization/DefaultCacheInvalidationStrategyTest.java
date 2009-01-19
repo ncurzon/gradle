@@ -15,20 +15,20 @@
  */
 package org.gradle.initialization;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import org.gradle.util.WrapUtil;
+import org.gradle.impl.initialization.DefaultCacheInvalidationStrategy;
 import org.gradle.util.GUtil;
 import org.gradle.util.HelperUtil;
-import org.gradle.impl.initialization.DefaultCacheInvalidationStrategy;
+import org.gradle.util.WrapUtil;
+import org.junit.After;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Hans Dockter

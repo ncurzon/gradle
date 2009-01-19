@@ -16,15 +16,18 @@
 
 package org.gradle.impl;
 
+import org.gradle.*;
+import org.gradle.api.execution.TaskExecutionGraph;
+import org.gradle.api.execution.TaskExecutionGraphListener;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.SettingsInternal;
-import org.gradle.api.execution.TaskExecutionGraphListener;
-import org.gradle.api.execution.TaskExecutionGraph;
 import org.gradle.configuration.BuildConfigurer;
 import org.gradle.execution.BuildExecuter;
-import org.gradle.initialization.*;
+import org.gradle.initialization.BuildLoader;
+import org.gradle.initialization.IGradlePropertiesLoader;
+import org.gradle.initialization.ISettingsFinder;
+import org.gradle.initialization.SettingsProcessor;
 import org.gradle.util.ListenerBroadcast;
-import org.gradle.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

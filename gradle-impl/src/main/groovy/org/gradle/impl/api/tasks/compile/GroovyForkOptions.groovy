@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.impl.api.tasks.compile;
+package org.gradle.impl.api.tasks.compile
+
+import org.gradle.impl.api.tasks.compile.AbstractOptions;
 
 /**
  * @author Hans Dockter

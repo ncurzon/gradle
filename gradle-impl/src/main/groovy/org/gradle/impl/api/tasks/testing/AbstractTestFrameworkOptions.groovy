@@ -1,7 +1,8 @@
 package org.gradle.impl.api.tasks.testing
 
-import org.gradle.impl.api.tasks.compile.AbstractOptions
 import org.gradle.api.GradleException
+import org.gradle.impl.api.tasks.compile.AbstractOptions
+import org.gradle.impl.api.tasks.testing.AbstractTestFramework
 
 /**
  * @author Tom Eyckmans

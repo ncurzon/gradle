@@ -1,12 +1,12 @@
 package org.gradle.initialization;
 
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.initialization.EmbeddedScriptSettingsFinder;
 import org.gradle.StartParameter;
 import org.gradle.groovy.scripts.ScriptSource;
-import static org.hamcrest.Matchers.*;
+import org.gradle.impl.DefaultStartParameter;
+import org.gradle.impl.initialization.EmbeddedScriptSettingsFinder;
+import static org.hamcrest.Matchers.sameInstance;
 import org.jmock.integration.junit4.JUnit4Mockery;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

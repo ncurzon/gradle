@@ -20,7 +20,6 @@ import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
 import org.gradle.api.dependencies.maven.MavenPom
 import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller
 
 /**
  * @author Hans Dockter

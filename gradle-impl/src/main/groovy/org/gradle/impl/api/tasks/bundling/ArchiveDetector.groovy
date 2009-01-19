@@ -16,9 +16,8 @@
 
 package org.gradle.impl.api.tasks.bundling
 
+import org.gradle.impl.api.tasks.util.TarFileSet
 import org.gradle.impl.api.tasks.util.ZipFileSet
-import org.gradle.impl.api.tasks.util.TarFileSet
-import org.gradle.impl.api.tasks.util.TarFileSet
 
 /**
  * @author Hans Dockter

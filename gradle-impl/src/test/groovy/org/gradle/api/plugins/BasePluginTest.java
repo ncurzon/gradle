@@ -17,12 +17,12 @@ package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
 import org.gradle.impl.api.internal.DefaultTask;
-import org.gradle.impl.api.plugins.BasePluginConvention;
 import org.gradle.impl.api.plugins.BasePlugin;
+import org.gradle.impl.api.plugins.BasePluginConvention;
 import org.gradle.impl.api.tasks.Clean;
 import org.gradle.util.HelperUtil;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 public class BasePluginTest {

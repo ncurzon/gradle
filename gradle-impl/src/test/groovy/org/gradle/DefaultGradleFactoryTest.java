@@ -15,12 +15,12 @@
  */
 package org.gradle;
 
-import org.junit.Test;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
+import org.gradle.impl.DefaultGradleFactory;
 import org.gradle.initialization.LoggingConfigurer;
 import org.gradle.util.HelperUtil;
-import org.gradle.impl.DefaultGradleFactory;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.junit.Test;
 
 /**
  * @author Hans Dockter

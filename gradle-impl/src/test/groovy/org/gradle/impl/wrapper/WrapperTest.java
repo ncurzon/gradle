@@ -16,9 +16,6 @@
 package org.gradle.impl.wrapper;
 
 import org.gradle.util.HelperUtil;
-import org.gradle.impl.wrapper.BootstrapMainStarter;
-import org.gradle.impl.wrapper.Install;
-import org.gradle.impl.wrapper.Wrapper;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;

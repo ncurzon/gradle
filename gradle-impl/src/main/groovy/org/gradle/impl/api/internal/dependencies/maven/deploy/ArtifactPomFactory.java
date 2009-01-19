@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven.deploy;
 
-import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.Artifact;
+import org.gradle.api.dependencies.maven.MavenPom;
 
 import java.io.File;
 

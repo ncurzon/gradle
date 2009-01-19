@@ -16,9 +16,11 @@
  
 package org.gradle.api.tasks.bundling
 
+import org.gradle.api.tasks.bundling.AbstractAntArchiveTest
 import org.junit.Before
 import org.junit.Test
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse
+import static org.junit.Assert.assertTrue
 
 /**
  * @author Hans Dockter

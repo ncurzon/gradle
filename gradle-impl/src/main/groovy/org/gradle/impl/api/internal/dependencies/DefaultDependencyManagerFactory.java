@@ -16,15 +16,15 @@
 
 package org.gradle.impl.api.internal.dependencies;
 
+import org.gradle.CacheUsage;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
-import org.gradle.api.internal.dependencies.IDependencyImplementationFactory;
-import org.gradle.api.internal.dependencies.DependencyFactory;
 import org.gradle.api.internal.dependencies.DefaultExcludeRuleContainer;
-import org.gradle.util.WrapUtil;
-import org.gradle.util.GradleUtil;
+import org.gradle.api.internal.dependencies.DependencyFactory;
+import org.gradle.api.internal.dependencies.IDependencyImplementationFactory;
 import org.gradle.initialization.ISettingsFinder;
-import org.gradle.CacheUsage;
+import org.gradle.util.GradleUtil;
+import org.gradle.util.WrapUtil;
 
 import java.io.File;
 import java.util.Set;

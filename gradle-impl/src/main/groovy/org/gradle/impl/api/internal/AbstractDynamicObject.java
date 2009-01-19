@@ -15,12 +15,11 @@
  */
 package org.gradle.impl.api.internal;
 
-import groovy.lang.*;
-
-import java.util.Map;
-import java.util.Collections;
-
+import groovy.lang.MissingPropertyException;
 import org.gradle.api.internal.DynamicObject;
+
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * An empty {@link org.gradle.api.internal.DynamicObject}.

@@ -15,9 +15,10 @@
  */
 package org.gradle.api.internal.plugins.osgi;
 
-import org.junit.Test;import static org.junit.Assert.assertNotNull;
 import org.gradle.impl.api.internal.plugins.osgi.ContainedVersionAnalyzer;
 import org.gradle.impl.api.internal.plugins.osgi.DefaultAnalyzerFactory;
+import static org.junit.Assert.assertNotNull;
+import org.junit.Test;
 
 /**
  * @author Hans Dockter

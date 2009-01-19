@@ -19,14 +19,14 @@ package org.gradle.impl.api.tasks.javadoc;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 import org.gradle.util.BootstrapUtil;
 import org.gradle.util.GUtil;
-import org.gradle.api.logging.LogLevel;
 
-import java.util.List;
 import java.io.File;
+import java.util.List;
 
 
 /**

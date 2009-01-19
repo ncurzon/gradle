@@ -15,17 +15,15 @@
  */
 package org.gradle.impl.initialization;
 
-import org.gradle.util.WrapUtil;
-import org.gradle.util.GradleUtil;
-import org.gradle.CacheUsage;
-import org.gradle.initialization.CacheInvalidationStrategy;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.AbstractFileFilter;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.gradle.initialization.CacheInvalidationStrategy;
+import org.gradle.util.WrapUtil;
 
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Hans Dockter

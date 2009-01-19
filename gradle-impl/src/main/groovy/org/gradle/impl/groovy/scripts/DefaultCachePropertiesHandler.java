@@ -15,14 +15,14 @@
  */
 package org.gradle.impl.groovy.scripts;
 
-import org.gradle.util.GradleVersion;
 import org.gradle.util.GUtil;
+import org.gradle.util.GradleVersion;
 
 import java.io.File;
-import java.util.Properties;
-import java.security.NoSuchAlgorithmException;
-import java.security.MessageDigest;
 import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Properties;
 
 /**
  * @author Hans Dockter

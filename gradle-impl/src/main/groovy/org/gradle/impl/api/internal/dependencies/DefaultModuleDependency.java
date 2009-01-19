@@ -21,8 +21,8 @@ import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.dependencies.Artifact;
-import org.gradle.api.dependencies.ModuleDependency;
 import org.gradle.api.dependencies.DependencyConfigurationMappingContainer;
+import org.gradle.api.dependencies.ModuleDependency;
 import org.gradle.util.WrapUtil;
 
 import java.util.regex.Matcher;

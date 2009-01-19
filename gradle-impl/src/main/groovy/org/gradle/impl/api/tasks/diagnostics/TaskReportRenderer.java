@@ -20,9 +20,9 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.util.GUtil;
 
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.List;
 
 /**
  * <p>A {@code TaskReportRenderer} is responsible for rendering the model of a project task report.</p>

@@ -19,17 +19,17 @@ import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.apache.ivy.core.publish.PublishEngine;
 import org.apache.ivy.core.publish.PublishOptions;
 import org.apache.ivy.plugins.resolver.DependencyResolver;
-import org.gradle.api.dependencies.ResolverContainer;
 import org.gradle.api.DependencyManager;
+import org.gradle.api.dependencies.ResolverContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.text.ParseException;
 
 /**
  * @author Hans Dockter

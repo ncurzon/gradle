@@ -1,11 +1,11 @@
 package org.gradle.impl.api.internal.plugins.osgi;
 
-import aQute.lib.osgi.Jar;
 import aQute.lib.osgi.Analyzer;
+import aQute.lib.osgi.Jar;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.Iterator;
+import java.util.Map;
 
 public class ContainedVersionAnalyzer extends Analyzer {
     public Map analyzeBundleClasspath(Jar dot, Map bundleClasspath, Map contained, Map referred, Map uses)

@@ -1,8 +1,8 @@
 package org.gradle.impl.initialization;
 
 import org.gradle.StartParameter;
-import org.gradle.initialization.ISettingsFinder;
 import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.initialization.ISettingsFinder;
 
 import java.io.File;
 

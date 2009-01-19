@@ -15,15 +15,15 @@
  */
 package org.gradle.api.internal.dependencies.maven.dependencies;
 
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultMavenExclude;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * @author Hans Dockter

@@ -21,8 +21,8 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.tools.ant.taskdefs.Chmod;
 import org.gradle.api.InvalidUserDataException;
-import org.gradle.util.AntUtil;
 import org.gradle.impl.wrapper.WrapperMain;
+import org.gradle.util.AntUtil;
 
 import java.io.File;
 import java.io.IOException;

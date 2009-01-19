@@ -15,15 +15,15 @@
 
 package org.gradle.impl.api.plugins.jetty;
 
+import org.gradle.api.Project;
+import org.gradle.impl.api.plugins.jetty.util.BuildFileHelper;
+import org.mortbay.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.mortbay.util.Scanner;
-import org.gradle.impl.api.plugins.jetty.util.BuildFileHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.gradle.api.Project;
 
 /**
  * <p>

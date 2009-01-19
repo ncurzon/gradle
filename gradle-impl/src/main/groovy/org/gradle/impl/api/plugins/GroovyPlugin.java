@@ -16,11 +16,11 @@
 
 package org.gradle.impl.api.plugins;
 
+import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.api.Plugin;
-import org.gradle.api.plugins.Convention;
 import org.gradle.api.internal.project.PluginRegistry;
+import org.gradle.api.plugins.Convention;
 import org.gradle.impl.api.tasks.ConventionValue;
 import org.gradle.impl.api.tasks.compile.Compile;
 import org.gradle.impl.api.tasks.compile.GroovyCompile;

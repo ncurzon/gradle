@@ -15,9 +15,9 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven;
 
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
-import org.gradle.api.dependencies.maven.MavenPom;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.gradle.api.dependencies.maven.MavenPom;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
 
 import java.io.PrintWriter;
 import java.util.List;

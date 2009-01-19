@@ -15,12 +15,11 @@
  */
 package org.gradle.util;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.gradle.api.internal.dependencies.DefaultDependencyResolverTest;
 
 /**
  * @author Hans Dockter

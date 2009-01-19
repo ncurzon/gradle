@@ -16,10 +16,11 @@
  
 package org.gradle.api.tasks.compile
 
-import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.compile.ForkOptions
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.tasks.compile.ForkOptions;
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertNull
 
 /**
  * @author Hans Dockter

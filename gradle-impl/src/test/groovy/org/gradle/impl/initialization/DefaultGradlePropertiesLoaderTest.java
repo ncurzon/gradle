@@ -15,11 +15,10 @@
  */
 package org.gradle.impl.initialization;
 
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.initialization.DefaultGradlePropertiesLoader;
 import org.gradle.StartParameter;
-import org.gradle.initialization.IGradlePropertiesLoader;
 import org.gradle.api.Project;
+import org.gradle.impl.DefaultStartParameter;
+import org.gradle.initialization.IGradlePropertiesLoader;
 import org.gradle.util.GUtil;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;

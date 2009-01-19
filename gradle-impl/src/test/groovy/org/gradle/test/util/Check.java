@@ -15,9 +15,9 @@
  */
 package org.gradle.test.util;
 
-import org.junit.Assert;
-import org.gradle.api.TaskAction;
 import org.gradle.api.Task;
+import org.gradle.api.TaskAction;
+import org.junit.Assert;
 
 /**
  * @author Hans Dockter

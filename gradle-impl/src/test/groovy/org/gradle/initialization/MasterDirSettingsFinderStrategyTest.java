@@ -15,10 +15,10 @@
  */
 package org.gradle.initialization;
 
+import org.gradle.impl.initialization.MasterDirSettingsFinderStrategy;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import org.gradle.impl.initialization.MasterDirSettingsFinderStrategy;
 
 import java.io.File;
 

@@ -16,10 +16,13 @@
 
 package org.gradle.api.plugins
 
-import org.gradle.impl.api.internal.project.DefaultProject
-import static org.junit.Assert.assertEquals
+import org.gradle.api.plugins.Convention
+import org.gradle.api.plugins.TestPluginConvention1
+import org.gradle.api.plugins.TestPluginConvention2
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

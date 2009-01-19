@@ -15,15 +15,11 @@
 
 package org.gradle.impl.api.plugins.jetty;
 
+import org.mortbay.jetty.plus.webapp.EnvConfiguration;
+import org.mortbay.jetty.webapp.*;
+
 import java.io.File;
 import java.util.List;
-
-import org.mortbay.jetty.plus.webapp.EnvConfiguration;
-import org.mortbay.jetty.webapp.Configuration;
-import org.mortbay.jetty.webapp.JettyWebXmlConfiguration;
-import org.mortbay.jetty.webapp.TagLibConfiguration;
-import org.mortbay.jetty.webapp.WebAppContext;
-import org.mortbay.jetty.webapp.WebInfConfiguration;
 
 /**
  * Jetty6PluginWebAppContext

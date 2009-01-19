@@ -18,13 +18,13 @@ package org.gradle.api.plugins
 
 import org.gradle.api.Project
 import org.gradle.api.internal.project.PluginRegistry
-import org.gradle.util.HelperUtil
-import static org.gradle.util.WrapUtil.*
-import static org.hamcrest.Matchers.*
-import static org.junit.Assert.*
-import org.junit.Test
-import org.gradle.impl.api.plugins.WarPlugin
 import org.gradle.impl.api.plugins.JavaPlugin
+import org.gradle.impl.api.plugins.WarPlugin
+import org.gradle.util.HelperUtil
+import org.junit.Test
+import static org.gradle.util.WrapUtil.toSet
+import static org.hamcrest.Matchers.equalTo
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

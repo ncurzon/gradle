@@ -15,20 +15,20 @@
  */
 package org.gradle.api.internal.dependencies.maven;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import static org.junit.Assert.assertEquals;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.impl.api.internal.dependencies.maven.DefaultPomModuleIdWriter;
 import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
+import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * @author Hans Dockter

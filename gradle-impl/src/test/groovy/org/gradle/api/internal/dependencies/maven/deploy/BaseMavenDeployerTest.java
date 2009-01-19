@@ -15,22 +15,20 @@
  */
 package org.gradle.api.internal.dependencies.maven.deploy;
 
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import org.junit.runner.RunWith;
-import org.junit.Test;
-import org.gradle.util.WrapUtil;
-import org.gradle.api.dependencies.maven.MavenResolver;
-import org.gradle.api.dependencies.maven.PomFilterContainer;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.DeployTaskFactory;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomDeployTask;
-import org.jmock.Expectations;
-import org.apache.maven.artifact.ant.RemoteRepository;
 import org.apache.maven.artifact.ant.InstallDeployTaskSupport;
+import org.apache.maven.artifact.ant.RemoteRepository;
 import org.codehaus.plexus.PlexusContainer;
 import org.codehaus.plexus.PlexusContainerException;
+import org.gradle.api.dependencies.maven.MavenResolver;
+import org.gradle.api.dependencies.maven.PomFilterContainer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomDeployTask;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.DeployTaskFactory;
+import org.gradle.util.WrapUtil;
+import org.jmock.Expectations;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.File;
 import java.io.IOException;

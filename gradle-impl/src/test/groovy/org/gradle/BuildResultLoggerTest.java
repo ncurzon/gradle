@@ -15,14 +15,14 @@
  */
 package org.gradle;
 
-import static org.hamcrest.Matchers.*;
+import org.gradle.api.logging.Logging;
+import static org.hamcrest.Matchers.startsWith;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
-import org.gradle.api.logging.Logging;
 
 @RunWith(org.jmock.integration.junit4.JMock.class)
 public class BuildResultLoggerTest {

@@ -18,11 +18,10 @@ package org.gradle.impl.logging;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
+import org.slf4j.Marker;
 
 import java.io.IOException;
 import java.io.OutputStream;
-
-import org.slf4j.Marker;
 
 /**
  * @author Hans Dockter

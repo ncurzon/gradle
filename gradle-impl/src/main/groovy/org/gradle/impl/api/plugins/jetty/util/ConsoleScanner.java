@@ -3,11 +3,11 @@
  */
 package org.gradle.impl.api.plugins.jetty.util;
 
-import java.io.IOException;
-
 import org.gradle.impl.api.plugins.jetty.AbstractJettyRunTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class ConsoleScanner extends Thread {
     private static Logger logger = LoggerFactory.getLogger(ConsoleScanner.class);

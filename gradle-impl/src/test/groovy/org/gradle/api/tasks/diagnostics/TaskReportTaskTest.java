@@ -19,24 +19,25 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.api.plugins.Convention;
-import org.gradle.util.GUtil;
-import org.gradle.util.WrapUtil;
-import static org.gradle.util.WrapUtil.*;
 import org.gradle.impl.api.tasks.diagnostics.TaskReportRenderer;
 import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
+import org.gradle.util.GUtil;
+import org.gradle.util.WrapUtil;
+import static org.gradle.util.WrapUtil.toLinkedSet;
 import org.jmock.Expectations;
 import org.jmock.Sequence;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
-import static java.util.Collections.*;
 import java.util.ArrayList;
+import static java.util.Collections.emptyList;
+import static java.util.Collections.emptyMap;
 import java.util.List;
 
 @RunWith(JMock.class)

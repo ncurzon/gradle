@@ -17,8 +17,9 @@
 package org.gradle.impl.api.internal.plugins
 
 import org.gradle.api.plugins.Convention
-import org.slf4j.LoggerFactory
+import org.gradle.impl.api.internal.plugins.PluginUtil
 import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 /**
  * @author Hans Dockter

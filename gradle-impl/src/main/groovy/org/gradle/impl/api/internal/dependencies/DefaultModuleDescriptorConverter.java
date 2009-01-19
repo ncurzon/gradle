@@ -16,27 +16,24 @@
 
 package org.gradle.impl.api.internal.dependencies;
 
-import org.apache.ivy.core.module.id.ModuleId;
-import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor;
-import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
-import org.apache.ivy.core.module.descriptor.ExcludeRule;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import groovy.lang.Closure;
 import org.apache.ivy.core.module.descriptor.Artifact;
+import org.apache.ivy.core.module.descriptor.*;
+import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.plugins.conflict.LatestConflictManager;
 import org.apache.ivy.plugins.latest.LatestRevisionStrategy;
 import org.apache.ivy.plugins.matcher.ExactPatternMatcher;
 import org.gradle.api.DependencyManager;
-import org.gradle.api.internal.dependencies.ivy.IvyUtil;
-import org.gradle.api.internal.dependencies.DependencyManagerInternal;
-import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.Transformer;
+import org.gradle.api.dependencies.Configuration;
 import org.gradle.api.dependencies.*;
+import org.gradle.api.internal.ChainingTransformer;
+import org.gradle.api.internal.dependencies.DependencyManagerInternal;
+import org.gradle.api.internal.dependencies.ivy.IvyUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-
-import groovy.lang.Closure;
 
 /**
  * @author Hans Dockter

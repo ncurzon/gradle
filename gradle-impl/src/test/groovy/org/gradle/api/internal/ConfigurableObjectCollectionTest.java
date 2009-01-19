@@ -15,12 +15,12 @@
  */
 package org.gradle.api.internal;
 
-import org.gradle.util.HelperUtil;
+import groovy.lang.Closure;
 import org.gradle.impl.api.internal.ConfigurableObjectCollection;
+import org.gradle.util.HelperUtil;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import groovy.lang.Closure;
 
 public class ConfigurableObjectCollectionTest {
     private final ConfigurableObjectCollection<Bean> collection = new ConfigurableObjectCollection<Bean>("<owner>");

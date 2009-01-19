@@ -16,6 +16,8 @@
  
 package org.gradle.impl.api.tasks.compile
 
+import org.gradle.impl.api.tasks.compile.AbstractOptions
+
 /**
  * @author Hans Dockter
  */

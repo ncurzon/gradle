@@ -15,38 +15,39 @@
  */
 package org.gradle.api.internal.dependencies.maven.deploy;
 
-import org.gradle.api.dependencies.maven.PomFilterContainer;
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.api.dependencies.maven.PublishFilter;
-import org.gradle.api.dependencies.maven.MavenResolver;
-import org.gradle.api.DependencyManager;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomInstallDeployTaskSupport;
-import org.gradle.util.JUnit4GroovyMockery;
+import org.apache.ivy.core.module.descriptor.Artifact;
+import org.apache.ivy.core.module.descriptor.DefaultArtifact;
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
+import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.apache.maven.artifact.ant.InstallDeployTaskSupport;
 import org.apache.maven.artifact.ant.Pom;
 import org.apache.maven.settings.Settings;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
-import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
-import org.apache.ivy.core.module.descriptor.Artifact;
-import org.apache.ivy.core.module.descriptor.DefaultArtifact;
-import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.apache.tools.ant.Project;
-import org.junit.Before;
-import org.junit.Test;import static org.junit.Assert.assertSame;
-import org.jmock.Expectations;
-import org.jmock.lib.legacy.ClassImposteriser;
 import org.codehaus.plexus.PlexusContainerException;
-import org.hamcrest.Matcher;
+import org.gradle.api.DependencyManager;
+import org.gradle.api.dependencies.maven.MavenPom;
+import org.gradle.api.dependencies.maven.MavenResolver;
+import org.gradle.api.dependencies.maven.PomFilterContainer;
+import org.gradle.api.dependencies.maven.PublishFilter;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomInstallDeployTaskSupport;
+import org.gradle.util.JUnit4GroovyMockery;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.jmock.Expectations;
+import org.jmock.lib.legacy.ClassImposteriser;
+import static org.junit.Assert.assertSame;
+import org.junit.Before;
+import org.junit.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
-import java.io.IOException;
-import java.io.File;
+import java.util.Map;
 
 /**
  * @author Hans Dockter

@@ -15,17 +15,15 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
+import org.apache.ivy.core.module.descriptor.DependencyArtifactDescriptor;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.ExcludeRule;
-import org.apache.ivy.core.module.descriptor.DependencyArtifactDescriptor;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
 import org.gradle.api.dependencies.maven.MavenPom;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Hans Dockter

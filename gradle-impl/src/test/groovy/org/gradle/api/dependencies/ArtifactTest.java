@@ -15,11 +15,9 @@
  */
 package org.gradle.api.dependencies;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertSame;
 import org.gradle.util.WrapUtil;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.List;
 

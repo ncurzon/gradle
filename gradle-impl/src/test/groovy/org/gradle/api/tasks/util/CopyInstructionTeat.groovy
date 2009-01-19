@@ -17,12 +17,12 @@
 package org.gradle.api.tasks.util
 
 import org.gradle.api.InvalidUserDataException
+import org.gradle.impl.api.tasks.util.CopyInstruction
 import org.gradle.util.HelperUtil
-import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.tasks.util.CopyInstruction;
-
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
 * @author Hans Dockter

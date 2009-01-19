@@ -19,10 +19,12 @@ package org.gradle.impl.configuration
 import org.gradle.api.Project
 import org.gradle.api.ProjectAction
 import org.gradle.api.internal.project.ProjectInternal
+import org.gradle.configuration.BuildConfigurer
+import org.gradle.impl.configuration.DefaultBuildConfigurer
+import org.gradle.impl.configuration.ProjectDependencies2TaskResolver
 import org.gradle.util.Clock
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.configuration.BuildConfigurer
 
 /**
  * @author Hans Dockter

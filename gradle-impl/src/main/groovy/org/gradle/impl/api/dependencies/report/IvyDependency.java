@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.api.dependencies.report;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Domain object that represents a node in a IvyDependencyGraph.

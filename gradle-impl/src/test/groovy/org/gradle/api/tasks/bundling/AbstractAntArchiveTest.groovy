@@ -16,19 +16,14 @@
 
 package org.gradle.api.tasks.bundling
 
-import org.gradle.impl.api.tasks.util.AntDirective
-import org.gradle.impl.api.tasks.util.FileSet
-import org.gradle.impl.api.tasks.util.FileCollection
-import org.gradle.util.HelperUtil
-import org.gradle.impl.api.tasks.util.ZipFileSet
-import org.gradle.impl.api.tasks.util.TarFileSet
-import org.junit.Before
-import static org.junit.Assert.*
-import org.junit.After
+import java.util.jar.Manifest
 import org.gradle.impl.api.tasks.bundling.Compression
 import org.gradle.impl.api.tasks.bundling.GradleManifest
-import org.gradle.impl.api.tasks.util.FileCollection
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.util.HelperUtil
+import org.junit.After
+import org.junit.Before
+import org.gradle.impl.api.tasks.util.*
+import static org.junit.Assert.*
 
 /**
 * @author Hans Dockter

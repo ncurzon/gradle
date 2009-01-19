@@ -17,8 +17,8 @@ package org.gradle.impl.api.plugins;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
-import org.gradle.impl.api.tasks.Upload;
 import org.gradle.api.internal.project.PluginRegistry;
+import org.gradle.impl.api.tasks.Upload;
 import org.gradle.util.GUtil;
 
 import java.util.Map;

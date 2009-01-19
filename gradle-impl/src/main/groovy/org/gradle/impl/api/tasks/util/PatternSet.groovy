@@ -17,7 +17,6 @@
 package org.gradle.impl.api.tasks.util
 
 import org.gradle.impl.api.tasks.AntBuilderAware
-import org.gradle.impl.api.tasks.AntBuilderAware
 
 /**
  * @author Hans Dockter

@@ -16,11 +16,11 @@
  
 package org.gradle.api.tasks.testing
 
-import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.testing.ForkMode
+import org.gradle.impl.api.tasks.testing.JunitForkOptions
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.tasks.testing.ForkMode
-import org.gradle.impl.api.tasks.testing.JunitForkOptions;
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

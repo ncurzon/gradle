@@ -15,17 +15,17 @@
  */
 package org.gradle.impl.initialization;
 
-import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
-import org.gradle.initialization.IProjectDescriptorRegistry;
+import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.initialization.DefaultProjectDescriptor;
+import org.gradle.initialization.IProjectDescriptorRegistry;
 import org.gradle.util.PathHelper;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Hans Dockter

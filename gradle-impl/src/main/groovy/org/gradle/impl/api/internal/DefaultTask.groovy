@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package org.gradle.impl.api.internal;
+package org.gradle.impl.api.internal
 
-import groovy.lang.Closure;
-import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.Project;
-import org.gradle.api.Task;
-import org.gradle.api.TaskAction;
+import org.gradle.api.InvalidUserDataException
+import org.gradle.api.Project
+import org.gradle.api.Task
+import org.gradle.api.TaskAction
+import org.gradle.impl.api.internal.AbstractTask
+import org.gradle.impl.api.internal.ClosureTaskAction
 import org.gradle.util.ConfigureUtil;
 
 /**

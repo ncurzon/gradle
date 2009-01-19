@@ -16,21 +16,21 @@
 package org.gradle.groovy.scripts;
 
 import groovy.lang.Script;
-import org.gradle.api.InputStreamClassLoader;
 import org.gradle.api.GradleException;
-import org.gradle.util.HelperUtil;
+import org.gradle.api.InputStreamClassLoader;
 import org.gradle.impl.groovy.scripts.CachePropertiesHandler;
 import org.gradle.impl.groovy.scripts.DefaultScriptCompilationHandler;
 import org.gradle.impl.groovy.scripts.EmptyScript;
+import org.gradle.util.HelperUtil;
+import org.hamcrest.Matchers;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.Expectations;
-import org.hamcrest.Matchers;
 
 import java.io.File;
 import java.io.IOException;

@@ -17,8 +17,10 @@
 package org.gradle.impl.api.tasks.bundling
 
 import java.util.jar.Attributes
+import java.util.jar.Attributes.Name
 import java.util.jar.Manifest
 import org.gradle.impl.api.tasks.AntBuilderAware
+import org.gradle.impl.api.tasks.bundling.GradleManifest
 
 /**
  * @author Hans Dockter

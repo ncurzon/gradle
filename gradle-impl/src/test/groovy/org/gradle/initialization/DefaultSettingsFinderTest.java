@@ -15,20 +15,20 @@
  */
 package org.gradle.initialization;
 
-import org.gradle.util.WrapUtil;
-import org.gradle.util.HelperUtil;
-import static org.gradle.util.ReflectionEqualsMatcher.*;
 import org.gradle.StartParameter;
+import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.impl.groovy.scripts.StringScriptSource;
 import org.gradle.impl.initialization.DefaultSettingsFinder;
-import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.util.HelperUtil;
+import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
+import org.gradle.util.WrapUtil;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
 
 import java.io.File;
 

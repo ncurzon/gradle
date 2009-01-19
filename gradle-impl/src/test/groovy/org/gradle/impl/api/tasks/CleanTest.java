@@ -17,20 +17,19 @@
 package org.gradle.impl.api.tasks;
 
 import org.gradle.api.GradleScriptException;
-import org.gradle.impl.api.internal.AbstractTask;
-import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.api.tasks.AbstractConventionTaskTest;
-import org.gradle.impl.api.tasks.Clean;
+import org.gradle.api.tasks.AbstractTaskTest;
+import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 import org.gradle.util.HelperUtil;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.jmock.lib.legacy.ClassImposteriser;
+import org.junit.After;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.After;
 import org.junit.runner.RunWith;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.lib.legacy.ClassImposteriser;
-import org.jmock.Expectations;
 
 import java.io.File;
 import java.io.IOException;

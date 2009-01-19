@@ -15,11 +15,11 @@
  */
 package org.gradle.impl.groovy.scripts;
 
-import org.gradle.api.Project;
-import org.gradle.util.GUtil;
-import org.gradle.groovy.scripts.ScriptSource;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.gradle.api.Project;
+import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.util.GUtil;
 
 import java.io.File;
 

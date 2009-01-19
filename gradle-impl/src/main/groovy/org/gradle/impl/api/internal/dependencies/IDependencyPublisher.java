@@ -17,8 +17,8 @@ package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.apache.ivy.core.publish.PublishEngine;
-import org.gradle.api.dependencies.ResolverContainer;
 import org.gradle.api.DependencyManager;
+import org.gradle.api.dependencies.ResolverContainer;
 
 import java.io.File;
 import java.util.List;

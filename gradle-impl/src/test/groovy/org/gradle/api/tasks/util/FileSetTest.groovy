@@ -17,11 +17,12 @@
 package org.gradle.api.tasks.util
 
 import org.gradle.api.InvalidUserDataException
-import static org.junit.Assert.*
+import org.gradle.api.tasks.util.AbstractTestForPatternSet
+import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.impl.api.tasks.util.PatternSet
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.tasks.util.FileSet
-import org.gradle.impl.api.tasks.util.PatternSet;
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

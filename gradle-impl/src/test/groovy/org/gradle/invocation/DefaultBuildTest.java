@@ -1,13 +1,14 @@
 package org.gradle.invocation;
 
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.invocation.DefaultBuild;
-import org.gradle.impl.execution.DefaultTaskExecuter;
 import org.gradle.StartParameter;
+import org.gradle.impl.DefaultStartParameter;
 import org.gradle.impl.api.internal.project.DefaultProjectRegistry;
+import org.gradle.impl.execution.DefaultTaskExecuter;
+import org.gradle.impl.invocation.DefaultBuild;
 import org.gradle.util.GradleVersion;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import java.io.File;

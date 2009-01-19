@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.impl.api.internal.dependencies.maven.deploy.groovy;
+package org.gradle.impl.api.internal.dependencies.maven.deploy.groovy
 
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.util.ConfigureUtil
-import org.gradle.api.dependencies.maven.PublishFilter
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.MavenPomFactory
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.api.dependencies.maven.CopyablePomFilterContainer
 import org.gradle.api.dependencies.maven.CopyableGroovyPomFilterContainer
-import org.gradle.api.dependencies.maven.PomFilterContainer
+import org.gradle.api.dependencies.maven.MavenPom
+import org.gradle.api.dependencies.maven.PublishFilter
+import org.gradle.impl.api.internal.dependencies.maven.MavenPomFactory
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer
+import org.gradle.util.ConfigureUtil;
 
 /**
  * @author Hans Dockter

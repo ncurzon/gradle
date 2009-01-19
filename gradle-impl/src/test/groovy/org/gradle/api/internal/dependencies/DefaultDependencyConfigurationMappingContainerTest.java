@@ -15,16 +15,16 @@
  */
 package org.gradle.api.internal.dependencies;
 
+import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
+import org.gradle.api.InvalidUserDataException;
+import org.gradle.util.WrapUtil;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import org.gradle.util.WrapUtil;
-import org.gradle.api.InvalidUserDataException;
-import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 /**
  * @author Hans Dockter

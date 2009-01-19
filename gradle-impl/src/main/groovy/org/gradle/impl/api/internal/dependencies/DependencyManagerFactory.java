@@ -19,8 +19,6 @@ package org.gradle.impl.api.internal.dependencies;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
 
-import java.io.File;
-
 /**
  * @author Hans Dockter
  */

@@ -15,6 +15,17 @@
 
 package org.gradle.impl.api.plugins.jetty;
 
+import org.mortbay.jetty.plus.annotation.InjectionCollection;
+import org.mortbay.jetty.plus.annotation.LifeCycleCallbackCollection;
+import org.mortbay.jetty.plus.annotation.RunAsCollection;
+import org.mortbay.jetty.plus.webapp.Configuration;
+import org.mortbay.jetty.servlet.FilterHolder;
+import org.mortbay.jetty.servlet.ServletHolder;
+import org.mortbay.jetty.webapp.WebAppClassLoader;
+import org.mortbay.jetty.webapp.WebAppContext;
+import org.mortbay.log.Log;
+import org.mortbay.util.LazyList;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -23,17 +34,6 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Iterator;
 import java.util.List;
-
-import org.mortbay.jetty.plus.annotation.InjectionCollection;
-import org.mortbay.jetty.plus.annotation.LifeCycleCallbackCollection;
-import org.mortbay.jetty.plus.annotation.RunAsCollection;
-import org.mortbay.jetty.plus.webapp.Configuration;
-import org.mortbay.jetty.servlet.FilterHolder;
-import org.mortbay.jetty.servlet.ServletHolder;
-import org.mortbay.jetty.webapp.WebAppContext;
-import org.mortbay.jetty.webapp.WebAppClassLoader;
-import org.mortbay.log.Log;
-import org.mortbay.util.LazyList;
 
 public class JettyConfiguration extends Configuration 
 {

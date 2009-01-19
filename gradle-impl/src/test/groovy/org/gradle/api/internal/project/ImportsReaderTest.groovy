@@ -16,11 +16,12 @@
  
 package org.gradle.api.internal.project
 
+import org.gradle.Defaults
+import org.gradle.api.internal.project.ImportsReader
 import org.gradle.util.HelperUtil
-import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.gradle.Defaults;
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

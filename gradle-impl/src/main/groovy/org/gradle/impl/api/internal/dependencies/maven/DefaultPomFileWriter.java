@@ -17,11 +17,11 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven;
 
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.gradle.api.dependencies.maven.MavenPom;
+
 import java.io.*;
 import java.util.List;
-
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 
 public final class DefaultPomFileWriter implements PomFileWriter {
     PomWriter pomWriter;

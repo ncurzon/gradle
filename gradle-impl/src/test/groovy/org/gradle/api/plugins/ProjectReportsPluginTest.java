@@ -17,14 +17,15 @@ package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
 import org.gradle.api.internal.project.PluginRegistry;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
-import org.gradle.util.HelperUtil;
-import org.gradle.impl.api.plugins.ProjectReportsPlugin;
 import org.gradle.impl.api.plugins.BasePlugin;
+import org.gradle.impl.api.plugins.ProjectReportsPlugin;
 import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
 import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
+import org.gradle.util.HelperUtil;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class ProjectReportsPluginTest {

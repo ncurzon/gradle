@@ -15,23 +15,26 @@
  */
 package org.gradle.api.internal.dependencies.maven.dependencies;
 
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.Assert;
-import org.junit.runner.RunWith;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import org.gradle.util.WrapUtil;
-import org.gradle.util.HelperUtil;
+import org.apache.ivy.core.module.descriptor.DefaultDependencyArtifactDescriptor;
+import org.apache.ivy.core.module.descriptor.DefaultDependencyDescriptor;
+import org.apache.ivy.core.module.descriptor.DefaultExcludeRule;
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.impl.api.internal.dependencies.maven.dependencies.*;
-import org.apache.ivy.core.module.descriptor.*;
-import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.Expectations;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
 import org.hamcrest.Matchers;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.List;
 

@@ -16,11 +16,12 @@
 
 package org.gradle.impl.api.tasks.testing.junit
 
+import org.gradle.impl.api.tasks.testing.Test
+import org.gradle.impl.api.tasks.testing.junit.AntJUnitExecute
+import org.gradle.impl.api.tasks.testing.junit.JUnitOptions
 import org.gradle.util.BootstrapUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.impl.api.tasks.testing.Test
-import org.gradle.impl.api.tasks.testing.Test
 
 /**
  * @author Hans Dockter

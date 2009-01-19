@@ -16,33 +16,24 @@
 
 package org.gradle.initialization
 
-import org.gradle.impl.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.api.internal.BuildInternal
-import org.gradle.api.internal.project.BuildScriptProcessor
-import org.gradle.api.internal.project.IProjectFactory
-import org.gradle.api.internal.project.IProjectRegistry
-import org.gradle.api.internal.project.PluginRegistry
-import org.gradle.api.internal.project.ProjectInternal
-import org.gradle.initialization.DefaultProjectDescriptor
-import org.gradle.impl.initialization.DefaultBuildLoader
-import org.gradle.impl.invocation.DefaultBuild
-import org.gradle.util.HelperUtil
-import org.gradle.util.JUnit4GroovyMockery
-import static org.hamcrest.Matchers.*
-import org.jmock.integration.junit4.JMock
-import org.junit.After
-import static org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.gradle.util.GUtil
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.initialization.DefaultBuildLoader
 import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry
 import org.gradle.impl.invocation.DefaultBuild
+import org.gradle.initialization.DefaultProjectDescriptor
+import org.gradle.util.GUtil
+import org.gradle.util.HelperUtil
+import org.gradle.util.JUnit4GroovyMockery
+import org.jmock.integration.junit4.JMock
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.gradle.api.internal.project.*
+import static org.hamcrest.Matchers.*
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

@@ -1,12 +1,12 @@
-package org.gradle.impl;
+package org.gradle.impl.bundle;
 
+import org.gradle.GradleFactory;
+import org.gradle.impl.initialization.DefaultLoggingConfigurer;
+import org.gradle.impl.DefaultGradleFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceRegistration;
 import org.osgi.framework.ServiceReference;
-import org.gradle.GradleFactory;
-import org.gradle.impl.DefaultGradleFactory;
-import org.gradle.impl.initialization.DefaultLoggingConfigurer;
+import org.osgi.framework.ServiceRegistration;
 
 /**
  * @author Tom Eyckmans

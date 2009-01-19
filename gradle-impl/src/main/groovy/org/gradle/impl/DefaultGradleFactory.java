@@ -15,23 +15,27 @@
  */
 package org.gradle.impl;
 
-import org.gradle.api.internal.project.*;
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
+import org.gradle.GradleFactory;
+import org.gradle.StartParameter;
+import org.gradle.api.internal.project.BuildScriptProcessor;
+import org.gradle.api.internal.project.ImportsReader;
+import org.gradle.api.internal.project.PluginRegistry;
+import org.gradle.api.logging.LogLevel;
+import org.gradle.groovy.scripts.IScriptProcessor;
 import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory;
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.impl.api.internal.project.DefaultAntBuilderFactory;
 import org.gradle.impl.api.internal.project.ProjectFactory;
 import org.gradle.impl.api.internal.project.TaskFactory;
-import org.gradle.api.logging.LogLevel;
-import org.gradle.groovy.scripts.*;
-import org.gradle.initialization.*;
-import org.gradle.util.WrapUtil;
-import org.gradle.logging.AntLoggingAdapter;
 import org.gradle.impl.configuration.DefaultBuildConfigurer;
 import org.gradle.impl.configuration.ProjectDependencies2TaskResolver;
-import org.gradle.GradleFactory;
-import org.gradle.StartParameter;
 import org.gradle.impl.groovy.scripts.*;
 import org.gradle.impl.initialization.*;
+import org.gradle.initialization.ISettingsFileSearchStrategy;
+import org.gradle.initialization.ISettingsFinder;
+import org.gradle.initialization.LoggingConfigurer;
+import org.gradle.logging.AntLoggingAdapter;
+import org.gradle.util.WrapUtil;
 
 /**
  * @author Hans Dockter

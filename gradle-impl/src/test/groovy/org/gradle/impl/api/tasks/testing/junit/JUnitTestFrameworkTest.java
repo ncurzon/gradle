@@ -1,21 +1,16 @@
 package org.gradle.impl.api.tasks.testing.junit;
 
-import org.junit.Before;
-import org.jmock.Expectations;
-import org.gradle.impl.api.tasks.testing.JunitForkOptions;
-import org.gradle.impl.api.tasks.testing.ForkMode;
-import org.gradle.impl.api.tasks.testing.junit.AntJUnitExecute;
-import org.gradle.impl.api.tasks.testing.junit.AntJUnitReport;
-import org.gradle.impl.api.tasks.testing.junit.JUnitOptions;
-import org.gradle.impl.api.tasks.testing.junit.JUnitTestFramework;
+import groovy.util.AntBuilder;
+import static junit.framework.Assert.assertNotNull;
 import org.gradle.api.tasks.testing.AbstractTestFrameworkTest;
 import org.gradle.impl.api.plugins.JavaPlugin;
-import static junit.framework.Assert.*;
+import org.gradle.impl.api.tasks.testing.ForkMode;
+import org.gradle.impl.api.tasks.testing.JunitForkOptions;
+import org.jmock.Expectations;
+import org.junit.Before;
 
 import java.util.Arrays;
 import java.util.HashSet;
-
-import groovy.util.AntBuilder;
 
 /**
  * @author Tom Eyckmans

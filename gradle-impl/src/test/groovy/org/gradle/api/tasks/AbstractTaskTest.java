@@ -19,28 +19,29 @@ package org.gradle.api.tasks;
 import groovy.lang.Closure;
 import org.codehaus.groovy.runtime.InvokerInvocationException;
 import org.gradle.api.*;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.impl.api.internal.project.AbstractProject;
 import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.impl.api.internal.project.TaskFactory;
 import org.gradle.impl.api.logging.DefaultStandardOutputCapture;
+import org.gradle.impl.api.logging.StandardOutputCapture;
 import org.gradle.test.util.Check;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
-import org.gradle.impl.api.logging.StandardOutputCapture;
-import org.gradle.api.logging.LogLevel;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.sameInstance;
+import org.jmock.Expectations;
+import org.jmock.Sequence;
+import org.jmock.integration.junit4.JUnit4Mockery;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.hamcrest.Matchers.*;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
-import org.jmock.Sequence;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Hans Dockter

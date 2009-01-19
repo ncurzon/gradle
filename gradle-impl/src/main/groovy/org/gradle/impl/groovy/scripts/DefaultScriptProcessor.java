@@ -17,10 +17,10 @@ package org.gradle.impl.groovy.scripts;
 
 import groovy.lang.Script;
 import org.gradle.CacheUsage;
-import org.gradle.groovy.scripts.IScriptProcessor;
-import org.gradle.groovy.scripts.ScriptWithSource;
-import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.api.Project;
+import org.gradle.groovy.scripts.IScriptProcessor;
+import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.groovy.scripts.ScriptWithSource;
 
 import java.io.File;
 

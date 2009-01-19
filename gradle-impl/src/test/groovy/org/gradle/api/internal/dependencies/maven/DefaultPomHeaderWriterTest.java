@@ -15,16 +15,16 @@
  */
 package org.gradle.api.internal.dependencies.maven;
 
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.gradle.impl.api.internal.dependencies.maven.PomWriter.NL;
-import org.gradle.util.GradleVersion;
 import org.gradle.impl.api.internal.dependencies.maven.DefaultPomHeaderWriter;
 import org.gradle.impl.api.internal.dependencies.maven.PomHeaderWriter;
+import static org.gradle.impl.api.internal.dependencies.maven.PomWriter.NL;
+import org.gradle.util.GradleVersion;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * @author Hans Dockter

@@ -16,17 +16,14 @@
  
 package org.gradle.api.tasks.testing.junit
 
-import static org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
-import org.gradle.impl.api.tasks.testing.junit.JUnitOptions
-import org.gradle.impl.api.tasks.testing.FormatterOptions
-import org.gradle.impl.api.tasks.testing.JunitForkOptions
 import org.gradle.api.tasks.testing.AbstractTestFrameworkOptionsTest
-import org.gradle.impl.api.tasks.testing.JunitForkOptions
 import org.gradle.impl.api.tasks.testing.FormatterOptions
+import org.gradle.impl.api.tasks.testing.JunitForkOptions
 import org.gradle.impl.api.tasks.testing.junit.JUnitOptions
 import org.gradle.impl.api.tasks.testing.junit.JUnitTestFramework
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

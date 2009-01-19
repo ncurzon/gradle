@@ -16,10 +16,10 @@
 package org.gradle.impl.initialization;
 
 import org.gradle.StartParameter;
-import org.gradle.initialization.SettingsProcessor;
-import org.gradle.initialization.ISettingsFinder;
-import org.gradle.initialization.IGradlePropertiesLoader;
 import org.gradle.api.internal.SettingsInternal;
+import org.gradle.initialization.IGradlePropertiesLoader;
+import org.gradle.initialization.ISettingsFinder;
+import org.gradle.initialization.SettingsProcessor;
 
 public class ScriptLocatingSettingsProcessor implements SettingsProcessor {
     private final SettingsProcessor processor;

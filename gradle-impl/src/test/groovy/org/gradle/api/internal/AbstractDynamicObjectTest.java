@@ -15,12 +15,12 @@
  */
 package org.gradle.api.internal;
 
-import static org.hamcrest.Matchers.*;
+import groovy.lang.MissingMethodException;
+import groovy.lang.MissingPropertyException;
+import org.gradle.impl.api.internal.AbstractDynamicObject;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import org.gradle.impl.api.internal.AbstractDynamicObject;
-import groovy.lang.*;
-import groovy.lang.MissingMethodException;
 
 public class AbstractDynamicObjectTest {
     private final AbstractDynamicObject object = new AbstractDynamicObject() {

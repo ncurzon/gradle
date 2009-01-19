@@ -16,11 +16,10 @@
 package org.gradle.api.internal;
 
 import groovy.lang.*;
-import groovy.lang.MissingMethodException;
 import org.gradle.api.plugins.Convention;
-import org.gradle.util.HelperUtil;
 import org.gradle.impl.api.internal.BeanDynamicObject;
 import org.gradle.impl.api.internal.DynamicObjectHelper;
+import org.gradle.util.HelperUtil;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import org.junit.Test;

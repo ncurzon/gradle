@@ -18,6 +18,7 @@ package org.gradle.impl.api.tasks.bundling
 
 import org.apache.commons.lang.builder.EqualsBuilder
 import org.apache.commons.lang.builder.HashCodeBuilder
+import org.gradle.impl.api.tasks.bundling.AbstractAntArchive
 
 /**
  * @author Hans Dockter

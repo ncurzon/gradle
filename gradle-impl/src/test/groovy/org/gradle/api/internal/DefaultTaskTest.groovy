@@ -16,14 +16,14 @@
 
 package org.gradle.api.internal
 
-import org.gradle.impl.api.internal.DefaultTask
+import org.gradle.api.internal.TestConvention
 import org.gradle.api.tasks.AbstractTaskTest
-import static org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
-import org.gradle.util.WrapUtil
 import org.gradle.impl.api.internal.AbstractTask
 import org.gradle.impl.api.internal.DefaultTask
+import org.gradle.util.WrapUtil
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

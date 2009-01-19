@@ -15,7 +15,12 @@
  */
 package org.gradle.api.internal
 
-import static org.junit.Assert.*
+import org.gradle.api.internal.DynamicBean
+import org.gradle.api.internal.DynamicObjectHelperTest
+import org.gradle.api.internal.DynamicObjectHelperTest.Bean
+import org.gradle.api.internal.GroovyBean
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 public class DynamicObjectHelperTestHelper {
     public static void assertCanGetAllProperties (DynamicObjectHelperTest.Bean bean) {

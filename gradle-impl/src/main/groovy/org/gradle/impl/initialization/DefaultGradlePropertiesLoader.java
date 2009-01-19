@@ -16,9 +16,9 @@
 package org.gradle.impl.initialization;
 
 import org.gradle.StartParameter;
+import org.gradle.api.Project;
 import org.gradle.initialization.IGradlePropertiesLoader;
 import org.gradle.util.GUtil;
-import org.gradle.api.Project;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

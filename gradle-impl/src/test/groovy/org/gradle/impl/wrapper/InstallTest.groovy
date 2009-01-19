@@ -16,15 +16,17 @@
 
 package org.gradle.impl.wrapper
 
+import org.gradle.impl.api.tasks.wrapper.Wrapper
 import org.gradle.impl.api.tasks.wrapper.Wrapper.PathBase
-import org.gradle.util.HelperUtil
-import org.junit.After
-import static org.junit.Assert.assertEquals
-import org.junit.Before
-import org.junit.Test
 import org.gradle.impl.wrapper.IDownload
 import org.gradle.impl.wrapper.Install
 import org.gradle.impl.wrapper.PathAssembler
+import org.gradle.util.HelperUtil
+import org.junit.After
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

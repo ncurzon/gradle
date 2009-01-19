@@ -16,8 +16,8 @@
 package org.gradle.impl.api.internal;
 
 import groovy.lang.MissingPropertyException;
-import org.gradle.api.plugins.Convention;
 import org.gradle.api.internal.DynamicObject;
+import org.gradle.api.plugins.Convention;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package org.gradle.impl.api.internal
 
-import org.gradle.api.TaskAction
 import org.gradle.api.Task
+import org.gradle.api.TaskAction
 
 class ClosureTaskAction implements TaskAction {
     private final Closure closure;

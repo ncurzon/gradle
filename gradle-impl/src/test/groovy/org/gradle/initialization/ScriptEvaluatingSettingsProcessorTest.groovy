@@ -17,35 +17,27 @@
 package org.gradle.initialization
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.api.DependencyManager
-import org.gradle.api.Project
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.api.internal.project.ImportsReader
-import org.gradle.groovy.scripts.*
-import org.gradle.impl.initialization.DefaultSettings
-import org.gradle.impl.initialization.ScriptEvaluatingSettingsProcessor
+import org.gradle.groovy.scripts.IScriptProcessor
+import org.gradle.groovy.scripts.ImportsScriptSource
+import org.gradle.groovy.scripts.ScriptSource
+import org.gradle.groovy.scripts.ScriptWithSource
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.groovy.scripts.EmptyScript
+import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
+import org.gradle.initialization.DefaultProjectDescriptor
+import org.gradle.initialization.IGradlePropertiesLoader
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.gradle.util.ReflectionEqualsMatcher
 import org.hamcrest.Matchers
 import org.jmock.lib.legacy.ClassImposteriser
 import org.junit.After
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertSame
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.groovy.scripts.EmptyScript
-import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
-import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry
-import org.gradle.impl.initialization.DefaultSettings
-import org.gradle.impl.initialization.DefaultSettingsFinder
-import org.gradle.impl.initialization.ScriptEvaluatingSettingsProcessor
-import org.gradle.impl.initialization.SettingsFactory
+import org.gradle.impl.initialization.*
+import static org.junit.Assert.assertSame
 
 /**
  * @author Hans Dockter

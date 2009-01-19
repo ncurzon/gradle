@@ -15,14 +15,14 @@
  */
 package org.gradle.api.internal.project;
 
-import org.gradle.impl.api.logging.StandardOutputLogging;
+import ch.qos.logback.classic.Level;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.impl.api.internal.project.DefaultStandardOutputRedirector;
-import org.junit.Test;
-import org.junit.Before;
-import static org.junit.Assert.assertSame;
+import org.gradle.impl.api.logging.StandardOutputLogging;
 import static org.junit.Assert.assertEquals;
-import ch.qos.logback.classic.Level;
+import static org.junit.Assert.assertSame;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * @author Hans Dockter

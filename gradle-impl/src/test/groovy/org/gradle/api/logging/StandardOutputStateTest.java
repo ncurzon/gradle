@@ -15,13 +15,11 @@
  */
 package org.gradle.api.logging;
 
-import org.junit.Test;
-import org.junit.Before;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import org.hamcrest.Matchers;
 import org.gradle.impl.api.logging.StandardOutputState;
+import org.hamcrest.Matchers;
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.PrintStream;
 

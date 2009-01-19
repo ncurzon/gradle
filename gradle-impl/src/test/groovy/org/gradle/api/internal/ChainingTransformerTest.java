@@ -15,16 +15,16 @@
  */
 package org.gradle.api.internal;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
+import groovy.lang.Closure;
+import org.gradle.api.Transformer;
+import org.gradle.util.HelperUtil;
+import static org.hamcrest.Matchers.equalTo;
 import org.jmock.Expectations;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.gradle.util.HelperUtil;
-import org.gradle.api.Transformer;
-import groovy.lang.Closure;
 
 @RunWith(JMock.class)
 public class ChainingTransformerTest {

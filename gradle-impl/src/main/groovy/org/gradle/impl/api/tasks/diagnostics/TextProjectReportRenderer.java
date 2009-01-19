@@ -17,7 +17,10 @@ package org.gradle.impl.api.tasks.diagnostics;
 
 import org.gradle.api.Project;
 
-import java.io.*;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Formatter;
 
 /**

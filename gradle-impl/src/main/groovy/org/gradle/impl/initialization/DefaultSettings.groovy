@@ -16,12 +16,11 @@
 
 package org.gradle.impl.initialization
 
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
-import org.gradle.groovy.scripts.ScriptSource
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.DefaultStartParameter
 import org.gradle.StartParameter
+import org.gradle.groovy.scripts.ScriptSource
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.initialization.BaseSettings
+import org.gradle.impl.initialization.BuildSourceBuilder
 import org.gradle.initialization.IProjectDescriptorRegistry
 
 /**

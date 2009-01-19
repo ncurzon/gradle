@@ -17,7 +17,6 @@
 package org.gradle.api.internal.dependencies
 
 import org.junit.Test
-import static org.junit.Assert.*;
 
 /**
  * @author Hans Dockter

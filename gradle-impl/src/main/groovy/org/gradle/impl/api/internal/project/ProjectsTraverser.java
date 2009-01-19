@@ -16,13 +16,11 @@
 
 package org.gradle.impl.api.internal.project;
 
-import groovy.lang.Closure;
+import org.gradle.api.Project;
+import org.gradle.api.ProjectAction;
 
 import java.util.Collection;
 import java.util.TreeSet;
-
-import org.gradle.api.Project;
-import org.gradle.api.ProjectAction;
 
 /**
  * @author Hans Dockter

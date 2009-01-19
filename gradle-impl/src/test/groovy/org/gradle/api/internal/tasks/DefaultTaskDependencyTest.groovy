@@ -18,16 +18,17 @@ package org.gradle.api.internal.tasks
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.tasks.TaskDependency
+import org.gradle.impl.api.internal.tasks.DefaultTaskDependency
 import org.gradle.util.JUnit4GroovyMockery
-import static org.gradle.util.WrapUtil.*
 import org.gradle.util.WrapUtil
-import static org.hamcrest.Matchers.*
 import org.jmock.integration.junit4.JMock
-import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.gradle.impl.api.internal.tasks.DefaultTaskDependency;
+import static org.gradle.util.WrapUtil.*
+import static org.hamcrest.Matchers.equalTo
+import static org.hamcrest.Matchers.sameInstance
+import static org.junit.Assert.assertThat
 
 @RunWith (JMock.class)
 public class DefaultTaskDependencyTest {

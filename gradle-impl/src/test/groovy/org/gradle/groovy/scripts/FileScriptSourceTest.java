@@ -16,11 +16,12 @@
 package org.gradle.groovy.scripts;
 
 import org.apache.commons.io.FileUtils;
-import org.gradle.util.HelperUtil;
 import org.gradle.impl.groovy.scripts.FileScriptSource;
-import static org.hamcrest.Matchers.*;
+import org.gradle.util.HelperUtil;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.nullValue;
 import org.junit.After;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 

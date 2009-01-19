@@ -16,9 +16,10 @@
  
 package org.gradle.api.tasks.bundling
 
-import static org.junit.Assert.*
+import org.gradle.api.tasks.bundling.TestArchiveTask
+import org.gradle.impl.api.tasks.bundling.ArchiveType
 import org.junit.Test
-import org.gradle.impl.api.tasks.bundling.ArchiveType;
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

@@ -16,20 +16,19 @@
 
 package org.gradle.impl.api.internal.dependencies;
 
+import groovy.lang.Closure;
 import org.apache.ivy.core.module.descriptor.Artifact;
 import org.apache.ivy.core.module.descriptor.DefaultArtifact;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Transformer;
-import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.dependencies.PublishArtifact;
-import org.gradle.util.WrapUtil;
+import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.util.GUtil;
+import org.gradle.util.WrapUtil;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import groovy.lang.Closure;
 
 /**
  * @author Hans Dockter

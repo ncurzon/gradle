@@ -18,20 +18,21 @@ package org.gradle.impl;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.gradle.CacheUsage;
+import org.gradle.Defaults;
+import org.gradle.StartParameter;
 import org.gradle.api.Project;
-import org.gradle.api.logging.LogLevel;
 import org.gradle.api.initialization.Settings;
-import org.gradle.execution.*;
+import org.gradle.api.logging.LogLevel;
+import org.gradle.execution.BuildExecuter;
+import org.gradle.execution.ProcessMode;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.impl.groovy.scripts.StringScriptSource;
 import org.gradle.impl.execution.BuiltInTasksBuildExecuter;
 import org.gradle.impl.execution.MergingBuildExecuter;
 import org.gradle.impl.execution.ProjectDefaultsBuildExecuter;
 import org.gradle.impl.execution.TaskNameResolvingBuildExecuter;
+import org.gradle.impl.groovy.scripts.StringScriptSource;
 import org.gradle.util.GUtil;
-import org.gradle.StartParameter;
-import org.gradle.CacheUsage;
-import org.gradle.Defaults;
 
 import java.io.File;
 import java.util.ArrayList;

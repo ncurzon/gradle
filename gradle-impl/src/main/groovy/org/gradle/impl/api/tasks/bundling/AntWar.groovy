@@ -16,8 +16,8 @@
 
 package org.gradle.impl.api.tasks.bundling
 
-import org.gradle.impl.api.tasks.util.FileCollection
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.impl.api.tasks.bundling.AbstractAntArchive
+import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
 import org.gradle.impl.api.tasks.util.FileSet
 
 /**

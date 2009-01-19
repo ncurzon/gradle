@@ -17,22 +17,22 @@
 package org.gradle.impl.api.plugins;
 
 import org.gradle.api.*;
-import org.gradle.api.plugins.Convention;
 import org.gradle.api.dependencies.Dependency;
 import org.gradle.api.dependencies.Filter;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
-import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.api.internal.project.PluginRegistry;
+import org.gradle.api.plugins.Convention;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.impl.api.tasks.ConventionValue;
 import org.gradle.impl.api.tasks.Resources;
 import org.gradle.impl.api.tasks.Upload;
-import org.gradle.impl.api.tasks.util.FileSet;
-import org.gradle.impl.api.tasks.testing.Test;
-import org.gradle.impl.api.tasks.javadoc.Javadoc;
-import org.gradle.impl.api.tasks.ide.eclipse.*;
-import org.gradle.impl.api.tasks.compile.Compile;
 import org.gradle.impl.api.tasks.bundling.Bundle;
 import org.gradle.impl.api.tasks.bundling.Jar;
+import org.gradle.impl.api.tasks.compile.Compile;
+import org.gradle.impl.api.tasks.ide.eclipse.*;
+import org.gradle.impl.api.tasks.javadoc.Javadoc;
+import org.gradle.impl.api.tasks.testing.Test;
+import org.gradle.impl.api.tasks.util.FileSet;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
 

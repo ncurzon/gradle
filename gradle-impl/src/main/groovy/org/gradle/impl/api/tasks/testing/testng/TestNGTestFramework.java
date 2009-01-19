@@ -1,9 +1,8 @@
 package org.gradle.impl.api.tasks.testing.testng;
 
 import org.gradle.api.Project;
-import org.gradle.impl.api.tasks.testing.Test;
-
 import org.gradle.impl.api.tasks.testing.AbstractTestFramework;
+import org.gradle.impl.api.tasks.testing.Test;
 
 /**
  * @author Tom Eyckmans

@@ -18,12 +18,11 @@ package org.gradle.api.tasks.compile
 
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.PathValidation
-import org.gradle.impl.api.tasks.util.BaseDirConverter
-import static org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
 import org.gradle.impl.api.tasks.compile.ClasspathConverter
 import org.gradle.impl.api.tasks.util.BaseDirConverter
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

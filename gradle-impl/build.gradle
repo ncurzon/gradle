@@ -44,14 +44,6 @@ dependencies {
             "org.apache.maven:maven-ant-tasks:2.0.9@jar",
             "org.apache.felix:org.apache.felix.framework:1.4.1"
 
-    runtime project(":command-line-api"),
-            project(":gradle-api"),
-            "org.apache.ant:ant-junit:1.7.0@jar",
-            "org.apache.ant:ant-launcher:1.7.0@jar",
-            "org.apache.ant:ant-nodeps:1.7.0@jar",
-            "org.apache.ant:ant-trax:1.7.0@jar",
-            "junit:junit:4.4@jar"
-
     def FIRST_LEVEL_JMOCK = ['org.hamcrest:hamcrest-core:1.1@jar', 'org.hamcrest:hamcrest-library:1.1@jar', 'org.jmock:jmock-junit4:2.4.0@jar']
     testCompile "junit:junit:4.4@jar", FIRST_LEVEL_JMOCK
     clientModule(['testCompile'], "org.jmock:jmock:2.4.0") {
@@ -59,15 +51,46 @@ dependencies {
     }
 }
 
-archive_jar {
-    jar() {
-        filesSet(dir:classesDir)
-        
-    }
-}
-
 configure(project.archive_jar.osgi) {
-      instruction 'Bundle-Activator', 'org.gradle.bootstrap.DefaultGradleActivator'
+      instruction 'Import-Package',
+        'org.osgi.framework',
+        'org.osgi.util.tracker',
+            'org.slf4j',
+            'org.gradle',
+            'org.gradle.api',
+            'org.gradle.api.dependencies',
+            'org.gradle.api.dependencies.maven',
+            'org.gradle.api.execution',
+            'org.gradle.api.initialization',
+            'org.gradle.api.internal',
+            'org.gradle.api.internal.dependencies',
+            'org.gradle.api.internal.dependencies.ivy',
+            'org.gradle.api.internal.dependencies.maven.deploy',
+            'org.gradle.api.internal.project',
+            'org.gradle.api.invocation',
+            'org.gradle.api.logging',
+            'org.gradle.api.plugins',
+            'org.gradle.api.tasks',
+            'org.gradle.configuration',
+            'org.gradle.execution',
+            'org.gradle.groovy.scripts',
+            'org.gradle.initialization',
+            'org.gradle.logging',
+            'org.gradle.util',
+            'org.apache.tools.ant',
+            'org.apache.ivy.util',
+            'org.apache.ivy.plugins.resolve',
+            'org.apache.ivy.core',
+            'org.apache.commons.io',
+            'org.apache.commons.lang',
+            'ch.qos.logback.classic.spi',
+            'ch.qos.logback.core.filter',
+            'ch.qos.logback.core.spi',
+            'ch.qos.logback.classic',
+            'groovy.lang',
+
+      instruction 'Export-Package', 'org.gradle.impl.bundle'
+      instruction 'Bundle-Activator', 'org.gradle.impl.bundle.DefaultGradleActivator'
       instruction 'Bundle-Vendor', 'gradle.org'
       instruction 'Bundle-Description', 'Gradle command line impl bundle'
       instruction 'Bundle-DocURL', 'http://www.gradle.org'

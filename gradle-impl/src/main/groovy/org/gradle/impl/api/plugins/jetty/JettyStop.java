@@ -15,18 +15,18 @@
 
 package org.gradle.impl.api.plugins.jetty;
 
+import org.gradle.api.InvalidUserDataException;
+import org.gradle.api.Project;
+import org.gradle.api.Task;
+import org.gradle.api.TaskAction;
+import org.gradle.impl.api.internal.ConventionTask;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.OutputStream;
 import java.net.ConnectException;
 import java.net.InetAddress;
 import java.net.Socket;
-
-import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.Project;
-import org.gradle.api.TaskAction;
-import org.gradle.api.Task;
-import org.gradle.impl.api.internal.ConventionTask;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class JettyStop extends ConventionTask {
     private static Logger logger = LoggerFactory.getLogger(JettyStop.class);

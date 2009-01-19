@@ -16,11 +16,11 @@
  
 package org.gradle.api.tasks.testing
 
+import org.gradle.impl.api.tasks.testing.FormatterOptions
 import org.junit.Before
-import static org.junit.Assert.*
 import org.junit.Test
-import org.gradle.impl.api.tasks.testing.FormatterOptions;
-
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertNull
 
 /**
  * @author Hans Dockter

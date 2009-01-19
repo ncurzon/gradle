@@ -15,10 +15,10 @@
  */
 package org.gradle.impl.api.tasks.diagnostics;
 
-import org.gradle.impl.api.dependencies.report.IvyDependencyGraph;
 import org.gradle.impl.api.dependencies.report.IvyDependency;
+import org.gradle.impl.api.dependencies.report.IvyDependencyGraph;
 
-import java.io.*;
+import java.io.IOException;
 
 /**
  * Simple dependency graph renderer that emits an ASCII tree.

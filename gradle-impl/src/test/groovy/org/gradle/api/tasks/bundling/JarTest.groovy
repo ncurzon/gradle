@@ -18,15 +18,12 @@ package org.gradle.api.tasks.bundling
 
 import groovy.mock.interceptor.MockFor
 import org.gradle.api.tasks.AbstractTaskTest
+import org.gradle.api.tasks.bundling.AbstractArchiveTaskTest
 import org.gradle.impl.api.tasks.util.FileSet
 import org.junit.Before
-import static org.junit.Assert.*
 import org.junit.Test
-import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
-import org.gradle.impl.api.tasks.bundling.Jar
-import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask
-import org.gradle.impl.api.tasks.bundling.AntJar
-import org.gradle.impl.api.tasks.bundling.GradleManifest
+import org.gradle.impl.api.tasks.bundling.*
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

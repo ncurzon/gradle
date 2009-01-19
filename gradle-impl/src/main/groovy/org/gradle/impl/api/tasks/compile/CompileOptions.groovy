@@ -16,6 +16,11 @@
 
 package org.gradle.impl.api.tasks.compile
 
+import org.gradle.impl.api.tasks.compile.AbstractOptions
+import org.gradle.impl.api.tasks.compile.CompileOptions
+import org.gradle.impl.api.tasks.compile.DebugOptions
+import org.gradle.impl.api.tasks.compile.ForkOptions
+
 /**
  * @author Hans Dockter
  */

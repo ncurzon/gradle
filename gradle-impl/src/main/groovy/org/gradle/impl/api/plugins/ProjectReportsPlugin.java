@@ -19,10 +19,10 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.internal.project.PluginRegistry;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
-import static org.gradle.util.WrapUtil.*;
 import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
 import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
+import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
+import static org.gradle.util.WrapUtil.toMap;
 
 import java.io.File;
 import java.util.Map;

@@ -17,8 +17,7 @@
 package org.gradle.impl.api.tasks.bundling
 
 import org.gradle.impl.api.tasks.AntBuilderAware
-import org.gradle.impl.api.tasks.util.FileSet
-import org.gradle.impl.api.tasks.AntBuilderAware
+import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
 import org.gradle.impl.api.tasks.util.FileSet
 
 /**

@@ -20,15 +20,14 @@ import org.gradle.api.AfterEvaluateListener
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
-import org.gradle.groovy.scripts.ScriptSource
-import org.gradle.util.ConfigureUtil
 import org.gradle.api.internal.BuildInternal
-import org.gradle.api.internal.project.ProjectInternal
-import org.gradle.api.internal.project.BuildScriptProcessor
-import org.gradle.api.internal.project.PluginRegistry
-import org.gradle.api.internal.project.IProjectRegistry
-import org.gradle.api.internal.project.IProjectFactory
+import org.gradle.groovy.scripts.ScriptSource
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.project.AbstractProject
+import org.gradle.impl.api.internal.project.AntBuilderFactory
+import org.gradle.impl.api.internal.project.ITaskFactory
+import org.gradle.util.ConfigureUtil
+import org.gradle.api.internal.project.*
 
 /**
  * @author Hans Dockter

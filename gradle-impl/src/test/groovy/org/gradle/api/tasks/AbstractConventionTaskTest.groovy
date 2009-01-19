@@ -17,6 +17,7 @@
 package org.gradle.api.tasks
 
 import org.gradle.api.internal.ConventionTestHelper
+import org.gradle.api.tasks.AbstractTaskTest
 import org.junit.Before
 import org.junit.Test
 

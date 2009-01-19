@@ -16,27 +16,24 @@
 
 package org.gradle.api.internal.dependencies;
 
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.UnknownDependencyNotation;
-import org.gradle.impl.api.internal.project.AbstractProject;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.util.HelperUtil;
-import org.gradle.util.WrapUtil;
 import org.gradle.impl.api.internal.dependencies.AbstractDependency;
 import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
+import org.gradle.impl.api.internal.project.AbstractProject;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
 import org.junit.runner.RunWith;
 
 import java.awt.*;

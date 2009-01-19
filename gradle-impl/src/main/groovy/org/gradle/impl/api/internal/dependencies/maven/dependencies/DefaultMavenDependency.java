@@ -15,13 +15,12 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
 import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Hans Dockter

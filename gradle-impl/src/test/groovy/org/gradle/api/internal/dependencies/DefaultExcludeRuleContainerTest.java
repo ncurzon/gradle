@@ -17,10 +17,10 @@ package org.gradle.api.internal.dependencies;
 
 import org.apache.ivy.core.IvyPatternHelper;
 import org.apache.ivy.core.module.descriptor.ExcludeRule;
-import org.gradle.util.GUtil;
-import org.gradle.util.WrapUtil;
-import org.gradle.util.HelperUtil;
 import org.gradle.api.InvalidUserDataException;
+import org.gradle.util.GUtil;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;

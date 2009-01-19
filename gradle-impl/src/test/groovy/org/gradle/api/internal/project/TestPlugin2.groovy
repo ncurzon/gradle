@@ -18,6 +18,7 @@ package org.gradle.api.internal.project
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.internal.project.PluginRegistry
 
 /**
 * @author Hans Dockter

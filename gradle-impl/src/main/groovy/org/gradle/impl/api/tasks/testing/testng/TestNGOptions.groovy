@@ -16,10 +16,11 @@
 package org.gradle.impl.api.tasks.testing.testng
 
 import groovy.xml.MarkupBuilder
-import org.gradle.impl.api.tasks.testing.AbstractTestFrameworkOptions
-import org.gradle.api.Project
-import org.gradle.util.GFileUtils
 import org.gradle.api.GradleException
+import org.gradle.impl.api.tasks.testing.AbstractTestFrameworkOptions
+import org.gradle.impl.api.tasks.testing.testng.TestNGOptions
+import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework
+import org.gradle.util.GFileUtils
 
 /**
  * @author Tom Eyckmans

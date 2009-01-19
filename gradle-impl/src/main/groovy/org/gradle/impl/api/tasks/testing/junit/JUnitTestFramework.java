@@ -15,12 +15,12 @@
  */
 package org.gradle.impl.api.tasks.testing.junit;
 
-import org.gradle.api.Project;
 import org.gradle.api.Plugin;
+import org.gradle.api.Project;
 import org.gradle.impl.api.plugins.GroovyPlugin;
 import org.gradle.impl.api.tasks.testing.AbstractTestFramework;
-import org.gradle.impl.api.tasks.testing.JunitForkOptions;
 import org.gradle.impl.api.tasks.testing.ForkMode;
+import org.gradle.impl.api.tasks.testing.JunitForkOptions;
 import org.gradle.impl.api.tasks.testing.Test;
 
 import java.util.Set;

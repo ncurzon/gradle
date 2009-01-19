@@ -17,7 +17,6 @@
 package org.gradle.impl.api.tasks.testing
 
 import org.gradle.impl.api.tasks.compile.AbstractOptions
-import org.gradle.impl.api.tasks.compile.AbstractOptions
 
 /**
  * @author Hans Dockter

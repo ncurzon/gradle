@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven;
 
-import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
+import org.gradle.api.dependencies.maven.MavenPom;
 
 /**
  * @author Hans Dockter

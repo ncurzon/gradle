@@ -16,13 +16,11 @@
 
 package org.gradle.impl.api.tasks.testing.junit
 
+import org.gradle.impl.api.tasks.testing.AbstractTestFrameworkOptions
 import org.gradle.impl.api.tasks.testing.FormatterOptions
 import org.gradle.impl.api.tasks.testing.JunitForkOptions
-import org.gradle.impl.api.tasks.testing.AbstractTestFramework
-import org.gradle.api.GradleException
-import org.gradle.impl.api.tasks.testing.AbstractTestFrameworkOptions
-import org.gradle.impl.api.tasks.testing.JunitForkOptions
-import org.gradle.impl.api.tasks.testing.AbstractTestFrameworkOptions
+import org.gradle.impl.api.tasks.testing.junit.JUnitOptions
+import org.gradle.impl.api.tasks.testing.junit.JUnitTestFramework
 
 /**
  * @author Hans Dockter

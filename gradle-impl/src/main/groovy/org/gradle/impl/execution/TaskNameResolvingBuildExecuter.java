@@ -23,7 +23,10 @@ import org.gradle.execution.TaskExecuter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * A {@link org.gradle.execution.BuildExecuter} which selects tasks which match the provided names. For each name, selects all tasks in all

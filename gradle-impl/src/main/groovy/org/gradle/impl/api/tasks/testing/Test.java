@@ -16,24 +16,23 @@
 
 package org.gradle.impl.api.tasks.testing;
 
+import groovy.lang.Closure;
+import groovy.lang.MissingPropertyException;
 import org.gradle.api.*;
 import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.impl.api.tasks.compile.ClasspathConverter;
 import org.gradle.impl.api.tasks.testing.junit.JUnitTestFramework;
-import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework;
+import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
+import org.gradle.util.ConfigureUtil;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
-import org.gradle.util.ConfigureUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-
-import groovy.lang.MissingPropertyException;
-import groovy.lang.Closure;
 
 /**
  * A task for executin Junit 3.8.x and Junit 4 tests.

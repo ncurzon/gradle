@@ -1,14 +1,14 @@
 package org.gradle.impl.invocation;
 
 import org.gradle.StartParameter;
-import org.gradle.impl.execution.Dag;
-import org.gradle.impl.execution.DefaultTaskExecuter;
-import org.gradle.impl.api.internal.project.DefaultProjectRegistry;
-import org.gradle.execution.TaskExecuter;
+import org.gradle.api.Task;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.project.IProjectRegistry;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.api.Task;
+import org.gradle.execution.TaskExecuter;
+import org.gradle.impl.api.internal.project.DefaultProjectRegistry;
+import org.gradle.impl.execution.Dag;
+import org.gradle.impl.execution.DefaultTaskExecuter;
 import org.gradle.util.GradleVersion;
 
 import java.io.File;

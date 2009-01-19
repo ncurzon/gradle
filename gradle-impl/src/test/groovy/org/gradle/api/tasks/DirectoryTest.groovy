@@ -16,15 +16,16 @@
 
 package org.gradle.api.tasks
 
-import org.gradle.api.InvalidUserDataException
 import org.gradle.api.GradleScriptException
-import org.gradle.util.HelperUtil
-import static org.junit.Assert.*
-import org.junit.Before
-import org.junit.Test
-import org.junit.After
+import org.gradle.api.InvalidUserDataException
+import org.gradle.api.tasks.AbstractTaskTest
 import org.gradle.impl.api.internal.AbstractTask
 import org.gradle.impl.api.tasks.Directory
+import org.gradle.util.HelperUtil
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

@@ -18,13 +18,11 @@ package org.gradle.impl.api.tasks.wrapper;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.taskdefs.Jar;
-import org.gradle.impl.api.internal.AbstractTask;
-import org.gradle.impl.api.tasks.wrapper.WrapperScriptGenerator;
 import org.gradle.api.tasks.AbstractTaskTest;
+import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.impl.invocation.DefaultBuild;
-import org.gradle.util.*;
 import org.gradle.impl.wrapper.Install;
-import org.gradle.impl.api.tasks.wrapper.Wrapper;
+import org.gradle.util.*;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;

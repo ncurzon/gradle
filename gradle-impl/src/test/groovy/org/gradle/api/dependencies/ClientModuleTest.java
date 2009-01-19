@@ -19,21 +19,20 @@ package org.gradle.api.dependencies;
 import org.apache.ivy.core.module.descriptor.DefaultDependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.internal.dependencies.*;
+import org.gradle.api.internal.dependencies.AbstractDependencyContainerTest;
+import org.gradle.api.internal.dependencies.DefaultDependencyConfigurationMappingContainer;
+import org.gradle.api.internal.dependencies.DefaultDependencyContainer;
+import org.gradle.api.internal.dependencies.DependencyDescriptorFactory;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;
-import org.jmock.integration.junit4.JMock;
 import org.jmock.Expectations;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertSame;
+import org.jmock.integration.junit4.JMock;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author Hans Dockter

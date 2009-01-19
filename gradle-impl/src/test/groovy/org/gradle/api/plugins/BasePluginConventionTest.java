@@ -17,13 +17,13 @@ package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
 import org.gradle.impl.api.plugins.BasePluginConvention;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.Assert.assertThat;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.File;

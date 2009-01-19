@@ -15,12 +15,9 @@
  */
 package org.gradle.api.dependencies.maven;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import org.gradle.api.dependencies.maven.Conf2ScopeMapping;
 
 /**
  * @author Hans Dockter

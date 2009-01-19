@@ -19,12 +19,12 @@ import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.apache.ivy.core.publish.PublishEngine;
 import org.apache.ivy.core.publish.PublishOptions;
 import org.apache.ivy.plugins.resolver.FileSystemResolver;
-import org.gradle.api.dependencies.ResolverContainer;
 import org.gradle.api.DependencyManager;
+import org.gradle.api.dependencies.ResolverContainer;
+import org.gradle.impl.api.internal.dependencies.DefaultDependencyPublisher;
 import org.gradle.util.HelperUtil;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.gradle.util.WrapUtil;
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyPublisher;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
@@ -33,9 +33,9 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.text.ParseException;
 
 /**
  * @author Hans Dockter

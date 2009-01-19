@@ -16,19 +16,18 @@
 package org.gradle.api.internal.dependencies;
 
 import org.gradle.api.dependencies.*;
-import org.gradle.util.HelperUtil;
-import org.gradle.util.WrapUtil;
 import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
 import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
+import org.hamcrest.Matchers;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;import static org.junit.Assert.assertThat;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.hamcrest.Matchers;
 
 import java.io.File;
 import java.util.*;

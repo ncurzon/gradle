@@ -21,11 +21,11 @@ import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.impl.api.internal.dependencies.maven.MavenPomFactory;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer;
 import org.gradle.util.JUnit4GroovyMockery;
+import org.hamcrest.Matchers;
 import org.jmock.Expectations;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.hamcrest.Matchers;
 
 import java.util.HashSet;
 import java.util.Iterator;

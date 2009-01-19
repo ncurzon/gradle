@@ -16,15 +16,15 @@
 
 package org.gradle.impl.api.tasks.compile;
 
+import org.gradle.api.*;
 import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
-import org.gradle.api.*;
 import org.gradle.util.GUtil;
 
-import java.util.List;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.File;
+import java.util.List;
 
 /**
 * @author Hans Dockter

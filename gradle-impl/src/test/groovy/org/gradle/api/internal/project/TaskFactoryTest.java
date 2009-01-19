@@ -17,10 +17,10 @@ package org.gradle.api.internal.project;
 
 import org.gradle.api.*;
 import org.gradle.impl.api.internal.DefaultTask;
-import org.gradle.util.TestTask;
-import org.gradle.util.WrapUtil;
 import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.impl.api.internal.project.TaskFactory;
+import org.gradle.util.TestTask;
+import org.gradle.util.WrapUtil;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

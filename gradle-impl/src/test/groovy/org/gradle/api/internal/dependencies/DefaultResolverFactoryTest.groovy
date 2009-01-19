@@ -16,21 +16,15 @@
 
 package org.gradle.api.internal.dependencies
 
-import org.apache.ivy.plugins.resolver.DependencyResolver
-import org.apache.ivy.plugins.resolver.IBiblioResolver
-import org.gradle.api.InvalidUserDataException
-import org.apache.ivy.plugins.resolver.DualResolver
-import org.apache.ivy.plugins.resolver.URLResolver
-import org.gradle.api.DependencyManager
-import org.apache.ivy.core.cache.RepositoryCacheManager
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
-import org.apache.ivy.plugins.resolver.FileSystemResolver
-import org.apache.ivy.plugins.resolver.RepositoryResolver
-import static org.junit.Assert.*
+import org.gradle.api.DependencyManager
+import org.gradle.api.InvalidUserDataException
+import org.gradle.impl.api.internal.dependencies.DefaultResolverFactory
 import org.junit.Before
 import org.junit.Test
-import org.apache.ivy.plugins.resolver.BasicResolver
-import org.gradle.impl.api.internal.dependencies.DefaultResolverFactory;
+import org.apache.ivy.plugins.resolver.*
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * @author Hans Dockter

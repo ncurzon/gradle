@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.impl.groovy.scripts;
+package org.gradle.impl.groovy.scripts
 
-import groovy.lang.Script;
-import groovy.lang.ExpandoMetaClass;
 import org.gradle.api.initialization.Settings
+import org.gradle.impl.groovy.scripts.DefaultSettingsScriptMetaData
+import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
 import org.slf4j.Logger
-import org.slf4j.LoggerFactory
-import org.gradle.api.initialization.Settings
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Hans Dockter

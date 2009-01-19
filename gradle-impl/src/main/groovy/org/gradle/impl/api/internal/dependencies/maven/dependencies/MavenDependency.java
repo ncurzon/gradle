@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven.dependencies;
 
-import java.util.List;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * @author Hans Dockter

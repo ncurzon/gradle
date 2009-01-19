@@ -15,27 +15,26 @@
  */
 package org.gradle.api.internal.dependencies.maven;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.Expectations;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
+import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.impl.api.internal.dependencies.maven.DefaultPomWriter;
 import org.gradle.impl.api.internal.dependencies.maven.PomHeaderWriter;
 import org.gradle.impl.api.internal.dependencies.maven.PomModuleIdWriter;
 import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
-import java.util.List;
+import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Hans Dockter

@@ -19,10 +19,11 @@ package org.gradle.util;
 /**
  * @author Hans Dockter
  */
+
 import groovy.lang.Closure;
+import org.hamcrest.Matcher;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
-import org.hamcrest.Matcher;
 
 public class JUnit4GroovyMockery extends JUnit4Mockery {
     class ClosureExpectations extends Expectations {

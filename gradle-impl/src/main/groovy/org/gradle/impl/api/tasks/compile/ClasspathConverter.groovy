@@ -18,10 +18,10 @@ package org.gradle.impl.api.tasks.compile
 
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.PathValidation
+import org.gradle.impl.api.tasks.compile.ClasspathConverter
 import org.gradle.impl.api.tasks.util.BaseDirConverter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.impl.api.tasks.util.BaseDirConverter
 
 /**
  * @author Hans Dockter

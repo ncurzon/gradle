@@ -17,6 +17,9 @@
 package org.gradle.impl.api.tasks.bundling
 
 import org.gradle.api.Project
+import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask
+import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
+import org.gradle.impl.api.tasks.bundling.AntZip
 import org.gradle.impl.api.tasks.util.ZipFileSet
 
 /**

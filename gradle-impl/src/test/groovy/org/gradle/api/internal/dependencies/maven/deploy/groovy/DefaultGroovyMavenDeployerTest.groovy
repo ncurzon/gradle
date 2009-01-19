@@ -16,24 +16,21 @@
 
 package org.gradle.api.internal.dependencies.maven.deploy.groovy
 
-import org.gradle.api.dependencies.maven.MavenPom
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.util.JUnit4GroovyMockery
-import org.hamcrest.BaseMatcher
-import org.hamcrest.Matcher
-import org.gradle.api.dependencies.maven.PublishFilter
-import org.hamcrest.Description
 import java.lang.reflect.Proxy
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPom
-import org.junit.Before
+import org.gradle.api.dependencies.maven.MavenPom
+import org.gradle.api.dependencies.maven.PublishFilter
 import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainerTest
-import org.junit.Test
+import org.gradle.api.internal.dependencies.maven.deploy.groovy.FilterMatcher
 import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import static org.junit.Assert.*
-import org.junit.runner.RunWith
-import org.jmock.integration.junit4.JMock
 import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer
+import org.hamcrest.BaseMatcher
+import org.hamcrest.Description
+import org.hamcrest.Matcher
+import org.jmock.integration.junit4.JMock
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import static org.junit.Assert.assertSame
 
 /**
  * @author Hans Dockter

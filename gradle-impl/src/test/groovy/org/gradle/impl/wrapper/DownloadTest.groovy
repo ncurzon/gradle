@@ -16,11 +16,11 @@
 
 package org.gradle.impl.wrapper
 
+import org.gradle.impl.wrapper.Download
 import org.gradle.util.HelperUtil
-import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.wrapper.Download;
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

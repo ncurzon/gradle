@@ -16,10 +16,12 @@
 package org.gradle.api.internal.project
 
 import org.gradle.api.internal.project.PluginRegistry
-import org.gradle.util.HelperUtil
-import static org.junit.Assert.*
-import org.junit.Test
+import org.gradle.api.internal.project.TestPlugin1
+import org.gradle.api.internal.project.TestPlugin2
 import org.gradle.impl.api.internal.project.DefaultProject
+import org.gradle.util.HelperUtil
+import org.junit.Test
+import static org.junit.Assert.*
 
 /**
 * @author Hans Dockter

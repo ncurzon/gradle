@@ -16,12 +16,14 @@
 
 package org.gradle.api.plugins
 
-import static org.junit.Assert.*
-import static org.hamcrest.Matchers.*;
+import org.gradle.api.plugins.AbstractPluginConventionTest
+import org.gradle.impl.api.plugins.GroovyPluginConvention
+import org.gradle.impl.api.plugins.JavaPluginConvention
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.plugins.JavaPluginConvention
-import org.gradle.impl.api.plugins.GroovyPluginConvention;
+import static org.hamcrest.Matchers.equalTo
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertThat
 
 /**
  * @author Hans Dockter

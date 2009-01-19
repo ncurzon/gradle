@@ -16,32 +16,28 @@
 
 package org.gradle.api.internal.dependencies;
 
+import org.apache.ivy.core.module.descriptor.*;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
 import org.gradle.api.DependencyManager;
-import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.api.dependencies.*;
 import org.gradle.api.dependencies.Artifact;
-import org.gradle.util.HelperUtil;
-import org.gradle.util.WrapUtil;
-import org.gradle.util.GUtil;
+import org.gradle.api.dependencies.*;
+import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
 import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import org.gradle.util.GUtil;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.apache.ivy.core.module.descriptor.*;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.Expectations;
 
-import java.util.*;
-import java.net.URL;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.*;
 
 /**
  * @author Hans Dockter

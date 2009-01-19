@@ -23,20 +23,14 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.execution.TaskExecutionGraphListener;
 import org.gradle.api.execution.TaskExecutionListener;
+import org.gradle.execution.TaskExecuter;
 import org.gradle.impl.api.internal.TaskInternal;
 import org.gradle.util.Clock;
 import org.gradle.util.ListenerBroadcast;
-import org.gradle.execution.TaskExecuter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @author Hans Dockter

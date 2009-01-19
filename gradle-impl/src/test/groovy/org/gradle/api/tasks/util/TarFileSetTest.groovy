@@ -16,8 +16,9 @@
 
 package org.gradle.api.tasks.util
 
-import org.junit.Before
+import org.gradle.api.tasks.util.FileSetTest
 import org.gradle.impl.api.tasks.util.TarFileSet
+import org.junit.Before
 
 /**
  * @author Hans Dockter

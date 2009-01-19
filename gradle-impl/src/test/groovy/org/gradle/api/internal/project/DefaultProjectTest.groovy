@@ -19,45 +19,37 @@ package org.gradle.api.internal.project
 import java.awt.Point
 import java.text.FieldPosition
 import org.apache.tools.ant.types.FileSet
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.api.*
-import org.gradle.impl.api.internal.DefaultTask
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.api.internal.project.BuildScriptProcessor
+import org.gradle.api.internal.project.IProjectRegistry
+import org.gradle.api.internal.project.PluginRegistry
+import org.gradle.api.internal.project.TestConvention
 import org.gradle.api.invocation.Build
 import org.gradle.api.logging.LogLevel
-import org.gradle.impl.api.logging.StandardOutputLogging
 import org.gradle.api.plugins.Convention
-import org.gradle.impl.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginTest
+import org.gradle.groovy.scripts.ScriptSource
+import org.gradle.impl.DefaultStartParameter
+import org.gradle.impl.api.internal.DefaultTask
+import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.project.AbstractProject.State
+import org.gradle.impl.api.logging.StandardOutputLogging
+import org.gradle.impl.api.plugins.JavaPlugin
 import org.gradle.impl.api.tasks.Directory
 import org.gradle.impl.api.tasks.util.BaseDirConverter
 import org.gradle.impl.groovy.scripts.EmptyScript
-import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.impl.invocation.DefaultBuild
+import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.gradle.util.WrapUtil
-import static org.hamcrest.Matchers.*
+import org.jmock.integration.junit4.JMock
 import org.jmock.lib.legacy.ClassImposteriser
-import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.gradle.util.HelperUtil
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.groovy.scripts.EmptyScript
-import org.gradle.impl.invocation.DefaultBuild
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
-import org.gradle.impl.api.internal.project.AbstractProject
-import org.gradle.impl.api.internal.project.AntBuilderFactory
-import org.gradle.impl.api.internal.project.DefaultProject
-import org.gradle.impl.api.internal.project.DefaultProjectRegistry
-import org.gradle.impl.api.internal.project.ITaskFactory
-import org.gradle.impl.api.internal.project.ProjectFactory
-import org.gradle.impl.api.internal.project.StandardOutputRedirector
-import org.gradle.impl.api.internal.DefaultTask
-import org.gradle.impl.api.tasks.Directory
-import org.gradle.impl.api.tasks.util.BaseDirConverter
+import org.gradle.api.*
+import org.gradle.impl.api.internal.project.*
+import static org.hamcrest.Matchers.*
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

@@ -15,9 +15,11 @@
  */
 package org.gradle.impl.api.tasks.testing.testng
 
+import org.gradle.impl.api.tasks.testing.Test
+import org.gradle.impl.api.tasks.testing.testng.AntTestNGExecute
+import org.gradle.impl.api.tasks.testing.testng.TestNGOptions
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.impl.api.tasks.testing.Test
 
 /**
  * @author Tom Eyckmans

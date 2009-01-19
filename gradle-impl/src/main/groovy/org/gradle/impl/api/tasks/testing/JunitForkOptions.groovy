@@ -17,7 +17,7 @@
 package org.gradle.impl.api.tasks.testing
 
 import org.gradle.impl.api.tasks.compile.AbstractOptions
-import org.gradle.impl.api.tasks.compile.AbstractOptions
+import org.gradle.impl.api.tasks.testing.ForkMode
 
 /**
  * @author Hans Dockter

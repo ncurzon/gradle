@@ -17,6 +17,7 @@
 package org.gradle.impl.api.tasks.util
 
 import org.gradle.api.InvalidUserDataException
+import org.gradle.impl.api.tasks.util.PatternSet
 
 /**
  * @author Hans Dockter

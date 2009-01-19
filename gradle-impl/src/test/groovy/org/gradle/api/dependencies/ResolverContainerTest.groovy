@@ -18,27 +18,20 @@ package org.gradle.api.internal.dependencies
 
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
 import org.apache.ivy.core.cache.RepositoryCacheManager
+import org.apache.ivy.plugins.resolver.DependencyResolver
 import org.apache.ivy.plugins.resolver.FileSystemResolver
 import org.gradle.api.DependencyManager
 import org.gradle.api.InvalidUserDataException
-import org.gradle.api.dependencies.maven.GroovyMavenDeployer
 import org.gradle.api.dependencies.ResolverContainer
-import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer
+import org.gradle.api.dependencies.maven.GroovyMavenDeployer
+import org.gradle.api.dependencies.maven.MavenResolver
+import org.gradle.api.internal.dependencies.ResolverFactory
 import org.gradle.util.JUnit4GroovyMockery
-import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertSame
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.gradle.api.dependencies.maven.GroovyMavenDeployer
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.api.dependencies.maven.GroovyMavenDeployer
-import org.apache.ivy.plugins.resolver.DependencyResolver
-import org.gradle.api.dependencies.maven.PomFilterContainer
-import org.gradle.api.dependencies.maven.MavenResolver
-import org.gradle.api.dependencies.maven.CopyableGroovyPomFilterContainer
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertSame
 
 /**
  * @author Hans Dockter

@@ -17,6 +17,7 @@
 package org.gradle.api.internal.dependencies
 
 import org.apache.ivy.Ivy
+import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor
 import org.apache.ivy.core.module.id.ModuleRevisionId
 import org.apache.ivy.core.settings.IvySettings
@@ -25,34 +26,20 @@ import org.apache.ivy.plugins.resolver.FileSystemResolver
 import org.apache.ivy.plugins.resolver.RepositoryResolver
 import org.gradle.api.DependencyManager
 import org.gradle.api.InvalidUserDataException
-import org.gradle.api.dependencies.Dependency
-import org.gradle.api.dependencies.ExcludeRuleContainer
-import org.gradle.api.dependencies.PublishArtifact
-import org.gradle.api.dependencies.ResolverContainer
-import org.gradle.api.dependencies.UnknownConfigurationException
+import org.gradle.api.Transformer
+import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
+import org.jmock.integration.junit4.JMock
 import org.jmock.lib.legacy.ClassImposteriser
-import static org.junit.Assert.*
-import static org.hamcrest.Matchers.*
-import static org.gradle.util.WrapUtil.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.gradle.api.dependencies.maven.MavenPom
-import org.gradle.api.dependencies.Configuration
-import org.gradle.util.HelperUtil
-import org.gradle.api.dependencies.PublishArtifact
-import org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor
-import org.gradle.api.Transformer
-import org.apache.ivy.core.module.id.ModuleId
-import org.gradle.api.Transformer
-import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyManager
-import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
-import org.gradle.impl.api.internal.dependencies.DefaultSettingsConverter
-import org.gradle.impl.api.internal.dependencies.IDependencyPublisher
-import org.gradle.impl.api.internal.dependencies.IDependencyResolver
-import org.gradle.impl.api.internal.dependencies.IIvyFactory
+import org.gradle.api.dependencies.*
+import org.gradle.api.internal.dependencies.*
+import org.gradle.impl.api.internal.dependencies.*
+import static org.gradle.util.WrapUtil.toSet
+import static org.hamcrest.Matchers.*
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

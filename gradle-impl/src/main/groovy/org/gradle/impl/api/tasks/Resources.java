@@ -24,8 +24,8 @@ import org.gradle.impl.api.tasks.util.CopyInstructionFactory;
 import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 import org.gradle.util.GUtil;
 
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 /**
  * Copies the content of the <code>sourceDirs</code> to the <code>destinationDir</code>.

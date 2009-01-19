@@ -15,10 +15,8 @@
  */
 package org.gradle.impl.api.dependencies.report;
 
-import org.gradle.impl.api.dependencies.report.IvyDependency;
-
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A graph of Ivy dependencies found in a project.

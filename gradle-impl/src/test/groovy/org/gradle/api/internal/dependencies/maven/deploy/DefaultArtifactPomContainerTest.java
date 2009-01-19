@@ -15,33 +15,32 @@
  */
 package org.gradle.api.internal.dependencies.maven.deploy;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.apache.ivy.core.module.descriptor.Artifact;
 import org.apache.ivy.core.module.descriptor.DefaultArtifact;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.id.ModuleRevisionId;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.Expectations;
 import org.gradle.api.InvalidUserDataException;
+import org.gradle.api.dependencies.maven.MavenPom;
+import org.gradle.api.dependencies.maven.PomFilterContainer;
+import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.impl.api.internal.dependencies.maven.PomFileWriter;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPom;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomFactory;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPomContainer;
-import org.gradle.api.dependencies.maven.PomFilterContainer;
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.util.WrapUtil;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.File;
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Hans Dockter

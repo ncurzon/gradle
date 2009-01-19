@@ -15,9 +15,9 @@
  */
 package org.gradle.api.internal.dependencies.maven;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  * @author Hans Dockter

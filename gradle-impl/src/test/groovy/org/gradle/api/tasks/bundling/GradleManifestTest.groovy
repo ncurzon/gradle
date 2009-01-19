@@ -16,13 +16,12 @@
 
 package org.gradle.api.tasks.bundling
 
+import java.util.jar.Attributes
 import java.util.jar.Manifest
-import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.bundling.GradleManifest
 import org.junit.Before
 import org.junit.Test
-import java.util.jar.Attributes
-import hidden.org.codehaus.plexus.util.StringOutputStream
-import org.gradle.impl.api.tasks.bundling.GradleManifest;
+import static org.junit.Assert.*
 
 /**
  * @author Hans Dockter

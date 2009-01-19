@@ -15,30 +15,30 @@
 
 package org.gradle.impl.api.plugins.jetty;
 
+import hidden.org.codehaus.plexus.util.FileUtils;
+import org.gradle.api.InvalidUserDataException;
+import org.gradle.api.Project;
+import org.gradle.impl.api.plugins.jetty.util.BuildFileHelper;
+import org.gradle.impl.api.plugins.jetty.util.JettyPluginServer;
+import org.gradle.impl.api.plugins.jetty.util.ScanTargetPattern;
+import org.mortbay.jetty.Handler;
+import org.mortbay.jetty.Server;
+import org.mortbay.jetty.handler.ContextHandler;
+import org.mortbay.jetty.handler.ContextHandlerCollection;
+import org.mortbay.jetty.handler.HandlerCollection;
+import org.mortbay.resource.Resource;
+import org.mortbay.resource.ResourceCollection;
+import org.mortbay.util.Scanner;
+import org.mortbay.xml.XmlConfiguration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import org.gradle.impl.api.plugins.jetty.util.ScanTargetPattern;
-import org.mortbay.resource.Resource;
-import org.mortbay.resource.ResourceCollection;
-import org.mortbay.util.Scanner;
-import org.mortbay.jetty.handler.ContextHandler;
-import org.mortbay.jetty.handler.HandlerCollection;
-import org.mortbay.jetty.handler.ContextHandlerCollection;
-import org.mortbay.jetty.Handler;
-import org.mortbay.jetty.Server;
-import org.mortbay.xml.XmlConfiguration;
-import org.gradle.api.InvalidUserDataException;
-import org.gradle.api.Project;
-import org.gradle.impl.api.plugins.jetty.util.BuildFileHelper;
-import org.gradle.impl.api.plugins.jetty.util.JettyPluginServer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import hidden.org.codehaus.plexus.util.FileUtils;
 
 /**
  * <p>

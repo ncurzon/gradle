@@ -16,6 +16,7 @@
 
 package org.gradle.impl.api.tasks.ide.eclipse;
 
+import org.apache.commons.io.FilenameUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
 import org.dom4j.Element;
@@ -25,10 +26,9 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
-import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.gradle.impl.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.gradle.util.GFileUtils;
-import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -17,7 +17,8 @@
 package org.gradle.api
 
 import org.junit.Test
-import static org.junit.Assert.*;
+import org.gradle.api.*
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

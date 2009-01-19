@@ -1,12 +1,12 @@
 package org.gradle.api.tasks.testing.testng
 
-import org.junit.Before
-import org.junit.Test
-import static org.junit.Assert.*;
-import static org.hamcrest.Matchers.*
 import org.gradle.api.tasks.testing.AbstractTestFrameworkOptionsTest
 import org.gradle.impl.api.tasks.testing.testng.TestNGOptions
-import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework;
+import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework
+import org.junit.Before
+import org.junit.Test
+import static org.hamcrest.Matchers.hasItems
+import static org.junit.Assert.*
 
 /**
  * @author Tom Eyckmans

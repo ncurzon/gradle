@@ -17,11 +17,14 @@
 package org.gradle.impl.api.tasks.bundling
 
 import org.gradle.api.Project
+import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
+import org.gradle.impl.api.tasks.bundling.AntWar
+import org.gradle.impl.api.tasks.bundling.Jar
+import org.gradle.impl.api.tasks.bundling.War
 import org.gradle.impl.api.tasks.util.FileSet
 import org.gradle.util.GUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.impl.api.tasks.util.FileSet
 
 /**
  * @author Hans Dockter

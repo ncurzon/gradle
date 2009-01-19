@@ -16,10 +16,11 @@
  
 package org.gradle.api.tasks.compile
 
-import static org.junit.Assert.*
+import org.gradle.impl.api.tasks.compile.DebugOptions
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.tasks.compile.DebugOptions;
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertNull
 
 /**
  * @author Hans Dockter

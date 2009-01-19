@@ -16,12 +16,12 @@
 package org.gradle.api.internal.project;
 
 import static junit.framework.Assert.assertSame;
-import org.gradle.api.Project;
 import org.gradle.api.InvalidUserDataException;
-import org.gradle.util.HelperUtil;
-import org.gradle.util.WrapUtil;
+import org.gradle.api.Project;
 import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.impl.api.internal.project.DefaultProjectRegistry;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;

@@ -15,10 +15,8 @@
  */
 package org.gradle.integtests;
 
-import static org.apache.commons.io.FileUtils.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import org.junit.Ignore;
 
 import java.io.File;
 import java.io.IOException;

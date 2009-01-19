@@ -15,27 +15,25 @@
  */
 package org.gradle.groovy.scripts;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.After;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
-import org.gradle.util.HelperUtil;
-import org.gradle.util.WrapUtil;
-import org.gradle.util.GradleVersion;
-import org.gradle.util.GUtil;
 import org.gradle.impl.groovy.scripts.CachePropertiesHandler;
 import org.gradle.impl.groovy.scripts.DefaultCachePropertiesHandler;
+import org.gradle.util.GUtil;
+import org.gradle.util.GradleVersion;
+import org.gradle.util.HelperUtil;
+import org.gradle.util.WrapUtil;
+import org.junit.After;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
-import java.util.Map;
-import java.util.HashMap;
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  * @author Hans Dockter

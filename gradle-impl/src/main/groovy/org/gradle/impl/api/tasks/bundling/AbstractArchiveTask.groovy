@@ -22,6 +22,8 @@ import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.impl.api.internal.ConventionTask
 import org.gradle.impl.api.internal.dependencies.DefaultPublishArtifact
+import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask
+import org.gradle.impl.api.tasks.bundling.ArchiveDetector
 import org.gradle.impl.api.tasks.util.AntDirective
 import org.gradle.impl.api.tasks.util.FileCollection
 import org.gradle.impl.api.tasks.util.FileSet
@@ -30,9 +32,6 @@ import org.gradle.util.GUtil
 import org.gradle.util.GradleUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.impl.api.tasks.util.AntDirective
-import org.gradle.impl.api.tasks.util.FileCollection
-import org.gradle.impl.api.tasks.util.FileSet
 
 /**
  * @author Hans Dockter

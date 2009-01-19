@@ -17,19 +17,20 @@
 package org.gradle.execution;
 
 import org.gradle.api.CircularReferenceException;
+import org.gradle.api.GradleScriptException;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
-import org.gradle.api.GradleScriptException;
 import org.gradle.api.execution.TaskExecutionGraphListener;
 import org.gradle.api.execution.TaskExecutionListener;
+import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.impl.api.internal.DefaultTask;
 import org.gradle.impl.api.internal.TaskInternal;
-import org.gradle.api.internal.project.ProjectInternal;
-import static org.gradle.util.HelperUtil.*;
-import org.gradle.util.TestClosure;
-import static org.gradle.util.WrapUtil.*;
 import org.gradle.impl.execution.Dag;
 import org.gradle.impl.execution.DefaultTaskExecuter;
+import static org.gradle.util.HelperUtil.createRootProject;
+import static org.gradle.util.HelperUtil.toClosure;
+import org.gradle.util.TestClosure;
+import static org.gradle.util.WrapUtil.toList;
 import static org.hamcrest.Matchers.*;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;

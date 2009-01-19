@@ -17,20 +17,22 @@
 package org.gradle.api.tasks
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.impl.api.internal.AbstractTask
-import org.gradle.impl.api.tasks.util.CopyInstruction
-import org.gradle.impl.api.tasks.util.CopyInstructionFactory
-import org.gradle.impl.api.tasks.util.ExistingDirsFilter
-import org.gradle.util.JUnit4GroovyMockery
-import org.jmock.lib.legacy.ClassImposteriser
-import static org.junit.Assert.assertEquals
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
+import org.gradle.api.tasks.AbstractTaskTest
+import org.gradle.api.tasks.ResourcesTestConvention
 import org.gradle.impl.api.internal.AbstractTask
 import org.gradle.impl.api.tasks.ConventionValue
 import org.gradle.impl.api.tasks.Resources
 import org.gradle.impl.api.tasks.util.CopyInstruction
+import org.gradle.impl.api.tasks.util.CopyInstructionFactory
+import org.gradle.impl.api.tasks.util.ExistingDirsFilter
+import org.gradle.util.JUnit4GroovyMockery
+import org.jmock.integration.junit4.JMock
+import org.jmock.lib.legacy.ClassImposteriser
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

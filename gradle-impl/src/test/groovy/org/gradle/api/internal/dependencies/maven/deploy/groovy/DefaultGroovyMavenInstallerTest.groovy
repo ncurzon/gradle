@@ -16,19 +16,15 @@
  
 package org.gradle.api.internal.dependencies.maven.deploy.groovy
 
+import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
+import org.gradle.api.dependencies.maven.PomFilterContainer
+import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenInstallerTest
+import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller
+import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenInstaller
+import org.jmock.integration.junit4.JMock
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenDeployerTest
-import org.gradle.api.dependencies.maven.PomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenDeployer
-import org.gradle.api.dependencies.maven.GroovyPomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller
-import org.gradle.api.internal.dependencies.maven.deploy.AbstractMavenResolverTest
-import org.gradle.api.internal.dependencies.maven.deploy.BaseMavenInstallerTest
-import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenInstaller
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BaseMavenInstaller
-import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyMavenInstaller
 
 /**
  * @author Hans Dockter

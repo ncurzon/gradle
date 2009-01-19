@@ -18,14 +18,8 @@ package org.gradle.impl.api.plugins
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.Project
 import org.gradle.impl.api.internal.plugins.PluginUtil
-import org.gradle.api.tasks.bundling.*
-import org.gradle.impl.api.internal.plugins.PluginUtil
-import org.gradle.impl.api.tasks.bundling.ArchiveType
-import org.gradle.impl.api.tasks.bundling.GradleManifest
-import org.gradle.impl.api.tasks.bundling.Tar
-import org.gradle.impl.api.tasks.bundling.Zip
-import org.gradle.impl.api.tasks.bundling.Jar
-import org.gradle.impl.api.tasks.bundling.War
+import org.gradle.impl.api.plugins.DefaultConventionsToPropertiesMapping
+import org.gradle.impl.api.tasks.bundling.*
 
 /**
  * @author Hans Dockter

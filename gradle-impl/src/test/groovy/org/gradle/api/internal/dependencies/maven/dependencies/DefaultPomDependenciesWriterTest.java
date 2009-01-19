@@ -15,27 +15,27 @@
  */
 package org.gradle.api.internal.dependencies.maven.dependencies;
 
+import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
+import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
+import org.gradle.api.dependencies.maven.MavenPom;
+import static org.gradle.impl.api.internal.dependencies.maven.PomWriter.NL;
+import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultPomDependenciesWriter;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
+import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
+import org.gradle.util.WrapUtil;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.Expectations;
-import org.gradle.util.WrapUtil;
-import static org.gradle.impl.api.internal.dependencies.maven.PomWriter.NL;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesConverter;
-import org.gradle.impl.api.internal.dependencies.maven.XmlHelper;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.PomDependenciesWriter;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultPomDependenciesWriter;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenDependency;
-import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.api.dependencies.maven.Conf2ScopeMappingContainer;
-import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 

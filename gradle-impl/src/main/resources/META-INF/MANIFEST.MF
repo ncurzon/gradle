@@ -1,1 +1,0 @@
-Bundle-Activator: org.gradle.impl.DefaultGradleActivator

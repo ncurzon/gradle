@@ -19,8 +19,8 @@ package org.gradle.impl.api.tasks.util;
 import groovy.util.AntBuilder;
 
 import java.io.File;
-import java.util.Set;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Hans Dockter

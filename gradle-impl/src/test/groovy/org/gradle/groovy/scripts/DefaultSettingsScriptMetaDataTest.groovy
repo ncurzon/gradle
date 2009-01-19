@@ -16,14 +16,10 @@
  
 package org.gradle.groovy.scripts
 
-import org.codehaus.groovy.control.CompilerConfiguration
-import org.gradle.impl.api.internal.project.DefaultProject
-import org.junit.Test
-import org.gradle.impl.initialization.DefaultSettings
-import org.gradle.api.internal.project.ProjectScript
-import static org.junit.Assert.*
 import org.gradle.impl.groovy.scripts.DefaultSettingsScriptMetaData
 import org.gradle.impl.initialization.DefaultSettings
+import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

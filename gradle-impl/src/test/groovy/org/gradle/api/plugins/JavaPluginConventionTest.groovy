@@ -17,11 +17,13 @@
 package org.gradle.api.plugins
 
 import org.gradle.api.InvalidUserDataException
-import static org.junit.Assert.assertEquals
+import org.gradle.api.plugins.AbstractPluginConventionTest
+import org.gradle.impl.api.plugins.BasePluginConvention
+import org.gradle.impl.api.plugins.JavaPluginConvention
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.api.plugins.JavaPluginConvention
-import org.gradle.impl.api.plugins.BasePluginConvention
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

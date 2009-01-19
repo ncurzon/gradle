@@ -15,12 +15,12 @@
  */
 package org.gradle.initialization;
 
-import org.gradle.impl.DefaultStartParameter;
 import org.gradle.StartParameter;
+import org.gradle.impl.DefaultStartParameter;
 import org.gradle.util.HelperUtil;
 import org.junit.After;
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;

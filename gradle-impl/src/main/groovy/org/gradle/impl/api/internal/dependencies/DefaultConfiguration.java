@@ -1,19 +1,14 @@
 package org.gradle.impl.api.internal.dependencies;
 
-import static org.apache.ivy.core.module.descriptor.Configuration.*;
-import org.gradle.api.dependencies.Configuration;
+import groovy.lang.Closure;
+import static org.apache.ivy.core.module.descriptor.Configuration.Visibility;
 import org.gradle.api.Transformer;
+import org.gradle.api.dependencies.Configuration;
 import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.internal.dependencies.DependencyManagerInternal;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Iterator;
-import java.util.List;
-
-import groovy.lang.Closure;
+import java.util.*;
 
 public class DefaultConfiguration implements Configuration {
     private final String name;

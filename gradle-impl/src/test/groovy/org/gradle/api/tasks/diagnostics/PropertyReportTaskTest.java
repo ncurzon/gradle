@@ -15,24 +15,24 @@
  */
 package org.gradle.api.tasks.diagnostics;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.lib.legacy.ClassImposteriser;
+import org.gradle.api.Project;
+import org.gradle.api.internal.project.ProjectInternal;
+import org.gradle.impl.api.tasks.diagnostics.PropertyReportRenderer;
+import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
+import org.gradle.util.GUtil;
+import static org.gradle.util.WrapUtil.toLinkedSet;
 import org.jmock.Expectations;
 import org.jmock.Sequence;
-import static org.junit.Assert.*;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.jmock.lib.legacy.ClassImposteriser;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.api.Project;
-import org.gradle.util.GUtil;
-import static org.gradle.util.WrapUtil.*;
-import org.gradle.impl.api.tasks.diagnostics.PropertyReportRenderer;
-import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
 
-import java.util.Collections;
 import java.io.IOException;
+import java.util.Collections;
 
 @RunWith(JMock.class)
 public class PropertyReportTaskTest {

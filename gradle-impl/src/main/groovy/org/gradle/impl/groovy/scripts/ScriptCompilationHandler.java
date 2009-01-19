@@ -19,8 +19,6 @@ import groovy.lang.Script;
 
 import java.io.File;
 
-import org.codehaus.groovy.control.CompilerConfiguration;
-
 /**
  * @author Hans Dockter
  */

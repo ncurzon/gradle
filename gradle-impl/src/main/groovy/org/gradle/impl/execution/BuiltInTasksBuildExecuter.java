@@ -17,11 +17,11 @@ package org.gradle.impl.execution;
 
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
-import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
-import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
 import org.gradle.execution.BuildExecuter;
 import org.gradle.execution.TaskExecuter;
+import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
+import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
+import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
 
 import java.util.Collections;
 

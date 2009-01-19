@@ -16,11 +16,13 @@
  
 package org.gradle.util
 
-import org.codehaus.groovy.runtime.InvokerHelper
-import static org.junit.Assert.*
-import org.junit.Test
+import org.apache.ivy.Ivy
 import org.apache.tools.ant.Main
-import org.apache.ivy.Ivy;
+import org.codehaus.groovy.runtime.InvokerHelper
+import org.gradle.util.GradleVersion
+import org.gradle.util.TestConsts
+import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

@@ -1,9 +1,7 @@
 package org.gradle.integtests;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 
 public class SettingsScriptErrorIntegrationTest extends AbstractIntegrationTest {

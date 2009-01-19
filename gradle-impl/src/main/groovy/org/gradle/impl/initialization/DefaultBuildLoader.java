@@ -17,13 +17,13 @@
 package org.gradle.impl.initialization;
 
 import org.gradle.StartParameter;
-import org.gradle.impl.invocation.DefaultBuild;
-import org.gradle.initialization.BuildLoader;
 import org.gradle.api.Project;
 import org.gradle.api.initialization.ProjectDescriptor;
+import org.gradle.api.internal.BuildInternal;
 import org.gradle.api.internal.project.IProjectFactory;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.api.internal.BuildInternal;
+import org.gradle.impl.invocation.DefaultBuild;
+import org.gradle.initialization.BuildLoader;
 import org.gradle.util.Clock;
 import org.gradle.util.GUtil;
 import org.slf4j.Logger;

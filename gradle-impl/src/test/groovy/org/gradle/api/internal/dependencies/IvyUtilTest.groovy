@@ -17,8 +17,9 @@
 package org.gradle.api.internal.dependencies
 
 import org.apache.ivy.core.module.id.ModuleRevisionId
-import static org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Test
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Hans Dockter

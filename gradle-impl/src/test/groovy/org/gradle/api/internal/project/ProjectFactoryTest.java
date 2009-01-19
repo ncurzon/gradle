@@ -16,19 +16,20 @@
 
 package org.gradle.api.internal.project;
 
+import org.apache.commons.io.FileUtils;
+import org.gradle.api.Project;
+import org.gradle.api.internal.BuildInternal;
+import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.impl.DefaultStartParameter;
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
 import org.gradle.impl.api.internal.project.AntBuilderFactory;
 import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.impl.api.internal.project.ITaskFactory;
 import org.gradle.impl.api.internal.project.ProjectFactory;
-import org.gradle.api.Project;
-import org.gradle.api.internal.BuildInternal;
 import org.gradle.impl.groovy.scripts.FileScriptSource;
-import org.gradle.groovy.scripts.ScriptSource;
 import org.gradle.impl.groovy.scripts.StringScriptSource;
-import static org.gradle.util.ReflectionEqualsMatcher.*;
 import org.gradle.util.HelperUtil;
+import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
@@ -37,7 +38,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

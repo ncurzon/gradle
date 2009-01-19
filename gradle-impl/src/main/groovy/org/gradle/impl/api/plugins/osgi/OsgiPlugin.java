@@ -19,19 +19,19 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
+import org.gradle.api.internal.project.PluginRegistry;
 import org.gradle.impl.api.internal.plugins.osgi.DefaultOsgiManifest;
 import org.gradle.impl.api.internal.plugins.osgi.OsgiHelper;
-import org.gradle.impl.api.plugins.JavaPluginConvention;
-import org.gradle.api.internal.project.PluginRegistry;
 import org.gradle.impl.api.plugins.JavaPlugin;
+import org.gradle.impl.api.plugins.JavaPluginConvention;
 import org.gradle.impl.api.tasks.bundling.AbstractArchiveTask;
 import org.gradle.impl.api.tasks.bundling.Bundle;
 import org.gradle.impl.api.tasks.bundling.Jar;
 
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>A {@link Plugin} which extends the {@link JavaPlugin} to add OSGi meta-information to the project JARs.</p> 

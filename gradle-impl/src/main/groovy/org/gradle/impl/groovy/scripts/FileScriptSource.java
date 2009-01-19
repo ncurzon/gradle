@@ -15,8 +15,8 @@
  */
 package org.gradle.impl.groovy.scripts;
 
-import org.gradle.util.GFileUtils;
 import org.gradle.groovy.scripts.ScriptSource;
+import org.gradle.util.GFileUtils;
 
 import java.io.File;
 

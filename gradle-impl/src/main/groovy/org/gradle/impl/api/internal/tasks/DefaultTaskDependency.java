@@ -21,12 +21,7 @@ import org.gradle.api.Task;
 import org.gradle.api.tasks.TaskDependency;
 import org.gradle.util.GUtil;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DefaultTaskDependency implements TaskDependency {
     private final Set<Object> values = new HashSet<Object>();

@@ -17,8 +17,8 @@
 package org.gradle.impl.api.internal.dependencies;
 
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager;
-import org.apache.ivy.plugins.lock.NoLockStrategy;
 import org.apache.ivy.core.cache.RepositoryCacheManager;
+import org.apache.ivy.plugins.lock.NoLockStrategy;
 import org.gradle.api.DependencyManager;
 
 import java.io.File;

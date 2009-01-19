@@ -15,13 +15,7 @@
  */
 package org.gradle.integtests;
 
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.jmock.integration.junit4.JMock;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 public class BuildSrcIntegrationTest extends AbstractIntegrationTest {
     @Test

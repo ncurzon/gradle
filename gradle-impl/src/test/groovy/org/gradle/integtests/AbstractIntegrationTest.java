@@ -17,33 +17,34 @@ package org.gradle.integtests;
 
 import junit.framework.AssertionFailedError;
 import org.apache.commons.io.FileUtils;
-import org.gradle.impl.DefaultStartParameter;
 import org.gradle.*;
-import org.gradle.impl.DefaultGradleFactory;
-import org.gradle.impl.initialization.DefaultLoggingConfigurer;
-import org.gradle.execution.ProcessMode;
 import org.gradle.api.GradleException;
-import org.gradle.api.UncheckedIOException;
-import org.gradle.api.Task;
 import org.gradle.api.GradleScriptException;
+import org.gradle.api.Task;
+import org.gradle.api.UncheckedIOException;
 import org.gradle.api.execution.TaskExecutionGraph;
 import org.gradle.api.execution.TaskExecutionListener;
-import org.gradle.api.invocation.Build;
 import org.gradle.api.initialization.Settings;
+import org.gradle.api.invocation.Build;
+import org.gradle.execution.ProcessMode;
+import org.gradle.impl.DefaultGradleFactory;
+import org.gradle.impl.DefaultStartParameter;
+import org.gradle.impl.initialization.DefaultLoggingConfigurer;
 import org.gradle.util.HelperUtil;
-import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matcher;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Formatter;
 import java.util.List;
-import java.util.ArrayList;
 
 public class AbstractIntegrationTest {
     private File testDir;

@@ -15,11 +15,11 @@
  */
 package org.gradle.impl.api.internal.dependencies.maven;
 
-import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPom;
+import org.apache.ivy.core.module.descriptor.Artifact;
 import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPom;
 import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomFactory;
-import org.apache.ivy.core.module.descriptor.Artifact;
+import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultArtifactPom;
 
 import java.io.File;
 

@@ -21,8 +21,8 @@ import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
 import org.gradle.impl.api.internal.DefaultTask;
 
-import java.io.IOException;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * The base class for all project report tasks.

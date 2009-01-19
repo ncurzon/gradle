@@ -15,17 +15,17 @@
  */
 package org.gradle.initialization;
 
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.initialization.ScriptLocatingSettingsProcessor;
 import org.gradle.StartParameter;
 import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.api.internal.SettingsInternal;
-import static org.hamcrest.Matchers.*;
+import org.gradle.impl.DefaultStartParameter;
+import org.gradle.impl.initialization.ScriptLocatingSettingsProcessor;
+import static org.hamcrest.Matchers.sameInstance;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

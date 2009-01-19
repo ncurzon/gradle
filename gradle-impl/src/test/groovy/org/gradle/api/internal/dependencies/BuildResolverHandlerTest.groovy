@@ -16,17 +16,18 @@
 
 package org.gradle.api.internal.dependencies
 
-import org.apache.ivy.plugins.resolver.FileSystemResolver
-import org.gradle.api.DependencyManager
-import org.apache.ivy.plugins.resolver.RepositoryResolver
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
-import org.junit.Before
-import org.junit.Test
-import static org.junit.Assert.*
+import org.apache.ivy.plugins.resolver.FileSystemResolver
+import org.apache.ivy.plugins.resolver.RepositoryResolver
+import org.gradle.api.DependencyManager
+import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
+import org.gradle.impl.api.internal.dependencies.LocalReposCacheHandler
 import org.gradle.util.JUnit4GroovyMockery
 import org.jmock.lib.legacy.ClassImposteriser
-import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
-import org.gradle.impl.api.internal.dependencies.LocalReposCacheHandler;
+import org.junit.Before
+import org.junit.Test
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertTrue
 
 /**
  * @author Hans Dockter

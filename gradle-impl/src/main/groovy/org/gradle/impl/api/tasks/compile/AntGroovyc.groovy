@@ -16,10 +16,13 @@
 
 package org.gradle.impl.api.tasks.compile
 
+import org.gradle.impl.api.tasks.compile.AntGroovyc
+import org.gradle.impl.api.tasks.compile.CompileOptions
+import org.gradle.impl.api.tasks.compile.GroovyCompileOptions
+import org.gradle.util.BootstrapUtil
 import org.gradle.util.GradleUtil
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.gradle.util.BootstrapUtil
 
 /**
  * Please not: includeAntRuntime=false is ignored if groovyc is used in non fork mode. In this case the runtime classpath is

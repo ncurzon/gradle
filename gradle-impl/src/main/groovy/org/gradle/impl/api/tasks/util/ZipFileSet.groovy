@@ -16,6 +16,8 @@
 
 package org.gradle.impl.api.tasks.util
 
+import org.gradle.impl.api.tasks.util.FileSet
+
 /**
  * @author Hans Dockter
  */
