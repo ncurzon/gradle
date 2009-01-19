@@ -474,8 +474,8 @@ public class JettyRun extends AbstractJettyRunTask {
     /**
      * @see JettyRun#createServer()
      */
-    public org.gradle.impl.api.plugins.jetty.util.JettyPluginServer createServer() {
-        return new JettyPluginServer();
+    public JettyPluginServer createServer() {
+        return new org.gradle.impl.api.plugins.jetty.JettyPluginServer();
     }
 
 

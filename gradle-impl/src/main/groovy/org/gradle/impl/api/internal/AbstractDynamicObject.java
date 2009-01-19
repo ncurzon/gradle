@@ -16,11 +16,9 @@
 package org.gradle.impl.api.internal;
 
 import groovy.lang.*;
-import groovy.lang.MissingMethodException;
 
 import java.util.Map;
 import java.util.Collections;
-import java.util.Arrays;
 
 import org.gradle.api.internal.DynamicObject;
 

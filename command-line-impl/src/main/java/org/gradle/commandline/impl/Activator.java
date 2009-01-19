@@ -16,7 +16,6 @@ public class Activator implements BundleActivator {
 //    private ServiceRegistration commandLineServiceRegistration;
 //    private ServiceTracker gradleFactoryTracker;
 
-    @Override
     public void start(BundleContext bundleContext) throws Exception
     {
         this.bundleContext = bundleContext;
@@ -32,7 +31,6 @@ public class Activator implements BundleActivator {
 //        commandLineServiceRegistration = bundleContext.registerService(GradleCommandLine.class.getName(), gradleCommandLine, null);
     }
 
-    @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
 //        gradleFactoryTracker.close();

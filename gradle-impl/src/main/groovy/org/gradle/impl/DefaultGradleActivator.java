@@ -16,7 +16,6 @@ public class DefaultGradleActivator implements BundleActivator {
     private BundleContext bundleContext;
     private ServiceRegistration gradleFactoryRegistration;
 
-    @Override
     public void start(BundleContext bundleContext) throws Exception
     {
         this.bundleContext = bundleContext;
@@ -30,7 +29,6 @@ public class DefaultGradleActivator implements BundleActivator {
         return gradleFactoryRegistration.getReference();
     }
 
-    @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
         this.gradleFactoryRegistration.unregister();
