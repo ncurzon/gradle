@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.logging;
+package org.gradle.impl.api.logging;
 
 import org.junit.Test;
 import org.junit.Before;
@@ -23,6 +23,8 @@ import static org.junit.Assert.assertSame;
 import org.slf4j.Marker;
 import org.gradle.impl.api.logging.StandardOutputLogging;
 import org.gradle.impl.api.logging.StandardOutputState;
+import org.gradle.api.logging.LogLevel;
+import org.gradle.api.logging.Logging;
 import ch.qos.logback.classic.Level;
 
 /**

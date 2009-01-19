@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.tasks.javadoc;
+package org.gradle.impl.api.tasks.javadoc;
 
 import org.apache.tools.ant.BuildException;
 import org.gradle.api.DependencyManager;

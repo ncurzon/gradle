@@ -32,7 +32,7 @@ import java.util.Map;
 public class DependencyFactory implements IDependencyImplementationFactory {
     private Set<IDependencyImplementationFactory> dependencyFactories;
 
-    DependencyFactory(Set<IDependencyImplementationFactory> dependencyFactories) {
+    public DependencyFactory(Set<IDependencyImplementationFactory> dependencyFactories) {
         this.dependencyFactories = dependencyFactories;
     }
 

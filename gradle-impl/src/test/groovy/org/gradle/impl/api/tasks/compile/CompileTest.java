@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package org.gradle.api.tasks.compile;
+package org.gradle.impl.api.tasks.compile;
 
 import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.impl.api.tasks.compile.AntJavac;
 import org.gradle.impl.api.tasks.compile.Compile;
 import org.gradle.api.tasks.AbstractTaskTest;
+import org.gradle.api.tasks.compile.AbstractCompileTest;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
 import org.jmock.lib.legacy.ClassImposteriser;

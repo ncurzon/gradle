@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.tasks.testing;
+package org.gradle.impl.api.tasks.testing;
 
 import org.gradle.api.DependencyManager;
 import org.gradle.api.GradleException;

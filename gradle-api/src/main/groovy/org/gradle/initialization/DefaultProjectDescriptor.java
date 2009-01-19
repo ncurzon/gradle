@@ -96,7 +96,7 @@ public class DefaultProjectDescriptor implements ProjectDescriptor {
         return path;
     }
 
-    void setPath(String path) {
+    public void setPath(String path) {
         this.path = path;
     }
 

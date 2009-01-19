@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.tasks.wrapper;
+package org.gradle.impl.api.tasks.wrapper;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.taskdefs.Jar;
@@ -24,7 +24,7 @@ import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.impl.invocation.DefaultBuild;
 import org.gradle.util.*;
 import org.gradle.impl.wrapper.Install;
-import org.gradle.impl.wrapper.Wrapper;
+import org.gradle.impl.api.tasks.wrapper.Wrapper;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
@@ -152,12 +152,12 @@ public class WrapperTest extends AbstractTaskTest {
         assertEquals(TEST_TEXT, FileUtils.readFileToString(new File(unjarDir, TEST_FILE_NAME)));
         Properties properties = GUtil.loadProperties(expectedTargetWrapperProperties);
         assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.URL_ROOT_PROPERTY), wrapper.getUrlRoot());
-        assertEquals(properties.getProperty(Wrapper.DISTRIBUTION_BASE_PROPERTY), wrapper.getDistributionBase().toString());
-        assertEquals(properties.getProperty(Wrapper.DISTRIBUTION_PATH_PROPERTY), wrapper.getDistributionPath());
-        assertEquals(properties.getProperty(Wrapper.DISTRIBUTION_NAME_PROPERTY), wrapper.getArchiveName());
-        assertEquals(properties.getProperty(Wrapper.DISTRIBUTION_CLASSIFIER_PROPERTY), wrapper.getArchiveClassifier());
-        assertEquals(properties.getProperty(Wrapper.DISTRIBUTION_VERSION_PROPERTY), wrapper.getGradleVersion());
-        assertEquals(properties.getProperty(Wrapper.ZIP_STORE_BASE_PROPERTY), wrapper.getArchiveBase().toString());
-        assertEquals(properties.getProperty(Wrapper.ZIP_STORE_PATH_PROPERTY), wrapper.getArchivePath());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_BASE_PROPERTY), wrapper.getDistributionBase().toString());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_PATH_PROPERTY), wrapper.getDistributionPath());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_NAME_PROPERTY), wrapper.getArchiveName());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_CLASSIFIER_PROPERTY), wrapper.getArchiveClassifier());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.DISTRIBUTION_VERSION_PROPERTY), wrapper.getGradleVersion());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.ZIP_STORE_BASE_PROPERTY), wrapper.getArchiveBase().toString());
+        assertEquals(properties.getProperty(org.gradle.impl.wrapper.Wrapper.ZIP_STORE_PATH_PROPERTY), wrapper.getArchivePath());
     }
 }

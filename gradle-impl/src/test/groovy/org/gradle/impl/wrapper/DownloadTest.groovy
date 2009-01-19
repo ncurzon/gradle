@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.wrapper
+package org.gradle.impl.wrapper
 
 import org.gradle.util.HelperUtil
 import static org.junit.Assert.*

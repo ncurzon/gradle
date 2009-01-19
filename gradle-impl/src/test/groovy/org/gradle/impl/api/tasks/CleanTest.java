@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package org.gradle.api.tasks;
+package org.gradle.impl.api.tasks;
 
 import org.gradle.api.GradleScriptException;
 import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.api.tasks.AbstractTaskTest;
+import org.gradle.api.tasks.AbstractConventionTaskTest;
 import org.gradle.impl.api.tasks.Clean;
 import org.gradle.impl.api.tasks.util.ExistingDirsFilter;
 import org.gradle.util.HelperUtil;

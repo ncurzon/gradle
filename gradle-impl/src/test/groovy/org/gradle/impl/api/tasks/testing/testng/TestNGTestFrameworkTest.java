@@ -1,4 +1,4 @@
-package org.gradle.api.tasks.testing.testng;
+package org.gradle.impl.api.tasks.testing.testng;
 
 import org.jmock.Expectations;
 import org.gradle.api.tasks.testing.AbstractTestFrameworkTest;

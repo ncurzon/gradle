@@ -1,4 +1,4 @@
-package org.gradle.api.tasks.testing.junit;
+package org.gradle.impl.api.tasks.testing.junit;
 
 import org.junit.Before;
 import org.jmock.Expectations;
