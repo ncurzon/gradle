@@ -23,7 +23,7 @@ import org.gradle.api.DependencyManager;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.UnknownDependencyNotation;
-import org.gradle.api.internal.project.AbstractProject;
+import org.gradle.impl.api.internal.project.AbstractProject;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;

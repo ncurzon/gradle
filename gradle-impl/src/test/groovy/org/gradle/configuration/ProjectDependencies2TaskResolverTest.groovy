@@ -16,13 +16,15 @@
 
 package org.gradle.configuration
 
-import org.gradle.api.internal.DefaultTask
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.DefaultTask
+import org.gradle.impl.api.internal.project.DefaultProject
 import org.gradle.util.HelperUtil
 import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.configuration.ProjectDependencies2TaskResolver;
+import org.gradle.impl.configuration.ProjectDependencies2TaskResolver
+import org.gradle.impl.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.DefaultTask
 
 /**
  * @author Hans Dockter

@@ -20,7 +20,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
 import org.gradle.api.dependencies.ResolverContainer;
-import org.gradle.api.internal.DefaultTask;
+import org.gradle.impl.api.internal.DefaultTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

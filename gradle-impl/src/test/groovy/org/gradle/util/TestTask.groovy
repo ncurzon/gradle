@@ -17,7 +17,8 @@
 package org.gradle.util
 
 import org.gradle.api.Project
-import org.gradle.api.internal.ConventionTask
+import org.gradle.impl.api.internal.ConventionTask
+import org.gradle.impl.api.internal.ConventionTask
 
 /**
  * @author Hans Dockter

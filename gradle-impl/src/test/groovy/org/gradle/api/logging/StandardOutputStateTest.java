@@ -21,6 +21,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import org.hamcrest.Matchers;
+import org.gradle.impl.api.logging.StandardOutputState;
 
 import java.io.PrintStream;
 

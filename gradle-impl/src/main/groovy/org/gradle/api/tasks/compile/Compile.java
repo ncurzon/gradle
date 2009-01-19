@@ -16,7 +16,7 @@
 
 package org.gradle.api.tasks.compile;
 
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
 import org.gradle.api.*;
 import org.gradle.util.GUtil;

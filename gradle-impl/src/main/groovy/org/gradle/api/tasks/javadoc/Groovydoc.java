@@ -19,7 +19,7 @@ package org.gradle.api.tasks.javadoc;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
 import org.gradle.util.BootstrapUtil;
 import org.gradle.util.GUtil;

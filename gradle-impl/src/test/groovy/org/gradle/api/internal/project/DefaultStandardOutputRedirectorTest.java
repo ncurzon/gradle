@@ -15,8 +15,9 @@
  */
 package org.gradle.api.internal.project;
 
-import org.gradle.api.logging.StandardOutputLogging;
+import org.gradle.impl.api.logging.StandardOutputLogging;
 import org.gradle.api.logging.LogLevel;
+import org.gradle.impl.api.internal.project.DefaultStandardOutputRedirector;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.assertSame;
@@ -31,7 +32,7 @@ public class DefaultStandardOutputRedirectorTest {
 
     @Before
     public void setUp() {
-        standardOutputRedirector = new DefaultStandardOutputRedirector();   
+        standardOutputRedirector = new DefaultStandardOutputRedirector();
     }
 
     @Test

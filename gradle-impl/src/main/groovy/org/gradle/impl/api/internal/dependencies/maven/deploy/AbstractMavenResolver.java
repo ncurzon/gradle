@@ -42,9 +42,9 @@ import org.gradle.api.dependencies.maven.PomFilterContainer;
 import org.gradle.api.dependencies.maven.MavenResolver;
 import org.gradle.api.dependencies.maven.PublishFilter;
 import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.api.logging.DefaultStandardOutputCapture;
+import org.gradle.impl.api.logging.DefaultStandardOutputCapture;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.api.logging.StandardOutputCapture;
+import org.gradle.impl.api.logging.StandardOutputCapture;
 import org.gradle.util.AntUtil;
 
 import java.io.File;

@@ -45,6 +45,10 @@ import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.groovy.scripts.EmptyScript
 import org.gradle.impl.groovy.scripts.StringScriptSource
+import org.gradle.impl.api.internal.project.DefaultAntBuilderFactory
+import org.gradle.impl.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.ProjectFactory
+import org.gradle.impl.api.internal.project.TaskFactory
 
 /**
  * @author Hans Dockter

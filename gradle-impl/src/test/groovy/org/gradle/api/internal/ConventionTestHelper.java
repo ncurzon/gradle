@@ -19,6 +19,8 @@ package org.gradle.api.internal;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
+import org.gradle.impl.api.internal.ConventionAwareHelper;
+import org.gradle.impl.api.internal.IConventionAware;
 
 import java.util.HashMap;
 import java.util.Map;

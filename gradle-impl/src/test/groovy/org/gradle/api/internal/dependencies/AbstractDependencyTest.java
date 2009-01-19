@@ -18,7 +18,7 @@ package org.gradle.api.internal.dependencies;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.ModuleDescriptor;
 import org.gradle.api.Transformer;
-import org.gradle.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.gradle.impl.api.internal.dependencies.AbstractDependency;

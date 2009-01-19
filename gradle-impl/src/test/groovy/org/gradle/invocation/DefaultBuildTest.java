@@ -4,7 +4,7 @@ import org.gradle.impl.DefaultStartParameter;
 import org.gradle.impl.invocation.DefaultBuild;
 import org.gradle.impl.execution.DefaultTaskExecuter;
 import org.gradle.StartParameter;
-import org.gradle.api.internal.project.DefaultProjectRegistry;
+import org.gradle.impl.api.internal.project.DefaultProjectRegistry;
 import org.gradle.util.GradleVersion;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

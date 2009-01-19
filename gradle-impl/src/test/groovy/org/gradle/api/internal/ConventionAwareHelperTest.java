@@ -18,7 +18,8 @@ package org.gradle.api.internal;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Task;
-import org.gradle.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.ConventionAwareHelper;
 import org.gradle.api.plugins.Convention;
 import org.gradle.api.tasks.ConventionValue;
 import org.gradle.util.TestTask;

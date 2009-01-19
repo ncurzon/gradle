@@ -16,7 +16,7 @@
 
 package org.gradle.api.plugins
 
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.DefaultProject
 import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

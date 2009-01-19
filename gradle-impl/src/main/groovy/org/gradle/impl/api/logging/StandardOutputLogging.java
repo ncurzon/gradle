@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.logging;
+package org.gradle.impl.api.logging;
 
 import ch.qos.logback.classic.Level;
 import org.gradle.impl.logging.StandardOutputLoggingAdapter;
+import org.gradle.api.logging.LogLevel;
+import org.gradle.api.logging.Logging;
 import org.slf4j.LoggerFactory;
 
 import java.io.PrintStream;

@@ -19,8 +19,8 @@ package org.gradle.api.tasks.bundling
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.api.internal.AbstractTask
-import org.gradle.api.internal.project.ITaskFactory
+import org.gradle.impl.api.internal.AbstractTask
+import org.gradle.impl.api.internal.project.ITaskFactory
 import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.api.plugins.JavaPluginConvention
 import org.gradle.api.tasks.AbstractConventionTaskTest
@@ -34,6 +34,8 @@ import static org.junit.Assert.assertSame
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.impl.api.internal.project.ITaskFactory
+import org.gradle.impl.api.internal.AbstractTask
 
 /**
  * @author Hans Dockter

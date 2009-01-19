@@ -20,7 +20,7 @@ import org.gradle.api.DependencyManager
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.api.internal.ConventionTask
+import org.gradle.impl.api.internal.ConventionTask
 import org.gradle.impl.api.internal.dependencies.DefaultPublishArtifact
 import org.gradle.api.tasks.util.AntDirective
 import org.gradle.api.tasks.util.FileCollection

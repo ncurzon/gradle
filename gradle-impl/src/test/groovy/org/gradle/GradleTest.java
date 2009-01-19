@@ -23,7 +23,7 @@ import org.gradle.api.initialization.ProjectDescriptor;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.internal.SettingsInternal;
 import org.gradle.api.internal.BuildInternal;
-import org.gradle.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.impl.configuration.DefaultBuildConfigurer;
 import org.gradle.execution.TaskExecuter;
 import org.gradle.initialization.*;

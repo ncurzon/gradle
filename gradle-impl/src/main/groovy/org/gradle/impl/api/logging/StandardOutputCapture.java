@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.logging;
+package org.gradle.impl.api.logging;
+
+import org.gradle.api.logging.LogLevel;
 
 /**
  * @author Hans Dockter
@@ -26,7 +28,7 @@ public interface StandardOutputCapture {
      *
      * If the standard output is captured globally already, setting the task output capturing has no effect.
      *
-     * For more fine-grained control see {@link org.gradle.api.logging.StandardOutputLogging}.
+     * For more fine-grained control see {@link StandardOutputLogging}.
      */
     StandardOutputCapture start();
 

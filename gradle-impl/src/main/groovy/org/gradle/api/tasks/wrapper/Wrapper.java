@@ -18,7 +18,7 @@ package org.gradle.api.tasks.wrapper;
 
 import org.apache.commons.io.FileUtils;
 import org.gradle.api.*;
-import org.gradle.api.internal.DefaultTask;
+import org.gradle.impl.api.internal.DefaultTask;
 import org.gradle.util.GUtil;
 import org.gradle.impl.wrapper.Install;
 

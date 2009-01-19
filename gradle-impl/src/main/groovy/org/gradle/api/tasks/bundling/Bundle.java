@@ -19,7 +19,7 @@ package org.gradle.api.tasks.bundling;
 import groovy.lang.Closure;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
 

@@ -19,7 +19,7 @@ import org.gradle.api.Task;
 import org.gradle.api.plugins.Convention;
 
 /**
- * A ConventionValue can be assigned to a {@link org.gradle.api.internal.IConventionAware} task. If a property
+ * A ConventionValue can be assigned to a {@link org.gradle.impl.api.internal.IConventionAware} task. If a property
  * of such an object is not set internally, a ConventionValue is used to calculate the value for the property.
  *
  * @author Hans Dockter

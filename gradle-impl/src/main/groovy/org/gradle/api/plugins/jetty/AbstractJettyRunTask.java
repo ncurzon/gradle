@@ -18,7 +18,7 @@ package org.gradle.api.plugins.jetty;
 
 
 import org.gradle.api.*;
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.api.plugins.jetty.util.*;
 import org.gradle.api.plugins.jetty.util.JettyPluginServer;
 import org.mortbay.jetty.Connector;

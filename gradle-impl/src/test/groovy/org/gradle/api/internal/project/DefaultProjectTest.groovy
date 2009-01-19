@@ -21,11 +21,11 @@ import java.text.FieldPosition
 import org.apache.tools.ant.types.FileSet
 import org.gradle.impl.DefaultStartParameter
 import org.gradle.api.*
-import org.gradle.api.internal.DefaultTask
+import org.gradle.impl.api.internal.DefaultTask
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
 import org.gradle.api.invocation.Build
 import org.gradle.api.logging.LogLevel
-import org.gradle.api.logging.StandardOutputLogging
+import org.gradle.impl.api.logging.StandardOutputLogging
 import org.gradle.api.plugins.Convention
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginTest
@@ -48,6 +48,14 @@ import org.gradle.impl.DefaultStartParameter
 import org.gradle.impl.groovy.scripts.EmptyScript
 import org.gradle.impl.invocation.DefaultBuild
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.impl.api.internal.project.AbstractProject
+import org.gradle.impl.api.internal.project.AntBuilderFactory
+import org.gradle.impl.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.DefaultProjectRegistry
+import org.gradle.impl.api.internal.project.ITaskFactory
+import org.gradle.impl.api.internal.project.ProjectFactory
+import org.gradle.impl.api.internal.project.StandardOutputRedirector
+import org.gradle.impl.api.internal.DefaultTask
 
 /**
  * @author Hans Dockter

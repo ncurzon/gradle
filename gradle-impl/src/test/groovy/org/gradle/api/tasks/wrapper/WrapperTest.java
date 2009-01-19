@@ -18,7 +18,7 @@ package org.gradle.api.tasks.wrapper;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.taskdefs.Jar;
-import org.gradle.api.internal.AbstractTask;
+import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.impl.invocation.DefaultBuild;
 import org.gradle.util.*;

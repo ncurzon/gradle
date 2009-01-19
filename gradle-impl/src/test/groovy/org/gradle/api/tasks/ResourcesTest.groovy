@@ -17,7 +17,7 @@
 package org.gradle.api.tasks
 
 import groovy.mock.interceptor.MockFor
-import org.gradle.api.internal.AbstractTask
+import org.gradle.impl.api.internal.AbstractTask
 import org.gradle.api.tasks.util.CopyInstruction
 import org.gradle.api.tasks.util.CopyInstructionFactory
 import org.gradle.api.tasks.util.ExistingDirsFilter
@@ -27,6 +27,7 @@ import static org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.impl.api.internal.AbstractTask
 
 /**
  * @author Hans Dockter

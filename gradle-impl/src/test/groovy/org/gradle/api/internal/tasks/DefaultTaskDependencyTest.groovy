@@ -26,7 +26,8 @@ import org.jmock.integration.junit4.JMock
 import static org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith;
+import org.junit.runner.RunWith
+import org.gradle.impl.api.internal.tasks.DefaultTaskDependency;
 
 @RunWith (JMock.class)
 public class DefaultTaskDependencyTest {

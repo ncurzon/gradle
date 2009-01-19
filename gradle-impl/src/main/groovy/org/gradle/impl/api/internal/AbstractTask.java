@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import groovy.util.AntBuilder;
 import groovy.lang.MissingPropertyException;
@@ -21,14 +21,14 @@ import org.codehaus.groovy.runtime.InvokerInvocationException;
 import org.gradle.api.*;
 import org.gradle.api.plugins.Convention;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.api.internal.tasks.DefaultTaskDependency;
+import org.gradle.impl.api.internal.tasks.DefaultTaskDependency;
 import org.gradle.api.tasks.StopActionException;
 import org.gradle.api.tasks.StopExecutionException;
 import org.gradle.api.tasks.TaskDependency;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.logging.DefaultStandardOutputCapture;
+import org.gradle.impl.api.logging.DefaultStandardOutputCapture;
+import org.gradle.impl.api.logging.StandardOutputCapture;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.api.logging.StandardOutputCapture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

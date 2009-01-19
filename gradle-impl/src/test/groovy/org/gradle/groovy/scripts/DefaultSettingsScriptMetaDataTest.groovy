@@ -17,7 +17,7 @@
 package org.gradle.groovy.scripts
 
 import org.codehaus.groovy.control.CompilerConfiguration
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.DefaultProject
 import org.junit.Test
 import org.gradle.impl.initialization.DefaultSettings
 import org.gradle.api.internal.project.ProjectScript

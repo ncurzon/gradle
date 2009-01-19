@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Task;

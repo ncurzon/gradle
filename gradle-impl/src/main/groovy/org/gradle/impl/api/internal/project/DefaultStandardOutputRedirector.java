@@ -16,7 +16,7 @@
 package org.gradle.impl.api.internal.project;
 
 import org.gradle.api.logging.LogLevel;
-import org.gradle.api.logging.StandardOutputLogging;
+import org.gradle.impl.api.logging.StandardOutputLogging;
 
 /**
  * @author Hans Dockter

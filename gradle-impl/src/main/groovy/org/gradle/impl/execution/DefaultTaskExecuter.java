@@ -23,7 +23,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.execution.TaskExecutionGraphListener;
 import org.gradle.api.execution.TaskExecutionListener;
-import org.gradle.api.internal.TaskInternal;
+import org.gradle.impl.api.internal.TaskInternal;
 import org.gradle.util.Clock;
 import org.gradle.util.ListenerBroadcast;
 import org.gradle.execution.TaskExecuter;

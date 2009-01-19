@@ -21,7 +21,7 @@ import org.gradle.api.Task;
 import org.gradle.api.tasks.Clean;
 import org.gradle.api.tasks.ConventionValue;
 import org.gradle.api.internal.project.PluginRegistry;
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.util.GUtil;
 
 import java.util.Map;

@@ -17,11 +17,12 @@
 package org.gradle.groovy.scripts
 
 import org.codehaus.groovy.control.CompilerConfiguration
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.DefaultProject
 import org.gradle.api.internal.project.ProjectScript
 import static org.junit.Assert.assertEquals
 import org.junit.Test
 import org.gradle.impl.groovy.scripts.DefaultProjectScriptMetaData
+import org.gradle.impl.api.internal.project.DefaultProject
 
 /**
  * @author Hans Dockter

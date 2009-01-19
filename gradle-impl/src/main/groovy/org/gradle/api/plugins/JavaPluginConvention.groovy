@@ -17,8 +17,9 @@ package org.gradle.api.plugins
 
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.Project
-import org.gradle.api.internal.plugins.PluginUtil
+import org.gradle.impl.api.internal.plugins.PluginUtil
 import org.gradle.api.tasks.bundling.*
+import org.gradle.impl.api.internal.plugins.PluginUtil
 
 /**
  * @author Hans Dockter

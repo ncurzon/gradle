@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import groovy.lang.*;
+import groovy.lang.MissingMethodException;
 import org.codehaus.groovy.runtime.InvokerInvocationException;
 
 import java.util.Collections;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A {@link DynamicObject} which uses groovy reflection to provide access to the properties and methods of a bean.
+ * A {@link org.gradle.api.internal.DynamicObject} which uses groovy reflection to provide access to the properties and methods of a bean.
  */
 public class BeanDynamicObject extends AbstractDynamicObject {
     private final Object bean;

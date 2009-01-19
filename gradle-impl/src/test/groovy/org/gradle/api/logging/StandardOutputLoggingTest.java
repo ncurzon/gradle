@@ -21,6 +21,8 @@ import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import org.slf4j.Marker;
+import org.gradle.impl.api.logging.StandardOutputLogging;
+import org.gradle.impl.api.logging.StandardOutputState;
 import ch.qos.logback.classic.Level;
 
 /**

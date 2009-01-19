@@ -31,7 +31,7 @@ import org.gradle.api.Transformer;
 import org.gradle.api.dependencies.SettingsConverter;
 import org.gradle.api.internal.ChainingTransformer;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.logging.StandardOutputLogging;
+import org.gradle.impl.api.logging.StandardOutputLogging;
 import org.gradle.util.WrapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

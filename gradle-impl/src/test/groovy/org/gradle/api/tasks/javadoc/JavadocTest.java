@@ -18,7 +18,7 @@ package org.gradle.api.tasks.javadoc;
 import org.apache.tools.ant.BuildException;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.GradleException;
-import org.gradle.api.internal.AbstractTask;
+import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.api.tasks.AbstractConventionTaskTest;
 import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.api.tasks.util.ExistingDirsFilter;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import groovy.lang.Closure;
 import org.gradle.api.InvalidUserDataException;
@@ -72,22 +72,4 @@ class DefaultTask extends AbstractTask {
     def methodMissing(String name, arguments) {
         dynamicObjectHelper.invokeMethod(name, arguments)
     }
-}
-
-class ClosureTaskAction implements TaskAction {
-    private final Closure closure;
-
-    def ClosureTaskAction(Closure closure) {
-        this.closure = closure;
-    }
-
-    public void execute(Task task) {
-        if (closure.maximumNumberOfParameters == 0) {
-            closure.call()
-        }
-        else {
-            closure.call(task);
-        }
-    }
-
 }

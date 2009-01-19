@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.logging;
+package org.gradle.impl.api.logging;
 
 import org.gradle.api.InvalidUserDataException;
+import org.gradle.api.logging.LogLevel;
 
 /**
  * @author Hans Dockter
@@ -57,7 +58,7 @@ public class DefaultStandardOutputCapture implements StandardOutputCapture {
     }
 
     /**
-     * @see org.gradle.api.logging.StandardOutputCapture#stop() ()
+     * @see StandardOutputCapture#stop() ()
      */
     public DefaultStandardOutputCapture stop() {
         StandardOutputLogging.flush();
@@ -66,14 +67,14 @@ public class DefaultStandardOutputCapture implements StandardOutputCapture {
     }
 
     /**
-     * @see org.gradle.api.logging.StandardOutputCapture#isEnabled() ()
+     * @see StandardOutputCapture#isEnabled() ()
      */
     public boolean isEnabled() {
         return enabled;
     }
 
     /**
-     * @see org.gradle.api.logging.StandardOutputCapture#getLevel() ()
+     * @see StandardOutputCapture#getLevel() ()
      */
     public LogLevel getLevel() {
         return level;

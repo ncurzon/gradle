@@ -17,6 +17,9 @@ package org.gradle.api.logging;
 
 import ch.qos.logback.classic.Level;
 import org.gradle.api.InvalidUserDataException;
+import org.gradle.impl.api.logging.DefaultStandardOutputCapture;
+import org.gradle.impl.api.logging.StandardOutputLogging;
+import org.gradle.impl.api.logging.StandardOutputState;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import static org.junit.Assert.*;

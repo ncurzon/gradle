@@ -16,6 +16,7 @@
 package org.gradle.api.internal;
 
 import org.gradle.util.HelperUtil;
+import org.gradle.impl.api.internal.ConfigurableObjectCollection;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import org.junit.Test;

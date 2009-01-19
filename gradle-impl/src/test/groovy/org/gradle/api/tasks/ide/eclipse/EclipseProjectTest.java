@@ -16,7 +16,7 @@
 package org.gradle.api.tasks.ide.eclipse;
 
 import org.apache.commons.io.IOUtils;
-import org.gradle.api.internal.AbstractTask;
+import org.gradle.impl.api.internal.AbstractTask;
 import org.gradle.api.tasks.AbstractTaskTest;
 import org.gradle.util.GFileUtils;
 import org.gradle.util.HelperUtil;

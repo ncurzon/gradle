@@ -19,7 +19,7 @@ package org.gradle.api.internal.dependencies;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.UnknownDependencyNotation;
 import org.gradle.api.dependencies.Dependency;
-import org.gradle.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.util.WrapUtil;
 import static org.hamcrest.Matchers.not;
 import org.jmock.Expectations;

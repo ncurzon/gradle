@@ -18,6 +18,10 @@ package org.gradle.api.internal.project;
 
 import org.gradle.impl.DefaultStartParameter;
 import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
+import org.gradle.impl.api.internal.project.AntBuilderFactory;
+import org.gradle.impl.api.internal.project.DefaultProject;
+import org.gradle.impl.api.internal.project.ITaskFactory;
+import org.gradle.impl.api.internal.project.ProjectFactory;
 import org.gradle.api.Project;
 import org.gradle.api.internal.BuildInternal;
 import org.gradle.impl.groovy.scripts.FileScriptSource;

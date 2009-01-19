@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import groovy.lang.*;
+import groovy.lang.MissingMethodException;
 
 import java.util.Map;
 import java.util.Collections;
 import java.util.Arrays;
 
+import org.gradle.api.internal.DynamicObject;
+
 /**
- * An empty {@link DynamicObject}.
+ * An empty {@link org.gradle.api.internal.DynamicObject}.
  */
 public abstract class AbstractDynamicObject implements DynamicObject {
     protected abstract String getDisplayName();
@@ -58,20 +61,6 @@ public abstract class AbstractDynamicObject implements DynamicObject {
 
     protected groovy.lang.MissingMethodException methodMissingException(String name, Object... params) {
         return new MissingMethodException(getDisplayName(), name, params);
-    }
-}
-
-class MissingMethodException extends groovy.lang.MissingMethodException {
-    private final String displayName;
-
-    public MissingMethodException(String displayName, String name, Object... arguments) {
-        super(name, null, arguments);
-        this.displayName = displayName;
-    }
-
-    public String getMessage() {
-        return String.format("Could not find method %s() for arguments %s on %s.", getMethod(), Arrays.toString(
-                getArguments()), displayName);
     }
 }
 

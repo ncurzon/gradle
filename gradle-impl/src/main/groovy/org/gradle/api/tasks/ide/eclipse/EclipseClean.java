@@ -18,7 +18,7 @@ package org.gradle.api.tasks.ide.eclipse;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
-import org.gradle.api.internal.ConventionTask;
+import org.gradle.impl.api.internal.ConventionTask;
 import org.gradle.util.GFileUtils;
 
 import java.io.File;

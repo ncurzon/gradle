@@ -26,7 +26,7 @@ import org.gradle.api.dependencies.ExcludeRuleContainer
 import org.gradle.api.dependencies.PublishArtifact
 import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
 import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.impl.api.internal.project.DefaultProject
 import org.gradle.util.JUnit4GroovyMockery
 import org.hamcrest.Matchers
 import org.jmock.lib.legacy.ClassImposteriser
@@ -37,6 +37,7 @@ import org.gradle.impl.api.internal.dependencies.BaseDependencyManager
 import org.gradle.impl.api.internal.dependencies.BuildResolverHandler
 import org.gradle.impl.api.internal.dependencies.DefaultModuleDescriptorConverter
 import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
+import org.gradle.impl.api.internal.project.DefaultProject
 
 /**
  * @author Hans Dockter

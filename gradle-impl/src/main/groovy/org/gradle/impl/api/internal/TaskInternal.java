@@ -1,4 +1,4 @@
-package org.gradle.api.internal;
+package org.gradle.impl.api.internal;
 
 import org.gradle.api.Task;
 
