@@ -8,6 +8,8 @@ group = 'org.gradle'
 usePlugin('osgi')
 
 dependencies {
+    runtime.extendsFrom = new HashSet<String>();
+    
     addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
 
     clientModule(['groovy'], "org.codehaus.groovy:groovy-all:1.5.6") {
@@ -53,8 +55,8 @@ dependencies {
 
 configure(project.archive_jar.osgi) {
       instruction 'Import-Package',
-        'org.osgi.framework',
-        'org.osgi.util.tracker',
+            'org.osgi.framework',
+            'org.osgi.util.tracker',
             'org.slf4j',
             'org.gradle',
             'org.gradle.api',
@@ -78,16 +80,63 @@ configure(project.archive_jar.osgi) {
             'org.gradle.logging',
             'org.gradle.util',
             'org.apache.tools.ant',
+            'org.apache.tools.ant.taskdefs',
+            'org.apache.maven.artifact.ant',
+            'org.apache.maven.settings',
+            'org.apache.ivy',
             'org.apache.ivy.util',
-            'org.apache.ivy.plugins.resolve',
             'org.apache.ivy.core',
+            'org.apache.ivy.core.settings',
+            'org.apache.ivy.core.cache',
+            'org.apache.ivy.core.report',
+            'org.apache.ivy.core.module.id',
+            'org.apache.ivy.core.module.descriptor',
+            'org.apache.ivy.core.resolve',
+            'org.apache.ivy.core.search',
+            'org.apache.ivy.core.publish',
+            'org.apache.ivy.plugins.namespace',
+            'org.apache.ivy.plugins.matcher',
+            'org.apache.ivy.plugins.conflict',
+            'org.apache.ivy.plugins.latest',
+            'org.apache.ivy.plugins.resolver',
+            'org.apache.ivy.plugins.lock',
             'org.apache.commons.io',
             'org.apache.commons.lang',
+            'org.apache.commons.lang.builder',
+            'org.apache.commons.httpclient',
+            'org.apache.webdav.lib',
             'ch.qos.logback.classic.spi',
+            'ch.qos.logback.classic.filter',
             'ch.qos.logback.core.filter',
             'ch.qos.logback.core.spi',
+            'ch.qos.logback.core',
             'ch.qos.logback.classic',
+            'aQute.lib.osgi',
             'groovy.lang',
+            'groovy.swing.factory',
+            'groovy.util',
+            'groovy.xml',
+            'org.codehaus.groovy.control',
+            'org.codehaus.groovy.runtime',
+            'org.codehaus.plexus',
+            'org.codehaus.plexus.component.repository.exception',
+            'hidden.org.codehaus.plexus.util',
+            'org.mortbay.jetty',
+            'org.mortbay.util',
+            'org.mortbay.xml',
+            'org.mortbay.jetty.plus.annotation',
+            'org.mortbay.jetty.plus.webapp',
+            'org.mortbay.jetty.servlet',
+            'org.mortbay.log',
+            'org.mortbay.jetty.handler',
+            'org.mortbay.jetty.nio',
+            'org.mortbay.jetty.security',
+            'org.mortbay.resource',
+            'org.mortbay.jetty.webapp',
+            'org.dom4j',
+            'org.dom4j.io',
+            'org.dom4j.tree'
+            
 
       instruction 'Export-Package', 'org.gradle.impl.bundle'
       instruction 'Bundle-Activator', 'org.gradle.impl.bundle.DefaultGradleActivator'

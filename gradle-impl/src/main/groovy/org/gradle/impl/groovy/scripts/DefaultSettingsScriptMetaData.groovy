@@ -16,7 +16,6 @@
 package org.gradle.impl.groovy.scripts
 
 import org.gradle.api.initialization.Settings
-import org.gradle.impl.groovy.scripts.DefaultSettingsScriptMetaData
 import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory;
