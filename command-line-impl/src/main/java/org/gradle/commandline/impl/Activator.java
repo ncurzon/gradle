@@ -2,10 +2,10 @@ package org.gradle.commandline.impl;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-//import org.osgi.framework.ServiceRegistration;
-//import org.osgi.util.tracker.ServiceTracker;
-//import org.gradle.commandline.impl.DefaultGradleCommandLine;
-//import org.gradle.GradleFactory;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.framework.ServiceReference;
+import org.gradle.GradleFactory;
+import org.gradle.commandline.GradleCommandLine;
 
 /**
  * @author Tom Eyckmans
@@ -13,28 +13,25 @@ import org.osgi.framework.BundleContext;
 public class Activator implements BundleActivator {
 
     private BundleContext bundleContext;
-//    private ServiceRegistration commandLineServiceRegistration;
-//    private ServiceTracker gradleFactoryTracker;
+    private ServiceRegistration commandLineServiceRegistration;
 
     public void start(BundleContext bundleContext) throws Exception
     {
         this.bundleContext = bundleContext;
-
-//        gradleFactoryTracker = new ServiceTracker(bundleContext, "(&(objectClass="+ GradleFactory.class.getName()+"))", null);
-//        gradleFactoryTracker.open();
+//        org.slf4j.impl.OSGILogFactory.initOSGI(bundleContext);
 
         // TODO improve this, how should we proceed if the gradleFactory is not available ?
-//        final GradleFactory gradleFactory = (GradleFactory) gradleFactoryTracker.getService();
+        final ServiceReference serviceRef = bundleContext.getServiceReference(GradleFactory.class.getName());
+        final GradleFactory gradleFactory = (GradleFactory) bundleContext.getService(serviceRef);
 
-//        final GradleCommandLine gradleCommandLine = new DefaultGradleCommandLine(gradleFactory);
-//
-//        commandLineServiceRegistration = bundleContext.registerService(GradleCommandLine.class.getName(), gradleCommandLine, null);
+        final GradleCommandLine gradleCommandLine = new DefaultGradleCommandLine(gradleFactory);
+
+        commandLineServiceRegistration = bundleContext.registerService(GradleCommandLine.class.getName(), gradleCommandLine, null);
     }
 
     public void stop(BundleContext bundleContext) throws Exception
     {
-//        gradleFactoryTracker.close();
-//        commandLineServiceRegistration.unregister();
+        commandLineServiceRegistration.unregister();
         this.bundleContext = null;
     }
 }

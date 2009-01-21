@@ -1,11 +1,22 @@
 package org.gradle.bundle;
 
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
 /**
- * Created by IntelliJ IDEA.
- * User: teyckmans
- * Date: Jan 21, 2009
- * Time: 9:06:54 PM
- * To change this template use File | Settings | File Templates.
+ * @author Tom Eyckmans
  */
-public class Activator {
+public class Activator implements BundleActivator {
+
+    private BundleContext bundleContext;
+
+    public void start(BundleContext bundleContext) throws Exception {
+        this.bundleContext = bundleContext;
+
+//        org.slf4j.impl.OSGILogFactory.initOSGI(bundleContext);
+    }
+
+    public void stop(BundleContext bundleContext) throws Exception {
+        this.bundleContext = null;
+    }
 }

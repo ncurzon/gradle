@@ -19,6 +19,9 @@ public class DefaultGradleActivator implements BundleActivator {
     public void start(BundleContext bundleContext) throws Exception
     {
         this.bundleContext = bundleContext;
+
+//        org.slf4j.impl.OSGILogFactory.initOSGI(bundleContext);
+
         this.gradleFactoryRegistration = bundleContext.registerService(GradleFactory.class.getName(), new DefaultGradleFactory(new DefaultLoggingConfigurer()), null);
 
         System.out.println("GRADLE FACTORY SERVICE REGISTERED");

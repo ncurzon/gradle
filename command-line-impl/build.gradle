@@ -9,32 +9,45 @@ usePlugin('osgi');
 
 dependencies {
     addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
+    addFlatDirResolver('bundles', new File(rootDir, 'bundle'))
+
+    addConfiguration('bundleClasspath')
 
     compile project(":command-line-api"),
             project(':gradle-api'),
             "net.sf.jopt-simple:jopt-simple:2.4.1@jar",
-            "ch.qos.logback:logback-classic:0.9.9@jar",
             "org.slf4j:slf4j-api:1.5.3@jar",
-            "ch.qos.logback:logback-core:0.9.9@jar",
             "org.apache.felix:org.apache.felix.framework:1.4.1"
+
+    bundleClasspath "net.sf.jopt-simple:jopt-simple:2.4.1@jar"
 }
 
 configure(project.archive_jar.osgi) {
     instruction 'Import-Package',
         'org.osgi.framework',
-        'org.osgi.util.tracker',
-        'org.gradle.commandline',
+        'org.slf4j',
         'org.gradle',
-        'org.gradle.util',
-        'joptsimple',
         'org.gradle.api',
+        'org.gradle.api.logging',
+        'org.gradle.commandline',
         'org.gradle.execution',
-        'org.slf4j'
-    instruction 'Export-Package', 'org.gradle.commandline'
+        'org.gradle.util'
     instruction 'Private-Package', 'org.gradle.commandline.impl'
     instruction 'Bundle-Activator', 'org.gradle.commandline.impl.Activator'
     instruction 'Bundle-Vendor', 'gradle.org'
     instruction 'Bundle-Description', 'Gradle command line impl bundle'
     instruction 'Bundle-DocURL', 'http://www.gradle.org'
-    //instruction 'Require-Bundle', 'gradle-api'
+
+    bundleClasspathFiles = dependencies.resolve('bundleClasspath') as File[]
+    bundleClasspathFilenames = []
+    bundleClasspathFiles.each() {
+        bundleClasspathFilenames << it.getName()    
+    }
+    bundleClasspathFilenames << '.'
+
+    instruction 'Bundle-ClassPath', createPropertyStringFromList(bundleClasspathFilenames)
+}
+
+archive_jar {
+    files(dependencies.resolve('bundleClasspath') as File[])
 }

@@ -3,6 +3,12 @@ package org.gradle.bootstrap;
 import org.gradle.commandline.GradleCommandLine;
 import org.gradle.bootstrap.HostApplication;
 
+import java.lang.reflect.Method;
+import java.util.Properties;
+import java.util.Map;
+import java.io.InputStream;
+import java.io.PrintStream;
+
 /**
  * @author Tom Eyckmans
  */
@@ -14,27 +20,35 @@ public class BootstrapMain {
         processGradleHome(bootStrapDebug);
 
         final HostApplication hostApplication = new HostApplication();
-        int exitCode = 1;
+        int exitCode = -1;
         try {
             hostApplication.startApplication();
 
-            final GradleCommandLine gradleCommandLine = hostApplication.getGradleCommandLine();
+            final Object gradleCommandLine = hostApplication.getGradleCommandLine();
 
-            exitCode = gradleCommandLine.runGradle(args, System.getProperties(), System.getenv(), System.in, System.out, System.err);
+            final Method runGradleMethod = gradleCommandLine.getClass().getMethod("runGradle",
+                    new Class[]{String[].class, Properties.class, Map.class, InputStream.class, PrintStream.class, PrintStream.class});
+
+            exitCode = (Integer)runGradleMethod.invoke(gradleCommandLine, args, System.getProperties(), System.getenv(), System.in, System.out, System.err);
         }
         catch ( Exception e ) {
             e.printStackTrace();
+
+            exitCode = 1;
         }
         finally {
             try {
                 hostApplication.stopApplication();
-                System.exit(exitCode);
             }
             catch ( Exception e ) {
                 e.printStackTrace();
-                System.exit(1);
+                
+                if ( exitCode == -1 )
+                    exitCode = 1;
             }
         }
+
+        System.exit(exitCode);
     }
 
     private static String processGradleHome(boolean bootStrapDebug) {

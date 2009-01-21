@@ -4,11 +4,15 @@ import org.apache.felix.framework.Felix;
 import org.apache.felix.framework.util.Util;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.gradle.commandline.GradleCommandLine;
 
 import java.util.Properties;
 import java.util.Enumeration;
+import java.util.Arrays;
+import java.util.List;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.io.File;
@@ -42,7 +46,12 @@ public class HostApplication {
 
         final BundleContext bundleContext = m_felix.getBundleContext();
 
-        bundleContext.installBundle("file:lib/jopt-simple-2.4.1.jar$");
+        final List<Bundle> installedBundles = Arrays.asList(bundleContext.getBundles());
+        for ( final Bundle bundle : installedBundles ) {
+            printState(bundle);
+        }
+
+//        bundleContext.installBundle("file:lib/jopt-simple-2.4.1.jar$");
 
         /*final Bundle commandLineApiBundle = bundleContext.installBundle("file:command-line-api/build/command-line-api-0.6.jar");
         final Bundle gradleApiBundle = bundleContext.installBundle("file:gradle-api/build/gradle-api-0.6.jar");
@@ -58,9 +67,6 @@ public class HostApplication {
         printState(gradleApiBundle);
         printState(commandLineImplBundle);
         printState(gradleImplBundle);*/
-
-        gradleCommandLineTracker = new ServiceTracker(bundleContext, bundleContext.createFilter("(objectClass="+GradleCommandLine.class.getName()+")"), null);
-        gradleCommandLineTracker.open();
     }
 
     private void printState(Bundle bundle)
@@ -88,12 +94,14 @@ public class HostApplication {
         }
     }
 
-    public GradleCommandLine getGradleCommandLine()
+    public Object getGradleCommandLine()
     {
-        while ( gradleCommandLineTracker.getService() != null ) {
-            
-        }
-        return (GradleCommandLine) gradleCommandLineTracker.getService();
+        final BundleContext bundleContext = m_felix.getBundleContext();
+        final ServiceReference serviceRef = bundleContext.getServiceReference(GradleCommandLine.class.getName());
+
+        final Object serviceObject = bundleContext.getService(serviceRef);
+
+        return serviceObject;
     }
 
     public void stopApplication() throws Exception

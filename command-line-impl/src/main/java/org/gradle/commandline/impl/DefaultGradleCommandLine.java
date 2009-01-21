@@ -45,7 +45,7 @@ import org.gradle.*;
  * @author Hans Dockter
  */
 public class DefaultGradleCommandLine implements GradleCommandLine {
-    private static Logger logger = LoggerFactory.getLogger(DefaultGradleCommandLine.class);
+    private static Logger logger = LoggerFactory.getLogger(GradleCommandLine.class);
 
     public static final String GRADLE_HOME_PROPERTY_KEY = "gradle.home";
     public static final String GRADLE_USER_HOME_PROPERTY_KEY = "gradle.user.home";
