@@ -14,3 +14,7 @@ configure(project.archive_jar.osgi) {
       instruction 'Bundle-Description', 'Gradle command line api bundle'
       instruction 'Bundle-DocURL', 'http://www.gradle.org'
 }
+
+compile {
+	options.fork([executable:'/usr/lib/jvm/java-6-sun-1.6.0.07/bin/javac'])
+}

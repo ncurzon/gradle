@@ -19,12 +19,19 @@ package org.gradle.initialization;
 import groovy.lang.Script;
 import org.gradle.StartParameter;
 import org.gradle.api.GradleScriptException;
+import org.gradle.api.GradleException;
 import org.gradle.api.internal.SettingsInternal;
 import org.gradle.api.internal.project.ImportsReader;
 import org.gradle.groovy.scripts.*;
 import org.gradle.util.Clock;
+import org.gradle.util.BootstrapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.URLClassLoader;
+import java.net.URL;
+import java.net.MalformedURLException;
+import java.util.List;
 
 
 /**
@@ -70,7 +77,7 @@ public class ScriptEvaluatingSettingsProcessor implements SettingsProcessor {
         try {
             Script settingsScript = scriptProcessor.createScript(
                     source,
-                    Thread.currentThread().getContextClassLoader(),
+                    getClass().getClassLoader(),
                     ScriptWithSource.class);
             settingsScriptMetaData.applyMetaData(settingsScript, settings);
             Clock clock = new Clock();

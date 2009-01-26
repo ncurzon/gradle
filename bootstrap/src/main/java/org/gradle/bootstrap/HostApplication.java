@@ -36,7 +36,131 @@ public class HostApplication {
 //                " org.slf4j, " +
 //                " org.slf4j.impl, " +
 //                " org.slf4j.helpers, " +
-                " org.w3c.dom "
+                "  javax.accessibility,\n" +
+                " javax.activity,\n" +
+                " javax.crypto,\n" +
+                " javax.crypto.interfaces,\n" +
+                " javax.crypto.spec,\n" +
+                " javax.imageio,\n" +
+                " javax.imageio.event,\n" +
+                " javax.imageio.metadata,\n" +
+                " javax.imageio.plugins.bmp,\n" +
+                " javax.imageio.plugins.jpeg,\n" +
+                " javax.imageio.spi,\n" +
+                " javax.imageio.stream,\n" +
+                " javax.management,\n" +
+                " javax.management.loading,\n" +
+                " javax.management.modelmbean,\n" +
+                " javax.management.monitor,\n" +
+                " javax.management.openmbean,\n" +
+                " javax.management.relation,\n" +
+                " javax.management.remote,\n" +
+                " javax.management.remote.rmi,\n" +
+                " javax.management.timer,\n" +
+                " javax.naming,\n" +
+                " javax.naming.directory,\n" +
+                " javax.naming.event,\n" +
+                " javax.naming.ldap,\n" +
+                " javax.naming.spi,\n" +
+                " javax.net,\n" +
+                " javax.net.ssl,\n" +
+                " javax.print,\n" +
+                " javax.print.attribute,\n" +
+                " javax.print.attribute.standard,\n" +
+                " javax.print.event,\n" +
+                " javax.rmi,\n" +
+                " javax.rmi.CORBA,\n" +
+                " javax.rmi.ssl,\n" +
+                " javax.security.auth,\n" +
+                " javax.security.auth.callback,\n" +
+                " javax.security.auth.kerberos,\n" +
+                " javax.security.auth.login,\n" +
+                " javax.security.auth.spi,\n" +
+                " javax.security.auth.x500,\n" +
+                " javax.security.cert,\n" +
+                " javax.security.sasl,\n" +
+                " javax.sound.midi,\n" +
+                " javax.sound.midi.spi,\n" +
+                " javax.sound.sampled,\n" +
+                " javax.sound.sampled.spi,\n" +
+                " javax.sql,\n" +
+                " javax.sql.rowset,\n" +
+                " javax.sql.rowset.serial,\n" +
+                " javax.sql.rowset.spi,\n" +
+                " javax.swing,\n" +
+                " javax.swing.border,\n" +
+                " javax.swing.colorchooser,\n" +
+                " javax.swing.event,\n" +
+                " javax.swing.filechooser,\n" +
+                " javax.swing.plaf,\n" +
+                " javax.swing.plaf.basic,\n" +
+                " javax.swing.plaf.metal,\n" +
+                " javax.swing.plaf.multi,\n" +
+                " javax.swing.plaf.synth,\n" +
+                " javax.swing.table,\n" +
+                " javax.swing.text,\n" +
+                " javax.swing.text.html,\n" +
+                " javax.swing.text.html.parser,\n" +
+                " javax.swing.text.rtf,\n" +
+                " javax.swing.tree,\n" +
+                " javax.swing.undo,\n" +
+                " javax.transaction,\n" +
+                " javax.transaction.xa,\n" +
+                " org.ietf.jgss,\n" +
+                " org.omg.CORBA,\n" +
+                " org.omg.CORBA_2_3,\n" +
+                " org.omg.CORBA_2_3.portable,\n" +
+                " org.omg.CORBA.DynAnyPackage,\n" +
+                " org.omg.CORBA.ORBPackage,\n" +
+                " org.omg.CORBA.portable,\n" +
+                " org.omg.CORBA.TypeCodePackage,\n" +
+                " org.omg.CosNaming,\n" +
+                " org.omg.CosNaming.NamingContextExtPackage,\n" +
+                " org.omg.CosNaming.NamingContextPackage,\n" +
+                " org.omg.Dynamic,\n" +
+                " org.omg.DynamicAny,\n" +
+                " org.omg.DynamicAny.DynAnyFactoryPackage,\n" +
+                " org.omg.DynamicAny.DynAnyPackage,\n" +
+                " org.omg.IOP,\n" +
+                " org.omg.IOP.CodecFactoryPackage,\n" +
+                " org.omg.IOP.CodecPackage,\n" +
+                " org.omg.Messaging,\n" +
+                " org.omg.PortableInterceptor,\n" +
+                " org.omg.PortableInterceptor.ORBInitInfoPackage,\n" +
+                " org.omg.PortableServer,\n" +
+                " org.omg.PortableServer.CurrentPackage,\n" +
+                " org.omg.PortableServer.POAManagerPackage,\n" +
+                " org.omg.PortableServer.POAPackage,\n" +
+                " org.omg.PortableServer.portable,\n" +
+                " org.omg.PortableServer.ServantLocatorPackage,\n" +
+                " org.omg.SendingContext,\n" +
+                " org.omg.stub.java.rmi,\n" +
+                " org.omg.stub.javax.management.remote.rmi,\n" +
+                " javax.xml,\n" +
+                " javax.xml.datatype,\n" +
+                " javax.xml.namespace,\n" +
+                " javax.xml.parsers,\n" +
+                " javax.xml.transform,\n" +
+                " javax.xml.transform.dom,\n" +
+                " javax.xml.transform.sax,\n" +
+                " javax.xml.transform.stream,\n" +
+                " javax.xml.validation,\n" +
+                " javax.xml.xpath,\n" +
+                " org.apache.xmlcommons,\n" +
+                " org.w3c.dom,\n" +
+                " org.w3c.dom.bootstrap,\n" +
+                " org.w3c.dom.css,\n" +
+                " org.w3c.dom.events,\n" +
+                " org.w3c.dom.html,\n" +
+                " org.w3c.dom.ls,\n" +
+                " org.w3c.dom.ranges,\n" +
+                " org.w3c.dom.stylesheets,\n" +
+                " org.w3c.dom.traversal,\n" +
+                " org.w3c.dom.views,\n" +
+                " org.w3c.dom.xpath,\n" +
+                " org.xml.sax,\n" +
+                " org.xml.sax.ext,\n" +
+                " org.xml.sax.helpers "
 //                " ch.qos.logback.classic.spi, " +
 //                " ch.qos.logback.classic.filter, " +
 //                " ch.qos.logback.core.filter, " +
@@ -84,7 +208,7 @@ public class HostApplication {
 //        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/bundle/dom4j-1.6.1.jar$");
 //        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/lib/groovy-all-1.5.6.jar");
         toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/command-line-api/build/command-line-api-0.6.jar");
-        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/gradle-api/build/gradle-api-0.6.jar");
+//        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/gradle-api/build/gradle-api-0.6.jar");
         toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/gradle-impl/build/gradle-impl-0.6.jar");
 //        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/command-line-impl/build/command-line-impl-0.6.jar");
 

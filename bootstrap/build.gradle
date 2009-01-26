@@ -14,4 +14,8 @@ dependencies {
 			"org.apache.felix:org.apache.felix.framework:1.4.1"
 }
 
+compile {
+	options.fork([executable:'/usr/lib/jvm/java-6-sun-1.6.0.07/bin/javac'])
+}
+
 

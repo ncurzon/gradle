@@ -104,7 +104,10 @@ public class DefaultScriptCompilationHandler implements ScriptCompilationHandler
         try {
             URLClassLoader urlClassLoader = new URLClassLoader(WrapUtil.toArray(scriptCacheDir.toURI().toURL()),
                     classLoader);
-            script = (Script) urlClassLoader.loadClass(scriptName).newInstance();
+
+            Object scriptObject = urlClassLoader.loadClass(scriptName).newInstance();
+
+            script = (Script)scriptObject; 
         } catch (ClassNotFoundException e) {
             logger.debug("Class not in cache: ", e);
             return null;

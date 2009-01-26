@@ -61,7 +61,7 @@ public class DefaultStartParameter implements StartParameter {
     private BuildExecuter buildExecuter;
     private boolean mergedBuild;
     private String logLevel = "LIFECYCLE";
-    private ProcessMode processMode;
+    private ProcessMode processMode = ProcessMode.DEFAULT;
 
     /**
      * Creates a {@code StartParameter} with default values. This is roughly equivalent to running Gradle on the
@@ -229,8 +229,7 @@ public class DefaultStartParameter implements StartParameter {
         if (buildExecuter != null) {
             return buildExecuter;
         }
-        BuildExecuter executer = GUtil.isTrue(taskNames) ? new TaskNameResolvingBuildExecuter(taskNames)
-                : new ProjectDefaultsBuildExecuter();
+        BuildExecuter executer = GUtil.isTrue(taskNames) ? new TaskNameResolvingBuildExecuter(taskNames) : new ProjectDefaultsBuildExecuter();
         if (mergedBuild) {
             executer = new MergingBuildExecuter(executer);
         }

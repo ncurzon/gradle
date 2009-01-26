@@ -21,6 +21,7 @@ import joptsimple.OptionSet;
 import org.gradle.*;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
+import org.gradle.api.GradleException;
 import org.gradle.api.initialization.Settings;
 import org.gradle.commandline.GradleCommandLine;
 import static org.gradle.commandline.Options.*;
@@ -28,6 +29,7 @@ import org.gradle.execution.ProcessMode;
 import org.gradle.util.GUtil;
 import org.gradle.util.GradleVersion;
 import org.gradle.util.WrapUtil;
+import org.gradle.util.BootstrapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,6 +40,10 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.ArrayList;
+import java.net.URLClassLoader;
+import java.net.URL;
+import java.net.MalformedURLException;
 
 /**
  * @author Hans Dockter
