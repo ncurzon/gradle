@@ -17,7 +17,6 @@ package org.gradle.api.internal;
 
 import groovy.lang.MissingMethodException;
 import groovy.lang.MissingPropertyException;
-import org.gradle.impl.api.internal.AbstractDynamicObject;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 import org.junit.Test;

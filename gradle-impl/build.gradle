@@ -8,13 +8,18 @@ group = 'org.gradle'
 usePlugin('osgi')
 
 dependencies {
-    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
+    addFlatDirResolver('libs', new File(rootDir, 'lib'))
     addFlatDirResolver('bundles', new File(rootDir, 'bundle'))
+    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
+
 
     addConfiguration('bundleClasspath')
 
-    bundleClasspath "net.sf.jopt-simple:jopt-simple:2.4.1@jar",
-                    "org.apache.ant:ant:1.7.0@jar",
+    bundleClasspath "org.apache.ant:ant:1.7.0@jar",
+                    "org.slf4j:slf4j-api:1.5.3@jar",
+                    "ch.qos.logback:logback-core:0.9.9@jar",
+                    "ch.qos.logback:logback-classic:0.9.9@jar",
+                    "net.sf.jopt-simple:jopt-simple:2.4.1@jar",
                     "commons-io:commons-io:1.4@jar",
                     "commons-lang:commons-lang:2.3@jar",
                     "slide:webdavlib:2.0@jar",
@@ -43,7 +48,7 @@ dependencies {
     compile "org.mortbay.jetty:jetty-plus:6.1.14@jar", "org.mortbay.jetty:jetty-util:6.1.14@jar", "javax.servlet:servlet-api:2.5@jar"
     bundleClasspath "org.mortbay.jetty:jetty-plus:6.1.14@jar", "org.mortbay.jetty:jetty-util:6.1.14@jar", "javax.servlet:servlet-api:2.5@jar"
 
-    compile project(":gradle-api"),
+    compile project(":command-line-api"),
             "org.apache.ant:ant:1.7.0@jar",
             "org.slf4j:slf4j-api:1.5.3@jar",
             "ch.qos.logback:logback-core:0.9.9@jar",
@@ -68,37 +73,10 @@ configure(project.archive_jar.osgi) {
     instruction 'Import-Package',
         'org.osgi.framework',
         'org.osgi.util.tracker',
-        'org.slf4j',
-        'org.gradle',
-        'org.gradle.api',
-        'org.gradle.api.dependencies',
-        'org.gradle.api.dependencies.maven',
-        'org.gradle.api.execution',
-        'org.gradle.api.initialization',
-        'org.gradle.api.internal',
-        'org.gradle.api.internal.dependencies',
-        'org.gradle.api.internal.dependencies.ivy',
-        'org.gradle.api.internal.dependencies.maven.deploy',
-        'org.gradle.api.internal.project',
-        'org.gradle.api.invocation',
-        'org.gradle.api.logging',
-        'org.gradle.api.plugins',
-        'org.gradle.api.tasks',
-        'org.gradle.configuration',
-        'org.gradle.execution',
-        'org.gradle.groovy.scripts',
-        'org.gradle.initialization',
-        'org.gradle.logging',
-        'org.gradle.util',
-        'ch.qos.logback.classic.spi',
-        'ch.qos.logback.classic.filter',
-        'ch.qos.logback.core.filter',
-        'ch.qos.logback.core.spi',
-        'ch.qos.logback.core',
-        'ch.qos.logback.classic'
+        'org.gradle.commandline'
 
     instruction 'Export-Package', 'org.gradle.impl.bundle'
-    instruction 'Bundle-Activator', 'org.gradle.impl.bundle.DefaultGradleActivator'
+    instruction 'Bundle-Activator', 'org.gradle.DefaultGradleActivator'
     instruction 'Bundle-Vendor', 'gradle.org'
     instruction 'Bundle-Description', 'Gradle command line impl bundle'
     instruction 'Bundle-DocURL', 'http://www.gradle.org'

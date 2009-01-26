@@ -8,13 +8,13 @@ group = 'org.gradle'
 usePlugin('osgi');
 
 dependencies {
-    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
+    addFlatDirResolver('libs', new File(rootDir, 'lib'))
     addFlatDirResolver('bundles', new File(rootDir, 'bundle'))
+    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
 
     addConfiguration('bundleClasspath')
 
-    compile project(":command-line-api"),
-            project(':gradle-api'),
+    compile  project(':command-line-api'), project(':gradle-impl'),
             "net.sf.jopt-simple:jopt-simple:2.4.1@jar",
             "org.slf4j:slf4j-api:1.5.3@jar",
             "org.apache.felix:org.apache.felix.framework:1.4.1"
@@ -25,7 +25,6 @@ dependencies {
 configure(project.archive_jar.osgi) {
     instruction 'Import-Package',
         'org.osgi.framework',
-        'org.slf4j',
         'org.gradle',
         'org.gradle.api',
         'org.gradle.api.logging',

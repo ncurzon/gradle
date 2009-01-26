@@ -17,17 +17,13 @@
 package org.gradle.api.internal.project;
 
 import org.apache.commons.io.FileUtils;
+import org.gradle.DefaultStartParameter;
 import org.gradle.api.Project;
 import org.gradle.api.internal.BuildInternal;
+import org.gradle.api.internal.dependencies.DependencyManagerFactory;
+import org.gradle.groovy.scripts.FileScriptSource;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory;
-import org.gradle.impl.api.internal.project.AntBuilderFactory;
-import org.gradle.impl.api.internal.project.DefaultProject;
-import org.gradle.impl.api.internal.project.ITaskFactory;
-import org.gradle.impl.api.internal.project.ProjectFactory;
-import org.gradle.impl.groovy.scripts.FileScriptSource;
-import org.gradle.impl.groovy.scripts.StringScriptSource;
+import org.gradle.groovy.scripts.StringScriptSource;
 import org.gradle.util.HelperUtil;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.jmock.Expectations;

@@ -15,10 +15,11 @@
  */
 package org.gradle.api.internal;
 
-import groovy.lang.*;
+import groovy.lang.GroovyRuntimeException;
+import groovy.lang.MissingPropertyException;
+import groovy.lang.ReadOnlyPropertyException;
+import groovy.lang.Script;
 import org.gradle.api.plugins.Convention;
-import org.gradle.impl.api.internal.BeanDynamicObject;
-import org.gradle.impl.api.internal.DynamicObjectHelper;
 import org.gradle.util.HelperUtil;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

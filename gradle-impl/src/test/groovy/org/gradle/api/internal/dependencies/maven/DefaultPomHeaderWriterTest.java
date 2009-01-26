@@ -15,9 +15,7 @@
  */
 package org.gradle.api.internal.dependencies.maven;
 
-import org.gradle.impl.api.internal.dependencies.maven.DefaultPomHeaderWriter;
-import org.gradle.impl.api.internal.dependencies.maven.PomHeaderWriter;
-import static org.gradle.impl.api.internal.dependencies.maven.PomWriter.NL;
+import static org.gradle.api.internal.dependencies.maven.PomWriter.NL;
 import org.gradle.util.GradleVersion;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;

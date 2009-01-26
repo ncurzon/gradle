@@ -18,8 +18,6 @@ package org.gradle.api.internal.dependencies.maven;
 import org.apache.commons.io.FileUtils;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.dependencies.maven.MavenPom;
-import org.gradle.impl.api.internal.dependencies.maven.DefaultPomFileWriter;
-import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
 import org.hamcrest.Description;
 import org.jmock.Expectations;
 import org.jmock.api.Action;

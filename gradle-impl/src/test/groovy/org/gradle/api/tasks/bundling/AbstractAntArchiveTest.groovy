@@ -17,12 +17,12 @@
 package org.gradle.api.tasks.bundling
 
 import java.util.jar.Manifest
-import org.gradle.impl.api.tasks.bundling.Compression
-import org.gradle.impl.api.tasks.bundling.GradleManifest
+import org.gradle.api.tasks.bundling.Compression
+import org.gradle.api.tasks.bundling.GradleManifest
 import org.gradle.util.HelperUtil
 import org.junit.After
 import org.junit.Before
-import org.gradle.impl.api.tasks.util.*
+import org.gradle.api.tasks.util.*
 import static org.junit.Assert.*
 
 /**

@@ -16,8 +16,8 @@
  
 package org.gradle.api.tasks.compile
 
-import org.gradle.impl.api.tasks.compile.GroovyCompileOptions
-import org.gradle.impl.api.tasks.compile.GroovyForkOptions
+import org.gradle.api.tasks.compile.GroovyCompileOptions
+import org.gradle.api.tasks.compile.GroovyForkOptions
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*

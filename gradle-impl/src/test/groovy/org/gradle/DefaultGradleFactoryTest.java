@@ -15,7 +15,6 @@
  */
 package org.gradle;
 
-import org.gradle.impl.DefaultGradleFactory;
 import org.gradle.initialization.LoggingConfigurer;
 import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;

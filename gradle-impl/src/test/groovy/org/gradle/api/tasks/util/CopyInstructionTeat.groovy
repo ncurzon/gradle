@@ -17,8 +17,9 @@
 package org.gradle.api.tasks.util
 
 import org.gradle.api.InvalidUserDataException
-import org.gradle.impl.api.tasks.util.CopyInstruction
+import org.gradle.api.tasks.util.CopyInstruction
 import org.gradle.util.HelperUtil
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.assertEquals

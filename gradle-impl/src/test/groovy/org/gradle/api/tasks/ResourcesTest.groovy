@@ -17,14 +17,14 @@
 package org.gradle.api.tasks
 
 import groovy.mock.interceptor.MockFor
+import org.gradle.api.internal.AbstractTask
 import org.gradle.api.tasks.AbstractTaskTest
+import org.gradle.api.tasks.ConventionValue
+import org.gradle.api.tasks.Resources
 import org.gradle.api.tasks.ResourcesTestConvention
-import org.gradle.impl.api.internal.AbstractTask
-import org.gradle.impl.api.tasks.ConventionValue
-import org.gradle.impl.api.tasks.Resources
-import org.gradle.impl.api.tasks.util.CopyInstruction
-import org.gradle.impl.api.tasks.util.CopyInstructionFactory
-import org.gradle.impl.api.tasks.util.ExistingDirsFilter
+import org.gradle.api.tasks.util.CopyInstruction
+import org.gradle.api.tasks.util.CopyInstructionFactory
+import org.gradle.api.tasks.util.ExistingDirsFilter
 import org.gradle.util.JUnit4GroovyMockery
 import org.jmock.integration.junit4.JMock
 import org.jmock.lib.legacy.ClassImposteriser

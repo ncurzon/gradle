@@ -16,10 +16,11 @@
 
 package org.gradle.configuration
 
-import org.gradle.impl.api.internal.DefaultTask
-import org.gradle.impl.api.internal.project.DefaultProject
-import org.gradle.impl.configuration.ProjectDependencies2TaskResolver
+import org.gradle.api.internal.DefaultTask
+import org.gradle.api.internal.project.DefaultProject
+import org.gradle.configuration.ProjectDependencies2TaskResolver
 import org.gradle.util.HelperUtil
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.assertEquals

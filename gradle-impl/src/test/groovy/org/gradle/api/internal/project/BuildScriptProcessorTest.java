@@ -21,7 +21,6 @@ import org.gradle.groovy.scripts.IProjectScriptMetaData;
 import org.gradle.groovy.scripts.IScriptProcessor;
 import org.gradle.groovy.scripts.ImportsScriptSource;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.impl.api.internal.project.DefaultProject;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.ReflectionEqualsMatcher;
 import org.jmock.Expectations;

@@ -16,10 +16,8 @@
 package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
-import org.gradle.impl.api.internal.DefaultTask;
-import org.gradle.impl.api.plugins.BasePlugin;
-import org.gradle.impl.api.plugins.BasePluginConvention;
-import org.gradle.impl.api.tasks.Clean;
+import org.gradle.api.internal.DefaultTask;
+import org.gradle.api.tasks.Clean;
 import org.gradle.util.HelperUtil;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;

@@ -16,9 +16,7 @@
 package org.gradle.api.internal.project;
 
 import org.gradle.api.*;
-import org.gradle.impl.api.internal.DefaultTask;
-import org.gradle.impl.api.internal.project.DefaultProject;
-import org.gradle.impl.api.internal.project.TaskFactory;
+import org.gradle.api.internal.DefaultTask;
 import org.gradle.util.TestTask;
 import org.gradle.util.WrapUtil;
 import static org.junit.Assert.*;

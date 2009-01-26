@@ -21,8 +21,6 @@ import org.apache.ivy.core.module.id.ModuleId;
 import org.apache.ivy.plugins.matcher.ExactPatternMatcher;
 import org.apache.ivy.plugins.matcher.GlobPatternMatcher;
 import org.apache.ivy.plugins.matcher.PatternMatcher;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultExcludeRuleConverter;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenExclude;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Before;

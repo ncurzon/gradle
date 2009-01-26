@@ -17,9 +17,9 @@
 package org.gradle.api.tasks.bundling
 
 import org.gradle.api.tasks.bundling.AbstractAntSkippableArchiveTest
-import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
-import org.gradle.impl.api.tasks.bundling.AntZip
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.api.tasks.bundling.AntArchiveParameter
+import org.gradle.api.tasks.bundling.AntZip
+import org.gradle.api.tasks.util.FileSet
 import org.junit.Before
 import org.junit.Test
 

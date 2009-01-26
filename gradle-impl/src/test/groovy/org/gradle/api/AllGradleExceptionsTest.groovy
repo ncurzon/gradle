@@ -16,6 +16,7 @@
  
 package org.gradle.api
 
+import org.junit.Assert
 import org.junit.Test
 import org.gradle.api.*
 import static org.junit.Assert.assertEquals

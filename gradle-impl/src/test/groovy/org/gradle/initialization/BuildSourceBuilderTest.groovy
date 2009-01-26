@@ -16,18 +16,13 @@
 
 package org.gradle.initialization
 
-import org.gradle.BuildListener
-import org.gradle.CacheUsage
-import org.gradle.GradleFactory
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.dependencies.Configuration
-import org.gradle.impl.DefaultGradle
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.api.plugins.BasePlugin
-import org.gradle.impl.api.plugins.JavaPlugin
-import org.gradle.impl.initialization.BuildSourceBuilder
+import org.gradle.api.plugins.BasePlugin
+import org.gradle.api.plugins.JavaPlugin
 import org.gradle.initialization.BuildListenerAction
+import org.gradle.initialization.BuildSourceBuilder
 import org.gradle.initialization.CacheInvalidationStrategy
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
@@ -38,6 +33,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.*
 import static org.junit.Assert.assertEquals
 
 /**

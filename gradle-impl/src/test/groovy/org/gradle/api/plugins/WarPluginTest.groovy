@@ -18,9 +18,11 @@ package org.gradle.api.plugins
 
 import org.gradle.api.Project
 import org.gradle.api.internal.project.PluginRegistry
-import org.gradle.impl.api.plugins.JavaPlugin
-import org.gradle.impl.api.plugins.WarPlugin
+import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.plugins.WarPlugin
 import org.gradle.util.HelperUtil
+import org.gradle.util.WrapUtil
+import org.hamcrest.Matchers
 import org.junit.Test
 import static org.gradle.util.WrapUtil.toSet
 import static org.hamcrest.Matchers.equalTo

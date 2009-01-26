@@ -21,7 +21,6 @@ import org.apache.ivy.core.publish.PublishOptions;
 import org.apache.ivy.plugins.resolver.FileSystemResolver;
 import org.gradle.api.DependencyManager;
 import org.gradle.api.dependencies.ResolverContainer;
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyPublisher;
 import org.gradle.util.HelperUtil;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.gradle.util.WrapUtil;

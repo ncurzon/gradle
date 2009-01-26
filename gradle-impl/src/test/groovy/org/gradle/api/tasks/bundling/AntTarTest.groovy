@@ -16,14 +16,10 @@
 
 package org.gradle.api.tasks.bundling
 
-import org.gradle.api.tasks.bundling.AbstractAntArchiveTest
-import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
-import org.gradle.impl.api.tasks.bundling.AntTar
-import org.gradle.impl.api.tasks.bundling.Compression
-import org.gradle.impl.api.tasks.bundling.LongFile
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.api.tasks.util.FileSet
 import org.junit.Before
 import org.junit.Test
+import org.gradle.api.tasks.bundling.*
 
 /**
  * @author Hans Dockter

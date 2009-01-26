@@ -17,7 +17,7 @@
 package org.gradle.api.tasks.util
 
 import org.gradle.api.tasks.util.FileSetTest
-import org.gradle.impl.api.tasks.util.ZipFileSet
+import org.gradle.api.tasks.util.ZipFileSet
 import org.junit.Before
 
 /**

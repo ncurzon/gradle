@@ -19,14 +19,15 @@ package org.gradle.api.internal.dependencies.maven.deploy.groovy
 import java.lang.reflect.Proxy
 import org.gradle.api.dependencies.maven.MavenPom
 import org.gradle.api.dependencies.maven.PublishFilter
+import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainer
 import org.gradle.api.internal.dependencies.maven.deploy.BasePomFilterContainerTest
+import org.gradle.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer
 import org.gradle.api.internal.dependencies.maven.deploy.groovy.FilterMatcher
-import org.gradle.impl.api.internal.dependencies.maven.deploy.BasePomFilterContainer
-import org.gradle.impl.api.internal.dependencies.maven.deploy.groovy.DefaultGroovyPomFilterContainer
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.jmock.integration.junit4.JMock
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

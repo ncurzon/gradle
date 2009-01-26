@@ -17,8 +17,10 @@
 package org.gradle.api.plugins
 
 import org.gradle.api.plugins.AbstractPluginConventionTest
-import org.gradle.impl.api.plugins.GroovyPluginConvention
-import org.gradle.impl.api.plugins.JavaPluginConvention
+import org.gradle.api.plugins.GroovyPluginConvention
+import org.gradle.api.plugins.JavaPluginConvention
+import org.hamcrest.Matchers
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.hamcrest.Matchers.equalTo

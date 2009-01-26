@@ -16,9 +16,9 @@
  
 package org.gradle.api.plugins
 
+import org.gradle.api.internal.project.DefaultProject
 import org.gradle.api.plugins.TestPluginConvention1
 import org.gradle.api.plugins.TestPluginConvention2
-import org.gradle.impl.api.internal.project.DefaultProject
 import org.gradle.util.HelperUtil
 import org.junit.Assert
 import org.junit.Before

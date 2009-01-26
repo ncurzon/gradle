@@ -16,8 +16,6 @@
 package org.gradle.api.internal.dependencies;
 
 import org.gradle.api.Project;
-import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
-import org.gradle.impl.api.internal.dependencies.ProjectDependencyFactory;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.gradle.util.WrapUtil;

@@ -16,14 +16,10 @@
  
 package org.gradle.api.tasks.bundling
 
-import org.gradle.api.tasks.bundling.AbstractAntArchiveTest
-import org.gradle.api.tasks.bundling.AbstractAntSkippableArchiveTest
-import org.gradle.impl.api.tasks.bundling.AntJar
-import org.gradle.impl.api.tasks.bundling.AntMetaArchiveParameter
-import org.gradle.impl.api.tasks.bundling.GradleManifest
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.api.tasks.util.FileSet
 import org.junit.Before
 import org.junit.Test
+import org.gradle.api.tasks.bundling.*
 
 /**
  * @author Hans Dockter

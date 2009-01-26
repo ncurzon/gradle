@@ -15,9 +15,7 @@
  */
 package org.gradle.api.internal.dependencies.maven.dependencies;
 
-import org.gradle.impl.api.internal.dependencies.maven.PomWriter;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultMavenDependency;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.MavenExclude;
+import org.gradle.api.internal.dependencies.maven.PomWriter;
 import org.gradle.util.WrapUtil;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;

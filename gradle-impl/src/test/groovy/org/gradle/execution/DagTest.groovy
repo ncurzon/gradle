@@ -27,7 +27,7 @@
  */
 package org.gradle.execution
 
-import org.gradle.impl.execution.Dag
+import org.gradle.execution.Dag
 import org.junit.Test
 import static org.junit.Assert.*
 

@@ -16,6 +16,7 @@
 package org.gradle.integtests
 
 import org.gradle.integtests.DynamicObjectIntegrationTest
+import org.junit.Assert
 import static org.junit.Assert.fail
 
 public class DynamicObjectIntegrationTestHelper {

@@ -15,7 +15,6 @@
  */
 package org.gradle.initialization;
 
-import org.gradle.impl.initialization.DefaultCacheInvalidationStrategy;
 import org.gradle.util.GUtil;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;

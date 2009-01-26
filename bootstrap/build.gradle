@@ -10,6 +10,7 @@ dependencies {
     addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
 
 	compile project(':command-line-api'),
+			"commons-io:commons-io:1.4@jar",
 			"org.apache.felix:org.apache.felix.framework:1.4.1"
 }
 

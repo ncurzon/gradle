@@ -17,10 +17,9 @@ package org.gradle.execution;
 
 import org.gradle.api.Project;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.impl.api.tasks.diagnostics.DependencyReportTask;
-import org.gradle.impl.api.tasks.diagnostics.PropertyReportTask;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
-import org.gradle.impl.execution.BuiltInTasksBuildExecuter;
+import org.gradle.api.tasks.diagnostics.DependencyReportTask;
+import org.gradle.api.tasks.diagnostics.PropertyReportTask;
+import org.gradle.api.tasks.diagnostics.TaskReportTask;
 import static org.hamcrest.Matchers.*;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;

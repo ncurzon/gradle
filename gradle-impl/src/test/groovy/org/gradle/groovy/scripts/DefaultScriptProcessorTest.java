@@ -20,8 +20,6 @@ import groovy.lang.Script;
 import org.apache.commons.io.FileUtils;
 import org.gradle.CacheUsage;
 import org.gradle.api.Project;
-import org.gradle.impl.groovy.scripts.DefaultScriptProcessor;
-import org.gradle.impl.groovy.scripts.ScriptCompilationHandler;
 import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;
 import org.jmock.Mockery;

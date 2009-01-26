@@ -18,14 +18,13 @@ package org.gradle.api.tasks.bundling
 
 import groovy.mock.interceptor.MockFor
 import org.gradle.api.tasks.AbstractTaskTest
-import org.gradle.api.tasks.bundling.AbstractArchiveTaskTest
-import org.gradle.impl.api.tasks.util.FileSet
+import org.gradle.api.tasks.util.FileSet
 import org.jmock.integration.junit4.JMock
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.gradle.impl.api.tasks.bundling.*
+import org.gradle.api.tasks.bundling.*
 import static org.junit.Assert.assertEquals
 
 /**

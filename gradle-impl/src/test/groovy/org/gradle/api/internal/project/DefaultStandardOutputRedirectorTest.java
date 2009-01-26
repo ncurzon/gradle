@@ -17,8 +17,7 @@ package org.gradle.api.internal.project;
 
 import ch.qos.logback.classic.Level;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.impl.api.internal.project.DefaultStandardOutputRedirector;
-import org.gradle.impl.api.logging.StandardOutputLogging;
+import org.gradle.api.logging.StandardOutputLogging;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import org.junit.Before;

@@ -15,8 +15,6 @@
  */
 package org.gradle.api.internal.dependencies;
 
-import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
-import org.gradle.impl.api.internal.dependencies.ModuleDependencyFactory;
 import org.gradle.util.WrapUtil;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;

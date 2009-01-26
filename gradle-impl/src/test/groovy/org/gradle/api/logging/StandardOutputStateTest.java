@@ -15,7 +15,6 @@
  */
 package org.gradle.api.logging;
 
-import org.gradle.impl.api.logging.StandardOutputState;
 import org.hamcrest.Matchers;
 import static org.junit.Assert.*;
 import org.junit.Before;

@@ -17,7 +17,6 @@ package org.gradle.api.internal.dependencies.maven.dependencies;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.dependencies.maven.Conf2ScopeMapping;
-import org.gradle.impl.api.internal.dependencies.maven.dependencies.DefaultConf2ScopeMappingContainer;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

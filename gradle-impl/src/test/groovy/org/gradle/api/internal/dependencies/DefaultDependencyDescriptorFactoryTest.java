@@ -22,8 +22,6 @@ import org.gradle.api.DependencyManager;
 import org.gradle.api.dependencies.Artifact;
 import org.gradle.api.dependencies.*;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
-import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency;
 import org.gradle.util.GUtil;
 import org.gradle.util.HelperUtil;
 import org.gradle.util.WrapUtil;

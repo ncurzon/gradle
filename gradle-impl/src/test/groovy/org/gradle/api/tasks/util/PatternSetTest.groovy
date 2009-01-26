@@ -17,7 +17,7 @@
 package org.gradle.api.tasks.util
 
 import org.gradle.api.tasks.util.AbstractTestForPatternSet
-import org.gradle.impl.api.tasks.util.PatternSet
+import org.gradle.api.tasks.util.PatternSet
 import org.junit.Before
 
 /**

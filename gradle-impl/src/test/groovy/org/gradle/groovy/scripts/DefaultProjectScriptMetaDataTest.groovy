@@ -17,9 +17,9 @@
 package org.gradle.groovy.scripts
 
 import org.codehaus.groovy.control.CompilerConfiguration
+import org.gradle.api.internal.project.DefaultProject
 import org.gradle.api.internal.project.ProjectScript
-import org.gradle.impl.api.internal.project.DefaultProject
-import org.gradle.impl.groovy.scripts.DefaultProjectScriptMetaData
+import org.gradle.groovy.scripts.DefaultProjectScriptMetaData
 import org.junit.Assert
 import org.junit.Test
 import static org.junit.Assert.assertEquals

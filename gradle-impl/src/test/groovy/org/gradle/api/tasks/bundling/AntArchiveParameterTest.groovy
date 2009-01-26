@@ -17,7 +17,7 @@
 package org.gradle.api.tasks.bundling
 
 import org.gradle.api.tasks.bundling.AbstractArchiveParameterTest
-import org.gradle.impl.api.tasks.bundling.AntArchiveParameter
+import org.gradle.api.tasks.bundling.AntArchiveParameter
 
 /**
  * @author Hans Dockter

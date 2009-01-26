@@ -16,8 +16,8 @@
  
 package org.gradle.api.tasks.testing
 
-import org.gradle.impl.api.tasks.testing.ForkMode
-import org.gradle.impl.api.tasks.testing.JunitForkOptions
+import org.gradle.api.tasks.testing.ForkMode
+import org.gradle.api.tasks.testing.JunitForkOptions
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*

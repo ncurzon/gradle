@@ -19,8 +19,6 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.internal.project.ProjectInternal;
 import org.gradle.api.plugins.Convention;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportRenderer;
-import org.gradle.impl.api.tasks.diagnostics.TaskReportTask;
 import org.gradle.util.GUtil;
 import org.gradle.util.WrapUtil;
 import static org.gradle.util.WrapUtil.toLinkedSet;

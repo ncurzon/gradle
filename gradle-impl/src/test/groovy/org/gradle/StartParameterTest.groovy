@@ -17,16 +17,17 @@
 package org.gradle
 
 import org.gradle.CacheUsage
+import org.gradle.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.api.initialization.Settings
 import org.gradle.api.logging.LogLevel
 import org.gradle.execution.BuildExecuter
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.execution.MergingBuildExecuter
-import org.gradle.impl.execution.ProjectDefaultsBuildExecuter
-import org.gradle.impl.execution.TaskNameResolvingBuildExecuter
-import org.gradle.impl.groovy.scripts.StringScriptSource
+import org.gradle.execution.MergingBuildExecuter
+import org.gradle.execution.ProjectDefaultsBuildExecuter
+import org.gradle.execution.TaskNameResolvingBuildExecuter
+import org.gradle.groovy.scripts.StringScriptSource
 import org.gradle.util.HelperUtil
+import org.gradle.util.ReflectionEqualsMatcher
 import org.junit.Before
 import org.junit.Test
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals

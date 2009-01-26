@@ -18,7 +18,7 @@ package org.gradle.util;
 import org.gradle.api.GradleException;
 import org.gradle.api.GradleScriptException;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.impl.groovy.scripts.StringScriptSource;
+import org.gradle.groovy.scripts.StringScriptSource;
 import static org.gradle.util.HelperUtil.toClosure;
 import static org.hamcrest.Matchers.*;
 import org.jmock.Expectations;

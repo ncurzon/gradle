@@ -19,6 +19,7 @@ import org.gradle.api.internal.DynamicBean
 import org.gradle.api.internal.DynamicObjectHelperTest
 import org.gradle.api.internal.DynamicObjectHelperTest.Bean
 import org.gradle.api.internal.GroovyBean
+import org.junit.Assert
 import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertTrue
 

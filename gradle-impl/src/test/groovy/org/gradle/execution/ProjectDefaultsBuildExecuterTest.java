@@ -18,7 +18,6 @@ package org.gradle.execution;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.impl.execution.ProjectDefaultsBuildExecuter;
 import org.gradle.util.WrapUtil;
 import static org.hamcrest.Matchers.equalTo;
 import org.jmock.Expectations;

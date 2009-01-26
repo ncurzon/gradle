@@ -19,7 +19,8 @@ package org.gradle.api.tasks.diagnostics
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.tasks.TaskDependency
-import org.gradle.impl.api.tasks.diagnostics.TaskReportRenderer
+import org.gradle.api.tasks.diagnostics.TaskReportRenderer
+import org.junit.Assert
 import org.junit.Test
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.assertThat

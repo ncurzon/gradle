@@ -15,7 +15,6 @@
  */
 package org.gradle.api.tasks.diagnostics;
 
-import org.gradle.impl.api.tasks.diagnostics.PropertyReportRenderer;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertThat;
 import org.junit.Before;

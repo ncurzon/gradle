@@ -2,17 +2,12 @@ package org.gradle.bootstrap;
 
 import org.apache.felix.framework.Felix;
 import org.apache.felix.framework.util.Util;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.ServiceRegistration;
-import org.osgi.framework.ServiceReference;
+import org.apache.commons.io.FileUtils;
+import org.osgi.framework.*;
 import org.osgi.util.tracker.ServiceTracker;
 import org.gradle.commandline.GradleCommandLine;
 
-import java.util.Properties;
-import java.util.Enumeration;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.io.File;
@@ -34,7 +29,34 @@ public class HostApplication {
     public void startApplication() throws Exception
     {
         // Create a case-insensitive configuration property map.
-        final Properties configProps = loadConfigProperties();
+        //final Properties configProps = loadConfigProperties();
+        final Properties configProps  = new Properties();
+        configProps.put("felix.embedded.execution", "true");
+        configProps.put("org.osgi.framework.bootdelegation", "" +
+//                " org.slf4j, " +
+//                " org.slf4j.impl, " +
+//                " org.slf4j.helpers, " +
+                " org.w3c.dom "
+//                " ch.qos.logback.classic.spi, " +
+//                " ch.qos.logback.classic.filter, " +
+//                " ch.qos.logback.core.filter, " +
+//                " ch.qos.logback.core.spi, " +
+//                " ch.qos.logback.core, " +
+//                " ch.qos.logback.classic "
+//                "groovy.lang," +
+//                "groovy.swing.factory, " +
+//                "groovy.util, " +
+//                "groovy.xml, " +
+//                "org.codehaus.groovy.control, " +
+//                "org.codehaus.groovy.runtime "
+        );
+
+        final File frameworkStorage = new File(System.getProperty("user.dir"), "felix-cache");
+
+        FileUtils.deleteDirectory(frameworkStorage);
+
+        configProps.put(Constants.FRAMEWORK_STORAGE, frameworkStorage.getAbsolutePath());
+
         // Create host activator;
 
         // Now create an instance of the framework with
@@ -49,6 +71,29 @@ public class HostApplication {
         final List<Bundle> installedBundles = Arrays.asList(bundleContext.getBundles());
         for ( final Bundle bundle : installedBundles ) {
             printState(bundle);
+        }
+
+        final List<String> toInstallBundles = new ArrayList<String>();
+//        toInstallBundles.add("file:bundle/logback-core-0.9.9.jar$");
+//        toInstallBundles.add("file:bundle/logback-classic-0.9.9.jar$");
+//        toInstallBundles.add("file:bundle/slf4j-api-1.5.6.jar");
+//        toInstallBundles.add("file:bundle/jcl-over-slf4j-1.5.6.jar");
+//        toInstallBundles.add("file:bundle/log.jar");
+//        toInstallBundles.add("file:lib/LogbackBundle-1.0.jar");
+//        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/bundle/com.springsource.org.apache.xmlcommons-1.3.3.jar");
+//        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/bundle/dom4j-1.6.1.jar$");
+//        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/lib/groovy-all-1.5.6.jar");
+        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/command-line-api/build/command-line-api-0.6.jar");
+        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/gradle-api/build/gradle-api-0.6.jar");
+        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/gradle-impl/build/gradle-impl-0.6.jar");
+//        toInstallBundles.add("file:/home/teyckmans/lib/org/gradle/git/gradle/command-line-impl/build/command-line-impl-0.6.jar");
+
+        for ( String toInstallBundle : toInstallBundles ) {
+            final Bundle installedBundle = bundleContext.installBundle(toInstallBundle);
+
+            installedBundle.start();
+
+            printState(installedBundle);
         }
 
 //        bundleContext.installBundle("file:lib/jopt-simple-2.4.1.jar$");

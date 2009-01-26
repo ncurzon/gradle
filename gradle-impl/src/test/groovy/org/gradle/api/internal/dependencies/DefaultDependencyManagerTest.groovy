@@ -29,6 +29,7 @@ import org.gradle.api.InvalidUserDataException
 import org.gradle.api.Transformer
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
+import org.gradle.util.WrapUtil
 import org.jmock.integration.junit4.JMock
 import org.jmock.lib.legacy.ClassImposteriser
 import org.junit.Before
@@ -36,7 +37,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.gradle.api.dependencies.*
 import org.gradle.api.internal.dependencies.*
-import org.gradle.impl.api.internal.dependencies.*
 import static org.gradle.util.WrapUtil.toSet
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.*

@@ -17,16 +17,8 @@
 package org.gradle.initialization
 
 import groovy.mock.interceptor.MockFor
+import org.gradle.DefaultStartParameter
 import org.gradle.api.internal.project.ImportsReader
-import org.gradle.groovy.scripts.IScriptProcessor
-import org.gradle.groovy.scripts.ImportsScriptSource
-import org.gradle.groovy.scripts.ScriptSource
-import org.gradle.groovy.scripts.ScriptWithSource
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.groovy.scripts.EmptyScript
-import org.gradle.impl.groovy.scripts.ISettingsScriptMetaData
-import org.gradle.initialization.DefaultProjectDescriptor
-import org.gradle.initialization.IGradlePropertiesLoader
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.gradle.util.ReflectionEqualsMatcher
@@ -36,7 +28,8 @@ import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.gradle.impl.initialization.*
+import org.gradle.groovy.scripts.*
+import org.gradle.initialization.*
 import static org.junit.Assert.assertSame
 
 /**

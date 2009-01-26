@@ -16,8 +16,9 @@
  
 package org.gradle.api.tasks.bundling
 
+import org.gradle.api.tasks.bundling.ArchiveType
 import org.gradle.api.tasks.bundling.TestArchiveTask
-import org.gradle.impl.api.tasks.bundling.ArchiveType
+import org.junit.Assert
 import org.junit.Test
 import static org.junit.Assert.assertEquals
 

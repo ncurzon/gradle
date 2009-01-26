@@ -21,12 +21,6 @@ import org.gradle.api.Project
 import org.gradle.api.dependencies.ClientModule
 import org.gradle.api.dependencies.Dependency
 import org.gradle.api.dependencies.Filter
-import org.gradle.api.internal.dependencies.AbstractDependencyContainerTest
-import org.gradle.api.internal.dependencies.DefaultDependencyConfigurationMappingContainer
-import org.gradle.api.internal.dependencies.DefaultDependencyContainer
-import org.gradle.api.internal.dependencies.DependencyFactory
-import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency
-import org.gradle.impl.api.internal.dependencies.DefaultProjectDependency
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.jmock.integration.junit4.JMock
@@ -35,6 +29,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.api.internal.dependencies.*
 import static org.junit.Assert.assertEquals
 
 /**

@@ -16,7 +16,7 @@
 
 package org.gradle.api.tasks.util
 
-import org.gradle.impl.api.tasks.util.AntDirective
+import org.gradle.api.tasks.util.AntDirective
 import org.junit.Test
 
 /**

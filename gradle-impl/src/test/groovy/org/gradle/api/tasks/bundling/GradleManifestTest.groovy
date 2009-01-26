@@ -18,7 +18,7 @@ package org.gradle.api.tasks.bundling
 
 import java.util.jar.Attributes
 import java.util.jar.Manifest
-import org.gradle.impl.api.tasks.bundling.GradleManifest
+import org.gradle.api.tasks.bundling.GradleManifest
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*

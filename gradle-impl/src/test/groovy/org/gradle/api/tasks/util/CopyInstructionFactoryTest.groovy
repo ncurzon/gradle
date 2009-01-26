@@ -16,8 +16,8 @@
  
 package org.gradle.api.tasks.util
 
-import org.gradle.impl.api.tasks.util.CopyInstruction
-import org.gradle.impl.api.tasks.util.CopyInstructionFactory
+import org.gradle.api.tasks.util.CopyInstruction
+import org.gradle.api.tasks.util.CopyInstructionFactory
 import org.junit.Test
 
 /**

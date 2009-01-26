@@ -19,6 +19,7 @@ package org.gradle.api.internal.project
 import org.gradle.Defaults
 import org.gradle.api.internal.project.ImportsReader
 import org.gradle.util.HelperUtil
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.assertEquals

@@ -23,8 +23,6 @@ import org.apache.ivy.core.report.ResolveReport;
 import org.apache.ivy.core.resolve.ResolveOptions;
 import org.apache.ivy.core.settings.IvySettings;
 import org.gradle.api.GradleException;
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyResolver;
-import org.gradle.impl.api.internal.dependencies.Report2Classpath;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.gradle.util.WrapUtil;
 import org.jmock.Expectations;

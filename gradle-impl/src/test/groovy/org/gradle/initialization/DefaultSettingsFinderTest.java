@@ -17,8 +17,7 @@ package org.gradle.initialization;
 
 import org.gradle.StartParameter;
 import org.gradle.groovy.scripts.ScriptSource;
-import org.gradle.impl.groovy.scripts.StringScriptSource;
-import org.gradle.impl.initialization.DefaultSettingsFinder;
+import org.gradle.groovy.scripts.StringScriptSource;
 import org.gradle.util.HelperUtil;
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals;
 import org.gradle.util.WrapUtil;

@@ -20,8 +20,6 @@ import org.gradle.api.Project;
 import org.gradle.api.ProjectAction;
 import org.gradle.api.internal.project.BuildScriptProcessor;
 import org.gradle.api.internal.project.ProjectInternal;
-import org.gradle.impl.configuration.DefaultBuildConfigurer;
-import org.gradle.impl.configuration.ProjectDependencies2TaskResolver;
 import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;

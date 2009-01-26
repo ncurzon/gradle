@@ -16,13 +16,13 @@
 
 package org.gradle.initialization
 
+import org.gradle.DefaultStartParameter
 import org.gradle.api.Project
 import org.gradle.api.internal.BuildInternal
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.initialization.DefaultBuildLoader
-import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry
-import org.gradle.impl.invocation.DefaultBuild
+import org.gradle.initialization.DefaultBuildLoader
 import org.gradle.initialization.DefaultProjectDescriptor
+import org.gradle.initialization.DefaultProjectDescriptorRegistry
+import org.gradle.invocation.DefaultBuild
 import org.gradle.util.GUtil
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery

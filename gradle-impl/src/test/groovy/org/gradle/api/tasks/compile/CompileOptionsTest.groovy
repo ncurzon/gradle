@@ -16,9 +16,9 @@
 
 package org.gradle.api.tasks.compile
 
-import org.gradle.impl.api.tasks.compile.CompileOptions
-import org.gradle.impl.api.tasks.compile.DebugOptions
-import org.gradle.impl.api.tasks.compile.ForkOptions
+import org.gradle.api.tasks.compile.CompileOptions
+import org.gradle.api.tasks.compile.DebugOptions
+import org.gradle.api.tasks.compile.ForkOptions
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*

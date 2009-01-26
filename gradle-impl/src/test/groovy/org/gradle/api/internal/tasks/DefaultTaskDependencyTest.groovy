@@ -17,11 +17,13 @@ package org.gradle.api.internal.tasks
 
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.internal.tasks.DefaultTaskDependency
 import org.gradle.api.tasks.TaskDependency
-import org.gradle.impl.api.internal.tasks.DefaultTaskDependency
 import org.gradle.util.JUnit4GroovyMockery
 import org.gradle.util.WrapUtil
+import org.hamcrest.Matchers
 import org.jmock.integration.junit4.JMock
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

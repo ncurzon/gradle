@@ -16,8 +16,6 @@
 package org.gradle.api.tasks.diagnostics;
 
 import org.gradle.api.Project;
-import org.gradle.impl.api.tasks.diagnostics.AbstractReportTask;
-import org.gradle.impl.api.tasks.diagnostics.ProjectReportRenderer;
 import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;
 import org.jmock.Sequence;

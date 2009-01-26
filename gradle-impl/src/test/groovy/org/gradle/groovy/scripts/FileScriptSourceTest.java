@@ -16,7 +16,6 @@
 package org.gradle.groovy.scripts;
 
 import org.apache.commons.io.FileUtils;
-import org.gradle.impl.groovy.scripts.FileScriptSource;
 import org.gradle.util.HelperUtil;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;

@@ -17,7 +17,7 @@
 package org.gradle.api.tasks
 
 import org.gradle.api.Task
-import org.gradle.impl.api.internal.AbstractTask
+import org.gradle.api.internal.AbstractTask
 import static org.junit.Assert.*
 
 /**

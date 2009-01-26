@@ -16,7 +16,6 @@
 package org.gradle.api.plugins;
 
 import org.gradle.api.Project;
-import org.gradle.impl.api.plugins.BasePluginConvention;
 import static org.hamcrest.Matchers.equalTo;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;

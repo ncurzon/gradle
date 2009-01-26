@@ -16,8 +16,8 @@
 package org.gradle.api.internal.dependencies.maven;
 
 import static junit.framework.Assert.assertTrue;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomDeployTask;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.DefaultDeployTaskFactory;
+import org.gradle.api.internal.dependencies.maven.deploy.CustomDeployTask;
+import org.gradle.api.internal.dependencies.maven.deploy.DefaultDeployTaskFactory;
 import org.junit.Test;
 
 /**

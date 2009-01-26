@@ -18,28 +18,24 @@ package org.gradle.initialization
 
 import org.apache.ivy.plugins.resolver.DualResolver
 import org.apache.ivy.plugins.resolver.FileSystemResolver
+import org.gradle.DefaultStartParameter
 import org.gradle.api.DependencyManager
 import org.gradle.api.Project
 import org.gradle.api.UnknownProjectException
 import org.gradle.api.dependencies.Configuration
 import org.gradle.api.dependencies.ResolverContainer
 import org.gradle.api.initialization.ProjectDescriptor
+import org.gradle.api.internal.dependencies.DependencyManagerFactory
+import org.gradle.api.plugins.BasePlugin
+import org.gradle.api.plugins.JavaPlugin
 import org.gradle.groovy.scripts.ScriptSource
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.api.internal.dependencies.DependencyManagerFactory
-import org.gradle.impl.api.plugins.BasePlugin
-import org.gradle.impl.api.plugins.JavaPlugin
-import org.gradle.impl.initialization.BuildSourceBuilder
-import org.gradle.impl.initialization.DefaultProjectDescriptorRegistry
-import org.gradle.impl.initialization.DefaultSettings
-import org.gradle.initialization.BuildDependenciesProjectMatcher
-import org.gradle.initialization.DefaultProjectDescriptor
 import org.gradle.util.JUnit4GroovyMockery
 import org.jmock.integration.junit4.JMock
 import org.jmock.lib.legacy.ClassImposteriser
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.gradle.initialization.*
 import static org.junit.Assert.*
 
 /**

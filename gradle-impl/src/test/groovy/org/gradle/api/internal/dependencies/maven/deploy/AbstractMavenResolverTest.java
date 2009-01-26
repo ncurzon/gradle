@@ -30,8 +30,6 @@ import org.gradle.api.dependencies.maven.MavenPom;
 import org.gradle.api.dependencies.maven.MavenResolver;
 import org.gradle.api.dependencies.maven.PomFilterContainer;
 import org.gradle.api.dependencies.maven.PublishFilter;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.ArtifactPomContainer;
-import org.gradle.impl.api.internal.dependencies.maven.deploy.CustomInstallDeployTaskSupport;
 import org.gradle.util.JUnit4GroovyMockery;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;

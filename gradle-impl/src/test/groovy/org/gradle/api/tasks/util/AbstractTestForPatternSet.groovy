@@ -16,7 +16,8 @@
 
 package org.gradle.api.tasks.util
 
-import org.gradle.impl.api.tasks.util.PatternSet
+import org.gradle.api.tasks.util.PatternSet
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.assertEquals

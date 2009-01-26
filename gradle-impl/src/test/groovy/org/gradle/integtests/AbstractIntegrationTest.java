@@ -27,9 +27,7 @@ import org.gradle.api.execution.TaskExecutionListener;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.invocation.Build;
 import org.gradle.execution.ProcessMode;
-import org.gradle.impl.DefaultGradleFactory;
-import org.gradle.impl.DefaultStartParameter;
-import org.gradle.impl.initialization.DefaultLoggingConfigurer;
+import org.gradle.initialization.DefaultLoggingConfigurer;
 import org.gradle.util.HelperUtil;
 import org.hamcrest.Matcher;
 import static org.hamcrest.Matchers.*;
@@ -92,7 +90,7 @@ public class AbstractIntegrationTest {
                 "import static org.hamcrest.Matchers.*");
 
         testFile("gradle-home/plugin.properties").writelns(
-                "groovy=org.gradle.impl.api.plugins.GroovyPlugin"
+                "groovy=org.gradle.api.plugins.GroovyPlugin"
         );
 
         parameter.setGradleUserHomeDir(testFile("user-home").asFile());

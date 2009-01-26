@@ -1,8 +1,9 @@
 package org.gradle.api.tasks.testing.testng
 
 import org.gradle.api.tasks.testing.AbstractTestFrameworkOptionsTest
-import org.gradle.impl.api.tasks.testing.testng.TestNGOptions
-import org.gradle.impl.api.tasks.testing.testng.TestNGTestFramework
+import org.gradle.api.tasks.testing.testng.TestNGOptions
+import org.gradle.api.tasks.testing.testng.TestNGTestFramework
+import org.hamcrest.Matchers
 import org.junit.Before
 import org.junit.Test
 import static org.hamcrest.Matchers.hasItems

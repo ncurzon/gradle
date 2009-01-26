@@ -18,8 +18,8 @@ package org.gradle.api.plugins
 
 import org.gradle.api.InvalidUserDataException
 import org.gradle.api.plugins.AbstractPluginConventionTest
-import org.gradle.impl.api.plugins.BasePluginConvention
-import org.gradle.impl.api.plugins.JavaPluginConvention
+import org.gradle.api.plugins.BasePluginConvention
+import org.gradle.api.plugins.JavaPluginConvention
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

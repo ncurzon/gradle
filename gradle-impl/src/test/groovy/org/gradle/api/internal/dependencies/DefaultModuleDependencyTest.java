@@ -20,8 +20,6 @@ import org.apache.ivy.core.module.descriptor.DefaultDependencyDescriptor;
 import org.apache.ivy.core.module.descriptor.DependencyDescriptor;
 import org.gradle.api.UnknownDependencyNotation;
 import org.gradle.api.dependencies.Artifact;
-import org.gradle.impl.api.internal.dependencies.AbstractDependency;
-import org.gradle.impl.api.internal.dependencies.DefaultModuleDependency;
 import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JMock;

@@ -15,8 +15,6 @@
  */
 package org.gradle.groovy.scripts;
 
-import org.gradle.impl.groovy.scripts.CachePropertiesHandler;
-import org.gradle.impl.groovy.scripts.DefaultCachePropertiesHandler;
 import org.gradle.util.GUtil;
 import org.gradle.util.GradleVersion;
 import org.gradle.util.HelperUtil;

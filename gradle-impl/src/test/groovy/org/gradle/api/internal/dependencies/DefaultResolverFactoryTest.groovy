@@ -19,7 +19,8 @@ package org.gradle.api.internal.dependencies
 import org.apache.ivy.core.cache.DefaultRepositoryCacheManager
 import org.gradle.api.DependencyManager
 import org.gradle.api.InvalidUserDataException
-import org.gradle.impl.api.internal.dependencies.DefaultResolverFactory
+import org.gradle.api.internal.dependencies.DefaultResolverFactory
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.apache.ivy.plugins.resolver.*

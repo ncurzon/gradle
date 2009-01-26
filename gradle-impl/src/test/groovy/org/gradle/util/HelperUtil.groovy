@@ -27,27 +27,21 @@ import org.apache.ivy.plugins.matcher.ExactPatternMatcher
 import org.apache.ivy.plugins.matcher.PatternMatcher
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.gradle.CacheUsage
+import org.gradle.DefaultStartParameter
 import org.gradle.api.internal.dependencies.DefaultDependencyConfigurationMappingContainer
-import org.gradle.api.internal.project.BuildScriptProcessor
-import org.gradle.api.internal.project.IProjectFactory
-import org.gradle.api.internal.project.PluginRegistry
+import org.gradle.api.internal.dependencies.DefaultDependencyManagerFactory
 import org.gradle.api.logging.LogLevel
+import org.gradle.groovy.scripts.EmptyScript
 import org.gradle.groovy.scripts.ScriptSource
 import org.gradle.groovy.scripts.ScriptWithSource
-import org.gradle.impl.DefaultStartParameter
-import org.gradle.impl.api.internal.dependencies.DefaultDependencyManagerFactory
-import org.gradle.impl.api.internal.project.DefaultAntBuilderFactory
-import org.gradle.impl.api.internal.project.DefaultProject
-import org.gradle.impl.api.internal.project.ProjectFactory
-import org.gradle.impl.api.internal.project.TaskFactory
-import org.gradle.impl.groovy.scripts.EmptyScript
-import org.gradle.impl.groovy.scripts.StringScriptSource
-import org.gradle.impl.invocation.DefaultBuild
+import org.gradle.groovy.scripts.StringScriptSource
 import org.gradle.initialization.ISettingsFinder
+import org.gradle.invocation.DefaultBuild
 import org.gradle.logging.AntLoggingAdapter
 import org.gradle.util.GradleUtil
 import org.gradle.util.MyScript
 import org.gradle.util.TestClosure
+import org.gradle.api.internal.project.*
 
 /**
  * @author Hans Dockter
@@ -113,7 +107,7 @@ class HelperUtil {
                 parentProject.build)
     }
 
-    static org.gradle.impl.DefaultStartParameter dummyStartParameter() {
+    static org.gradle.DefaultStartParameter dummyStartParameter() {
         return new DefaultStartParameter(
                 "settingsFileName",
                 "buildFileName",

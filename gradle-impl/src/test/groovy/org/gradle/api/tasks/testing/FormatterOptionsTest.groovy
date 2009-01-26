@@ -16,7 +16,8 @@
  
 package org.gradle.api.tasks.testing
 
-import org.gradle.impl.api.tasks.testing.FormatterOptions
+import org.gradle.api.tasks.testing.FormatterOptions
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.assertEquals

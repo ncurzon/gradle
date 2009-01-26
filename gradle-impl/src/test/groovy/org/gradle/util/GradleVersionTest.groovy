@@ -21,6 +21,7 @@ import org.apache.tools.ant.Main
 import org.codehaus.groovy.runtime.InvokerHelper
 import org.gradle.util.GradleVersion
 import org.gradle.util.TestConsts
+import org.junit.Assert
 import org.junit.Test
 import static org.junit.Assert.assertEquals
 

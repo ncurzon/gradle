@@ -22,8 +22,8 @@ import org.apache.ivy.plugins.resolver.ChainResolver
 import org.apache.ivy.plugins.resolver.IBiblioResolver
 import org.gradle.api.DependencyManager
 import org.gradle.api.Transformer
-import org.gradle.impl.api.internal.dependencies.ClientModuleResolver
-import org.gradle.impl.api.internal.dependencies.DefaultSettingsConverter
+import org.gradle.api.internal.dependencies.ClientModuleResolver
+import org.gradle.api.internal.dependencies.DefaultSettingsConverter
 import org.gradle.util.HelperUtil
 import org.gradle.util.JUnit4GroovyMockery
 import org.hamcrest.Matchers
