@@ -35,15 +35,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.ArrayList;
-import java.net.URLClassLoader;
-import java.net.URL;
-import java.net.MalformedURLException;
 
 /**
  * @author Hans Dockter
@@ -64,7 +59,7 @@ public class DefaultGradleCommandLine implements GradleCommandLine {
         this.gradleFactory = gradleFactory;
     }
 
-    public int runGradle(String[] args, Properties properties, Map<String, String> env, InputStream in, PrintStream out, PrintStream err) {
+    public int runGradle(String[] args, Properties properties, Map<String, String> env, PrintStream out, PrintStream err) {
         resultLogger = new BuildResultLogger(logger);
         exceptionReporter = new BuildExceptionReporter(logger);
 

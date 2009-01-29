@@ -9,5 +9,5 @@ import java.io.InputStream;
  * @author Tom Eyckmans
  */
 public interface GradleCommandLine {
-    int runGradle(String[] args, Properties properties, Map<String, String> env, InputStream in, PrintStream out, PrintStream err);
+    int runGradle(String[] args, Properties properties, Map<String, String> env, PrintStream out, PrintStream err);
 }

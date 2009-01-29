@@ -1,35 +1,30 @@
 package org.gradle.bootstrap;
 
-import org.gradle.commandline.GradleCommandLine;
-import org.gradle.bootstrap.HostApplication;
+import org.gradle.bootstrap.util.GradleHomeUtil;
 
 import java.lang.reflect.Method;
 import java.util.Properties;
 import java.util.Map;
-import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.File;
 
 /**
  * @author Tom Eyckmans
  */
 public class BootstrapMain {
     public static void main(String[] args) {
-        String bootStrapDebugValue = System.getProperty("gradle.bootstrap.debug");
-        boolean bootStrapDebug = bootStrapDebugValue != null && !bootStrapDebugValue.toUpperCase().equals("FALSE");
+        final File gradleHomeDirectory = processGradleHome();
 
-        processGradleHome(bootStrapDebug);
-
-        final HostApplication hostApplication = new HostApplication();
+        final HostApplication hostApplication = new HostApplication(gradleHomeDirectory);
         int exitCode = -1;
         try {
-            hostApplication.startApplication();
+            hostApplication.startApplication(System.getProperties(), System.getenv());
 
             final Object gradleCommandLine = hostApplication.getGradleCommandLine();
 
-            final Method runGradleMethod = gradleCommandLine.getClass().getMethod("runGradle",
-                    new Class[]{String[].class, Properties.class, Map.class, InputStream.class, PrintStream.class, PrintStream.class});
+            final Method runGradleMethod = gradleCommandLine.getClass().getMethod("runGradle", String[].class, Properties.class, Map.class, PrintStream.class, PrintStream.class);
 
-            exitCode = (Integer)runGradleMethod.invoke(gradleCommandLine, args, System.getProperties(), System.getenv(), System.in, System.out, System.err);
+            exitCode = (Integer)runGradleMethod.invoke(gradleCommandLine, args, System.getProperties(), System.getenv(), System.out, System.err);
         }
         catch ( Exception e ) {
             e.printStackTrace();
@@ -51,22 +46,20 @@ public class BootstrapMain {
         System.exit(exitCode);
     }
 
-    private static String processGradleHome(boolean bootStrapDebug) {
-        String gradleHome = System.getProperty("gradle.home");
-        if (gradleHome == null) {
-            gradleHome = System.getenv("GRADLE_HOME");
-            if (gradleHome == null) {
-                throw new RuntimeException("The gradle home must be set either via the system property gradle.home or via the environment variable GRADLE_HOME!");
-            }
-            if (bootStrapDebug) {
-                System.out.println("Gradle Home is declared by environment variable GRADLE_HOME to: " + gradleHome);
-            }
-            System.setProperty("gradle.home", gradleHome);
-        } else {
-            if (bootStrapDebug) {
-                System.out.println("Gradle Home is declared by system property gradle.home to: " + gradleHome);
-            }
-        }
-        return gradleHome;
+    private static File processGradleHome() {
+        final boolean bootStrapDebug = determineBootstrapDebug();
+
+        final File gradleHomeDirectory = GradleHomeUtil.determineGradleHome(System.getProperties(), System.getenv(), bootStrapDebug, System.out);
+
+        GradleHomeUtil.validateGradleHome(gradleHomeDirectory, true);
+
+        return gradleHomeDirectory;
+    }
+
+    private static boolean determineBootstrapDebug()
+    {
+        final String bootStrapDebugValue = System.getProperty("gradle.bootstrap.debug");
+
+        return bootStrapDebugValue != null && !bootStrapDebugValue.toUpperCase().equals("FALSE");
     }
 }

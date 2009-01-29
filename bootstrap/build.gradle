@@ -7,15 +7,10 @@ targetCompatibility = 1.5
 version = '0.6'
 
 dependencies {
-    addMavenStyleRepo('nexus', 'http://ironman:8080/nexus/content/repositories/central/', 'http://ironman:8080/nexus/content/repositories/central/')
+    addMavenRepo()
 
 	compile project(':command-line-api'),
 			"commons-io:commons-io:1.4@jar",
+			"commons-lang:commons-lang:2.3@jar",
 			"org.apache.felix:org.apache.felix.framework:1.4.1"
 }
-
-compile {
-	options.fork([executable:'/usr/lib/jvm/java-6-sun-1.6.0.07/bin/javac'])
-}
-
-
