@@ -158,10 +158,4 @@ public class ListenerBroadcastTest {
             assertThat(e.getCause().getMessage(), equalTo("failed"));
         }
     }
-
-    private interface TestListener {
-        void event1(String param);
-
-        void event2(int value, String other);
-    }
 }

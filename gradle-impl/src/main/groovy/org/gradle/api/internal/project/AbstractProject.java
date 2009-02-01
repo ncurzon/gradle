@@ -514,6 +514,7 @@ public abstract class AbstractProject implements ProjectInternal {
         }
         Clock clock = new Clock();
         state = State.INITIALIZING;
+        Thread.currentThread().setContextClassLoader(build.getBuildScriptClassLoader());
         setBuildScript(buildScriptProcessor.createScript(this));
         try {
             standardOutputRedirector.on(LogLevel.QUIET);

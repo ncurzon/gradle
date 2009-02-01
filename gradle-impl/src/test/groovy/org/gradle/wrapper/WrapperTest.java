@@ -15,18 +15,17 @@
  */
 package org.gradle.wrapper;
 
-import org.gradle.util.HelperUtil;
 import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.After;
 import org.junit.runner.RunWith;
+import org.gradle.util.HelperUtil;
 
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.File;
 import java.util.Properties;
 
 /**
@@ -41,7 +40,7 @@ public class WrapperTest {
     JUnit4Mockery context = new JUnit4Mockery();
 
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws Exception {
         context.setImposteriser(ClassImposteriser.INSTANCE);
         wrapper = new Wrapper();
         bootstrapMainStarterMock = context.mock(BootstrapMainStarter.class);

@@ -19,6 +19,7 @@ import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import org.gradle.*;
+import org.gradle.initialization.DefaultLoggingConfigurer;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
 import org.gradle.api.GradleException;
@@ -39,6 +40,8 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 /**
  * @author Hans Dockter
@@ -57,6 +60,10 @@ public class DefaultGradleCommandLine implements GradleCommandLine {
 
     public DefaultGradleCommandLine(GradleFactory gradleFactory) {
         this.gradleFactory = gradleFactory;
+    }
+
+    public static void main(String[] args) {
+        new DefaultGradleCommandLine(new DefaultGradleFactory(new DefaultLoggingConfigurer())).runGradle(args, System.getProperties(), System.getenv(), System.out, System.err);
     }
 
     public int runGradle(String[] args, Properties properties, Map<String, String> env, PrintStream out, PrintStream err) {
@@ -234,6 +241,7 @@ public class DefaultGradleCommandLine implements GradleCommandLine {
         }
 
         try {
+            Thread.currentThread().setContextClassLoader(new URLClassLoader(new URL[]{}, this.getClass().getClassLoader()));
             final Gradle gradle = gradleFactory.newInstance(startParameter);
 
             gradle.addBuildListener(exceptionReporter);

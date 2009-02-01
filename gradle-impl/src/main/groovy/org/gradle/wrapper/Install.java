@@ -42,7 +42,7 @@ public class Install {
         this.pathAssembler = pathAssembler;
     }
 
-    String createDist(String urlRoot, String distBase, String distPath, String distName, String distVersion,
+    public String createDist(String urlRoot, String distBase, String distPath, String distName, String distVersion,
                       String distClassifier, String zipBase, String zipPath) throws Exception {
         String gradleHome = pathAssembler.gradleHome(distBase, distPath, distName, distVersion);
         File gradleHomeFile = new File(gradleHome);

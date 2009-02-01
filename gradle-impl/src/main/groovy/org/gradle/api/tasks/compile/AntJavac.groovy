@@ -20,6 +20,7 @@ import org.gradle.api.tasks.compile.AntJavac
 import org.gradle.api.tasks.compile.CompileOptions
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.gradle.util.ClasspathUtil
 
 /**
  * @author Hans Dockter
@@ -32,6 +33,10 @@ class AntJavac {
     void execute(List sourceDirs, List includes, List excludes, File targetDir, List classpath, String sourceCompatibility,
                  String targetCompatibility, CompileOptions compileOptions, AntBuilder ant) {
         createAntClassPath(ant, classpath)
+
+        // TODO Fix temporary workaround for the Javac task not being able to determine the correct compile version
+        compileOptions.fork(executable:ClasspathUtil.getJavacExecutable().absolutePath)
+
         Map otherArgs = [
                 includeAntRuntime: false,
                 srcdir: sourceDirs.join(':'),

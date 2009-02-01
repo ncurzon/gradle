@@ -1,5 +1,3 @@
-archivesBaseName = 'gradle-bootstrap'
-
 usePlugin('java');
 
 sourceCompatibility = 1.5
@@ -14,3 +12,5 @@ dependencies {
 			"commons-lang:commons-lang:2.3@jar",
 			"org.apache.felix:org.apache.felix.framework:1.4.1"
 }
+
+archive_jar.manifest.mainAttributes("Main-Class": "org.gradle.bootstrap.BootstrapMain")

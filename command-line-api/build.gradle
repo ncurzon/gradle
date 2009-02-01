@@ -1,4 +1,4 @@
-usePlugin('java');
+usePlugin('java')
 
 sourceCompatibility = 1.5
 targetCompatibility = 1.5
@@ -13,8 +13,4 @@ configure(project.archive_jar.osgi) {
       instruction 'Bundle-Vendor', 'gradle.org'
       instruction 'Bundle-Description', 'Gradle command line api bundle'
       instruction 'Bundle-DocURL', 'http://www.gradle.org'
-}
-
-compile {
-	options.fork([executable:'/usr/lib/jvm/java-6-sun-1.6.0.07/bin/javac'])
 }

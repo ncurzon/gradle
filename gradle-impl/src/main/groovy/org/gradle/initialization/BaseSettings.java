@@ -41,8 +41,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLClassLoader;
 import java.net.URL;
-import java.util.Map;
-import java.util.Set;
+import java.net.MalformedURLException;
+import java.util.*;
 
 /**
  * @author Hans Dockter
@@ -195,7 +195,7 @@ public class BaseSettings implements SettingsInternal {
     // todo We don't have command query separation here. This si a temporary thing. If our new classloader handling works out, which
     // adds simply the build script jars to the context classloader we can remove the return argument and simplify our design.
     public URLClassLoader createClassLoader() {
-        URLClassLoader classLoader = new URLClassLoader(new URL[]{}, getClass().getClassLoader());
+        URLClassLoader classLoader = (URLClassLoader) Thread.currentThread().getContextClassLoader();
         StartParameter startParameter = buildSrcStartParameter.newInstance();
         startParameter.setCurrentDir(new File(getRootDir(), DEFAULT_BUILD_SRC_DIR));
         Set<File> additionalClasspath = buildSourceBuilder.createBuildSourceClasspath(startParameter);

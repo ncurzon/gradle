@@ -33,6 +33,7 @@ import org.junit.Test
 import static org.gradle.util.ReflectionEqualsMatcher.reflectionEquals
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.*
+import org.gradle.commandline.impl.DefaultGradleCommandLine
 
 /**
  * @author Hans Dockter
@@ -66,10 +67,10 @@ class StartParameterTest {
 
     @Test public void testDefaultValues() {
         DefaultStartParameter parameter = new DefaultStartParameter();
-        assertThat(parameter.gradleUserHomeDir, equalTo(new File(AbstractMain.DEFAULT_GRADLE_USER_HOME)))
+        assertThat(parameter.gradleUserHomeDir, equalTo(new File(DefaultGradleCommandLine.DEFAULT_GRADLE_USER_HOME)))
         assertThat(parameter.currentDir, equalTo(new File(System.getProperty("user.dir"))))
         assertThat(parameter.buildFileName, equalTo(Project.DEFAULT_BUILD_FILE))
-        assertThat(parameter.logLevel, equalTo(LogLevel.LIFECYCLE))
+        assertThat(parameter.logLevel, equalTo(LogLevel.LIFECYCLE.toString()))
         assertThat(parameter.settingsFileName, equalTo(Settings.DEFAULT_SETTINGS_FILE))
         assertThat(parameter.taskNames, notNullValue())
         assertThat(parameter.projectProperties, notNullValue())
@@ -87,11 +88,11 @@ class StartParameterTest {
     @Test public void testSetTaskNamesToEmptyOrNullListUsesProjectDefaultTasks() {
         DefaultStartParameter parameter = new DefaultStartParameter()
 
-        parameter.setBuildExecuter({} as BuildExecuter)
+//        parameter.setBuildExecuter({} as BuildExecuter)
         parameter.setTaskNames(Collections.emptyList())
         assertThat(parameter.buildExecuter, instanceOf(ProjectDefaultsBuildExecuter))
 
-        parameter.setBuildExecuter({} as BuildExecuter)
+//        parameter.setBuildExecuter({} as BuildExecuter)
         parameter.setTaskNames(null)
         assertThat(parameter.buildExecuter, instanceOf(ProjectDefaultsBuildExecuter))
     }
@@ -115,8 +116,8 @@ class StartParameterTest {
     @Test public void testSettingGradleHomeSetsDefaultLocationsIfNotAlreadySet() {
         DefaultStartParameter parameter = new DefaultStartParameter()
         parameter.gradleHomeDir = gradleHome
-        assertThat(parameter.defaultImportsFile, equalTo(new File(gradleHome, AbstractMain.IMPORTS_FILE_NAME)))
-        assertThat(parameter.pluginPropertiesFile, equalTo(new File(gradleHome, AbstractMain.DEFAULT_PLUGIN_PROPERTIES)))
+        assertThat(parameter.defaultImportsFile, equalTo(new File(gradleHome, Defaults.IMPORTS_FILE_NAME)))
+        assertThat(parameter.pluginPropertiesFile, equalTo(new File(gradleHome, Defaults.DEFAULT_PLUGIN_PROPERTIES)))
 
         parameter = new DefaultStartParameter()
         parameter.defaultImportsFile = new File("imports")

@@ -120,7 +120,7 @@ class HelperUtil {
                 new File("defaultImports"),
                 new File("pluginProperties"),
                 CacheUsage.ON,
-                LogLevel.LIFECYCLE
+                LogLevel.LIFECYCLE.toString()
         );
     }
 

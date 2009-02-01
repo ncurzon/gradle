@@ -84,4 +84,26 @@ public class ClasspathUtil {
         logger.debug("Found tools jar in: {}", toolsJar.getAbsolutePath());
         return toolsJar;
     }
+
+    public static File getJavacExecutable()
+    {
+        String javaHome = System.getProperty("java.home");
+        File toolsJar = new File(javaHome + "/bin/javac");
+        if (toolsJar.exists()) {
+            logger.debug("Found javac in: {}", toolsJar.getAbsolutePath());
+            // Found in java.home as given
+            return toolsJar;
+        }
+        if (javaHome.toLowerCase(Locale.US).endsWith(File.separator + "jre")) {
+            javaHome = javaHome.substring(0, javaHome.length() - 4);
+            toolsJar = new File(javaHome + "/bin/javac");
+        }
+        if (!toolsJar.exists()) {
+            logger.debug("Unable to locate javac. "
+                    + "Expected to find it in " + toolsJar.getPath());
+            return null;
+        }
+        logger.debug("Found javac in: {}", toolsJar.getAbsolutePath());
+        return toolsJar;
+    }
 }

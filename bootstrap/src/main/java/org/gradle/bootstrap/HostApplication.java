@@ -2,8 +2,6 @@ package org.gradle.bootstrap;
 
 import org.apache.felix.framework.Felix;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.osgi.framework.*;
 import org.osgi.framework.launch.Framework;
 import org.gradle.commandline.GradleCommandLine;
