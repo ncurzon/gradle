@@ -22,8 +22,6 @@ import org.gradle.api.Plugin;
 import static org.gradle.api.plugins.JavaPlugin.*;
 import org.gradle.api.internal.project.PluginRegistry;
 import org.gradle.api.tasks.ConventionValue;
-import org.gradle.api.tasks.testing.Test;
-import org.gradle.api.tasks.testing.ForkMode;
 import org.gradle.api.tasks.compile.Compile;
 import org.gradle.api.tasks.compile.GroovyCompile;
 import org.gradle.api.tasks.javadoc.Groovydoc;
@@ -64,17 +62,17 @@ public class GroovyPlugin implements Plugin {
         Groovydoc groovydoc = (Groovydoc) project.createTask(GUtil.map("type", Groovydoc.class), GROOVYDOC);
         groovydoc.conventionMapping(GUtil.map(
                 "srcDirs", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return groovy(convention).getGroovySrcDirs();
             }
         },
                 "destinationDir", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return groovy(convention).getGroovydocDir();
             }
         },
                 "groovyClasspath", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return task.getProject().getDependencies().configuration("groovy").resolve();
             }
         }));
@@ -84,7 +82,7 @@ public class GroovyPlugin implements Plugin {
         Javadoc javadoc = (Javadoc) project.task(JAVADOC);
         javadoc.exclude("**/*.groovy");
         javadoc.conventionMapping(WrapUtil.<String, ConventionValue>toMap("srcDirs", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return GUtil.addLists(
                         ((JavaPluginConvention) convention.getPlugins().get("java")).getSrcDirs(),
                         groovy(convention).getGroovySrcDirs());
@@ -100,12 +98,12 @@ public class GroovyPlugin implements Plugin {
                 DefaultConventionsToPropertiesMapping.TEST_COMPILE);
         testCompile.conventionMapping(GUtil.map(
                 "groovySourceDirs", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return groovy(convention).getGroovyTestSrcDirs();
             }
         },
                 "groovyClasspath", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return task.getProject().getDependencies().configuration("groovy").resolve();
             }
         }));
@@ -117,18 +115,18 @@ public class GroovyPlugin implements Plugin {
                 DefaultConventionsToPropertiesMapping.COMPILE);
         compile.conventionMapping(GUtil.map(
                 "groovySourceDirs", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return groovy(convention).getGroovySrcDirs();
             }
         },
                 "groovyClasspath", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return task.getProject().getDependencies().configuration("groovy").resolve();
             }
         }));
     }
 
-    private GroovyPluginConvention groovy(Convention convention) {
+    private GroovyPluginConvention groovy(DefaultConvention convention) {
         return (GroovyPluginConvention) convention.getPlugins().get("groovy");
     }
 }

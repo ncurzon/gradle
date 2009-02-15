@@ -16,7 +16,7 @@
  
 package org.gradle.api.internal.plugins
 
-import org.gradle.api.plugins.Convention
+import org.gradle.api.plugins.DefaultConvention
 import org.slf4j.LoggerFactory
 import org.slf4j.Logger
 
@@ -26,7 +26,7 @@ import org.slf4j.Logger
 class PluginUtil {
     static Logger logger = LoggerFactory.getLogger(PluginUtil)
     
-    static void applyCustomValues(Convention convention, def newPluginConvention, Map customValues) {
+    static void applyCustomValues(DefaultConvention convention, def newPluginConvention, Map customValues) {
         customValues.each { String key, value ->
             if (convention.plugins.keySet().contains(key) && value instanceof Map) {
                 value.each { String property, propertyValue ->

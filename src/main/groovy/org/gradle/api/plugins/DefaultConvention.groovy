@@ -16,12 +16,10 @@
  
 package org.gradle.api.plugins
 
-import org.gradle.api.internal.DynamicObject
-
 /**
  * @author Hans Dockter
  */
-class Convention implements DynamicObject {
+class DefaultConvention extends Convention {
 
     Map<String, Object> plugins = [:]
 
@@ -30,7 +28,7 @@ class Convention implements DynamicObject {
         if (pluginConvention) {
             return pluginConvention."$property"
         }
-        throw new MissingPropertyException(property, Convention)
+        throw new MissingPropertyException(property, DefaultConvention)
     }
 
     boolean hasProperty(String property) {
@@ -53,7 +51,7 @@ class Convention implements DynamicObject {
             pluginConvention."$property" = value
             return
         }
-        throw new MissingPropertyException(property, Convention)
+        throw new MissingPropertyException(property, DefaultConvention)
     }
 
     public Object invokeMethod(String name, Object... arguments) {
@@ -65,7 +63,7 @@ class Convention implements DynamicObject {
         if (pluginConvention) {
             return pluginConvention.invokeMethod(method, args)
         }
-        throw new MissingMethodException(method, Convention, args)
+        throw new MissingMethodException(method, DefaultConvention, args)
     }
 
     def methodMissing(String method, arguments) {

@@ -29,7 +29,7 @@ import org.gradle.api.internal.tasks.DefaultTaskEngine;
 import org.gradle.api.internal.tasks.TaskEngine;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 import org.gradle.api.tasks.Directory;
 import org.gradle.api.tasks.util.BaseDirConverter;
 import org.gradle.groovy.scripts.ScriptSource;
@@ -122,7 +122,7 @@ public abstract class AbstractProject implements ProjectInternal {
     public AbstractProject(String name) {
         this.name = name;
         dynamicObjectHelper = new DynamicObjectHelper(this);
-        dynamicObjectHelper.setConvention(new Convention());
+        dynamicObjectHelper.setConvention(new DefaultConvention());
     }
 
     public AbstractProject(String name, ProjectInternal parent, File projectDir, String buildFileName,
@@ -157,7 +157,7 @@ public abstract class AbstractProject implements ProjectInternal {
         }
 
         dynamicObjectHelper = new DynamicObjectHelper(this);
-        dynamicObjectHelper.setConvention(new Convention());
+        dynamicObjectHelper.setConvention(new DefaultConvention());
         if (parent != null) {
             dynamicObjectHelper.setParent(parent.getInheritedScope());
         }
@@ -368,11 +368,11 @@ public abstract class AbstractProject implements ProjectInternal {
         this.buildDirName = buildDirName;
     }
 
-    public Convention getConvention() {
+    public DefaultConvention getConvention() {
         return dynamicObjectHelper.getConvention();
     }
 
-    public void setConvention(Convention convention) {
+    public void setConvention(DefaultConvention convention) {
         dynamicObjectHelper.setConvention(convention);
     }
 

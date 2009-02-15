@@ -18,7 +18,7 @@ package org.gradle.api.internal;
 
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Task;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 import org.gradle.api.tasks.ConventionValue;
 import org.gradle.util.ReflectionUtil;
 
@@ -32,7 +32,7 @@ import java.util.Map;
  * @author Hans Dockter
  */
 public class ConventionAwareHelper {
-    private Convention convention;
+    private DefaultConvention convention;
 
     private Task source;
 
@@ -43,7 +43,7 @@ public class ConventionAwareHelper {
         this.source = source;
     }
 
-    public Task convention(Convention convention, Map<String, ConventionValue> conventionMapping) {
+    public Task convention(DefaultConvention convention, Map<String, ConventionValue> conventionMapping) {
         this.convention = convention;
         this.conventionMapping = conventionMapping;
         return source;
@@ -78,11 +78,11 @@ public class ConventionAwareHelper {
         return returnValue;
     }
 
-    public Convention getConvention() {
+    public DefaultConvention getConvention() {
         return convention;
     }
 
-    public void setConvention(Convention convention) {
+    public void setConvention(DefaultConvention convention) {
         this.convention = convention;
     }
 

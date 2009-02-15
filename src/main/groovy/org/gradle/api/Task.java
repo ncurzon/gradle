@@ -19,7 +19,7 @@ import groovy.lang.Closure;
 import groovy.lang.MissingPropertyException;
 import groovy.util.AntBuilder;
 import org.gradle.api.logging.LogLevel;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 import org.gradle.api.tasks.StopActionException;
 import org.gradle.api.tasks.StopExecutionException;
 import org.gradle.api.tasks.TaskDependency;
@@ -97,14 +97,14 @@ import java.util.Set;
  * of this scope are readable and writable.</li>
  *
  * <li>The <em>convention</em> properties added to the task by each {@link Plugin} applied to the project. A {@link
- * Plugin} can add properties and methods to a task through the task's {@link Convention} object.  The properties of
+ * Plugin} can add properties and methods to a task through the task's {@link org.gradle.api.plugins.DefaultConvention} object.  The properties of
  * this scope may be readable or writable, depending on the convention objects.</li>
  *
  * </ul>
  *
  * <h4>Dynamic Methods</h4>
  *
- * <p>A {@link Plugin} may add methods to a {@code Task} using its {@link Convention} object.</p>
+ * <p>A {@link Plugin} may add methods to a {@code Task} using its {@link org.gradle.api.plugins.DefaultConvention} object.</p>
  *
  * @author Hans Dockter
  */
@@ -360,12 +360,12 @@ public interface Task extends Comparable<Task> {
     void defineProperty(String name, Object value); // We can't call this method setProperty as this lead to polymorphism problems with Groovy.;
 
     /**
-     * <p>Returns the {@link Convention} object for this task. A {@link Plugin} can use the convention object to
+     * <p>Returns the {@link org.gradle.api.plugins.DefaultConvention} object for this task. A {@link Plugin} can use the convention object to
      * contribute properties and methods to this task.</p>
      *
      * @return The convention object. Never returns null.
      */
-    Convention getConvention();
+    DefaultConvention getConvention();
 
     /**
      * Returns the description of a task.

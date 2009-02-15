@@ -19,7 +19,7 @@ import groovy.lang.Closure;
 import groovy.lang.MissingPropertyException;
 import groovy.util.AntBuilder;
 import org.gradle.api.initialization.Settings;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.logging.LogLevel;
 import org.slf4j.Logger;
@@ -106,7 +106,7 @@ import java.util.Set;
  * can contain any arbitrary name -> value pair.  The properties of this scope are readable and writable.</li>
  *
  * <li>The <em>convention</em> properties added to the project by each {@link Plugin} applied to the project. A {@link
- * Plugin} can add properties and methods to a project through the project's {@link Convention} object.  The properties
+ * Plugin} can add properties and methods to a project through the project's {@link org.gradle.api.plugins.DefaultConvention} object.  The properties
  * of this scope may be readable or writable, depending on the convention objects.</li>
  *
  * <li>The tasks of the project.  A task is accessable by using its name as a property name.  The properties of this
@@ -136,7 +136,7 @@ import java.util.Set;
  * <li>The build file.  The project searches for a matching method declared in the build file.</li>
  *
  * <li>The <em>convention</em> methods added to the project by each {@link Plugin} applied to the project. A {@link
- * Plugin} can add properties and method to a project through the project's {@link Convention} object.</li>
+ * Plugin} can add properties and method to a project through the project's {@link org.gradle.api.plugins.DefaultConvention} object.</li>
  *
  * <li>The tasks of the project. A method is added for each task, using the name of the task as the method name and
  * taking a single closure parameter. The method calls the {@link Task#configure(groovy.lang.Closure)} method for the
@@ -316,7 +316,7 @@ public interface Project extends Comparable<Project> {
      *
      * <li>The project object itself.  For example, the <code>rootDir</code> project property.</li>
      *
-     * <li>The project's {@link Convention} object.  For example, the <code>srcRootName</code> java plugin
+     * <li>The project's {@link org.gradle.api.plugins.DefaultConvention} object.  For example, the <code>srcRootName</code> java plugin
      * property.</li>
      *
      * <li>The project's additional properties.</li>
@@ -809,7 +809,7 @@ public interface Project extends Comparable<Project> {
     DependencyManager dependencies(Closure configureClosure);
 
     /**
-     * <p>Return the {@link Convention} for this project.</p>
+     * <p>Return the {@link org.gradle.api.plugins.DefaultConvention} for this project.</p>
      *
      * <p>You can access this property in your build file using <code>convention</code>. You can also can also access
      * the properties and methods of the convention object as if they were properties and methods of this project. See
@@ -817,7 +817,7 @@ public interface Project extends Comparable<Project> {
      *
      * @return The <code>Convention</code>. Never returns null.
      */
-    Convention getConvention();
+    DefaultConvention getConvention();
 
     /**
      * <p>Compares the nesting level of this project with another project of the multi-project hierarchy.</p>

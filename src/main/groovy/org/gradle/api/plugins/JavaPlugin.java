@@ -32,7 +32,6 @@ import org.gradle.api.tasks.bundling.Jar;
 import org.gradle.api.tasks.compile.Compile;
 import org.gradle.api.tasks.ide.eclipse.*;
 import org.gradle.api.tasks.javadoc.Javadoc;
-import org.gradle.api.tasks.testing.ForkMode;
 import org.gradle.api.tasks.testing.Test;
 import org.gradle.api.tasks.util.FileSet;
 import org.gradle.util.GUtil;
@@ -83,7 +82,7 @@ public class JavaPlugin implements Plugin {
         pluginRegistry.apply(ReportingBasePlugin.class, project, customValues);
 
         JavaPluginConvention javaConvention = new JavaPluginConvention(project, customValues);
-        Convention convention = project.getConvention();
+        DefaultConvention convention = project.getConvention();
         convention.getPlugins().put("java", javaConvention);
 
         configureDependencyManager(project, javaConvention);
@@ -94,7 +93,7 @@ public class JavaPlugin implements Plugin {
         ((ConventionTask) project.createTask(GUtil.map("type", Clean.class), CLEAN)).
                 conventionMapping(GUtil.map(
                         "dir", new ConventionValue() {
-                            public Object getValue(Convention convention, Task task) {
+                            public Object getValue(DefaultConvention convention, Task task) {
                                 return project.getBuildDir();
                             }
                         }));
@@ -151,7 +150,7 @@ public class JavaPlugin implements Plugin {
 
         eclipseWtpModule.conventionMapping(GUtil.map(
                 "srcDirs", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return GUtil.addLists(java(convention).getSrcDirs(), java(convention).getResourceDirs());
                     }
                 }));
@@ -161,27 +160,27 @@ public class JavaPlugin implements Plugin {
         EclipseClasspath eclipseClasspath = (EclipseClasspath) project.createTask(GUtil.map("type", EclipseClasspath.class), ECLIPSE_CP);
         eclipseClasspath.conventionMapping(GUtil.map(
                 "srcDirs", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return GUtil.addLists(java(convention).getSrcDirs(), java(convention).getResourceDirs());
                     }
                 },
                 "testSrcDirs", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return GUtil.addLists(java(convention).getTestSrcDirs(), java(convention).getTestResourceDirs());
                     }
                 },
                 "outputDirectory", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return java(convention).getClassesDir();
                     }
                 },
                 "testOutputDirectory", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return java(convention).getTestClassesDir();
                     }
                 },
                 "classpathLibs", new ConventionValue() {
-                    public Object getValue(Convention convention, final Task task) {
+                    public Object getValue(DefaultConvention convention, final Task task) {
                         return task.getProject().getDependencies().configuration(TEST_RUNTIME).resolve(new ResolveInstructionModifier() {
                             public ResolveInstruction modify(ResolveInstruction resolveInstruction) {
                                 return new ResolveInstruction(resolveInstruction).
@@ -192,7 +191,7 @@ public class JavaPlugin implements Plugin {
                     }
                 },
                 "projectDependencies", new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         /*
                         * todo We return all project dependencies here, not just the one for runtime. We can't use Ivy here, as we
                         * request the project dependencies not via a resolve. We would have to filter the project dependencies
@@ -261,7 +260,7 @@ public class JavaPlugin implements Plugin {
         Jar jar = libsBundle.jar();
         jar.conventionMapping(WrapUtil.<String, ConventionValue>toMap("resourceCollections",
                 new ConventionValue() {
-                    public Object getValue(Convention convention, Task task) {
+                    public Object getValue(DefaultConvention convention, Task task) {
                         return WrapUtil.toList(new FileSet(javaConvention.getClassesDir()));
                     }
                 }));
@@ -343,7 +342,7 @@ public class JavaPlugin implements Plugin {
         task.dependsOn(configurationResolver.getBuildProjectDependencies());
     }
 
-    protected JavaPluginConvention java(Convention convention) {
+    protected JavaPluginConvention java(DefaultConvention convention) {
         return (JavaPluginConvention) convention.getPlugins().get("java");
     }
 }

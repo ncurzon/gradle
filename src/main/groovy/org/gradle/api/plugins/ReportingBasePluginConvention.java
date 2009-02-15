@@ -23,8 +23,13 @@ import java.io.File;
  * <p>A {@code BasePluginConvention} defines the convention properties and methods used by the {@link ReportingBasePlugin}</p>
  */
 public class ReportingBasePluginConvention {
-    private String reportsDirName = "reports";
-    private Project project;
+    public enum ValueNames implements ConventionValueName {
+        reportsDirName,
+
+        // derived
+        reportsDir
+    }
+    private final Project project;
 
     public ReportingBasePluginConvention(Project project) {
         this.project = project;

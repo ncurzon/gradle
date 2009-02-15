@@ -26,7 +26,7 @@ import org.gradle.api.internal.artifacts.DependencyManagerFactory
 import org.gradle.api.invocation.Build
 import org.gradle.api.logging.LogLevel
 import org.gradle.api.logging.StandardOutputLogging
-import org.gradle.api.plugins.Convention
+import org.gradle.api.plugins.DefaultConvention
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.plugins.JavaPluginTest
 import org.gradle.api.tasks.Directory
@@ -46,6 +46,7 @@ import org.gradle.api.*
 import org.gradle.api.internal.project.*
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.*
+import org.gradle.api.plugins.DefaultConvention
 
 /**
  * @author Hans Dockter
@@ -770,7 +771,7 @@ def scriptMethod(Closure closure) {
         project.convention."$propertyName" = 5
         assertTrue(project.hasProperty(propertyName))
         assertTrue(child1.hasProperty(propertyName))
-        project.convention = new Convention()
+        project.convention = new DefaultConvention()
         project."$propertyName" = 4
         assertTrue(project.hasProperty(propertyName))
         assertTrue(child1.hasProperty(propertyName))

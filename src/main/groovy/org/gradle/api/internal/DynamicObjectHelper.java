@@ -16,7 +16,7 @@
 package org.gradle.api.internal;
 
 import groovy.lang.MissingPropertyException;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class DynamicObjectHelper extends AbstractDynamicObject {
     private final AbstractDynamicObject delegateObject;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private DynamicObject parent;
-    private Convention convention;
+    private DefaultConvention convention;
     private DynamicObject beforeConvention;
     private DynamicObject afterConvention;
 
@@ -61,11 +61,11 @@ public class DynamicObjectHelper extends AbstractDynamicObject {
         this.parent = parent;
     }
 
-    public Convention getConvention() {
+    public DefaultConvention getConvention() {
         return convention;
     }
 
-    public void setConvention(Convention convention) {
+    public void setConvention(DefaultConvention convention) {
         this.convention = convention;
     }
 

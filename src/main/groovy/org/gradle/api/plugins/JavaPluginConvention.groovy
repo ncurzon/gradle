@@ -26,6 +26,8 @@ import org.gradle.api.tasks.bundling.*
 // todo Think about moving the mkdir method to the project.
 // todo Refactor to Java
 class JavaPluginConvention {
+
+
     public static final Map DEFAULT_ARCHIVE_TYPES = [
             jar: new ArchiveType("jar", DefaultConventionsToPropertiesMapping.JAR, Jar),
             zip: new ArchiveType("zip", DefaultConventionsToPropertiesMapping.ZIP, Zip),
@@ -57,8 +59,6 @@ class JavaPluginConvention {
     List floatingResourceDirs = []
     List floatingTestResourceDirs = []
 
-    String uploadDistsPomDirName
-    String uploadLibsPomDirName
 
     String sourceCompatibility
     String targetCompatibility

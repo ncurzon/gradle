@@ -16,7 +16,7 @@
 package org.gradle.api.tasks;
 
 import org.gradle.api.Task;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 
 /**
  * A ConventionValue can be assigned to a {@link org.gradle.api.internal.IConventionAware} task. If a property
@@ -31,5 +31,5 @@ public interface ConventionValue {
      * @param convention The convention object belonging to the task's project
      * @param task The convention aware task  
      */
-    Object getValue(Convention convention, Task task);
+    Object getValue(DefaultConvention convention, Task task);
 }

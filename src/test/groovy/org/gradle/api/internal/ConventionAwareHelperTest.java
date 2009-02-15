@@ -19,7 +19,7 @@ package org.gradle.api.internal;
 import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Task;
 import org.gradle.api.internal.project.DefaultProject;
-import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.DefaultConvention;
 import org.gradle.api.tasks.ConventionValue;
 import org.gradle.util.TestTask;
 import org.gradle.util.WrapUtil;
@@ -46,12 +46,12 @@ public class ConventionAwareHelperTest {
         final List expectedList1 = WrapUtil.toList("a");
         final List expectedList2 = WrapUtil.toList("b");
         assertSame(testTask, conventionAware.conventionMapping(WrapUtil.<String, ConventionValue>toMap("list1", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return expectedList1;
             }
         })));
         assertSame(testTask, conventionAware.conventionMapping(WrapUtil.<String, ConventionValue>toMap("list2", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return expectedList2;
             }
         })));
@@ -67,7 +67,7 @@ public class ConventionAwareHelperTest {
     @Test public void testOverwriteProperties() {
         final List conventionList1 = WrapUtil.toList("a");
         conventionAware.conventionMapping(WrapUtil.<String, ConventionValue>toMap("list1", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return conventionList1;
             }
         }));
@@ -79,7 +79,7 @@ public class ConventionAwareHelperTest {
 
     @Test public void testCachedProperties() {
         Object value = conventionAware.conventionMapping(WrapUtil.<String, ConventionValue>toMap("list1", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return WrapUtil.toList("a");
             }
         }));

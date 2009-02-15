@@ -80,24 +80,24 @@ public class WarPlugin implements Plugin {
 
         eclipseWtp.conventionMapping(GUtil.map(
                 "warResourceMappings", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 Map resourceMappings = WrapUtil.toMap("/WEB-INF/classes", GUtil.addLists(java(convention).getSrcDirs(), java(convention).getResourceDirs()));
                 resourceMappings.put("/", WrapUtil.toList(java(convention).getWebAppDir()));
                 return resourceMappings;
             }
         },
                 "outputDirectory", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return java(convention).getClassesDir();
             }
         },
                 "deployName", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 return project.getName();
             }
         },
                 "warLibs", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 List warLibs = war.dependencies(eclipseWtp.isFailForMissingDependencies(), false);
                 if (war.getAdditionalLibFileSets() != null) {
                     warLibs.addAll(war.getAdditionalLibFileSets());
@@ -106,7 +106,7 @@ public class WarPlugin implements Plugin {
             }
         },
                 "projectDependencies", new ConventionValue() {
-            public Object getValue(Convention convention, Task task) {
+            public Object getValue(DefaultConvention convention, Task task) {
                 /*
                 * todo We return all project dependencies here, not just the one for runtime. We can't use Ivy here, as we
                 * request the project dependencies not via a resolve. We would have to filter the project dependencies
@@ -122,7 +122,7 @@ public class WarPlugin implements Plugin {
         return eclipseWtp;
     }
 
-    private JavaPluginConvention java(Convention convention) {
+    private JavaPluginConvention java(DefaultConvention convention) {
         return (JavaPluginConvention) convention.getPlugins().get("java");
     }
 

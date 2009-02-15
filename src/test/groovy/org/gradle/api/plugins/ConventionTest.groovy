@@ -25,13 +25,13 @@ import org.junit.Test
  * @author Hans Dockter
  */
 class ConventionTest {
-    Convention convention
+    DefaultConvention convention
 
     TestPluginConvention1 convention1
     TestPluginConvention2 convention2 = new TestPluginConvention2()
 
     @Before public void setUp() {
-        convention = new Convention()
+        convention = new DefaultConvention()
         convention1 = new TestPluginConvention1()
         convention2 = new TestPluginConvention2()
         convention.plugins.plugin1 = convention1
