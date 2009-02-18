@@ -18,6 +18,9 @@ package org.gradle.api.internal;
 
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.plugins.ConventionValueName;
+import org.gradle.api.plugins.Convention;
+import org.gradle.api.plugins.OverwritableConventionValue;
 import org.gradle.api.tasks.ConventionValue;
 
 import java.util.Map;
@@ -27,11 +30,13 @@ import java.util.Map;
  */
 public abstract class ConventionTask extends DefaultTask implements IConventionAware {
     private ConventionAwareHelper conventionAwareHelper;
+    private final Convention convention;
     
     public ConventionTask(Project project, String name) {
         super(project, name);
         conventionAwareHelper = new ConventionAwareHelper(this);
         conventionAwareHelper.setConvention(project.getConvention());
+        this.convention = project.getConvention();
     }
 
     public Task conventionMapping(Map<String, ConventionValue> mapping) {
@@ -60,5 +65,9 @@ public abstract class ConventionTask extends DefaultTask implements IConventionA
 
     public Object conv(Object internalValue, String propertyName) {
         return conventionAwareHelper.getConventionValue(internalValue, propertyName);
+    }
+
+    public  <T> org.gradle.api.plugins.ConventionValue<T> getConventionValue(ConventionValueName valueName) {
+        return new OverwritableConventionValue<T>(convention.<T>getConventionValue(valueName));
     }
 }

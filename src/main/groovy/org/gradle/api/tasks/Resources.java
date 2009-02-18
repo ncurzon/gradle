@@ -19,6 +19,7 @@ package org.gradle.api.tasks;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
+import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.CopyInstructionFactory;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
@@ -39,12 +40,12 @@ public class Resources extends ConventionTask {
     /**
      * A list of file objects denoting the directories to extract the content from.
      */
-    private List srcDirs = null;
+    private final org.gradle.api.plugins.ConventionValue<List<File>> srcDirs;
 
     /**
      * The directory where to copy then content from the source dirs.
      */
-    private File destinationDir;
+    private final org.gradle.api.plugins.ConventionValue<File> destinationDir;
 
     /**
      * A set of include pattern (e.g. <code>'**//*.txt'</code>) which is applied to all source dirs.
@@ -104,6 +105,8 @@ public class Resources extends ConventionTask {
                 copyResources(task);
             }
         });
+        srcDirs = getConventionValue(JavaPluginConvention.ValueNames.resourceDirs);
+        destinationDir = getConventionValue(JavaPluginConvention.ValueNames.classesDir);
     }
 
     private void copyResources(Task task) {
@@ -122,10 +125,7 @@ public class Resources extends ConventionTask {
      * adds the given sourceDirs to the sourceDirs property.
      */
     public Resources from(File... sourceDirs) {
-        if (srcDirs == null) {
-            srcDirs = new ArrayList();
-        }
-        srcDirs.addAll(Arrays.asList(sourceDirs));
+        srcDirs.getValue().addAll(Arrays.asList(sourceDirs));
         return this;
     }
 
@@ -133,7 +133,7 @@ public class Resources extends ConventionTask {
      * sets the destination dir (equivalent to <code>resources.destinationDir = </code>
      */
     public Resources into(File destinationDir) {
-        this.destinationDir = destinationDir;
+        this.destinationDir.setValue(destinationDir);
         return this;
     }
 
@@ -209,8 +209,8 @@ public class Resources extends ConventionTask {
         return (List) conv(srcDirs, "srcDirs");
     }
 
-    public void setSrcDirs(List srcDirs) {
-        this.srcDirs = srcDirs;
+    public void setSrcDirs(List<File> srcDirs) {
+        this.srcDirs.setValue(srcDirs);
     }
 
     public File getDestinationDir() {
@@ -218,7 +218,7 @@ public class Resources extends ConventionTask {
     }
 
     public void setDestinationDir(File destinationDir) {
-        this.destinationDir = destinationDir;
+        this.destinationDir.setValue(destinationDir);
     }
 
     public Set<String> getGlobalIncludes() {

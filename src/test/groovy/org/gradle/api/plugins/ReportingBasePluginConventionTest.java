@@ -26,20 +26,23 @@ import org.junit.Before;
 import org.junit.runner.RunWith;
 
 import java.io.File;
+import java.util.HashMap;
 
 @RunWith(JMock.class)
 public class ReportingBasePluginConventionTest {
     private final JUnit4Mockery context = new JUnit4Mockery();
     private final Project project = context.mock(Project.class);
-    private final ReportingBasePluginConvention convention = new ReportingBasePluginConvention(project);
+    private final DefaultConvention conventionMock = context.mock(DefaultConvention.class);
+    private ReportingBasePluginConvention convention;
     private final File buildDir = new File("build-dir");
 
     @Before
     public void setUp() {
         context.checking(new Expectations() {{
-            allowing(project).getBuildDir();
-            will(returnValue(buildDir));
+            one(project).getConvention();
+            will(returnValue(conventionMock));
         }});
+        convention = new ReportingBasePluginConvention(project, new HashMap<String, Object>());
     }
 
     @Test

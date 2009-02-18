@@ -70,12 +70,12 @@ class GradleManifestTest {
         Manifest manifest = gradleManifest.manifest
         assertEquals(3, manifest.entries[section1].size())
         (attributes + attributes2).each {String key, String value ->
-            assertEquals(value, manifest.entries[section1].getValue(key))
+            assertEquals(value, manifest.entries[section1].getConventionValue(key))
         }
 
         assertEquals(1, manifest.entries[section2].size())
         attributes3.each {String key, String value ->
-            assertEquals(value, manifest.entries[section2].getValue(key))
+            assertEquals(value, manifest.entries[section2].getConventionValue(key))
         }
     }
 

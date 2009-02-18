@@ -20,6 +20,7 @@ import groovy.lang.MissingPropertyException;
 import groovy.util.AntBuilder;
 import org.gradle.api.initialization.Settings;
 import org.gradle.api.plugins.DefaultConvention;
+import org.gradle.api.plugins.ConventionValueName;
 import org.gradle.api.invocation.Build;
 import org.gradle.api.logging.LogLevel;
 import org.slf4j.Logger;
@@ -150,6 +151,7 @@ import java.util.Set;
  * @author Hans Dockter
  */
 public interface Project extends Comparable<Project> {
+    
     /**
      * The default project build file name.
      */

@@ -18,47 +18,38 @@ package org.gradle.api.plugins;
 import org.gradle.api.Project;
 
 import java.io.File;
+import java.util.Map;
 
 /**
  * <p>A {@code BasePluginConvention} defines the convention properties and methods used by the {@link ReportingBasePlugin}</p>
  */
-public class ReportingBasePluginConvention {
+public class ReportingBasePluginConvention extends AbstractPluginConvention {
     public enum ValueNames implements ConventionValueName {
         reportsDirName,
 
         // derived
         reportsDir
     }
-    private final Project project;
 
-    public ReportingBasePluginConvention(Project project) {
-        this.project = project;
+    private final ConventionValue<String> reportsDirName;
+    private final ConventionValue<File> reportsDir;
+
+    public ReportingBasePluginConvention(Project project, Map<String, ?> customValues) {
+        super(project, customValues);
+
+        reportsDirName = addStringValue(ValueNames.reportsDirName, "reports");
+        reportsDir = addDerivedFileValue(ValueNames.reportsDir, project.getBuildDir(), reportsDirName);
     }
 
-    /**
-     * Returns the name of the reports directory, relative to the project's build directory.
-     *
-     * @return The reports directory name. Never returns null.
-     */
     public String getReportsDirName() {
-        return reportsDirName;
+        return reportsDirName.getValue();
     }
 
-    /**
-     * Sets the name of the reports directory, relative to the project's build directory.
-     *
-     * @param reportsDirName The reports directory name. Should not be null.
-     */
     public void setReportsDirName(String reportsDirName) {
-        this.reportsDirName = reportsDirName;
+        this.reportsDirName.setValue(reportsDirName);
     }
 
-    /**
-     * Returns the directory containing all reports for this project
-     *
-     * @return The reports directory. Never returns null.
-     */
     public File getReportsDir() {
-        return new File(project.getBuildDir(), reportsDirName);
+        return reportsDir.getValue();
     }
 }

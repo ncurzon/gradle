@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.jar.Attributes
 import org.apache.tools.ant.taskdefs.condition.Os
 import org.gradle.api.Task
-import org.gradle.api.internal.dependencies.WebdavResolver
+import org.gradle.api.internal.artifacts.publish.ivycomponents.WebdavResolver
 import org.gradle.api.tasks.StopExecutionException
 import org.gradle.api.tasks.testing.ForkMode
 import org.gradle.api.tasks.wrapper.Wrapper
@@ -32,8 +32,8 @@ archivesBaseName = 'gradle'
 
 usePlugin('groovy')
 
-sourceCompatibility = 1.5
-targetCompatibility = 1.5
+sourceCompatibility = "1.5"
+targetCompatibility = "1.5"
 
 svn = new Svn(project)
 
@@ -129,8 +129,8 @@ dependencies {
     }
     distLib "junit:junit:4.4@jar"
     clientModule(['testngIntegrationTesting'],'testng:testng:5.8') {
-		addArtifact(new Artifact('testng','jar','jar','jdk15', "http://repo2.maven.org/maven2/org/testng/testng/5.8/testng-5.8-jdk15.jar"))
-		addArtifact(new Artifact('testng','jar','jar','jdk14', "http://repo2.maven.org/maven2/org/testng/testng/5.8/testng-5.8-jdk14.jar"))
+		addArtifact(new org.gradle.api.internal.artifacts.dependencies.DefaultDependencyArtifact('testng','jar','jar','jdk15', "http://repo2.maven.org/maven2/org/testng/testng/5.8/testng-5.8-jdk15.jar"))
+		addArtifact(new org.gradle.api.internal.artifacts.dependencies.DefaultDependencyArtifact('testng','jar','jar','jdk14', "http://repo2.maven.org/maven2/org/testng/testng/5.8/testng-5.8-jdk14.jar"))
 	}
     testngIntegrationTesting "org.codehaus.groovy:groovy-all:1.5.6"
 }

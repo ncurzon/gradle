@@ -18,6 +18,8 @@ package org.gradle.api.tasks.javadoc;
 
 import org.apache.tools.ant.BuildException;
 import org.gradle.api.*;
+import org.gradle.api.plugins.JavaPluginConvention;
+import org.gradle.api.plugins.ConventionValueName;
 import org.gradle.api.artifacts.ConfigurationResolveInstructionModifier;
 import org.gradle.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
@@ -33,9 +35,9 @@ import java.util.List;
  * @author Hans Dockter
  */
 public class Javadoc extends ConventionTask {
-    private List<File> srcDirs;
+    private final org.gradle.api.plugins.ConventionValue<List<File>> srcDirs;
 
-    private File destinationDir;
+    private final org.gradle.api.plugins.ConventionValue<File> destinationDir;
 
     private DependencyManager dependencyManager;
 
@@ -55,13 +57,16 @@ public class Javadoc extends ConventionTask {
 
     private ConfigurationResolveInstructionModifier resolveInstructionModifier;
 
-    public Javadoc(Project project, String name) {
+    public Javadoc(Project project, String name, ConventionValueName srcDirs, ConventionValueName javadocDir) {
         super(project, name);
         doFirst(new TaskAction() {
             public void execute(Task task) {
                 generate();
             }
         });
+        dependencyManager = project.getDependencies();
+        this.srcDirs = getConventionValue(srcDirs);
+        destinationDir = getConventionValue(javadocDir);
     }
 
     private void generate() {
@@ -80,14 +85,14 @@ public class Javadoc extends ConventionTask {
      * @return The source directories. Never returns null.
      */
     public List<File> getSrcDirs() {
-        return (List<File>) conv(srcDirs, "srcDirs");
+        return srcDirs.getValue();
     }
 
     /**
      * <p>Sets the source directories containing the java source files to generate documentation for.</p>
      */
     public void setSrcDirs(List<File> srcDirs) {
-        this.srcDirs = new ArrayList<File>(srcDirs);
+        this.srcDirs.setValue(new ArrayList<File>(srcDirs));
     }
 
     /**
@@ -96,14 +101,14 @@ public class Javadoc extends ConventionTask {
      * @return The directory.
      */
     public File getDestinationDir() {
-        return (File) conv(destinationDir, "destinationDir");
+        return destinationDir.getValue();
     }
 
     /**
      * <p>Sets the directory to generate the documentation into.</p>
      */
     public void setDestinationDir(File destinationDir) {
-        this.destinationDir = destinationDir;
+        this.destinationDir.setValue(destinationDir);
     }
 
     /**

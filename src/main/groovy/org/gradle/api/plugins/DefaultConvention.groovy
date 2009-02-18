@@ -24,34 +24,50 @@ class DefaultConvention extends Convention {
     Map<String, Object> plugins = [:]
 
     def propertyMissing(String property) {
-        def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
-        if (pluginConvention) {
-            return pluginConvention."$property"
+        if ( hasConventionValue(property) ) {
+            return getConventionValue(property).getValue()
         }
-        throw new MissingPropertyException(property, DefaultConvention)
+        else {
+            def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
+            if (pluginConvention) {
+                return pluginConvention."$property"
+            }
+            throw new MissingPropertyException(property, DefaultConvention)
+        }
     }
 
     boolean hasProperty(String property) {
-        def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
-        if (pluginConvention) {
-            return true
+        if ( hasConventionValue(property) ) {
+            return true;
         }
-        return false
+        else {
+            def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
+            if (pluginConvention) {
+                return true
+            }
+            return false
+        }
     }
 
     Map<String, Object> getProperties() {
         Map properties = [:]
         plugins.values().each { properties = it.properties + properties }
+        conventionValues.values().each { properties = it.getValue() + properties }
         properties
     }
 
     void setProperty(String property, value) {
-        def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
-        if (pluginConvention) {
-            pluginConvention."$property" = value
-            return
+        if ( hasConventionValue(property) ) {
+            getConventionValue(property).setValue(value)
         }
-        throw new MissingPropertyException(property, DefaultConvention)
+        else {
+            def pluginConvention = plugins.values().find { it.metaClass.hasProperty(it, property) }
+            if (pluginConvention) {
+                pluginConvention."$property" = value
+                return
+            }
+            throw new MissingPropertyException(property, DefaultConvention)
+        }
     }
 
     public Object invokeMethod(String name, Object... arguments) {

@@ -34,7 +34,9 @@ import java.util.Map;
  */
 public class ReportingBasePlugin implements Plugin {
     public void apply(final Project project, PluginRegistry pluginRegistry, Map<String, ?> customValues) {
+        pluginRegistry.apply(ProjectPlugin.class, project, customValues);
+        
         DefaultConvention convention = project.getConvention();
-        convention.getPlugins().put("reportingBase", new ReportingBasePluginConvention(project));
+        convention.getPlugins().put("reportingBase", new ReportingBasePluginConvention(project, customValues));
     }
 }

@@ -21,6 +21,8 @@ import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
+import org.gradle.api.plugins.ProjectPluginConvention;
+import org.gradle.api.plugins.ConventionValueName;
 import org.gradle.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
 import org.slf4j.Logger;
@@ -35,39 +37,42 @@ import java.io.IOException;
 public class Clean extends ConventionTask {
     private static Logger logger = LoggerFactory.getLogger(Clean.class);
 
-    File dir;
+    private final org.gradle.api.plugins.ConventionValue<File> buildDir;
 
-    ExistingDirsFilter existingDirsFilter = new ExistingDirsFilter();
+    private ExistingDirsFilter existingDirsFilter = new ExistingDirsFilter();
 
-    public Clean(Project project, String name) {
+    public Clean(final Project project, String name, ConventionValueName buildDir) {
         super(project, name);
         doFirst(new TaskAction() {
             public void execute(Task task) {
                 clean(task);
             }
         });
+        this.buildDir = getConventionValue(buildDir);
     }
 
     private void clean(Task task) {
-        if (getDir() == null) {
+        final File buildDir = this.buildDir.getValue();
+
+        if (buildDir == null) {
             throw new InvalidUserDataException("The dir property must be specified!");
         }
-        existingDirsFilter.checkExistenceAndThrowStopActionIfNot(getDir());
-        logger.debug("Deleting dir: {}", getDir());
+        existingDirsFilter.checkExistenceAndThrowStopActionIfNot(buildDir);
+        logger.debug("Deleting dir: {}", buildDir);
 
         try {
-            FileUtils.deleteDirectory(getDir());
+            FileUtils.deleteDirectory(buildDir);
         } catch (IOException e) {
-            throw new InvalidUserDataException("Can't delete directory: " + getDir());
+            throw new InvalidUserDataException("Can't delete directory: " + buildDir);
         }
     }
 
     public File getDir() {
-        return (File) conv(dir, "dir");
+        return buildDir.getValue();
     }
 
     public void setDir(File dir) {
-        this.dir = dir;
+        this.buildDir.setValue(dir);
     }
 
     public ExistingDirsFilter getExistingDirsFilter() {

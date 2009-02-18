@@ -20,17 +20,21 @@ import org.gradle.api.InvalidUserDataException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.TaskAction;
+import org.gradle.api.plugins.ConventionValue;
+import org.gradle.api.plugins.GroovyPluginConvention;
 import org.gradle.util.GUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.io.File;
+import java.math.BigDecimal;
 
 /**
  * @author Hans Dockter
  */
 public class GroovyCompile extends Compile {
-    private List groovySourceDirs = null;
+    private final ConventionValue<List<File>> groovySourceDirs;
 
     private AntGroovyc antGroovyCompile = new AntGroovyc();
 
@@ -54,6 +58,7 @@ public class GroovyCompile extends Compile {
                 compile(task);
             }
         });
+        groovySourceDirs = getConventionValue(GroovyPluginConvention.ValueNames.groovySrcDirs);
     }
 
     protected void compile(Task task) {
@@ -61,15 +66,18 @@ public class GroovyCompile extends Compile {
         if (getAntGroovyCompile() == null) throw new InvalidUserDataException("The ant groovy compile command must be set!");
         if (getDestinationDir() == null) throw new InvalidUserDataException("The target dir is not set, compile can't be triggered!");
 
+        final BigDecimal sourceCompatibility = super.sourceCompatibility.getValue();
+        final BigDecimal targetCompatibility = super.targetCompatibility.getValue();
+
         List existingSourceDirs = existentDirsFilter.findExistingDirs(getSrcDirs());
         List classpath = null;
         if (existingSourceDirs.size() > 0) {
-            if (getSourceCompatibility() == null || getTargetCompatibility() == null) {
+            if (sourceCompatibility == null || targetCompatibility == null) {
                 throw new InvalidUserDataException("The sourceCompatibility and targetCompatibility must be set!");
             }
             classpath = createClasspath();
-            antCompile.execute(existingSourceDirs, getIncludes(), getExcludes(), getDestinationDir(), classpath, getSourceCompatibility(),
-                    getTargetCompatibility(), getOptions(), getProject().getAnt());
+            antCompile.execute(existingSourceDirs, getIncludes(), getExcludes(), getDestinationDir(), classpath, sourceCompatibility.toString(),
+                    targetCompatibility.toString(), getOptions(), getProject().getAnt());
         }
         List existingGroovySourceDirs = existentDirsFilter.findExistingDirs(getGroovySourceDirs());
         if (existingGroovySourceDirs.size() > 0) {
@@ -79,8 +87,8 @@ public class GroovyCompile extends Compile {
             // todo We need to understand why it is not good enough to put groovy and ant in the task classpath but also Junit. As we don't understand we put the whole testCompile in it right now. It doesn't hurt, but understanding is better :)
             List taskClasspath = getGroovyClasspath();
             antGroovyCompile.execute(getProject().getAnt(), existingGroovySourceDirs, getGroovyIncludes(), getGroovyExcludes(),
-                    getGroovyJavaIncludes(), getGroovyExcludes(), getDestinationDir(), classpath, getSourceCompatibility(),
-                    getTargetCompatibility(), getGroovyOptions(), getOptions(), taskClasspath);
+                    getGroovyJavaIncludes(), getGroovyExcludes(), getDestinationDir(), classpath, sourceCompatibility.toString(),
+                    targetCompatibility.toString(), getGroovyOptions(), getOptions(), taskClasspath);
         }
     }
 
@@ -182,12 +190,12 @@ public class GroovyCompile extends Compile {
         this.antGroovyCompile = antGroovyCompile;
     }
 
-    public List getGroovySourceDirs() {
-        return (List) conv(groovySourceDirs, "groovySourceDirs");
+    public List<File> getGroovySourceDirs() {
+        return groovySourceDirs.getValue();
     }
 
-    public void setGroovySourceDirs(List groovySourceDirs) {
-        this.groovySourceDirs = groovySourceDirs;
+    public void setGroovySourceDirs(List<File> groovySourceDirs) {
+        this.groovySourceDirs.setValue(groovySourceDirs);
     }
 
     /**

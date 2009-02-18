@@ -17,6 +17,8 @@
 package org.gradle.api.tasks.compile;
 
 import org.gradle.api.*;
+import org.gradle.api.plugins.ConventionValue;
+import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.artifacts.ConfigurationResolveInstructionModifier;
 import org.gradle.api.internal.ConventionTask;
 import org.gradle.api.tasks.util.ExistingDirsFilter;
@@ -26,6 +28,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.math.BigDecimal;
 
 /**
 * @author Hans Dockter
@@ -35,22 +38,22 @@ public class Compile extends ConventionTask {
     /**
      * The directories with the sources to compile
      */
-    private List srcDirs = null;
+    private final ConventionValue<List<File>> srcDirs;
 
     /**
      * The directory where to put the compiled classes (.class files)
      */
-    private File destinationDir;
+    private final ConventionValue<File> destinationDir;
 
     /**
      * The sourceCompatibility used by the Java compiler for your code. (e.g. 1.5)
      */
-    private String sourceCompatibility;
+    protected final ConventionValue<BigDecimal> sourceCompatibility;
 
     /**
      * The targetCompatibility used by the Java compiler for your code. (e.g. 1.5)
      */
-    private String targetCompatibility;
+    protected final ConventionValue<BigDecimal> targetCompatibility;
 
     private ConfigurationResolveInstructionModifier resolveInstructionModifier;
 
@@ -93,6 +96,11 @@ public class Compile extends ConventionTask {
                 compile(task);
             }
         });
+
+        srcDirs = getConventionValue(JavaPluginConvention.ValueNames.srcDirs);
+        destinationDir = getConventionValue(JavaPluginConvention.ValueNames.classesDir);
+        sourceCompatibility = getConventionValue(JavaPluginConvention.ValueNames.sourceCompatibility);
+        targetCompatibility = getConventionValue(JavaPluginConvention.ValueNames.targetCompatibility);
     }
 
     protected void compile(Task task) {
@@ -107,8 +115,8 @@ public class Compile extends ConventionTask {
             throw new InvalidUserDataException("The sourceCompatibility and targetCompatibility must be set!");
         }
 
-        antCompile.execute(existingSourceDirs, includes, excludes, getDestinationDir(), getClasspath(), getSourceCompatibility(),
-                getTargetCompatibility(), options, getProject().getAnt());
+        antCompile.execute(existingSourceDirs, includes, excludes, getDestinationDir(), getClasspath(), getSourceCompatibility().toString(),
+                getTargetCompatibility().toString(), options, getProject().getAnt());
     }
 
     public List getClasspath() {
@@ -143,36 +151,36 @@ public class Compile extends ConventionTask {
         return this;
     }
 
-    public List getSrcDirs() {
-        return (List) conv(srcDirs, "srcDirs");
+    public List<File> getSrcDirs() {
+        return srcDirs.getValue();
     }
 
-    public void setSrcDirs(List srcDirs) {
-        this.srcDirs = srcDirs;
+    public void setSrcDirs(List<File> srcDirs) {
+        this.srcDirs.setValue(srcDirs);
     }
 
     public File getDestinationDir() {
-        return (File) conv(destinationDir, "destinationDir");
+        return destinationDir.getValue();
     }
 
     public void setDestinationDir(File destinationDir) {
-        this.destinationDir = destinationDir;
+        this.destinationDir.setValue(destinationDir);
     }
 
-    public String getSourceCompatibility() {
-        return (String) conv(sourceCompatibility, "sourceCompatibility");
+    public BigDecimal getSourceCompatibility() {
+        return sourceCompatibility.getValue();
     }
 
-    public void setSourceCompatibility(String sourceCompatibility) {
-        this.sourceCompatibility = sourceCompatibility;
+    public void setSourceCompatibility(BigDecimal sourceCompatibility) {
+        this.sourceCompatibility.setValue(sourceCompatibility);
     }
 
-    public String getTargetCompatibility() {
-        return (String) conv(targetCompatibility, "targetCompatibility");
+    public BigDecimal getTargetCompatibility() {
+        return targetCompatibility.getValue();
     }
 
-    public void setTargetCompatibility(String targetCompatibility) {
-        this.targetCompatibility = targetCompatibility;
+    public void setTargetCompatibility(BigDecimal targetCompatibility) {
+        this.targetCompatibility.setValue(targetCompatibility);
     }
 
     public List getUnmanagedClasspath() {

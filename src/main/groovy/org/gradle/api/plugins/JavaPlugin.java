@@ -47,6 +47,7 @@ import java.util.Map;
  * @author Hans Dockter
  */
 public class JavaPlugin implements Plugin {
+    
     public static final String RESOURCES = "resources";
     public static final String COMPILE = "compile";
     public static final String TEST_RESOURCES = "testResources";
@@ -90,26 +91,19 @@ public class JavaPlugin implements Plugin {
 
         project.createTask(INIT);
 
-        ((ConventionTask) project.createTask(GUtil.map("type", Clean.class), CLEAN)).
-                conventionMapping(GUtil.map(
-                        "dir", new ConventionValue() {
-                            public Object getValue(DefaultConvention convention, Task task) {
-                                return project.getBuildDir();
-                            }
-                        }));
+        project.createTask(GUtil.map("type", Clean.class), CLEAN);
 
         configureJavaDoc(project);
 
-        ((ConventionTask) project.createTask(GUtil.map("type", Resources.class, "dependsOn", INIT), RESOURCES)).
-                conventionMapping(DefaultConventionsToPropertiesMapping.RESOURCES);
+        project.createTask(GUtil.map("type", Resources.class, "dependsOn", INIT), RESOURCES);
 
         configureCompile((Compile) project.createTask(GUtil.map("type", Compile.class, "dependsOn", RESOURCES),
-                COMPILE), DefaultConventionsToPropertiesMapping.COMPILE);
+                COMPILE));
 
         configureTestResources(project);
 
         configureTestCompile((Compile) project.createTask(GUtil.map("type", Compile.class, "dependsOn", TEST_RESOURCES),
-                TEST_COMPILE), (Compile) project.task(COMPILE), DefaultConventionsToPropertiesMapping.TEST_COMPILE);
+                TEST_COMPILE), (Compile) project.task(COMPILE));
 
         configureTest(project);
 
@@ -125,7 +119,6 @@ public class JavaPlugin implements Plugin {
 
     private void configureJavaDoc(Project project) {
         Javadoc javadoc = (Javadoc) project.createTask(GUtil.map("type", Javadoc.class), JAVADOC);
-        javadoc.conventionMapping(DefaultConventionsToPropertiesMapping.JAVADOC);
         javadoc.setResolveInstruction(new ConfigurationResolveInstructionModifier(COMPILE));
     }
 
@@ -308,9 +301,8 @@ public class JavaPlugin implements Plugin {
         dependencyManager.getDefaultMavenScopeMapping().addMapping(TEST_RUNTIME_PRIORITY, TEST_RUNTIME, Conf2ScopeMappingContainer.TEST);
     }
 
-    protected Compile configureTestCompile(Compile testCompile, final Compile compile, Map propertyMapping) {
+    protected Compile configureTestCompile(Compile testCompile, final Compile compile) {
         testCompile.getSkipProperties().add(Task.AUTOSKIP_PROPERTY_PREFIX + TEST);
-        configureCompileInternal(testCompile, propertyMapping);
         testCompile.setResolveInstruction(new ConfigurationResolveInstructionModifier(TEST_COMPILE));
         addDependsOnProjectDependencies(testCompile, TEST_COMPILE);
         return (Compile) testCompile.doFirst(new TaskAction() {
@@ -323,15 +315,9 @@ public class JavaPlugin implements Plugin {
         });
     }
 
-    protected Compile configureCompile(Compile compile, Map propertyMapping) {
+    protected Compile configureCompile(Compile compile) {
         compile.setResolveInstruction(new ConfigurationResolveInstructionModifier(COMPILE));
         addDependsOnProjectDependencies(compile, COMPILE);
-        configureCompileInternal(compile, propertyMapping);
-        return compile;
-    }
-
-    protected Compile configureCompileInternal(Compile compile, Map propertyMapping) {
-        compile.conventionMapping(propertyMapping);
         return compile;
     }
 

@@ -134,7 +134,7 @@ abstract class AbstractAntArchiveTest {
             assertEquals(value, manifestProperties.mainAttributes.getValue(key))
         }
         sectionAttributes.each {String key, String value ->
-            assertEquals(value, manifestProperties.entries[sectionName].getValue(key))
+            assertEquals(value, manifestProperties.entries[sectionName].getConventionValue(key))
         }
         checkExistenceOfFileSetDuo(unzipDir, 'META-INF/', METAINFS_KEY)
     }

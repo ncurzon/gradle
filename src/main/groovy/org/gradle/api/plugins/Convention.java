@@ -10,14 +10,28 @@ import java.util.Map;
  */
 public abstract class Convention implements DynamicObject {
 
-    private final Map<ConventionValueName, ConventionValue> conventionValues = new HashMap<ConventionValueName, ConventionValue>();
+    protected final Map<ConventionValueName, ConventionValue> conventionValues = new HashMap<ConventionValueName, ConventionValue>();
+    private final Map<String, ConventionValue> strConventionValues = new HashMap<String, ConventionValue>();
 
-    public <T> ConventionValue<T> getValue(ConventionValueName conventionValueName) {
+    public boolean hasConventionValue(ConventionValueName conventionValueName) {
+        return conventionValues.containsKey(conventionValueName);
+    }
+
+    public boolean hasConventionValue(String conventionValueName) {
+        return strConventionValues.containsKey(conventionValueName);
+    }
+
+    public <T> ConventionValue<T> getConventionValue(ConventionValueName conventionValueName) {
         return conventionValues.get(conventionValueName);
     }
 
-    public <T> ConventionValue<T> addValue(ConventionValue<T> conventionValue) {
+    public <T> ConventionValue<T> getConventionValue(String conventionValueName) {
+        return strConventionValues.get(conventionValueName);
+    }
+
+    public <T> ConventionValue<T> defineConventionValue(ConventionValue<T> conventionValue) {
         conventionValues.put(conventionValue.getName(), conventionValue);
+        strConventionValues.put(conventionValue.getName().toString(), conventionValue);
         return conventionValue;
     }
 
