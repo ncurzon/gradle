@@ -10,25 +10,25 @@ import java.util.Map;
  */
 public class ProjectPluginConvention extends AbstractPluginConvention {
 
-    public enum ValueNames implements ConventionValueName {
-        defaultBuildFile,
-        embeddedScriptId,
-        defaultArchivesTaskBaseName,
-        hierarchyPathSeparator,
-        buildDirName,
-        gradlePropertiesName,
-        systemPropPrefix,
-        tmpDirName,
-        cacheDirName,
-        defaultGroup,
-        defaultVersion,
+    public static class ValueNames {
+        public static final ConventionValueName<String> defaultBuildFile = new ConventionValueName<String>();
+        public static final ConventionValueName<String> embeddedScriptId = new ConventionValueName<String>();
+        public static final ConventionValueName<String> defaultArchivesTaskBaseName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> hierarchyPathSeparator = new ConventionValueName<String>();
+        public static final ConventionValueName<String> buildDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> gradlePropertiesName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> systemPropPrefix = new ConventionValueName<String>();
+        public static final ConventionValueName<String> tmpDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> cacheDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> defaultGroup = new ConventionValueName<String>();
+        public static final ConventionValueName<String> defaultVersion = new ConventionValueName<String>();
 
         //derived
-        rootDir,
-        projectDir,
-        buildDir,
-        tmpDir,
-        cacheDir
+        public static final ConventionValueName<File> rootDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> projectDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> buildDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> tmpDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> cacheDir = new ConventionValueName<File>();
     }
 
     protected ProjectPluginConvention(final Project project, Map<String, ?> customValues) {

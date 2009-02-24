@@ -5,7 +5,7 @@ package org.gradle.api.plugins;
  */
 public interface ConventionValue<T> {
 
-    ConventionValueName getName();
+    ConventionValueName<T> getName();
 
     T getValue();
 

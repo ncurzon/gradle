@@ -24,11 +24,11 @@ import java.util.Map;
  * <p>A {@code BasePluginConvention} defines the convention properties and methods used by the {@link ReportingBasePlugin}</p>
  */
 public class ReportingBasePluginConvention extends AbstractPluginConvention {
-    public enum ValueNames implements ConventionValueName {
-        reportsDirName,
+    public static class ValueNames {
+        public static final ConventionValueName<String> reportsDirName = new ConventionValueName<String>();
 
         // derived
-        reportsDir
+        public static final ConventionValueName<File> reportsDir = new ConventionValueName<File>();
     }
 
     private final ConventionValue<String> reportsDirName;

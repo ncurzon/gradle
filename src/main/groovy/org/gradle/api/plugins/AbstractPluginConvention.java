@@ -44,7 +44,7 @@ public abstract class AbstractPluginConvention {
         });
     }
 
-    ConventionValue<File> addDerivedFileValue(ConventionValueName conventionValueName, final ConventionValue<File> srcRoot, final ConventionValue<String> subDirName) {
+    ConventionValue<File> addDerivedFileValue(ConventionValueName<File> conventionValueName, final ConventionValue<File> srcRoot, final ConventionValue<String> subDirName) {
         return addValue(new FileStringDerivedFileConventionValue(conventionValueName, srcRoot, subDirName));
     }
 
@@ -52,7 +52,7 @@ public abstract class AbstractPluginConvention {
         private final ConventionValue<File> parent;
         private final ConventionValue<String> subDirName;
 
-        private FileStringDerivedFileConventionValue(ConventionValueName name, ConventionValue<File> parent, ConventionValue<String> subDirName) {
+        private FileStringDerivedFileConventionValue(ConventionValueName<File> name, ConventionValue<File> parent, ConventionValue<String> subDirName) {
             super(name);
             this.parent = parent;
             this.subDirName = subDirName;
@@ -70,7 +70,7 @@ public abstract class AbstractPluginConvention {
         }
     }
 
-    ConventionValue<File> addDerivedFileValue(ConventionValueName conventionValueName, final File srcRoot, final ConventionValue<String> subDirName) {
+    ConventionValue<File> addDerivedFileValue(ConventionValueName<File> conventionValueName, final File srcRoot, final ConventionValue<String> subDirName) {
         return addValue(new DerivedConventionValue<File>(conventionValueName) {
             @Override
             public File getValue() {
@@ -79,20 +79,20 @@ public abstract class AbstractPluginConvention {
         });
     }
 
-    DefaultConventionValue<String> addStringValue(ConventionValueName conventionValueName, String defaultValue) {
+    DefaultConventionValue<String> addStringValue(ConventionValueName<String> conventionValueName, String defaultValue) {
         final DefaultConventionValue<String> stringValue = new DefaultConventionValue<String>(conventionValueName, defaultValue);
         addValue(stringValue);
         return stringValue;
     }
 
-    DefaultConventionValue<List<String>> addStringListValue(ConventionValueName conventionValueName, String toAddValue) {
+    DefaultConventionValue<List<String>> addStringListValue(ConventionValueName<List<String>> conventionValueName, String toAddValue) {
         final DefaultConventionValue<List<String>> stringListValue = new DefaultConventionValue<List<String>>(conventionValueName, new ArrayList<String>());
         stringListValue.getValue().add(toAddValue);
         addValue(stringListValue);
         return stringListValue;
     }
 
-    <T> ConventionValue<T> getValue(ConventionValueName conventionValueName) {
+    <T> ConventionValue<T> getValue(ConventionValueName<T> conventionValueName) {
         return convention.getConventionValue(conventionValueName);
     }
 }

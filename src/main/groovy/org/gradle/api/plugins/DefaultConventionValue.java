@@ -7,21 +7,21 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Tom Eyckmans
  */
 public class DefaultConventionValue<T> implements ConventionValue<T> {
-    private final ConventionValueName name;
+    private final ConventionValueName<T> name;
     private final Lock valueLock;
     private T value;
 
-    public DefaultConventionValue(ConventionValueName name) {
+    public DefaultConventionValue(ConventionValueName<T> name) {
         this(name, null);
     }
 
-    public DefaultConventionValue(ConventionValueName name, T value) {
+    public DefaultConventionValue(ConventionValueName<T> name, T value) {
         this.name = name;
         this.valueLock = new ReentrantLock();
         this.value = value;
     }
 
-    public ConventionValueName getName() {
+    public ConventionValueName<T> getName() {
         return name;
     }
 

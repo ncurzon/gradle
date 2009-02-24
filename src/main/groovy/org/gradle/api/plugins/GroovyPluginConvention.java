@@ -12,17 +12,17 @@ import java.io.File;
  */
 public class GroovyPluginConvention extends AbstractPluginConvention {
 
-    public enum ValueNames implements ConventionValueName {
-        groovySrcDirNames,
-        groovyTestSrcDirNames,
-        floatingGroovySrcDirs,
-        floatingGroovyTestSrcDirs,
-        groovydocDirName,
+    public static class ValueNames {
+        public static final ConventionValueName<List<String>> groovySrcDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<String>> groovyTestSrcDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<File>> floatingGroovySrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> floatingGroovyTestSrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<String> groovydocDirName = new ConventionValueName<String>();
 
         // derived
-        groovySrcDirs,
-        groovyTestSrcDirs,
-        groovydocDir
+        public static final ConventionValueName<List<File>> groovySrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> groovyTestSrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<File> groovydocDir = new ConventionValueName<File>();
     }
 
     private final ConventionValue<List<String>> groovySrcDirNames;

@@ -14,50 +14,50 @@ import java.math.BigDecimal;
  */
 public class JavaPluginConvention extends AbstractPluginConvention {
 
-    public enum ValueNames implements ConventionValueName {
-        srcRootName,
-        srcDocsDirName,
-        classesDirName,
-        testClassesDirName,
-        distsDirName,
-        docsDirName,
-        javadocDirName,
-        testResultsDirName,
-        webAppDirName,
-        testReportDirName,
-        srcDirNames,
-        resourceDirNames,
-        testSrcDirNames,
-        testResourceDirNames,
-        floatingSrcDirs,
-        floatingTestSrcDirs,
-        floatingResourceDirs,
-        floatingTestResourceDirs,
-        uploadDistsPomDirName,
-        uploadLibsPomDirName,
-        sourceCompatibility,
-        targetCompatibility,
-        archiveTypes,
-        manifest,
-        metaInf,
+    public static class ValueNames {
+        public static final ConventionValueName<String> srcRootName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> srcDocsDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> classesDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> testClassesDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> distsDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> docsDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> javadocDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> testResultsDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> webAppDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> testReportDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<List<String>> srcDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<String>> resourceDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<String>> testSrcDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<String>> testResourceDirNames = new ConventionValueName<List<String>>();
+        public static final ConventionValueName<List<File>> floatingSrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> floatingTestSrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> floatingResourceDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> floatingTestResourceDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<String> uploadDistsPomDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<String> uploadLibsPomDirName = new ConventionValueName<String>();
+        public static final ConventionValueName<BigDecimal> sourceCompatibility = new ConventionValueName<BigDecimal>();
+        public static final ConventionValueName<BigDecimal> targetCompatibility = new ConventionValueName<BigDecimal>();
+        public static final ConventionValueName<Map<String, ArchiveType>> archiveTypes = new ConventionValueName<Map<String, ArchiveType>>();
+        public static final ConventionValueName<GradleManifest> manifest = new ConventionValueName<GradleManifest>();
+        public static final ConventionValueName<List> metaInf = new ConventionValueName<List>();
 
         // derived
-        srcRoot,
-        srcDirs,
-        resourceDirs,
-        testSrcDirs,
-        testResourceDirs,
-        srcDocsDir,
-        webAppDir,
-        classesDir,
-        testClassesDir,
-        uploadLibsPomDir,
-        uploadDistsPomDir,
-        distsDir,
-        docsDir,
-        javadocDir,
-        testResultsDir,
-        testReportDir
+        public static final ConventionValueName<File> srcRoot = new ConventionValueName<File>();
+        public static final ConventionValueName<List<File>> srcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> resourceDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> testSrcDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<List<File>> testResourceDirs = new ConventionValueName<List<File>>();
+        public static final ConventionValueName<File> srcDocsDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> webAppDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> classesDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> testClassesDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> uploadLibsPomDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> uploadDistsPomDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> distsDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> docsDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> javadocDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> testResultsDir = new ConventionValueName<File>();
+        public static final ConventionValueName<File> testReportDir = new ConventionValueName<File>();
     }
 
     public static final Map<String, ArchiveType> DEFAULT_ARCHIVE_TYPES = new HashMap<String, ArchiveType>();

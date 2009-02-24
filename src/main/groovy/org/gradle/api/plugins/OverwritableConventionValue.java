@@ -16,7 +16,7 @@ public class OverwritableConventionValue<T> implements ConventionValue<T>{
         this.valueLock = new ReentrantLock();
     }
 
-    public ConventionValueName getName() {
+    public ConventionValueName<T> getName() {
         return defaultValue.getName();
     }
 
